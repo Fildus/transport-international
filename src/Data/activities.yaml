@@ -1,0 +1,25 @@
+transportOfGoods:
+    transportOfGoods:
+        industrialTransportOfGoods:
+            perLot: [inContainer, full, inBulking, inHalfLot, textile, LessThan3T5]
+        transportOfGoodsByTank:
+            food: [liquidFoodCistern, foodCisternPulverulent]
+            non-food: [liquidNonFoodCistern, nonFoodCisternPulverulent, dangerousGoodsTank]
+        transportOfGoodsByTruck: [cerealTipper, polybenneSkip, tipperTPScrap]
+        refrigeratedTransportationOfGoods:
+            food: [refrigeratedHungMeat, refrigeratedNegativeTemperature, refrigeratedPositiveTemperature]
+            non-food: [refrigerated_Organs_Blood, refrigeratedOther]
+        diverseTransportationOfGoods:
+            liveAnimal: [horse, variousAnimals]
+            other: [funds, logs, ofInseparableMass, ofDangerousGoods, of_straw_feed, forFragile, press_postal, furniture, dedicatedToPrivate]
+            vehicles: [worksVehicles, boats, bungalow_mobilhome, bikes, cars]
+            largeDimensions: [inExceptional]
+            nonRoad: [byAir, bySea, byRail, byInlandWaterway]
+    charter: [charterClusteringOrFull, charteringPerishableFoodstuffs, approvedCharteringCustoms, airCharter, maritimeChartering, chateringOther]
+    rentWithDriver: [rentWithSemiDriverHeavyTrucks, rentWithDriverHeavyTrucks, rentWithDriverLightVehicles, rentWithDriverForkliftTruck, rentWithDriverCoaches, rentWithDriver_publicWorks]
+    logistic: [logisticsStockControl, logisticsPreparationOfOrders, logisticsDistribution, logisticsConditioningOfPallets]
+    storage: [coveredStorage, outdoorStorage, coldStorage, storingOfLiquids, storingOfHazardousMaterials, secureStorage, storageInFurnitureStorage, selfStorageStorage]
+    expressTransport: [urgent_express, expressTransport_expressParcel, expressTransport_expressDeliveryServices]
+mover: [forIndividuals, industrialTransfer, administrative, ofPiano, ofWorksOfArt, ofSate, inFurnitureStorehouses, inSelfStorage]
+passengerTransport: [forGroups, schoolTransport, regularService, travelAgencies, packageTour, airTravel, lightVehicle]
+taxi: [lightVehicleOrBike]

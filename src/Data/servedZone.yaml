@@ -1,0 +1,157 @@
+africa:
+    centralAfrica: allCountriesOfCentralAfrica
+    easternAfrica: allCountriesOfEasternAfrica
+    southernAfrica: allCountriesOfSouthernAfrica
+    northernAfrica: [algeria, egypt, libya, mauritania, moroccoRabat, moroccoCasablanca, moroccoFes, moroccoMarrakech, moroccoMeknes, moroccoOujda, moroccoLaayoune, moroccoAgadir, moroccoTanger, tunisiaCentralSousse, tunisiaNorthTunis, tunisiaSouthGafsa]
+    westernAfrica: [benin, burkinaFaso, cameroon, chad, gambia, ghana, guinea, guineaBissau, ivoryCoast_central_yamoussoukro, ivoryCoast_north_korhogo, ivoryCoast_south_abidjan, liberia, mali, niger, nigeria, senegal, sierraLeone, togo]
+america:
+    canada: [calgary, edmonton, princeGeorge_ti, vancouver_lm, victoria_tc, winnipeg, saintJohn, saintJohn_s, halifax, yellowknife, iqaluit, ottawa, toronto, charlottetown, montreal, quebec, regina, sakstoon, whitehorse]
+    centralAmerica: allCountriesOfCentralAmerica
+    southernAmerica: southAmerica
+    USA: [juneau_anchorage, montgomery_birmingham, littleRock, phoenix, sacramento_losAngeles, denver, hartford_bridgeport, dover_wilmington, tallahassee_jacksonville, atlanta, honolulu, desMoines, boise, springfieldChicago, indianapolis, topekaWichita, frankfortLouisville, batonRouge_newOrleans, boston, annapolis_baltimore, augusta_portland, lansing_detroit, stPaul_minneapolis, jeffersonCity_kansasCity, jackson, helena_billings, raleigh_charlotte, bismarck_fargo, lincoln_omaha, concord_manchester, trenton_newark, santaFe_albuquerque, carsonCity_lasVegas, albany_newYork, columbus, oklahomaCity, salem_portland, harrisburg_philadelphia, providence, columbia, pierre_siouxFalls, nashvilleMemphis, austin_houston, saltLakeCity, richmont_virginiaBeach, montpelier_burlington, olympia_seattle, madison_milwaukee, charleston, cheyenne]
+asia:
+    centralAsia: [chine_mongolie ,inde_pakistan ,russia]
+    farEast: japon_extremeOrient
+    middleEast: [middleEast, turquie]
+easternEurope:
+    albania: albania
+    belarus: belarus
+    bosniaAndHerzegovina: bosnieHerzegovine
+    bulgaria: bulgaria
+    croatia: croatia
+    czechR: tchequeR
+    estonia: estonia
+    hungary: hungary
+    kosovo: kosovo
+    latvia: latvia
+    lithuania: lithuania
+    macedonia: macedonia
+    moldova: moldova
+    montenegro: montenegro
+    poland: poland
+    romania: [bucarest_valachie ,cluj_transilvanie ,constanta_dobrogea ,iasi_moldova ,timisoara_banat]
+    russia: russia
+    serbia: serbia
+    slovakia: slovakia
+    slovenia: slovenia
+    ukraine: ukraine
+oceania:
+    oceania: [australie, indonesie, oceanie]
+andorra:
+    andorra: andorra
+austria:
+    austria: [wien, a3_niederosterreich_sanktPolten, oberOsterreich_linz, salzburg, vorarlberg_tirol_innsbruck, burgenland_eisenstadt, steiermark_graz, karnten_klagenfurt]
+    liechtenstein: liechtenstein
+belgium:
+    belgium: [bruxelles_brabant_brussels, antwerpen, leuven_hasselt, liege, namur, charleroi_bastogne, mons, brugge, gent]
+denmark:
+    denmark: [frederiksborg, fyn, islande, kobenhavn, nordjylland, ringkobing_ribe_velje_sonderjylland, vestsjaelland_storstrom_roskilde, viborgArhus]
+finland:
+    finlandSuomi: finlande
+France:
+    corsica: ajaccio_bastia_corse
+    aquitaine: [perigueux_dordogne, bordeaux_gironde, montDeMarsan_landes, agen_lotEtGaronne, pau_pyreneesAtlantiques]
+    auvergne: [moulins_allier, aurillac_cantal, lePuyEnVelay_hauteLoire, clermontFerrand_puyDeDome]
+    bourgogne: [dijon_coteOr, nevers_nievre, macon_saoneEtLoire, auxerre_yonne]
+    bretagne: [saintBrieuc_cotesArmor, quimper_finistere, rennes_illeEtVilaine, vannes_morbihan]
+    centre: [bourges_cher, chartres_eureEtLoir, chateauroux_indre, tours_indreEtLoire, blois_loirEtCher, orleans_loiret]
+    champagneArdennes: [charlevilleMezieres_ardennes, troyes_aube, chalonsEnChampagne_marne, chaumont_hauteMarne]
+    dom_tom_monaco: [monaco, northAtlantic, indianOcean, southPacific]
+    francheComte: [besancon_doubs, lonsLeSaunier_jura, vesoul_hauteSaone, belfort_territoireDeBelfort]
+    ileDeFrance: [paris, melun_seineEtMarne, versailles_yvelines, evry_essonne, nanterre_hautsDeSeine, bobigny_seineSaintDenis, creteil_valDeMarne, pontoise_valOise]
+    languedocRoussillon: [carcassonne_aude, nimes_gard, montpellier_herault, mende_lozere, perpignan_pyreneesOrientales]
+    limousin: [tulle_correze, gueret_creuse, limoges_hauteVienne]
+    lorraine: [nancy_meurtheEtMoselle, barLeDuc_meuse, metz_moselle, epinal_vosges]
+    midiPyrenees: [foix_ariege, rodez_aveyron, toulouse_hauteGaronne, auch_gers, cahors_lot, tarbes_hautesPyrenees, albi_tarn, montauban_tarnEtGaronne]
+    nordPasDeCalais: [lille_nord, arras_pasDeCalais]
+    normandie: [caen_calvados, evreux_eure, saintLo_manche, alencon_orne, rouen_seineMaritime]
+    paysDeLaLoire: [nantes_loireAtlantique, angers_maineEtLoire, laval_mayenne, leMans_sarthe, laRocheSurYon_vendee]
+    picardie: [laon_aisne, beauvais_oise, amiens_somme]
+    poitouCharentes: [angoulemeCharente, laRochelle_charenteMaritime, niort_deuxSevres, poitiers_vienne]
+    provenceAlpesCoteAzur: [digne_alpesDeHauteProvence, gap_hautesAlpes, nice_alpesMaritimes, marseille_bouchesDuRhone, toulon_var, avignon_vaucluse]
+    rhoneAlpes: [bourgEnBresse_ain, privas_ardeche, valence_drome, grenoble_isere, saintEtienne_loire, lyon_rhone, chambery_savoie, annecy_hauteSavoie]
+    alsace: [strasbourg_basRhin, colmar_hautRhin]
+germany:
+    badenWurttemberg: [freiburg, karlsruhe_mannheim, stuttgart_pforzheim, tubingen_ulm]
+    bayern: [ansbach_nuremberg, augsburg, bayreuth, landshut, munchen, regensburg, wurzburg]
+    berlin: berlin
+    hamburg: hamburg
+    hessen: [darmstadt, frankfurt_wiesbaden, giessen_marburg, kassel]
+    mecklenburgVorpommern: schwerin
+    niedersachsen: [braunschweig_gottingen, hannover, luneburg, oldenburg_osnabruck]
+    nordrheinWestfalen: [arnsberg_dortmund, bonn, detmold_paderborn, dusseldorf, koln, munster]
+    rheinlandPfalz: [koblenz, mainz, neustadt_kaiserslautern, trier]
+    saarland: saarbrucken
+    sachsen: [chemnitz_zwickau, dresden, leipzig]
+    sachsenAnhalt: [dessau, halle, magdeburg]
+    schleswigHolstein: kiel
+    thuringen: erfurt
+    brandenburg: potsdam
+    bremen: bremen
+greece:
+    greece: [chypre, grece, malte]
+ireland:
+    ireland: [cork_munster, dublin_leinster, galway_connaught, ulster]
+italy:
+    basilicata: potenza
+    calabria: [catanzaro, cosenza]
+    campania: [napoli, salerno]
+    emiliaRomagna: [bologna, ferrara, parma]
+    friuliVeneziaGiulia: udine
+    lazio_vaticano: [latina, roma, vatican]
+    liguria: genova
+    lombardia: [brescia, milano]
+    marche_saintMarin: [ancona, rsm_saintMarin]
+    molise: campobasso
+    piemonte: [piemonteEast, cuneo, torino]
+    puglia: bari
+    sardegna: [cagliari, sassari]
+    sicilia: [messina, palermo]
+    toscana: [firenze, pisa, siena]
+    trentinoAltoAdige: trento
+    umbria: perugia
+    valAoste: aosta
+    veneto: [padova_venezia, treviso_belluno, verona_vicenza]
+    abruzzo: aquila
+luxembourg:
+    luxembourg: luxembourg
+netherlands:
+    netherlands: [amsterdam_zaanstad, haarlem_denHaag, rotterdam_utrecht, breda_middelburg, eindhoven_tilburg, maastricht_arnhem, apeldoorn_enschede, zwolle_leeuwarden, groningue_assen]
+norway:
+    norway: norvege
+portugal:
+    portugal: [lisboa, santarem, coimbra_viseu, porto, braganca_vilaReal, castelBranco, beja, faro, lesAcores_madeira]
+spain:
+    basqueCountry_euskadi: [araba, gipuzkoa, nafarroa, bizkaiaBilbao]
+    aragon: [huesca, teruel, zaragosa]
+    asturias: oviedo
+    cantabria: santander
+    castilla_laMancha: [albacete, ciudadReal, cuenca, guadalajara, toledo]
+    castillaYLeon: [avila, burgos, leon, palencia, salamanca, segovia, soria, valladolid, zamora]
+    catalunya: [barcelona, girona, lleida, tarragona]
+    balears: mallorca
+    extremadura: [badajoz, caceres]
+    galicia: [aCoruna, lugo, ourense, vigo]
+    laRioja: logrono
+    madrid: madrid
+    murcia: murcia
+    theCanaryIslands: [lasPalmas, santaCruzDeTenerife]
+    valencia: [alacant, castelloDeLaPlana, valencia]
+    andalucia: [almeria, cadiz, cordoba, granada, huelva, jaen, malaga, sevilla]
+sweden:
+    sweden: sweden
+switzerland:
+    switzerland: [geneve_lausanne_fribourg_sion, neuchatel_delemont, bern, basel_soleure_liestal, aarau, luzern_zug_schwyz_altdorf_stans_sarnen, chur, zurich_schaffhausen_frauenfeld_glarus, stGallen_appenzeil_herisau]
+unitedKingdom:
+    eastAnglia: [cambridge, ipswich, norwich]
+    eastMidlands: [derby, leicester, northampton, nottingham]
+    london: london
+    northEast: [middlesbrough, newcastleUponTyne]
+    northWest: [carlisle, liverpool, manchester]
+    southEast: [brighton, oxford, reading, southampton]
+    southWest: [bournemouth, bristol, gloucester, plymouth]
+    westMidlands: [birmingham_warwick, hereford_worcester, stafford]
+    yorkshireAndHumberside: [kingstonUponHull, leeds, york]
+    northernIreland: belfast
+    scotland: [aberdeenDundee, edimbourg, glasgow, inverness]
+    walesCymru: [cardiff_powys, swansea_ceredigion, wrexham_gwynedd]

@@ -1,0 +1,58 @@
+{% for k, v in structure %}
+    {% set unique =  random(1000000) %}
+    {% if v is iterable %}
+        <li>
+            <a class="buttonClose" onclick="toggleOpening(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')">
+                <i class="fas fa-plus"></i>
+            </a>
+
+            <input type="checkbox" id="{{ unique~'-'~k~'-input' }}"
+                   onclick="toggleSelection(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')"
+                   class="structure-form">
+
+            {% set labelName =  translation ?? 'activitiesForm' ~'.'~k~'.labelName'%}
+
+            <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans }}</label>
+            <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
+                hidden="hidden">
+                {% include 'form.html.twig' with {
+                    'structure': v,
+                    'lvl': lvl + 1,
+                    'parent': k,
+                    'translation' : translation ?? 'activitiesForm' ~'.'~k} %}
+            </ul>
+        </li>
+    {% else %}
+        {% if k matches '/^\\d+$/' == null %}
+            <li>
+                <a class="buttonClose" onclick="toggleOpening(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')">
+                    <i class="fas fa-plus"></i>
+                </a>
+
+                <input type="checkbox" id="{{ unique~'-'~k~'-input' }}"
+                       onclick="toggleSelection(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')"
+                       class="structure-form">
+
+                {% set labelName =  translation ?? 'activitiesForm' ~'.'~k~'.labelName'%}
+
+                <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans }}</label>
+                <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
+                    hidden="hidden">
+                    <li class="lvl-{{ lvl + 1 }}">{% spaceless %}
+                            {{ form_errors(form[v]) }}
+                            {{ form_widget(form[v], {
+                                attr:{'class' : 'checkbox-form',}}) }}
+                            {{ form_label(form[v], translation~'.'~v | trans) }}
+                        {% endspaceless %}</li>
+                </ul>
+            </li>
+            {% else %}
+                <li class="lvl-{{ lvl + 1 }}">{% spaceless %}
+                        {{ form_errors(form[v]) }}
+                        {{ form_widget(form[v], {
+                            attr:{'class' : 'checkbox-form',}}) }}
+                        {{ form_label(form[v], translation~'.'~v | trans) }}
+                    {% endspaceless %}</li>
+        {% endif %}
+    {% endif %}
+{% endfor %}

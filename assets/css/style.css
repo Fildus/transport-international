@@ -1,0 +1,12 @@
+.buttonClose {
+    cursor : pointer;
+    color  : #E26648;
+}
+
+ul {
+    margin : 0;
+}
+
+li {
+    list-style : none;
+}
