@@ -7,11 +7,13 @@
         {{ form_start(form) }}
         <div class="checkboxCascade">
             <ul>
-                {% include 'form.html.twig' with {'form': form.children.activity.children, 'structure': structureActivities, 'lvl': 0} %}
+                {% include 'form.html.twig' with {'form': form.children.activity.children, 'structure': structureActivities, 'lvl': 0, 'transTree': 'activitiesForm'} %}
             </ul>
-            <hr>
+        </div>
+        <hr>
+        <div class="checkboxCascade">
             <ul>
-                {% include 'form.html.twig' with {'form': form.children.servedZone.children, 'structure': structureServedZone, 'lvl': 0} %}
+                {% include 'form.html.twig' with {'form': form.children.servedZone.children, 'structure': structureServedZone, 'lvl': 0,'transTree': 'servedZone'} %}
             </ul>
         </div>
         <input type="submit" value="Envoyer">

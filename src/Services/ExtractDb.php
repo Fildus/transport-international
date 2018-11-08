@@ -16,7 +16,7 @@ class ExtractDb
     const ACTIVITE = 'activite';
     const ALERTE = 'alerte';
     const CATEGORIE = 'categorie';
-    const CLIENT = 'client';
+    const CLIENT = 'info_client';
     const COMMENTAIRE = 'commentaire';
     const COMPTEUR = 'compteur';
     const DEPARTEMENT = 'departement';
@@ -77,4 +77,15 @@ class ExtractDb
         }
         return $res;
     }
+
+    public static function query(string $query, $fetch = 'fetch', ?string $dbName = 'ti_existant_complet')
+    {
+        if ($fetch === 'fetch'){
+            return self::pdo($dbName)->query($query)->fetchAll();
+        }elseif ($fetch === 'object'){
+            return self::pdo($dbName)->query($query)->fetchObject();
+        }
+        return self::pdo($dbName)->query($query);
+    }
+
 }

@@ -17,37 +17,37 @@ class LegalInformation
     private $id;
 
     /**
-     * @ORM\Column(type="bigint", options={"unsigned" = true})
+     * @ORM\Column(type="bigint", options={"unsigned" = true}, nullable=true)
      */
     private $siret;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $corporateName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $companyName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $legalForm;
 
     /**
-     * @ORM\Column(type="bigint", options={"unsigned" = true})
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $turnover;
 
     /**
-     * @ORM\Column(type="integer", options={"unsigned" = true})
+     * @ORM\Column(type="integer", options={"unsigned" = true}, nullable=true)
      */
     private $workforceNbr;
 
     /**
-     * @ORM\Column(type="smallint", options={"unsigned" = true})
+     * @ORM\Column(type="smallint", options={"unsigned" = true}, nullable=true)
      */
     private $establishmentsNbr;
 
@@ -61,7 +61,7 @@ class LegalInformation
         return $this->siret;
     }
 
-    public function setSiret(int $siret): self
+    public function setSiret(?int $siret): self
     {
         $this->siret = $siret;
 
@@ -73,7 +73,7 @@ class LegalInformation
         return $this->corporateName;
     }
 
-    public function setCorporateName(string $corporateName): self
+    public function setCorporateName(?string $corporateName): self
     {
         $this->corporateName = $corporateName;
 
@@ -85,7 +85,7 @@ class LegalInformation
         return $this->companyName;
     }
 
-    public function setCompanyName(string $companyName): self
+    public function setCompanyName(?string $companyName): self
     {
         $this->companyName = $companyName;
 
@@ -97,19 +97,19 @@ class LegalInformation
         return $this->legalForm;
     }
 
-    public function setLegalForm(string $legalForm): self
+    public function setLegalForm(?string $legalForm): self
     {
         $this->legalForm = $legalForm;
 
         return $this;
     }
 
-    public function getTurnover(): ?int
+    public function getTurnover(): ?string
     {
         return $this->turnover;
     }
 
-    public function setTurnover(int $turnover): self
+    public function setTurnover(?string $turnover): self
     {
         $this->turnover = $turnover;
 
@@ -121,7 +121,7 @@ class LegalInformation
         return $this->workforceNbr;
     }
 
-    public function setWorkforceNbr(int $workforceNbr): self
+    public function setWorkforceNbr(?int $workforceNbr): self
     {
         $this->workforceNbr = $workforceNbr;
 
@@ -133,7 +133,7 @@ class LegalInformation
         return $this->establishmentsNbr;
     }
 
-    public function setEstablishmentsNbr(int $establishmentsNbr): self
+    public function setEstablishmentsNbr(?int $establishmentsNbr): self
     {
         $this->establishmentsNbr = $establishmentsNbr;
 

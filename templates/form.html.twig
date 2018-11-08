@@ -10,7 +10,7 @@
                    onclick="toggleSelection(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')"
                    class="structure-form">
 
-            {% set labelName =  translation ?? 'activitiesForm' ~'.'~k~'.labelName'%}
+            {% set labelName =  translation ?? transTree ~'.'~k~'.labelName'%}
 
             <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans }}</label>
             <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
@@ -19,7 +19,7 @@
                     'structure': v,
                     'lvl': lvl + 1,
                     'parent': k,
-                    'translation' : translation ?? 'activitiesForm' ~'.'~k} %}
+                    'translation' : translation ?? transTree ~'.'~k} %}
             </ul>
         </li>
     {% else %}
@@ -33,7 +33,7 @@
                        onclick="toggleSelection(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')"
                        class="structure-form">
 
-                {% set labelName =  translation ?? 'activitiesForm' ~'.'~k~'.labelName'%}
+                {% set labelName =  translation ?? transTree ~'.'~k~'.labelName'%}
 
                 <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans }}</label>
                 <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"

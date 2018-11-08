@@ -37,14 +37,14 @@ class ClientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-//            ->add('register', RegisterType::class)
-//            ->add('legalInformation', LegalInformationType::class)
-//            ->add('location', LocationType::class)
-//            ->add('contact', ContactType::class)
-//            ->add('coreBusiness', CoreBusinessType::class)
-//            ->add('managers', ManagersType::class)
-//            ->add('equipment', EquipmentType::class)
-//            ->add('about', AboutType::class)
+            ->add('register', RegisterType::class)
+            ->add('legalInformation', LegalInformationType::class)
+            ->add('location', LocationType::class)
+            ->add('contact', ContactType::class)
+            ->add('coreBusiness', CoreBusinessType::class)
+            ->add('managers', ManagersType::class)
+            ->add('equipment', EquipmentType::class)
+            ->add('about', AboutType::class)
             ->add('activity', CollectionType::class, [
                 'entry_type' => CheckboxType::class,
                 'data' => $this->getActivities($options),
@@ -108,7 +108,6 @@ class ClientType extends AbstractType
 
     public function getServedZones($options)
     {
-        dump($options['data']);
         $servedZone = [];
         foreach ($this->servedZoneRepository->findBy(['country' => null, 'region' => null]) as $item) {
             if (!empty($options['data'])) {

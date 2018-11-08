@@ -17,19 +17,19 @@ class Contact
     private $id;
 
     /**
-     * @ORM\Column(type="bigint", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="bigint", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $fax;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $mailContact;
+    private $contact;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -41,38 +41,38 @@ class Contact
         return $this->id;
     }
 
-    public function getPhone(): ?int
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
 
-    public function setPhone(?int $phone): self
+    public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
 
         return $this;
     }
 
-    public function getFax(): ?int
+    public function getFax(): ?string
     {
         return $this->fax;
     }
 
-    public function setFax(?int $fax): self
+    public function setFax(?string $fax): self
     {
         $this->fax = $fax;
 
         return $this;
     }
 
-    public function getMailContact(): ?string
+    public function getContact(): ?string
     {
-        return $this->mailContact;
+        return $this->contact;
     }
 
-    public function setMailContact(?string $mailContact): self
+    public function setContact(?string $contact): self
     {
-        $this->mailContact = $mailContact;
+        $this->contact = $contact;
 
         return $this;
     }

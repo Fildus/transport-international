@@ -132,3 +132,879 @@ activitiesForm:
     taxi:
         labelName: Taxi
         lightVehicleOrBike: VL ou moto
+
+servedZone:
+    africa:
+        labelName: .. Afrique
+        centralAfrica:
+            labelName: Afrique Centrale
+        allCountriesOfCentralAfrica: ..AFRIQUE Centrale
+        easternAfrica:
+            labelName: Afrique de l Est
+        allCountriesOfEasternAfrica: ..AFRIQUE de l'Est
+        southernAfrica:
+            labelName: Afrique Australe
+        allCountriesOfSouthernAfrica: ..AFRIQUE Australe
+        northernAfrica:
+            labelName: Afrique du Nord
+            algeria: AN - ALGERIE
+            egypt: AN - EGYPTE
+            libya: AN - LIBYE
+            mauritania: AN - MAURITANIE
+            moroccoRabat: AN - MAROC - 10-Rabat
+            moroccoCasablanca: AN - MAROC - 20-Casablanca
+            moroccoFes: AN - MAROC - 30-Fès
+            moroccoMarrakech: AN - MAROC - 40-Marrakech
+            moroccoMeknes: AN - MAROC - 50-Meknès
+            moroccoOujda: AN - MAROC - 60-Oujda
+            moroccoLaayoune: AN - MAROC - 70-Laâyoune
+            moroccoAgadir: AN - MAROC - 80-Agadir
+            moroccoTanger: AN - MAROC - 90-Tanger
+            tunisiaCentralSousse: AN - TUNISIE centre - Sousse
+            tunisiaNorthTunis: AN - TUNISIE nord - Tunis
+            tunisiaSouthGafsa: AN - TUNISIE sud - Gafsa
+        westernAfrica:
+            labelName: Afrique de l Ouest
+            benin: AO - BENIN
+            burkinaFaso: AO - BURKINA-FASO
+            cameroon: AO - CAMEROUN
+            chad: AO - TCHAD
+            gambia: AO - GAMBIE
+            ghana: AO - GHANA
+            guinea: AO - GUINEE
+            guineaBissau: AO - GUINEE-BISSAU
+            ivoryCoast_central_yamoussoukro: AO - COTE-D-IVOIRE - Centre - Yamoussoukro
+            ivoryCoast_north_korhogo: AO - COTE-D-IVOIRE - Nord - Korhogo
+            ivoryCoast_south_abidjan: AO - COTE-D-IVOIRE-Sud - Abidjan
+            liberia: AO - LIBERIA
+            mali: AO - MALI
+            niger: AO - NIGER
+            nigeria: AO - NIGERIA
+            senegal: AO - SENEGAL
+            sierraLeone: AO - SIERRA-LEONE
+            togo: AO - TOGO
+    america:
+        labelName: .. Amériques
+        canada:
+            labelName: CANADA
+            calgary: CDN - AB - Calgary
+            edmonton: CDN - AB - Edmonton
+            princeGeorge_ti: CDN - BC - Prince George - TI
+            vancouver_lm: CDN - BC - Vancouver - LM
+            victoria_tc: CDN - BC - Victoria - TC
+            winnipeg: CDN - MB - Winnipeg
+            saintJohn: CDN - NB - Saint John
+            saintJohn_s: CDN - NL - Saint John_s
+            halifax: CDN - NS - Halifax
+            yellowknife: CDN - NS - Halifax
+            iqaluit: CDN - NU - Iqaluit
+            ottawa: CDN - ON - Ottawa
+            toronto: CDN - ON - Toronto
+            charlottetown: CDN - PE - Charlottetown
+            montreal: CDN - QC - Montréal
+            quebec: CDN - QC - Québec
+            regina: CDN - SK - Regina
+            sakstoon: CDN - SK - Sakstoon
+            whitehorse: CDN - YT - Whitehorse
+
+        centralAmerica:
+            labelName: Amérique Centrale
+        allCountriesOfCentralAmerica: '- Am. Centrale et Caraibes'
+
+        southernAmerica:
+            labelName: Amérique du Sud
+        southAmerica: '- Am. du Sud'
+
+        USA:
+            labelName: USA
+            juneau_anchorage: USA - AK - Juneau - Anchorage
+            montgomery_birmingham: USA - AL - Montgomery - Birmingham
+            littleRock: USA - AR - Little Rock
+            phoenix: USA - AZ - Phoenix
+            sacramento_losAngeles: USA - CA - Sacramento - Los Angeles
+            denver: USA - CO - Denver
+            hartford_bridgeport: USA - CT - Hartford - Bridgeport
+            dover_wilmington: USA - DE - Dover - Wilmington
+            tallahassee_jacksonville: USA - FL - Tallahassee - Jacksonville
+            atlanta: USA - GA - Atlanta
+            honolulu: USA - HI - Honolulu
+            desMoines: USA - IA - Des Moines
+            boise: USA - ID - Boise
+            springfieldChicago: USA - IL - Springfield - Chicago
+            indianapolis: USA - IN - Indianapolis
+            topekaWichita: USA - KS - Topeka - Wichita
+            frankfortLouisville: USA - KY - Frankfort - Louisville
+            batonRouge_newOrleans: USA - LA - Bâton-Rouge - New Orleans
+            boston: USA - MA - Boston
+            annapolis_baltimore: USA - MD - Annapolis - Baltimore
+            augusta_portland: USA - ME - Augusta - Portland
+            lansing_detroit: USA - MI - Lansing - Detroit
+            stPaul_minneapolis: USA - MN - St Paul - Minneapolis
+            jeffersonCity_kansasCity: USA - MO - Jefferson City - Kansas City
+            jackson: USA - MS - Jackson
+            helena_billings: USA - MT - Helena - Billings
+            raleigh_charlotte: USA - NC - Raleigh - Charlotte
+            bismarck_fargo: USA - ND - Bismarck - Fargo
+            lincoln_omaha: USA - NE - Lincoln - Omaha
+            concord_manchester: USA - NH - Concord - Manchester
+            trenton_newark: USA - NJ - Trenton - Newark
+            santaFe_albuquerque: USA - NM - Santa Fe - Albuquerque
+            carsonCity_lasVegas: USA - NV - Carson City - Las Vegas
+            albany_newYork: USA - NY - Albany - New York
+            columbus: USA - OH - Columbus
+            oklahomaCity: USA - OK - Oklahoma City
+            salem_portland: USA - OR - Salem - Portland
+            harrisburg_philadelphia: USA - PA - Harrisburg - Philadelphia
+            providence: USA - RI - Providence
+            columbia: USA - SC - Columbia
+            pierre_siouxFalls: USA - SD - Pierre - Sioux Falls
+            nashvilleMemphis: USA - TN - Nashville - Memphis
+            austin_houston: USA - TX - Austin - Houston
+            saltLakeCity: USA - UT - Salt Lake City
+            richmont_virginiaBeach: USA - VA - Richmont - Virginia Beach
+            montpelier_burlington: USA - VT - Montpelier - Burlington
+            olympia_seattle: USA - WA - Olympia - Seattle
+            madison_milwaukee: USA - WI - Madison - Milwaukee
+            charleston: USA - WV - Charleston
+            cheyenne: USA - WY - Cheyenne
+    asia:
+        labelName: .. Asie
+
+        centralAsia:
+            labelName: Asie Centrale
+            chine_mongolie: Chine - Mongolie
+            inde_pakistan: Inde - Pakistan
+            russia: Russie + Ex-URSS
+
+        farEast:
+            labelName: Extrême-Orient
+        japon_extremeOrient: Japon + Extrême-Orient
+
+        middleEast:
+            labelName: Moyen-Orient
+            middleEast: Moyen-Orient
+            turquie: Turquie
+    easternEurope:
+        labelName: .... Europe de l'Est
+        albania:
+            labelName: ALBANIE
+            albania: ALBANIE
+        belarus:
+            labelName: BIELORUSSIE
+            belarus: BIELORUSSIE
+        bosniaAndHerzegovina:
+            labelName: BOSNIE-HERZEGOVINE
+            bosnieHerzegovine: BOSNIE-HERZEGOVINE
+        bulgaria:
+            labelName: BULGARIE
+            bulgaria: BULGARIE
+        croatia:
+            labelName: CROATIE
+            croatia: CROATIE
+        czechR:
+            labelName: R. TCHEQUE
+            tchequeR: R. TCHEQUE
+        estonia:
+            labelName: ESTONIE
+            estonia: ESTONIE
+        hungary:
+            labelName: HONGRIE
+            hungary: HONGRIE
+        kosovo:
+            labelName: KOSOVO
+            kosovo: KOSOVO
+        latvia:
+            labelName: LETTONIE
+            latvia: LETTONIE
+        lithuania:
+            labelName: LITUANIE
+            lithuania: LITUANIE
+        macedonia:
+            labelName: MACEDOINE
+            macedonia: MACEDOINE
+        moldova:
+            labelName: MOLDAVIE
+            moldova: MOLDAVIE
+        montenegro:
+            labelName: MONTENEGRO
+            montenegro: MONTENEGRO
+        poland:
+            labelName: POLOGNE
+            poland: POLOGNE
+        romania:
+            labelName: ROUMANIE
+            bucarest_valachie: ROUMANIE - Bucarest - VALACHIE
+            cluj_transilvanie: ROUMANIE - Cluj - TRANSILVANIE
+            constanta_dobrogea: ROUMANIE - Constanta - DOBROGEA
+            iasi_moldova: ROUMANIE - Iasi - MOLDOVA
+            timisoara_banat: ROUMANIE - Timisoara - BANAT
+        russia:
+            labelName: RUSSIE
+            russia: RUSSIE
+        serbia:
+            labelName: SERBIE
+            serbia: SERBIE
+        slovakia:
+            labelName: SLOVAQUIE
+            slovakia: SLOVAQUIE
+        slovenia:
+            labelName: SLOVENIE
+            slovenia: SLOVENIE
+        ukraine:
+            labelName: UKRAINE
+            ukraine: UKRAINE
+    oceania:
+        labelName: .. Océanie
+        oceania:
+            labelName: OCEANIE
+            australie: AUSTRALIE
+            indonesie: INDONESIE
+            oceanie: OCEANIE
+    andorra:
+        labelName: Andorre
+        andorra:
+            labelName: Andorra
+            andorra: Andorre
+    austria:
+        labelName: Autriche
+        austria:
+            labelName: Autriche
+            wien: A1 - Wien
+            a3_niederosterreich_sanktPolten: A2 - A3 - Niederosterreich - Sankt Pölten
+            oberOsterreich_linz: A4 - Ober-Osterreich - Linz
+            salzburg: A5 - Salzburg
+            vorarlberg_tirol_innsbruck: A6 - Vorarlberg - Tirol - Innsbruck
+            burgenland_eisenstadt: A7 - Burgenland- Eisenstadt
+            steiermark_graz: A8 - Steiermark - Graz
+            karnten_klagenfurt: A9 - Karnten - Klagenfurt
+        liechtenstein:
+            labelName: Liechtenstein
+            liechtenstein: FL - LIECHTENSTEIN
+    belgium:
+        labelName: Belgique
+        belgium:
+            labelName: Belgique
+            bruxelles_brabant_brussels: B1... - BRUXELLES -Brabant- BRUSSELS
+            antwerpen: B2... - ANTWERPEN
+            leuven_hasselt: B3... - LEUVEN - HASSELT
+            liege: B4... - LIEGE
+            namur: B5... - NAMUR
+            charleroi_bastogne: B6... - CHARLEROI - BASTOGNE
+            mons: B7... - MONS
+            brugge: B8... - BRUGGE
+            gent: B9... - GENT
+    denmark:
+        labelName: Danemark - Islande
+        denmark:
+            labelName: Danemark - ( Islande )
+            frederiksborg: Frederiksborg
+            fyn: Fyn
+            islande: Islande
+            kobenhavn: Kobenhavn
+            nordjylland: Nordjylland
+            ringkobing_ribe_velje_sonderjylland: Ringkobing - Ribe - Velje - Sonderjylland
+            vestsjaelland_storstrom_roskilde: Vestsjaelland - Storstrom - Roskilde
+            viborgArhus: Viborg Arhus
+    finland:
+        labelName: Finlande
+        finlandSuomi:
+            labelName: Finlande - Suomi
+            finlande: finlande
+    France:
+        labelName: France
+        corsica:
+            labelName: FR - Corse
+            ajaccio_bastia_corse: F20 - Ajaccio (2A) - Bastia (2B) - CORSE
+
+        aquitaine:
+            labelName: FR - Aquitaine
+            perigueux_dordogne: F24 - Périgueux - DORDOGNE
+            bordeaux_gironde: F33 - Bordeaux - GIRONDE
+            montDeMarsan_landes: F40 - Mont-de-Marsan - LANDES
+            agen_lotEtGaronne: F47 - Agen - LOT-ET-GARONNE
+            pau_pyreneesAtlantiques: F64 - Pau - PYRENEES-ATLANTIQUES
+
+        auvergne:
+            labelName: FR - Auvergne
+            moulins_allier: F03 - Moulins - ALLIER
+            aurillac_cantal: F15 - Aurillac - CANTAL
+            lePuyEnVelay_hauteLoire: F43 - Le Puy-en-Velay - HAUTE-LOIRE
+            clermontFerrand_puyDeDome: F63 - Clermont-Ferrand - PUY-DE-DOME
+
+        bourgogne:
+            labelName: FR - Bourgogne
+            dijon_coteOr: F21 - Dijon - COTE-D'OR
+            nevers_nievre: F58 - Nevers - NIEVRE
+            macon_saoneEtLoire: F71 - Mâcon - SAONE-ET-LOIRE
+            auxerre_yonne: F89 - Auxerre - YONNE
+
+        bretagne:
+            labelName: FR - Bretagne
+            saintBrieuc_cotesArmor: F22 - Saint-Brieuc - COTES-D'ARMOR
+            quimper_finistere: F29 - Quimper - FINISTERE
+            rennes_illeEtVilaine: F35 - Rennes - ILLE-ET-VILAINE
+            vannes_morbihan: F56 - Vannes - MORBIHAN
+
+        centre:
+            labelName: FR - Centre
+            bourges_cher: F18 - Bourges - CHER
+            chartres_eureEtLoir: F28 - Chartres - EURE-ET-LOIR
+            chateauroux_indre: F36 - Châteauroux - INDRE
+            tours_indreEtLoire: F37 - Tours - INDRE-ET-LOIRE
+            blois_loirEtCher: F41 - Blois - LOIR-ET-CHER
+            orleans_loiret: F45 - Orléans - LOIRET
+
+        champagneArdennes:
+            labelName: FR - Champagne-Ardennes
+            charlevilleMezieres_ardennes: F08 - Charleville-Mézières - ARDENNES
+            troyes_aube: F10 - Troyes - AUBE
+            chalonsEnChampagne_marne: F51 - Châlons-en-Champagne - MARNE
+            chaumont_hauteMarne: F52 - Chaumont - HAUTE-MARNE
+
+        dom_tom_monaco:
+            labelName: FR - DOM - TOM - MONACO
+            monaco: MC - MONACO
+            northAtlantic: PTOM - Atlantique Nord
+            indianOcean: PTOM - Océan Indien
+            southPacific: PTOM - Pacifique Sud
+
+        francheComte:
+            labelName: FR - Franche-Comté
+            besancon_doubs: F25 - Besançon - DOUBS
+            lonsLeSaunier_jura: F39 - Lons-le-Saunier- JURA
+            vesoul_hauteSaone: F70 - Vesoul - HAUTE-SAONE
+            belfort_territoireDeBelfort: F90 - Belfort - TERRITOIRE DE BELFORT
+
+        ileDeFrance:
+            labelName: FR - Ile-de-France
+            paris: F75 - PARIS
+            melun_seineEtMarne: F77 - Melun - SEINE-ET-MARNE
+            versailles_yvelines: F78 - Versailles - YVELINES
+            evry_essonne: F91 - Evry - ESSONNE
+            nanterre_hautsDeSeine: F92 - Nanterre - HAUTS-DE-SEINE
+            bobigny_seineSaintDenis: F93 - Bobigny - SEINE-SAINT-DENIS
+            creteil_valDeMarne: F94 - Créteil - VAL-DE-MARNE
+            pontoise_valOise: F95 - Pontoise - VAL-D'OISE
+
+        languedocRoussillon:
+            labelName: FR - Languedoc-Roussillon
+            carcassonne_aude: F11 - Carcassonne - AUDE
+            nimes_gard: F30 - Nimes - GARD
+            montpellier_herault: F34 - Montpellier - HERAULT
+            mende_lozere: F48 - Mende - LOZERE
+            perpignan_pyreneesOrientales: F66 - Perpignan - PYRENEES-ORIENTALES
+
+        limousin:
+            labelName: FR - Limousin
+            tulle_correze: F19 - Tulle - CORREZE
+            gueret_creuse: F23 - Guéret - CREUSE
+            limoges_hauteVienne: F87 - Limoges - HAUTE-VIENNE
+
+        lorraine:
+            labelName: FR - Lorraine
+            nancy_meurtheEtMoselle: F54 - Nancy - MEURTHE-ET-MOSELLE
+            barLeDuc_meuse: F55 - Bar-le-Duc - MEUSE
+            metz_moselle: F57 - Metz - MOSELLE
+            epinal_vosges: F88 - Epinal - VOSGES
+
+        midiPyrenees:
+            labelName: FR - Midi-Pyrénées
+            foix_ariege: F09 - Foix - ARIEGE
+            rodez_aveyron: F12 - Rodez - AVEYRON
+            toulouse_hauteGaronne: F31 - Toulouse - HAUTE-GARONNE
+            auch_gers: F32 - Auch - GERS
+            cahors_lot: F46 - Cahors - LOT
+            tarbes_hautesPyrenees: F65 - Tarbes - HAUTES-PYRENEES
+            albi_tarn: F81 - Albi - TARN
+            montauban_tarnEtGaronne: F82 - Montauban - TARN-ET-GARONNE
+
+        nordPasDeCalais:
+            labelName: FR - Nord-Pas-de-Calais
+            lille_nord: F59 - Lille - NORD
+            arras_pasDeCalais: F62 - Arras - PAS-DE-CALAIS
+
+        normandie:
+            labelName: FR - Normandie
+            caen_calvados: F14 - Caen - CALVADOS
+            evreux_eure: F27 - Evreux - EURE
+            saintLo_manche: F50 - Saint-Lô - MANCHE
+            alencon_orne: F61 - Alençon - ORNE
+            rouen_seineMaritime: F76 - Rouen - SEINE-MARITIME
+
+        paysDeLaLoire:
+            labelName: FR - Pays de la Loire
+            nantes_loireAtlantique: F44 - Nantes - LOIRE-ATLANTIQUE
+            angers_maineEtLoire: F49 - Angers - MAINE-ET-LOIRE
+            laval_mayenne: F53 - LAVAL - MAYENNE
+            leMans_sarthe: F72 - Le Mans - SARTHE
+            laRocheSurYon_vendee: F85 - La Roche-sur-Yon - VENDEE
+
+        picardie:
+            labelName: FR - Picardie
+            laon_aisne: F02 - Laon - AISNE
+            beauvais_oise: F60 - Beauvais - OISE
+            amiens_somme: F80 - Amiens - SOMME
+
+        poitouCharentes:
+            labelName: FR - Poitou-Charentes
+            angoulemeCharente: F16 - Angoulême - CHARENTE
+            laRochelle_charenteMaritime: F17 - La Rochelle - CHARENTE-MARITIME
+            niort_deuxSevres: F79 - Niort - DEUX-SEVRES
+            poitiers_vienne: F86 - Poitiers - VIENNE
+
+        provenceAlpesCoteAzur:
+            labelName: FR - Provence-Alpes-Côte d Azur
+            digne_alpesDeHauteProvence: F04 - Digne - ALPES-DE-HAUTE-PROVENCE
+            gap_hautesAlpes: F05 - Gap - HAUTES-ALPES
+            nice_alpesMaritimes: F06 - Nice - ALPES-MARITIMES
+            marseille_bouchesDuRhone: F13 - Marseille - BOUCHES-DU-RHONE
+            toulon_var: F83 - Toulon - VAR
+            avignon_vaucluse: F84 - Avignon - VAUCLUSE
+
+        rhoneAlpes:
+            labelName: FR - Rhône-Alpes
+            bourgEnBresse_ain: F01 - Bourg-en-Bresse - AIN
+            privas_ardeche: F07 - Privas - ARDECHE
+            valence_drome: F26 - Valence - DROME
+            grenoble_isere: F38 - Grenoble - ISERE
+            saintEtienne_loire: F42 - Saint-Etienne - LOIRE
+            lyon_rhone: F69 - Lyon - RHONE
+            chambery_savoie: F73 - Chambéry - SAVOIE
+            annecy_hauteSavoie: F74 - Annecy - HAUTE-SAVOIE
+
+        alsace:
+            labelName: FR - Alsace
+            strasbourg_basRhin: F67 - Strasbourg - BAS-RHIN
+            colmar_hautRhin: F68 - Colmar - HAUT-RHIN
+    germany:
+        labelName: Allemagne
+
+        badenWurttemberg:
+            labelName: DE - Baden Wurttemberg
+            freiburg: FREIBURG
+            karlsruhe_mannheim: KARLSRUHE - Mannheim
+            stuttgart_pforzheim: STUTTGART - Pforzheim
+            tubingen_ulm: TÜBINGEN - Ulm
+
+        bayern:
+            labelName: DE - Bayern
+            ansbach_nuremberg: ANSBACH - Nuremberg
+            augsburg: AUGSBURG
+            bayreuth: BAYREUTH
+            landshut: LANDSHUT
+            munchen: MUNCHEN
+            regensburg: REGENSBURG
+            wurzburg: WÜRZBURG
+
+        berlin:
+            labelName: DE - Berlin
+            berlin: BERLIN
+
+        hamburg:
+            labelName: DE - Hamburg
+            hamburg: HAMBURG
+
+        hessen:
+            labelName: DE - Hessen
+            darmstadt: DARMSTADT
+            frankfurt_wiesbaden: FRANKFURT - WIESBADEN
+            giessen_marburg: GIESSEN - Marburg
+            kassel: KASSEL
+
+        mecklenburgVorpommern:
+            labelName: DE - Mecklenburg-Vorpommern
+            schwerin: SCHWERIN
+
+        niedersachsen:
+            labelName: DE - Niedersachsen
+            braunschweig_gottingen: BRAUNSCHWEIG - Gottingen
+            hannover: HANNOVER
+            luneburg: LUNEBURG
+            oldenburg_osnabruck: OLDENBURG - Osnabruck
+
+        nordrheinWestfalen:
+            labelName: DE - Nordrhein-Westfalen
+            arnsberg_dortmund: ARNSBERG - Dortmund
+            bonn: BONN
+            detmold_paderborn: DETMOLD - Paderborn
+            dusseldorf: DUSSELDORF
+            koln: KOLN
+            munster: MUNSTER
+
+        rheinlandPfalz:
+            labelName: DE - Rheinland-Pfalz
+            koblenz: KOBLENZ
+            mainz: MAINZ
+            neustadt_kaiserslautern: NEUSTADT - Kaiserslautern
+            trier: TRIER
+
+        saarland:
+            labelName: DE - Saarland
+            saarbrucken: SAARBRÜCKEN
+
+        sachsen:
+            labelName: DE - Sachsen
+            chemnitz_zwickau: CHEMNITZ - Zwickau
+            dresden: DRESDEN
+            leipzig: LEIPZIG
+
+        sachsenAnhalt:
+            labelName: DE - Sachsen-Anhalt
+            dessau: DESSAU
+            halle: HALLE
+            magdeburg: MAGDEBURG
+
+        schleswigHolstein:
+            labelName: DE - Schleswig-Holstein
+            kiel: KIEL
+
+        thuringen:
+            labelName: DE - Thuringen
+            erfurt: ERFURT
+
+        brandenburg:
+            labelName: DE - Brandenburg
+            potsdam: POTSDAM
+
+        bremen:
+            labelName: DE - Bremen
+            bremen: BREMEN
+    greece:
+        labelName: Grèce (Chypre - Malte)
+        greece:
+            labelName: Grèce - Chypre - Malte
+            chypre: CHYPRE
+            grece: GRECE
+            malte: MALTE
+    ireland:
+        labelName: Irlande
+        ireland:
+            labelName: Irlande
+            cork_munster: CORK - Munster
+            dublin_leinster: DUBLIN - Leinster
+            galway_connaught: GALWAY - Connaught
+            ulster: Ulster
+    italy:
+        labelName: Italie
+        basilicata:
+            labelName: IT - Basilicata - 85
+            potenza: POTENZA
+
+        calabria:
+            labelName: IT - Calabria - 87-88
+            catanzaro: Calabria - CATANZARO
+            cosenza: Calabria - COSENZA
+
+        campania:
+            labelName: IT - Campania - 80-84
+            napoli: Campania - NAPOLI
+            salerno: Campania - SALERNO
+
+        emiliaRomagna:
+            labelName: IT - Emilia Romagna - 40
+            bologna: Emilia Romagna - BOLOGNA
+            ferrara: Emilia Romagna - FERRARA
+            parma: Emilia Romagna - PARMA
+
+        friuliVeneziaGiulia:
+            labelName: IT - Friuli Venezia Giulia - 34
+            udine: UDINE
+
+        lazio_vaticano:
+            labelName: IT - Lazio - Vaticano - 00-04
+            latina: Lazio - LATINA
+            roma: Lazio - ROMA
+            vatican: V - VATICAN
+
+        liguria:
+            labelName: IT - Liguria
+            genova: GENOVA
+
+        lombardia:
+            labelName: IT - Lombardia - 20
+            brescia: Lombardia - BRESCIA
+            milano: Lombardia - MILANO
+
+        marche_saintMarin:
+            labelName: IT - Marche - Saint Marin - 60
+            ancona: ANCONA
+            rsm_saintMarin: RSM - SAINT MARIN
+
+        molise:
+            labelName: IT - Molise - 86
+            campobasso: CAMPOBASSO
+
+        piemonte:
+            labelName: IT - Piemonte
+            piemonteEast: Piemonte (Est)
+            cuneo: Piemonte - CUNEO
+            torino: Piemonte - TORINO
+
+        puglia:
+            labelName: IT - Puglia - 70
+            bari: BARI
+
+        sardegna:
+            labelName: IT - Sardegna - 07-09
+            cagliari: Sardegna - CAGLIARI
+            sassari: Sardegna - SASSARI
+
+        sicilia:
+            labelName: IT - Sicilia - 90
+            messina: Sicilia - MESSINA
+            palermo: Sicilia - PALERMO
+
+        toscana:
+            labelName: IT - Toscana - 50
+            firenze: Toscana - FIRENZE
+            pisa: Toscana - PISA
+            siena: Toscana - SIENA
+
+        trentinoAltoAdige:
+            labelName: IT - Trentino Alto Adige - 38
+            trento: TRENTO
+
+        umbria:
+            labelName: IT - Umbria - 06
+            perugia: PERUGIA
+
+        valAoste:
+            labelName: IT - Val d Aoste - 11
+            aosta: AOSTA
+
+        veneto:
+            labelName: IT - Veneto - 30-32-37
+            padova_venezia: Veneto - PADOVA - Venezia
+            treviso_belluno: Belluno
+            verona_vicenza: Veneto - VERONA - Vicenza
+
+        abruzzo:
+            labelName: IT - Abruzzo - 67
+            aquila: L'AQUILA
+    luxembourg:
+        labelName: Luxembourg
+        luxembourg:
+            labelName: Luxembourg
+            luxembourg: Luxembourg
+    netherlands:
+        labelName: Pays-Bas
+        netherlands:
+            labelName: Pays-Bas
+            amsterdam_zaanstad: NL1 - Amsterdam - Zaanstad
+            haarlem_denHaag: NL2 - Haarlem - Den Haag (La Haye)
+            rotterdam_utrecht: NL3 - Rotterdam - Utrecht
+            breda_middelburg: NL4 - Breda - Middelburg
+            eindhoven_tilburg: NL5 - Eindhoven - Tilburg
+            maastricht_arnhem: NL6 - Maastricht - Arnhem
+            apeldoorn_enschede: NL7 - Apeldoorn - Enschede
+            zwolle_leeuwarden: NL8 - Zwolle - Leeuwarden
+            groningue_assen: NL9 - Groningue - Assen
+    norway:
+        labelName: Norvège
+        norway:
+            labelName: Norvège
+            norvege: Norvège
+    portugal:
+        labelName: Portugal
+        portugal:
+            labelName: Portugal
+            lisboa: PT1 - Lisboa
+            santarem: PT2 - Santarem
+            coimbra_viseu: PT3 - Coimbra - Viseu
+            porto: PT4 - Porto
+            braganca_vilaReal: PT5 - Bragança - Vila Real
+            castelBranco: PT6 - Castel Branco
+            beja: PT7 - Beja
+            faro: PT8 - Faro
+            lesAcores_madeira: PT9 - Les Açores - Madeira
+    spain:
+        labelName: Espagne
+
+        basqueCountry_euskadi:
+            labelName: Pays Basque - Euskadi
+            araba: E01 - Araba
+            gipuzkoa: E20 - Gipuzkoa
+            nafarroa: E31 - Nafarroa
+            bizkaiaBilbao: E48 - Bizkaia-Bilbao
+
+        aragon:
+            labelName: ES - Aragon
+            huesca: E22 - Huesca
+            teruel: E44 - Teruel
+            zaragosa: E50 - Zaragosa
+
+        asturias:
+            labelName: ES - Asturias
+            oviedo: E33 - Oviedo
+
+        cantabria:
+            labelName: ES - Cantabria
+            santander: E39 - Santander
+
+        castilla_laMancha:
+            labelName: ES - Castilla - La Mancha
+            albacete: E02 - Albacete
+            ciudadReal: E13 - Ciudad Real
+            cuenca: E16 - Cuenca
+            guadalajara: E19 - Guadalajara
+            toledo: Toledo
+
+        castillaYLeon:
+            labelName: ES - Castilla y Leon
+            avila: E05 - Avila
+            burgos: E09 - Burgos
+            leon: E24 - Leon
+            palencia: E34 - Palencia
+            salamanca: E37 - Salamanca
+            segovia: E40 - Segovia
+            soria: E42 - Soria
+            valladolid: E47 - Valladolid
+            zamora: E49 - Zamora
+
+        catalunya:
+            labelName: ES - Catalunya
+            barcelona: E08 - Barcelona
+            girona: E17 - Girona
+            lleida: E25 - Lleida
+            tarragona: E43 - Tarragona
+
+        balears:
+            labelName: ES - Els Balears
+            mallorca: E07 - Mallorca
+
+        extremadura:
+            labelName: ES - Extremadura
+            badajoz: E06 - Badajoz
+            caceres: E10 - Caceres
+
+        galicia:
+            labelName: ES - Galicia
+            aCoruna: E15 - A Coruña
+            lugo: E27 - Lugo
+            ourense: E32 - Ourense
+            vigo: E36 - Vigo
+
+        laRioja:
+            labelName: ES - La Rioja
+            logrono: E26 - Logrono
+
+        madrid:
+            labelName: ES - Madrid
+            madrid: E28 - Madrid
+
+        murcia:
+            labelName: ES - Murcia
+            murcia: E30 - Murcia
+
+        theCanaryIslands:
+            labelName: ES - Les Canaries
+            lasPalmas: E35 - Las Palmas
+            santaCruzDeTenerife: E38 - Santa Cruz de Tenerife
+
+        valencia:
+            labelName: ES - València
+            alacant: E03 - Alacant
+            castelloDeLaPlana: E12 - Castello de la Plana
+            valencia: E46 - Valencia
+
+        andalucia:
+            labelName: ES- Andalucia
+            almeria: E04 - Almeria
+            cadiz: E11 - Cadiz
+            cordoba: E14 - Cordoba
+            granada: E18 - Granada
+            huelva: E21 - Huelva
+            jaen: E23 - Jaen
+            malaga: E29 - Malaga
+            sevilla: E41 - Sevilla
+    sweden:
+        labelName: Suède
+        sweden:
+            labelName: Suède
+            sweden: Suède
+    switzerland:
+        labelName: Suisse
+        switzerland:
+            labelName: Suisse
+            geneve_lausanne_fribourg_sion: CH1 - Genève - Lausanne - Fribourg - Sion
+            neuchatel_delemont: CH2 - Neuchâtel - Delémont
+            bern: CH3 - Bern
+            basel_soleure_liestal: CH4 - Basel - Soleure - Liestal
+            aarau: CH5 - Aarau
+            luzern_zug_schwyz_altdorf_stans_sarnen: CH6 - Luzern - Zug - Schwyz - Altdorf - Stans - Sarnen
+            chur: CH7 - Chur
+            zurich_schaffhausen_frauenfeld_glarus: CH8 - Zurich - Schaffhausen - Frauenfeld - Glarus
+            stGallen_appenzeil_herisau: CH9 - St Gallen - Appenzeil - Herisau
+    unitedKingdom:
+        labelName: Royaume-Uni
+
+        eastAnglia:
+            labelName: GB - East Anglia
+            cambridge: Cambridge
+            ipswich: Ipswich
+            norwich: Norwich
+
+        eastMidlands:
+            labelName: GB - East Midlands
+            derby: Derby
+            leicester: Leicester
+            northampton: Northampton
+            nottingham: Nottingham
+
+        london:
+            labelName: GB - London
+            london: London
+
+        northEast:
+            labelName: GB - North East
+            middlesbrough: Middlesbrough
+            newcastleUponTyne: Newcastle Upon Tyne
+
+        northWest:
+            labelName: GB - North West
+            carlisle: Carlisle
+            liverpool: Liverpool
+            manchester: Manchester
+
+        southEast:
+            labelName: GB - South East
+            brighton: Brighton
+            oxford: Oxford
+            reading: Reading
+            southampton: Southampton
+
+        southWest:
+            labelName: GB - South West
+            bournemouth: Bournemouth (Dorset - Somerset)
+            bristol: Bristol
+            gloucester: Gloucester
+            plymouth: Plymouth (Cornwall - Devon)
+
+        westMidlands:
+            labelName: GB - West Midlands
+            birmingham_warwick: Birmingham - Warwick
+            hereford_worcester: Hereford - Worcester
+            stafford: Stafford
+
+        yorkshireAndHumberside:
+            labelName: GB - Yorkshire & Humberside
+            kingstonUponHull: Kingston Upon Hull
+            leeds: Leeds
+            york: York
+
+        northernIreland:
+            labelName: Irlande du Nord
+            belfast: Belfast
+
+        scotland:
+            labelName: Écosse
+            aberdeenDundee: Aberdeen-Dundee
+            edimbourg: Edimbourg
+            glasgow: Glasgow
+            inverness: Inverness
+
+        walesCymru:
+            labelName: Pays de Galles - Cymru
+            cardiff_powys: Cardiff - Powys
+            swansea_ceredigion: Swansea - Ceredigion
+            wrexham_gwynedd: Wrexham - Gwynedd
