@@ -104,12 +104,12 @@ class LegalInformation
         return $this;
     }
 
-    public function getTurnover(): ?string
+    public function getTurnover()
     {
         return $this->turnover;
     }
 
-    public function setTurnover(?string $turnover): self
+    public function setTurnover($turnover): self
     {
         $this->turnover = $turnover;
 

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {% include 'top.html.twig' %}
+    <div class="container">
+        <div class="row">
+            {% include 'client/account/parts/header.html.twig' %}
+            {% include 'client/account/parts/nav.html.twig' %}
+            {{ form_start(form) }}
+            <div class="checkboxCascade">
+                <ul>
+                    {% include 'form/checkboxCascade.html.twig' with {'form': form.children.activity.children, 'structure': structureActivities, 'lvl': 0, 'transTree': 'activitiesForm'} %}
+                </ul>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success">Soumettre</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+welcome: Bienvinue sur l'Annuaire Transport-international.com
+Account:
+    myAccount: Mon compte
+    profile: Profil
+    register: inscription
+log:
+    login:
+        title: déjà inscrit
+        html: déjà inscrit ?
+    logout:
+        title: se déconnecter
+        html: Se déconnecter

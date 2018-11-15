@@ -1,0 +1,11 @@
+{% for k, domain in domains %}
+    {% if k != app.request.locale %}
+        <li>
+            <a hreflang="{{ domain.domain }}"
+            href="{{ 'http://test-'~domain.domain~path(route~'.'~k) }}">
+            <img src="{{ asset('build/img/flags/'~domain.img) }}"
+                 alt="{{ domain.hreflang }}">
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

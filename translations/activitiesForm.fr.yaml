@@ -1,0 +1,134 @@
+activitiesForm:
+    transportOfGoods:
+        labelName: Transporteur de Marchandises
+        transportOfGoods:
+            labelName: Transporteur de Marchandises
+            industrialTransportOfGoods:
+                labelName: Transport de Marchandises Industriel
+                perLot:
+                    labelName: Par Lot
+                    inContainer: En Conteneur
+                    full: Complet
+                    inBulking: En Groupage
+                    inHalfLot: En Demi Lot
+                    textile: Textile
+                    LessThan3T5: Léger moins de 3T5
+            transportOfGoodsByTank:
+                labelName: Transport de Marchandises Par Citerne
+                food:
+                    labelName: Alimentaire
+                    liquidFoodCistern: Citerne Alimentaire Liquide
+                    foodCisternPulverulent: Citerne Alimentaire Pulvérulent
+                non-food:
+                    labelName: Non-Alimentaire
+                    liquidNonFoodCistern: Citerne Non Alimentaire Liquide
+                    nonFoodCisternPulverulent: Citerne Non Alimentaire Pulvérulent
+                    dangerousGoodsTank: Citerne Matière Dangereuse
+            transportOfGoodsByTruck:
+                labelName: Transport de Marchandises Par Benne
+                cerealTipper: Benne Céréales
+                polybenneSkip: Benne Poly-benne
+                tipperTPScrap: Benne T.P. - Ferrailles
+            refrigeratedTransportationOfGoods:
+                labelName: Transport de Marchandises Frigorifique
+                food:
+                    labelName: Alimentaire
+                    refrigeratedHungMeat: Frigorifique Viande Pendue
+                    refrigeratedNegativeTemperature: Frigorifique Température Négative
+                    refrigeratedPositiveTemperature: Frigorifique Température Positive
+                non-food:
+                    labelName: Non-Alimentaire
+                    refrigerated_Organs_Blood: Frigorifique Organes / Sang
+                    refrigeratedOther: Frigorifique Autre
+            diverseTransportationOfGoods:
+                labelName: Transport de Marchandises Divers
+                liveAnimal:
+                    labelName: D'Animaux Vivants
+                    horse: Cheval
+                    variousAnimals: Animaux Divers
+                other:
+                    labelName: Autres
+                    funds: De Fonds
+                    logs: De Grumes
+                    ofInseparableMass: De Masse indivisible
+                    ofDangerousGoods: De Matières Dangereuses
+                    of_straw_feed: De Paille / Fourrage
+                    forFragile: Pour le Fragile
+                    press_postal: Presse / Poste
+                    furniture: De Meubles
+                    dedicatedToPrivate: Dédié AUX PARTICULIERS
+                vehicles:
+                    labelName: De Véhicules
+                    worksVehicles: Engins Travaux
+                    boats: Bateaux
+                    bungalow_mobilhome: Bungalow / Mobilhome
+                    bikes: Motos
+                    cars: Voitures
+                largeDimensions:
+                    labelName: Grandes Dimensions
+                    inExceptional: En Exceptionnel
+                nonRoad:
+                    labelName: Non Routier
+                    byAir: Par Air
+                    bySea: Par Mer
+                    byRail: Par Rail
+                    byInlandWaterway: Par Voie Fluviale
+        charter:
+            labelName: Affrètement
+            charterClusteringOrFull: Affrètement Groupage Ou Complet
+            charteringPerishableFoodstuffs: Affrètement Denrées Périssables
+            approvedCharteringCustoms: Affrètement Agréé Douanes
+            airCharter: Affrètement Aérien
+            maritimeChartering: Affrètement Maritime
+            chateringOther: Affrètement Autres
+        rentWithDriver:
+            labelName: Location avec chauffeur
+            rentWithSemiDriverHeavyTrucks: Location avec chauffeur Semi Poids Lourds
+            rentWithDriverHeavyTrucks: Location avec chauffeur Poids Lourds
+            rentWithDriverLightVehicles: Location avec chauffeur Véhicules Légers
+            rentWithDriverForkliftTruck: Location avec chauffeur Chariot Elévateur
+            rentWithDriverCoaches: Location avec chauffeur Autocars
+            rentWithDriver_publicWorks: Location avec chauffeur Véhicules TP
+        logistic:
+            labelName: Logistique
+            logisticsStockControl: Logistique Gestion Des Stocks
+            logisticsPreparationOfOrders: Logistique Préparation De Commandes
+            logisticsDistribution: Logistique Distribution
+            logisticsConditioningOfPallets: Logistique Conditionnement De Palettes
+        storage:
+            labelName: Entreposage
+            coveredStorage: Entreposage Couvert
+            outdoorStorage: Entreposage En Plein-Air
+            coldStorage: Entreposage Frigorifique
+            storingOfLiquids: Entreposage De Liquides
+            storingOfHazardousMaterials: Entreposage De Matières Dangereuses
+            secureStorage: Entreposage Sécurisé
+            storageInFurnitureStorage: Entreposage Dans Garde-Meubles
+            selfStorageStorage: Entreposage En Self-Stockage
+        expressTransport:
+            labelName: Transport Express
+            urgent_express: Transport Express Urgent Express
+            expressTransport_expressParcel: Transport Express Colis Express
+            expressTransport_expressDeliveryServices: Transport Express Messagerie Express
+    mover:
+        labelName: Déménageur
+        forIndividuals: Pour Particuliers
+        industrialTransfer: Transfert Industriel
+        administrative: Administratif
+        ofPiano: De Piano
+        ofWorksOfArt: D'Objets d'Art
+        ofSate: De Coffre-Fort
+        inFurnitureStorehouses: En Garde-Meubles
+        inSelfStorage: En Self-Stockage
+    passengerTransport:
+        labelName: Transport de Voyageurs
+        forGroups: Pour Groupes
+        schoolTransport: Transport Scolaire
+        regularService: Ligne Régulière
+        travelAgencies: Agences De Voyages
+        packageTour: Voyage Organisé
+        airTravel: Déplacement Aérien
+        lightVehicle: Véhicule Léger
+    taxi:
+        labelName: Taxi
+        lightVehicleOrBike: VL ou moto

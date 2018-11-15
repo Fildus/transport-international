@@ -1,0 +1,340 @@
+-   domain: "transport-international.com"
+    title: "Transport International - annuaire référence du Transport"
+    description: "Annuaire du Transport en Europe et à l'International. Tous les professionnels du transport routier, la logistique, l'affrètement, le déménagement, taxis"
+    select:
+    lang: fr
+-   domain: "almacenamiento-espana.com"
+    title: "'Transport International', la referencia del TRANSPORTE en EUROPA"
+    description: "Almacenamiento Espana, referencia del transporte por carretera, la logistica, el fletamento. Depositos y servicios para los profesionales del transporte. El alquiler y traslado por  Espana, Europa y el mundo \n"
+    select: storage
+    lang: es
+-   domain: "annuaire-affreteurs.com"
+    title: "Transport International, la référence du TRANSPORT en EUROPE"
+    description: "Référence affreteurs, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: charter
+    lang: fr
+-   domain: "annuaire-demenageur.com"
+    title: "référence du DEMENAGEUR"
+    description: "La référence du demenageur professionnel et des particuliers en Europe.\nTous les différents métiers du demenagement dans un seul annuaire."
+    select: relocation
+    lang: fr
+-   domain: "annuaire-des-affreteurs.com"
+    title: "Transport International, la référence du TRANSPORT en EUROPE"
+    description: "Référence des affreteurs, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: charter
+    lang: fr
+-   domain: "annuaire-des-autocaristes.com"
+    title: "Référence des autocaristes, transport de voyageurs, annuaire du transport en autocar"
+    description: "Autocariste, référence des autocaristes, transport en autocar, L’annuaire des professionnels du transport en Europe et à l’international.\n"
+    select: travelers
+    lang: fr
+-   domain: "annuaire-des-demenageurs.com"
+    title: "Référence des Demenageurs, annuaire du demenagement"
+    description: "Annuaire des demenageurs, l’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du demenagement dans un seul annuaire. "
+    select: relocation
+    lang: fr
+-   domain: "annuaire-des-entreposeurs.com"
+    title: "Transport International, la référence du TRANSPORT en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: storage
+    lang: fr
+-   domain: "annuaire-entreposeurs.com"
+    title: "Transport International, la référence du TRANSPORT en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: storage
+    lang: fr
+-   domain: "anuar-transport.com"
+    title: "Transport Interna&#355;ional, anuar al transportului european."
+    description: "transport interna&#355;ional, anuarul transportului rutier, anuarul logisticii, anuarul gestionarilor transportului. Depozitare &#351;i servicii pentru profesionalii transportului. Închirieri &#351;i demenaj&#259;ri în Fran&#355;a, Europa &#351;i la nivel interna&#355;ional."
+    select:
+    lang: ro
+-   domain: "anuari-transport.com"
+    title: "Transport Internacional, anuari del TRANSPORT a EUROPA"
+    description: "Transport internacional, anuari del transport per carretera, la logística, el noliejament. Depósits y serveis para els profesionals del transport. Lloguer i trasllat a Espanya, Europa i al internacional"
+    select:
+    lang: es
+-   domain: "autocar-belgique.com"
+    title: "l'Annuaire du TRANSPORT de VOYAGEUR en BELGIQUE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout les entreprises de voyages en autocar en national et international."
+    select: travelers
+    lang: fr-BE
+-   domain: "autocar-deutschland.com"
+    title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    select: travelers
+    lang: de
+-   domain: "autocar-espana.com"
+    title: "''Transport International'', el anuario del TRANSPORTE en ESPANA Y en  EUROPA"
+    description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    select: travelers
+    lang: es
+-   domain: "autocar-france.com"
+    title: "annuaire du Voyage en autocar en FRANCE"
+    description: "Autocar France, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier pour les voyages en autocar en national et international."
+    select: travelers
+    lang: fr
+-   domain: "autocar-italia.com"
+    title: "Trasporto internazionale, elenco del TRASPORTO in IALIA e in EUROPA"
+    description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    select: travelers
+    lang: it
+-   domain: "autocar-luxembourg.com"
+    title: "annuaire du TRANSPORT en Autocar au Luxembourg"
+    description: "Autocar Luxembourg, le voyage en autocar national et international."
+    select: travelers
+    lang: fr
+-   domain: "autocar-suisse.com"
+    title: "Annuaire du TRANSPORT de Voyageurs en Suiise"
+    description: "Autocar Suisse, les voyages en autocar en national et international."
+    select: travelers
+    lang: fr-CH
+-   domain: "autocaristes.com"
+    title: "Transport International, annuaire du TRANSPORT en EUROPE"
+    description: "Autocaristes, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: travelers
+    lang: fr
+-   domain: "coaches-uk.net"
+    title: " ''Transport International'', the directory of the TRANSPORT in UK and in Europe "
+    description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    select: travelers
+    lang: en-GB
+-   domain: "demenagement-belgique.com"
+    title: "Annuaire du DEMENAGEMENT en BELGIQUE"
+    description: "L’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du déménagement dans un seul annuaire."
+    select: relocation
+    lang: fr-BE
+-   domain: "demenagement-luxembourg.com"
+    title: "Annuaire du DEMENAGEMENT au LUXEMBOURG"
+    description: "Demenagement Luxembourg, l’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du déménagement dans un seul annuaire."
+    select: relocation
+    lang: fr
+-   domain: "demenagement-suisse.com"
+    title: "Annuaire du DEMENAGEUR en SUISSE"
+    description: "Demenagement Suisse, l’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du déménagement dans un seul annuaire."
+    select: relocation
+    lang: fr-CH
+-   domain: "entrepot-belgique.com"
+    title: "Transport International, l'Annuaire de l'Entrepôt en BELGIQUE"
+    description: "Transport international, L’annuaire des professionnels du transport en BELGIQUE et à l’international.\r\nTout pour l'entreposage, le stockage et l'archivage."
+    select: storage
+    lang: fr-BE
+-   domain: "entrepot-france.com"
+    title: "Transport International, annuaire de l'Entreposage en France et en EUROPE"
+    description: "Transport international, L’annuaire des professionnels de l'entrepot en France et en Europe.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: storage
+    lang: fr
+-   domain: "entrepot-luxembourg.com"
+    title: "Transport International, annuaire du TRANSPORT en EUROPE"
+    description: "Entrepot luxembourg, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: storage
+    lang: fr
+-   domain: "entrepot-suisse.com"
+    title: "Transport International, annuaire du TRANSPORT en Suisse et en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: storage
+    lang: fr-CH
+-   domain: "fletamento-espana.com"
+    title: "''Transport International'', el anuario del FLATAMENTO en España"
+    description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    select: charter
+    lang: es
+-   domain: "france-demenagement.net"
+    title: "France Demenagement, Transport International, annuaire du Demenagement en France et en EUROPE"
+    description: "France demenagement, L’annuaire des professionnels du demenagement en Europe et à l’international.\r\nLe déménagement fait par des demenageurs professionnels."
+    select: relocation
+    lang: fr
+-   domain: "freight-uk.net"
+    title: " ''Transport International'', the directory of the Freight in UK and in Europe "
+    description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    select: charter
+    lang: en-GB
+-   domain: "fret-belgique.com"
+    title: "Transport International, l'Annuaire de l'ORGANISATION des TRANSPORTS en BELGIQUE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, maritime, aérien, ferrovière, fluvial et l'affrètement en international dans un seul annuaire."
+    select: charter
+    lang: fr-BE
+-   domain: "fret-france.com"
+    title: "Transport International, annuaire du fret en France et en EUROPE"
+    description: "Fret France, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: charter
+    lang: fr
+-   domain: "fret-luxembourg.com"
+    title: "Transport International, annuaire du frêt au Luxembourg et en EUROPE"
+    description: "Fret Luxembourg, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: charter
+    lang: fr
+-   domain: "fret-suisse.com"
+    title: "Transport International, annuaire du frêt en Suisse et en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: charter
+    lang: fr-CH
+-   domain: "guia-transporte.com"
+    title: "Guia Transporte, el anuario del TRANSPORTE en EUROPA"
+    description: "Guia Transporte es un guia del Transporte Internacional, anuario del transporte por carretera, la logistica, el fletamento. Depositos y servicios para los profesionales del transporte. El alquiler y traslado por  Espana, Europa y el mundo \r\n"
+    select:
+    lang: es
+-   domain: "immagazzionamento-italia.com"
+    title: "Trasporto internazionale, elenco del magazzinaggio in Italia e in EUROPA"
+    description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    select: storage
+    lang: it
+-   domain: "international-transport.net"
+    title: "Transport International, annuaire du TRANSPORT en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: storage
+    lang: gb
+-   domain: "lagerung-deutschland.com"
+    title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    select: storage
+    lang: de
+-   domain: "mudanza-espana.com"
+    title: "''Transport International'', el anuario del mudanza en España y en EUROPA"
+    description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    select: relocation
+    lang: es
+-   domain: "noleggio-italia.com"
+    title: "Trasporto internazionale, elenco del noleggio in Italia e in EUROPA"
+    description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    select: charter
+    lang: it
+-   domain: "removal-uk.net"
+    title: " ''Transport International'', the directory of the removal UK and in Europe "
+    description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    select: relocation
+    lang: en-GB
+-   domain: "transport-belgique.com"
+    title: "Transport International, l'Annuaire du TRANSPORT en BELGIQUE"
+    description: "Transport Belgique, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: transport
+    lang: fr-BE
+-   domain: "transport-deutschland.com"
+    title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    select: transport
+    lang: de
+-   domain: "transport-france.com"
+    title: "Transport International, l'Annuaire du TRANSPORT en FRANCE"
+    description: "Transport France, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: transport
+    lang: fr
+-   domain: "transport-international.be"
+    title: "Transport International, annuaire du TRANSPORT BELGE en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport belge en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select:
+    lang: be
+-   domain: "transport-luxembourg.com"
+    title: "Transport National, l'Annuaire du TRANSPORT au LUXEMBOURG"
+    description: "Transport Luxembourg, l’annuaire des professionnels du transport au LUXEMBOURG et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar national et international."
+    select: transport
+    lang: fr
+-   domain: "transport-suisse.net"
+    title: "Transport Suisse, transport International, annuaire du TRANSPORT en Suisse et en EUROPE"
+    description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    select: transport
+    lang: fr-CH
+-   domain: "transport-uk.net"
+    title: "Transport UK .net, the directory of the TRANSPORT in UK and in Europe "
+    description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    select: transport
+    lang: en-GB
+-   domain: "transport-unternehmen.net"
+    title: "Transportunternehmen, Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Transportunternehmen, internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    select:
+    lang: de
+-   domain: "transportation-directory.com"
+    title: "International Transport, the directory of the TRANSPORT in Europe "
+    description: "International transport , the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    select:
+    lang: en-GB
+-   domain: "transporte-espana.com"
+    title: "''Transport International'', el anuario del TRANSPORTE en España y en EUROPA"
+    description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    select: transport
+    lang: es
+-   domain: "trasloco-italia.com"
+    title: "Trasporto internazionale, elenco del TRASLOCO in Italia e  in EUROPA"
+    description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    select: relocation
+    lang: it
+-   domain: "trasporti.fr"
+    title: "Trasporti internazionali, elenco dei TRASPORTI in ITALIA e in EUROPA"
+    description: "Trasporti internazionali, elenco dei trasporti stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Italia, Europa e l'internazionale"
+    select: relocation
+    lang: it
+-   domain: "trasporto-italia.com"
+    title: "Trasporto internazionale, elenco del TRASPORTO in ITALIA"
+    description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    select: transport
+    lang: it
+-   domain: "trasporto.fr"
+    title: "Trasporto internazionale, elenco del TRASPORTO in EUROPA"
+    description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    select:
+    lang: it
+-   domain: "umzuege-deutschland.com"
+    title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Deutschland, Europa und international."
+    select: relocation
+    lang: de
+-   domain: "umzuge-deutschland.com"
+    title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    select: relocation
+    lang: de
+-   domain: "verfrachten-deutschland.com"
+    title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
+    description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    select: charter
+    lang: de
+-   domain: "warehousing-uk.net"
+    title: " ''Transport International'', the directory of the TRANSPORT in UK and in Europe "
+    description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    select: storage
+    lang: en-GB
+-   domain: "transporte-portugal.com"
+    title: "Transporte internacional, o anuário do transporte em Portugal."
+    description: "Transporte internacional, o anuário dos profissionais do transporte em Portugal e no internacional.\r\nA logística.\r\nTodos os tipos de transporte estão aqui presentes para qualquer tipo de mercadoria."
+    select: transport
+    lang: pt
+-   domain: "anuario-transporte.com"
+    title: "Transporte International,  anuario do transporte português na Europa"
+    description: "Transporte internacional, o anuário dos profissionais do transporte na Europa e no internacional.\r\nTodo o transporte rodoviário, a logística e o fretamento num só anuário. A mudança, viagem de autocarro internacional."
+    select:
+    lang: pt
+-   domain: "autocarro-portugal.com"
+    title: "Transporte internacional, anuário do transporte em Portugal"
+    description: "Transporte internacional, o anuário dos profissionais do transporte em Portugal e no internacional. \r\nTodo o tansporte rodoviário, viagens de autocarro nacional e internacional."
+    select: travelers
+    lang: pt
+-   domain: "mudanca-portugal.com"
+    title: "Anuário da mudança em Portugal"
+    description: "Anuário dos profissionais e dos particulares em Portugal.\r\nTodas as diferentes profissões da mudança num só anuário."
+    select: relocation
+    lang: pt
+-   domain: "armazenagem-portugal.com"
+    title: "Transporte internacional, o anuário dos profissionais do armazenista em Portugal e no internacional. "
+    description: "Armazens propostos para vários tipos de mercadoria.\r\nTodo o tansporte rodoviário, a logística e o fretamento num só anuário.\r\n"
+    select: storage
+    lang: pt
+-   domain: "fretamento-portugal.com"
+    title: "Transporte internacional, anuário dos profissionais do fretamento em Portugal e no internacional."
+    description: "Transporte internacional, anuário dos profissionais do transporte em Portugal e no internacional\r\nTodo o transporte rodoviário, a logística e o fretamento num só anuário.\r\n"
+    select: charter
+    lang: pt
+-   domain: "transport-routier.eu"
+    title: "INTERNAZIONE TRASPORTU"
+    description: "Transport routier, annuaire des transporteurs routiers européens."
+    select:
+    lang: it
+-   domain: "transports-maroc.com"
+    title: "Transport Maroc"
+    description: "Transport Maroc, Transports Maroc, Transport Marocain."
+    select:
+    lang: ma
+-   domain: "transport-cotedivoire.com"
+    title: "Transports CI"
+    description: "Transport CI"
+    select:
+    lang: ci

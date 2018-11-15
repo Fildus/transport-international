@@ -43,10 +43,10 @@ class Client
     private $coreBusiness;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Register", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      */
-    private $register;
+    private $user;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Managers", cascade={"persist", "remove"})
@@ -137,14 +137,14 @@ class Client
         return $this;
     }
 
-    public function getRegister(): ?Register
+    public function getUser(): ?User
     {
-        return $this->register;
+        return $this->user;
     }
 
-    public function setRegister(Register $register): self
+    public function setUser(User $user): self
     {
-        $this->register = $register;
+        $this->user = $user;
 
         return $this;
     }

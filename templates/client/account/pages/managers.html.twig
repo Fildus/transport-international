@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {% include 'top.html.twig' %}
+    <div class="container">
+        <div class="row">
+            {% include 'client/account/parts/header.html.twig' %}
+            {% include 'client/account/parts/nav.html.twig' %}
+            {% include'client/account/defaultForm.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

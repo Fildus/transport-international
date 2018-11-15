@@ -1,0 +1,60 @@
+{% extends 'home.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {{ include('top.html.twig') }}
+
+    {{ form_start(form) }}
+    <div class="container  mt-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 form-group input-group-sm">
+                    {{ form_label(form.user.username) }}
+                    {{ form_widget(form.user.username) }}
+                </div>
+
+                <div class="col-sm-12 col-md-6 form-group input-group-sm">
+                    {{ form_label(form.user.password.password) }}
+                    {{ form_widget(form.user.password.password) }}
+
+                    {{ form_label(form.user.password.confirm) }}
+                    {{ form_widget(form.user.password.confirm) }}
+                </div>
+            </div>
+        </div>
+        <hr class="m-3">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 form-group input-group-sm">
+                    {{ form_label(form.legalInformation.siret) }}
+                    {{ form_widget(form.legalInformation.siret) }}
+                </div>
+                <div class="col-sm-12 col-md-6 form-group input-group-sm">
+                    {{ form_label(form.legalInformation.corporateName) }}
+                    {{ form_widget(form.legalInformation.corporateName) }}
+
+                    {{ form_label(form.legalInformation.companyName) }}
+                    {{ form_widget(form.legalInformation.companyName) }}
+
+                    {{ form_label(form.legalInformation.legalForm, null) }}
+                    {{ form_widget(form.legalInformation.legalForm) }}
+                </div>
+                <div class="col-sm-12 col-md-6 form-group input-group-sm">
+                    {{ form_label(form.legalInformation.turnover) }}
+                    {{ form_widget(form.legalInformation.turnover) }}
+
+                    {{ form_label(form.legalInformation.workforceNbr) }}
+                    {{ form_widget(form.legalInformation.workforceNbr) }}
+
+                    {{ form_label(form.legalInformation.establishmentsNbr) }}
+                    {{ form_widget(form.legalInformation.establishmentsNbr) }}
+                </div>
+            </div>
+            <input type="submit" value="soumettre" class="btn btn-success float-right">
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+
+{% endblock %}

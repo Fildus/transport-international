@@ -1,0 +1,5 @@
+#top{font-size:11px;line-height:35px;color:#7e7e7e;background-color:#ebebe8;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}
+#top nav{padding:0}#top nav ul{margin:0;padding:0}#top nav ul li{display:inline;list-style:none}
+.checkboxCascade .fas{cursor:pointer;color:#e26648;padding:0}.checkboxCascade label{margin-top:0;margin-bottom:0}
+.checkboxCascade ul{margin:0}body{font-family:'Lucida Grande',tahoma,verdana,arial,sans-serif;color:#7e7e7e;font-size:14px}
+@media(min-width:992px){#sidebar-nav{border-radius:5px;border:1px solid #e4e4e4}}

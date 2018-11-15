@@ -1,0 +1,36 @@
+{
+  "name": "transport-international",
+  "version": "1.0.0",
+  "description": "transport international",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^4.3.0",
+    "gulp-livereload": "^4.0.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.9"
+
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fildus/transport-international.git"
+  },
+  "author": "David GASTALDELLO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fildus/transport-international/issues"
+  },
+  "homepage": "https://github.com/Fildus/transport-international#readme"
+}

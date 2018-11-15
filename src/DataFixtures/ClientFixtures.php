@@ -10,6 +10,7 @@ use App\Entity\Managers;
 use App\Entity\Register;
 use App\Entity\Equipment;
 use App\Entity\ServedZone;
+use App\Entity\User;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use App\Services\ExtractDb;
@@ -682,7 +683,7 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
                 ->setLocation($this->getLocation($row))
                 ->setContact($this->getContact($row))
                 ->setCoreBusiness($this->getCorebusiness($row))
-                ->setRegister($this->getRegister($row))
+                ->setUser($this->getUser($row))
                 ->setManagers($this->getManagers($row))
                 ->setEquipment($this->getEquipment($row))
                 ->setAbout($this->getAbout($row));
@@ -694,6 +695,7 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
 
             if ($i % 500 === 0) {
                 $manager->flush();
+
             }
         }
         $manager->flush();
@@ -750,10 +752,10 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
             ->setTaxis($coreBusinessTaxis);
     }
 
-    private function getRegister($row)
+    private function getUser($row)
     {
-        return (new Register())
-            ->setMail(utf8_encode($row['e_mail']) ?? null)
+        return (new User())
+            ->setUsername(utf8_encode($row['e_mail']) ?? null)
             ->setPassword(utf8_encode($row['password']) ?? null);
     }
 

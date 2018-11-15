@@ -12,10 +12,10 @@
 
             {% set labelName =  translation ?? transTree ~'.'~k~'.labelName'%}
 
-            <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans }}</label>
+            <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans({}, transTree) }}</label>
             <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
                 hidden="hidden">
-                {% include 'form.html.twig' with {
+                {% include 'form/checkboxCascade.html.twig' with {
                     'structure': v,
                     'lvl': lvl + 1,
                     'parent': k,
@@ -34,15 +34,15 @@
                        class="structure-form">
 
                 {% set labelName =  translation ?? transTree ~'.'~k~'.labelName'%}
-
-                <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans }}</label>
+                <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans({},transTree) }}</label>
                 <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
                     hidden="hidden">
                     <li class="lvl-{{ lvl + 1 }}">{% spaceless %}
                             {{ form_errors(form[v]) }}
                             {{ form_widget(form[v], {
                                 attr:{'class' : 'checkbox-form',}}) }}
-                            {{ form_label(form[v], translation~'.'~v | trans) }}
+                            {% set trad = translation~'.'~v %}
+                            {{ form_label(form[v], trad | trans({},transTree)) }}
                         {% endspaceless %}</li>
                 </ul>
             </li>
@@ -51,8 +51,11 @@
                         {{ form_errors(form[v]) }}
                         {{ form_widget(form[v], {
                             attr:{'class' : 'checkbox-form',}}) }}
-                        {{ form_label(form[v], translation~'.'~v | trans) }}
+                        {% set trad = translation~'.'~v %}
+                        {{ form_label(form[v], trad | trans({},transTree)) }}
                     {% endspaceless %}</li>
         {% endif %}
     {% endif %}
 {% endfor %}
+
+{#{{ 'activitiesForm.taxi.lightVehicleOrBike' | trans({},transTree) }}#}

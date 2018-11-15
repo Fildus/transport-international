@@ -17,4 +17,7 @@
 
 ###> custom ###
 .idea
+node_modules*
+test*
+yarn*
 ###< custom ###
