@@ -2,10 +2,16 @@
 
 namespace App\Controller;
 
+use App\Services\ArrayPath;
+use App\Services\ExtractDb;
 use App\Services\Locale;
+use App\Services\Cache;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\Yaml\Yaml;
 
 class HomeController extends AbstractController
 {

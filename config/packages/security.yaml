@@ -19,9 +19,9 @@ security:
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             form_login:
-                check_path: /login
+                check_path: _login
                 csrf_parameter: _csrf_security_token
-                default_target_path: account_legalInformation.%locale%
+                default_target_path: _loginSuccess
 
             logout:
                 path: /logout

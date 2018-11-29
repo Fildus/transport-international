@@ -1,0 +1,68 @@
+account:
+    header:
+        dashboard: VOTRE TABLEAU DE BORD
+    nav:
+        name: Paramètres de compte
+        legalInformation: Informations légales
+        location: Votre localisation
+        contact: Vos coordonnées
+        coreBusiness: Votre coeur de métier
+        user: Identifiants
+        managers: Contacts
+        equipment: Vos équipements
+        about: A propos
+        activity: Vos activités
+        servedZone: Zones desservies
+header:
+    form:
+        charter: Affrètement
+top:
+    welcome: Bienvinue sur l'Annuaire Transport-international.com
+    Account:
+        myAccount: Mon compte
+        profile: Profil
+        register: inscription
+    log:
+        login:
+            title: déjà inscrit
+            html: déjà inscrit ?
+        logout:
+            title: se déconnecter
+            html: Se déconnecter
+slider:
+    title: Transport-international.com
+    subTitle: La référence du Transport en Europe et à l'international
+    globeTerrestre:
+        alt: globe terrestre
+    slides:
+        first: Transport International est mis <strong>gratuitement</strong> à la disposition des PME-PMI, des Chargeurs, des Associations et des particuliers, pour leur permettre de <strong>trouver rapidement et facilement</strong> les professionnels du transport en Europe.
+        second: L’annuaire des transports vous apportera des réponses rapides et précises sur vos recherches d’un professionnel pour tout type de transport en local et même jusqu’à l’international.
+        third: Avec plus de <strong>135000 TRANSPORTEURS référencés sur 23 PAYS</strong>, Transport International est le guide du transport En Europe, de la logistique et de l’affrètement.
+register:
+    mainTitle: inscription
+    form:
+        username: Votre nom d'utilisateur
+        password: Votre password
+        confirm: Confirmation de votre password
+        siret: Votre siret
+        corporateName: raison sociale
+        turnover: Chiffre d'affaire
+        companyName: Le nom de votre société
+        workforce: Le nombre d'mployés
+        legalForm: Forme légale
+        establishments: Nombre d'établissements
+login:
+    mainTitle: connexion
+search:
+    mainTitle: Votre recherche
+    form:
+        title:
+            location: Localisation
+    results:
+        contact:
+            title: Contact
+        website:
+            title: Site web
+        profile:
+            title: Voir la fiche
+        mainTitle: Liste des prestataires

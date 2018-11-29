@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use App\Services\Slug;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LegalInformationRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class LegalInformation
 {
@@ -50,6 +52,11 @@ class LegalInformation
      * @ORM\Column(type="smallint", options={"unsigned" = true}, nullable=true)
      */
     private $establishmentsNbr;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     public function getId(): ?int
     {
@@ -138,5 +145,25 @@ class LegalInformation
         $this->establishmentsNbr = $establishmentsNbr;
 
         return $this;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    public function setSlug($slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function setSlugLifecycleCallback()
+    {
+        $this->slug = (new Slug())->getSlug($this->companyName).'-'.rand(1000,10000);
     }
 }

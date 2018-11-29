@@ -9,12 +9,16 @@ class ArrayPath
     private $arrayLvl = [];
 
     private static $separator = '__';
+
     private $data;
 
-    public function __construct(array $data, ?string $separator = null)
+    private $exclude;
+
+    public function __construct(array $data, ?string $separator = null, $exclude = [])
     {
         $separator !== null ? self::$separator = $separator : null;
         $this->data = $data;
+        $this->exclude = $exclude;
     }
 
     private function iterateInline($data, $path = []): void
@@ -35,11 +39,26 @@ class ArrayPath
         }
     }
 
+    private function exclude($data)
+    {
+        $formatedData = [];
+        if (!empty($this->exclude)) {
+            foreach ($data as $k => $d) {
+                if (!in_array($d, $this->exclude)){
+                    $formatedData[] = $d;
+                }
+            }
+            return $formatedData;
+        } else {
+            return $data;
+        }
+    }
+
     private function iterateArrayLvl($data): void
     {
         foreach ($data as $item) {
             $this->arrayLvl[] = [
-                'path' => explode('__', key($item)),
+                'path' => $this->exclude(explode(self::$separator, key($item))),
                 'name' => array_values($item)[0],
             ];
         }

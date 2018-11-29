@@ -1,61 +1,23 @@
-{% for k, v in structure %}
-    {% set unique =  random(1000000) %}
-    {% if v is iterable %}
-        <li>
-            <a class="buttonClose" onclick="toggleOpening(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')">
-                <i class="fas fa-plus"></i>
-            </a>
+{% set unique =  random(10000)%}
+    {% if entity.children is not empty %}
+        <a class="buttonClose" onclick="toggleOpening(this, '{{ 'a'~unique }}')">
+            <i class="fas fa-plus"></i>
+        </a>
 
-            <input type="checkbox" id="{{ unique~'-'~k~'-input' }}"
-                   onclick="toggleSelection(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')"
-                   class="structure-form">
+        <input id="{{ 'b'~unique }}"
+               onclick="toggleSelection(this, '{{ 'a'~unique }}')"
+               class="structure-form"
+               type="checkbox">
 
-            {% set labelName =  translation ?? transTree ~'.'~k~'.labelName'%}
-
-            <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans({}, transTree) }}</label>
-            <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
-                hidden="hidden">
-                {% include 'form/checkboxCascade.html.twig' with {
-                    'structure': v,
-                    'lvl': lvl + 1,
-                    'parent': k,
-                    'translation' : translation ?? transTree ~'.'~k} %}
-            </ul>
-        </li>
+        <label for="{{ 'b'~unique }}">{{ entity.translation }}</label>
+        <ul id="{{ 'a'~unique }}" hidden>
+            {% for entity in entity.children %}
+                <li>
+                    {% include 'form/checkboxCascade.html.twig' with {'entities': entity} %}
+                </li>
+            {% endfor %}
+        </ul>
     {% else %}
-        {% if k matches '/^\\d+$/' == null %}
-            <li>
-                <a class="buttonClose" onclick="toggleOpening(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')">
-                    <i class="fas fa-plus"></i>
-                </a>
-
-                <input type="checkbox" id="{{ unique~'-'~k~'-input' }}"
-                       onclick="toggleSelection(this, '{{ unique~'-'~k~'-'~lvl~'-liste' }}')"
-                       class="structure-form">
-
-                {% set labelName =  translation ?? transTree ~'.'~k~'.labelName'%}
-                <label for="{{ unique~'-'~k~'-input' }}">{{ labelName | trans({},transTree) }}</label>
-                <ul id="{{ unique~'-'~k~'-'~lvl~'-liste' }}"
-                    hidden="hidden">
-                    <li class="lvl-{{ lvl + 1 }}">{% spaceless %}
-                            {{ form_errors(form[v]) }}
-                            {{ form_widget(form[v], {
-                                attr:{'class' : 'checkbox-form',}}) }}
-                            {% set trad = translation~'.'~v %}
-                            {{ form_label(form[v], trad | trans({},transTree)) }}
-                        {% endspaceless %}</li>
-                </ul>
-            </li>
-            {% else %}
-                <li class="lvl-{{ lvl + 1 }}">{% spaceless %}
-                        {{ form_errors(form[v]) }}
-                        {{ form_widget(form[v], {
-                            attr:{'class' : 'checkbox-form',}}) }}
-                        {% set trad = translation~'.'~v %}
-                        {{ form_label(form[v], trad | trans({},transTree)) }}
-                    {% endspaceless %}</li>
-        {% endif %}
+        {{ form_widget(form[entity.__toString], {attr:{'class' : 'checkbox-form'}}) }}
+        {{ form_label(form[entity.__toString], entity.translation) }}
     {% endif %}
-{% endfor %}
-
-{#{{ 'activitiesForm.taxi.lightVehicleOrBike' | trans({},transTree) }}#}

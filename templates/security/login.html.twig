@@ -1,9 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% include 'top.html.twig' %}
+    {% include 'parts/top.html.twig' %}
+    <div class="container mt-2 mb-2">
+        {{ render(controller('App\\Controller\\RenderController::getHeader')) }}
+    </div>
+    <div class="mainTitle">
+        <div class="container">
+            <h1>{{ 'login.mainTitle' | trans }}</h1>
+        </div>
+    </div>
     <div class="container mt-5">
-        <h1>connexion</h1>
         {% if error %}
             <div class="alert alert-danger">
                 {{ error.messageKey | trans(error.messageData, 'security') }}

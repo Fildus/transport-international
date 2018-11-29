@@ -1,0 +1,25 @@
+{% if item.children is not empty %}
+    <li class="dropdown">
+        <a class="dropdown-toggle"
+           id="dropdownMenu-{{ item }}"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false"
+           title="{{ item.translation }}">
+            {{ item.translation }}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-{{ item }}">
+            {% for item in item.children %}
+                {{ include('form/headerCascade.html.twig', {'item':item}) }}
+            {% endfor %}
+        </ul>
+    </li>
+{% else %}
+    <li>
+        <a class="dropdown-item"
+           href="{{ path('_search', {"activity": item.__tostring }) }}"
+           title="{{ item.translation | replace({"Affrètement ": ""}) }}">
+            {{ item.translation | replace({"Affrètement ": ""}) }}
+        </a>
+    </li>
+{% endif %}

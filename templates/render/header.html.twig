@@ -1,0 +1,35 @@
+{% macro nav() %}
+    <li class="main-li">{{ dropdownMenu('charter', ('header.form.charter'|trans)) | raw }}</li>
+    <li class="main-li">{{ dropdownMenu('transportOfGoods', 'Transport', [], {
+            'diverseTransportationOfGoods' : dropdownMenu('expressTransport', 'Transport Express', [], null, true)
+        }) | raw }}</li>
+    <li class="main-li">{{ dropdownMenu('passengerTransport', 'Voyageurs') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu('mover', 'Déménagement') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu('rentWithDriver', 'Location') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu('logistic', 'Logistique') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu('taxi', 'Taxis') | raw }}</li>
+{% endmacro %}
+
+{% import _self as header %}
+
+<div id="header" class="row mt-2">
+    <div id="logo" class="col-12 col-md-3 text-center">
+        <a href="{{ path('home') }}">
+            <img src="{{ asset('build/img/logo-transport-international.png') }}"
+                 alt="logo transport international">
+        </a>
+    </div>
+    <div class="col-12 col-md-9 mt-3">
+        <nav class="dropdown text-center">
+            <ul class="header-nav m-auto">
+                {% set key = '4z54zd5z4da.'~app.request.get('_locale') %}
+                {% if isCached(key)%}
+                    {{ getCache(key) }}
+                {% else %}
+                    {{ setCache(key, header.nav()) }}
+                {% endif %}
+            </ul>
+            <hr class="mr-4 ml-4">
+        </nav>
+    </div>
+</div>

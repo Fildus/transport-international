@@ -67,21 +67,19 @@ class Client
     private $about;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Activity", fetch="EAGER")
-     * @ORM\JoinTable()
-     */
-    private $activity;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\ServedZone", fetch="EAGER")
-     * @ORM\JoinTable()
+     * @ORM\ManyToMany(targetEntity="App\Entity\ServedZone", inversedBy="clients")
      */
     private $servedZone;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Activity", inversedBy="clients")
+     */
+    private $activity;
+
     public function __construct()
     {
-        $this->activity = new ArrayCollection();
         $this->servedZone = new ArrayCollection();
+        $this->activity = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -186,32 +184,6 @@ class Client
     }
 
     /**
-     * @return Collection|Activity[]
-     */
-    public function getActivity(): Collection
-    {
-        return $this->activity;
-    }
-
-    public function addActivity(Activity $activity): self
-    {
-        if (!$this->activity->contains($activity)) {
-            $this->activity[] = $activity;
-        }
-
-        return $this;
-    }
-
-    public function removeActivity(Activity $activity): self
-    {
-        if ($this->activity->contains($activity)) {
-            $this->activity->removeElement($activity);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|ServedZone[]
      */
     public function getServedZone(): Collection
@@ -232,6 +204,32 @@ class Client
     {
         if ($this->servedZone->contains($servedZone)) {
             $this->servedZone->removeElement($servedZone);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Activity[]
+     */
+    public function getActivity(): Collection
+    {
+        return $this->activity;
+    }
+
+    public function addActivity(Activity $activity): self
+    {
+        if (!$this->activity->contains($activity)) {
+            $this->activity[] = $activity;
+        }
+
+        return $this;
+    }
+
+    public function removeActivity(Activity $activity): self
+    {
+        if ($this->activity->contains($activity)) {
+            $this->activity->removeElement($activity);
         }
 
         return $this;

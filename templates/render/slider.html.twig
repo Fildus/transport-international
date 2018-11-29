@@ -1,0 +1,32 @@
+<div id="slider">
+    <div class="container">
+        <section class="row">
+            <figure class="col-md-4">
+                <img src="{{ asset('build/img/globe-terrestre.png') }}" alt="{{ 'slider.globeTerrestre.alt' | trans }}">
+            </figure>
+            <div class="col-md-8">
+                <h1>{{ 'slider.title' | trans }}</h1>
+                <article>
+                    <h2>{{ 'slider.subTitle' | trans }}</h2>
+                    <div>
+                        <div id="slides">
+                            <ul>
+                                {% for item in ['first', 'second', 'third'] %}
+                                    <li class="slide">
+                                        <h3>
+                                            {{ ('slider.slides.'~item) | trans | raw }}
+                                        </h3>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div id="buttons">
+                            <a id="prev" href="#">‹</a>
+                            <a id="next" href="#">›</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</div>

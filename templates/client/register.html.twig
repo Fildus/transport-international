@@ -2,22 +2,29 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    {{ include('top.html.twig') }}
-
+    {{ include('parts/top.html.twig') }}
+    <div class="container mt-2 mb-2">
+        {{ render(controller('App\\Controller\\RenderController::getHeader')) }}
+    </div>
+    <div class="mainTitle">
+        <div class="container">
+            <h1>{{ 'register.mainTitle' | trans }}</h1>
+        </div>
+    </div>
     {{ form_start(form) }}
     <div class="container  mt-5">
         <div class="col-12">
             <div class="row">
                 <div class="col-sm-12 col-md-6 form-group input-group-sm">
-                    {{ form_label(form.user.username) }}
+                    {{ form_label(form.user.username, 'register.form.username'|trans) }}
                     {{ form_widget(form.user.username) }}
                 </div>
 
                 <div class="col-sm-12 col-md-6 form-group input-group-sm">
-                    {{ form_label(form.user.password.password) }}
+                    {{ form_label(form.user.password.password, 'register.form.password'|trans) }}
                     {{ form_widget(form.user.password.password) }}
 
-                    {{ form_label(form.user.password.confirm) }}
+                    {{ form_label(form.user.password.confirm, 'register.form.confirm'|trans) }}
                     {{ form_widget(form.user.password.confirm) }}
                 </div>
             </div>
@@ -26,27 +33,27 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-12 form-group input-group-sm">
-                    {{ form_label(form.legalInformation.siret) }}
+                    {{ form_label(form.legalInformation.siret, 'register.form.siret'|trans) }}
                     {{ form_widget(form.legalInformation.siret) }}
                 </div>
                 <div class="col-sm-12 col-md-6 form-group input-group-sm">
-                    {{ form_label(form.legalInformation.corporateName) }}
+                    {{ form_label(form.legalInformation.corporateName, 'register.form.legalForm'|trans) }}
                     {{ form_widget(form.legalInformation.corporateName) }}
 
-                    {{ form_label(form.legalInformation.companyName) }}
+                    {{ form_label(form.legalInformation.companyName, 'register.form.companyName'|trans) }}
                     {{ form_widget(form.legalInformation.companyName) }}
 
-                    {{ form_label(form.legalInformation.legalForm, null) }}
+                    {{ form_label(form.legalInformation.legalForm, 'register.form.legalForm'|trans) }}
                     {{ form_widget(form.legalInformation.legalForm) }}
                 </div>
                 <div class="col-sm-12 col-md-6 form-group input-group-sm">
-                    {{ form_label(form.legalInformation.turnover) }}
+                    {{ form_label(form.legalInformation.turnover, 'register.form.turnover'|trans) }}
                     {{ form_widget(form.legalInformation.turnover) }}
 
-                    {{ form_label(form.legalInformation.workforceNbr) }}
+                    {{ form_label(form.legalInformation.workforceNbr, 'register.form.workforce'|trans) }}
                     {{ form_widget(form.legalInformation.workforceNbr) }}
 
-                    {{ form_label(form.legalInformation.establishmentsNbr) }}
+                    {{ form_label(form.legalInformation.establishmentsNbr, 'register.form.establishments'|trans) }}
                     {{ form_widget(form.legalInformation.establishmentsNbr) }}
                 </div>
             </div>

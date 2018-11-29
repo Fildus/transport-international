@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use App\Form\ServedZoneType;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,12 +30,12 @@ class Location
     private $postalCode;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $city;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\ServedZone")
      */
     private $location;
 
@@ -77,14 +80,14 @@ class Location
         return $this;
     }
 
-    public function getLocation(): ?string
+    public function getLocation()
     {
         return $this->location;
     }
 
-    public function setLocation(string $location): self
+    public function setLocation(?ServedZone $servedZone)
     {
-        $this->location = $location;
+        $this->location = $servedZone;
 
         return $this;
     }

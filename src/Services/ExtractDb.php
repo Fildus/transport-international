@@ -50,12 +50,12 @@ class ExtractDb
     const DUMP = 'dump';
     const DD = 'dd';
 
-    public static function pdo($dbName)
+    public function pdo($dbName)
     {
         return new PDO('mysql:dbname='.$dbName.';host=127.0.0.1', 'david', 'beepbeep');
     }
 
-    public static function extract(string $table, string $dump = null, ?int $rows = 100, ?string $method = 'fetchAll', $dbName = 'ti_existant_complet')
+    public function extract(string $table, string $dump = null, ?int $rows = 100, ?string $method = 'fetchAll', $dbName = 'ti_existant_complet')
     {
         $rows === null ? $rows = 100 : null;
         $rows === 0 ? $sqlLimit = null : $sqlLimit = 'LIMIT ' . $rows;
@@ -78,14 +78,14 @@ class ExtractDb
         return $res;
     }
 
-    public static function query(string $query, $fetch = 'fetch', ?string $dbName = 'ti_existant_complet')
+    public function query(string $query, $fetch = 'fetch', ?string $dbName = 'ti_existant_complet')
     {
         if ($fetch === 'fetch'){
-            return self::pdo($dbName)->query($query)->fetchAll();
+            return $this->pdo($dbName)->query($query)->fetchAll();
         }elseif ($fetch === 'object'){
-            return self::pdo($dbName)->query($query)->fetchObject();
+            return $this->pdo($dbName)->query($query)->fetchObject();
         }
-        return self::pdo($dbName)->query($query);
+        return $this->pdo($dbName)->query($query);
     }
 
 }

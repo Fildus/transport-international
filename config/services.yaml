@@ -5,8 +5,17 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    fallback: 'en'
 
 services:
+    simple_cache.app:
+        class: Symfony\Component\Cache\Adapter\SimpleCacheAdapter
+        arguments: ["@cache.app"]
+
+    Symfony\Component\Cache\Simple\Psr6Cache: ~
+    Psr\SimpleCache\CacheInterface:
+        alias: Symfony\Component\Cache\Simple\Psr6Cache
+
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

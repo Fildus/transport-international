@@ -20,9 +20,12 @@ class ServedZoneType extends AbstractType
      */
     private $servedZoneRepository;
 
+    private $request;
+
     public function __construct(ServedZoneRepository $servedZoneRepository)
     {
         $this->servedZoneRepository = $servedZoneRepository;
+        $this->request = $this->servedZoneRepository->findBy(['country' => null, 'region' => null]);
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -41,7 +44,7 @@ class ServedZoneType extends AbstractType
                 if (isset($event->getData()['servedZone'])) {
                     $formData = $event->getData()['servedZone'];
                 }
-                foreach ($this->servedZoneRepository->findBy(['country' => null, 'region' => null]) as $k => $v) {
+                foreach ($this->request as $k => $v) {
                     if (isset($formData[$v->getDepartment()])) {
                         $event->getForm()->getNormData()->addServedZone($v);
                     } else {
@@ -61,7 +64,7 @@ class ServedZoneType extends AbstractType
     public function getServedZones($options)
     {
         $servedZone = [];
-        foreach ($this->servedZoneRepository->findBy(['country' => null, 'region' => null]) as $item) {
+        foreach ($this->request as $item) {
             if (!empty($options['data'])) {
                 $servedZone[$item->getDepartment()] = $options['data']->getServedZone()->contains($item) ? true : false;
             }

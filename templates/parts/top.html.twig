@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 text-center">
-                <span>{{ 'welcome'|trans({}, 'top') }} - </span>
+                <span>{{ 'top.welcome'|trans }} - </span>
                 <a href="https://plus.google.com/113123040539212368916?prsrc=3" rel="publisher" target="_top">
                     <img src="{{ asset('build/img/icons/gplus-16.png') }}" alt="Google+">
                 </a>
@@ -10,12 +10,12 @@
             <div class="col-12 col-md-4 text-center">
                 <nav>
                     <ul>
-                        <li>{{ 'Account.myAccount'|trans({}, 'top') }} :</li>
+                        <li>{{ 'top.Account.myAccount'|trans }} :</li>
                         <li>
                             {% if app.user is not null %}
-                                <a href="{{ path('account_legalInformation.default') }}">{{ 'Account.myAccount'|trans({}, 'top') }}</a>
+                                <a href="{{ path('account_legalInformation') }}">{{ 'top.Account.myAccount'|trans }}</a>
                             {% else %}
-                                <a href="{{ path('_register.default') }}">{{ 'Account.register'|trans({}, 'top') }}</a>
+                                <a href="{{ path('_register') }}">{{ 'top.Account.register'|trans }}</a>
                             {% endif %}
                         </li>
                         |
@@ -23,21 +23,20 @@
                             {% if app.user is not null %}
                                 <a href="{{ path('logout') }}" rel="nofollow"
                                    class="connect"
-                                   title="{{ 'log.logout.title'|trans({}, 'top') }}">{{ 'log.logout.html'|trans({}, 'top') }}</a>
+                                   title="{{ 'top.log.logout.title'|trans }}">{{ 'top.log.logout.html'|trans }}</a>
                             {% else %}
-                                <a href="{{ path('_login.default') }}" rel="nofollow"
+                                <a href="{{ path('_login') }}" rel="nofollow"
                                    class="connect"
-                                   title="{{ 'log.login.title'|trans({}, 'top') }}">{{ 'log.login.html'|trans({}, 'top') }}</a>
+                                   title="{{ 'top.log.login.title'|trans }}">{{ 'top.log.login.html'|trans }}</a>
                             {% endif %}
                         </li>
                     </ul>
                 </nav>
             </div>
-
             <div class="col-12 col-md-4 text-center">
                 <nav>
                     <ul>
-                        {{ render(controller('App\\Controller\\renderController::getDomains', {'route': app.request.get('_route')})) }}
+                        {{ render(controller('App\\Controller\\RenderController::getDomains', {'route': app.request.get('_route')})) }}
                     </ul>
                 </nav>
             </div>

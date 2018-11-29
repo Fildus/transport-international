@@ -20,14 +20,16 @@ use App\Form\LocationType;
 use App\Form\ManagersType;
 use App\Form\ServedZoneType;
 use App\Form\UserType;
+use App\Repository\ActivityRepository;
 use App\Repository\ClientRepository;
+use App\Repository\ServedZoneRepository;
 use App\Services\Locale;
 use Doctrine\Common\Persistence\ObjectManager;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Yaml\Yaml;
 
 /**
  * Class UserController
@@ -95,6 +97,7 @@ class AccountController extends AbstractController
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
         ]);
+        dump($client);
         $legalInformation = $client->getLegalInformation() ?? new LegalInformation();
 
         $form = $this->createForm(LegalInformationType::class, $legalInformation);
@@ -108,7 +111,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/legalInformation.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -135,7 +138,8 @@ class AccountController extends AbstractController
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
         ]);
-        $location = $client->getLocation() ?? new Location();
+
+        $location = $client->getLocation();
 
         $form = $this->createForm(LocationType::class, $location);
 
@@ -148,7 +152,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/location.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -188,7 +192,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/contact.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -228,7 +232,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/coreBusiness.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -268,7 +272,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/user.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -308,7 +312,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/managers.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -348,7 +352,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/managers.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -388,7 +392,7 @@ class AccountController extends AbstractController
         }
 
         return new Response($this->renderView('client/account/pages/about.html.twig', [
-            'form' =>$form->createView()
+            'form' => $form->createView()
         ]));
     }
 
@@ -408,9 +412,12 @@ class AccountController extends AbstractController
      *      "ci" : "/activity-ci"
      * }, name="_activity")
      * @param Request $request
+     * @param ActivityRepository $activityRepository
+     * @param CacheInterface $cache
      * @return Response
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function activity(Request $request)
+    public function activity(Request $request, ActivityRepository $activityRepository, CacheInterface $cache)
     {
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
@@ -423,9 +430,14 @@ class AccountController extends AbstractController
             $this->objectManager->persist($client);
             $this->objectManager->flush();
         }
+
+        if (!$cache->has('activity-cache')) {
+            $cache->set('activity-cache', $activityRepository->findBy(['level' => 0]));
+        }
+
         return new Response($this->renderView('client/account/pages/activity.html.twig', [
-            'form' =>$form->createView(),
-            'structureActivities' => Yaml::parseFile($this->container->get('parameter_bag')->get('kernel.project_dir') . '/src/Data/activities.yaml')
+            'form' => $form->createView(),
+            'activities' => $cache->get('activity-cache')
         ]));
     }
 
@@ -445,9 +457,12 @@ class AccountController extends AbstractController
      *      "ci" : "/servedZone-ci"
      * }, name="_servedZone")
      * @param Request $request
+     * @param ServedZoneRepository $servedZoneRepository
+     * @param CacheInterface $cache
      * @return Response
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function servedZone(Request $request)
+    public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository, CacheInterface $cache)
     {
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
@@ -460,9 +475,14 @@ class AccountController extends AbstractController
             $this->objectManager->persist($client);
             $this->objectManager->flush();
         }
+
+        if (!$cache->has('servedZone-cache')) {
+            $cache->set('servedZone-cache', $servedZoneRepository->findByWithTranslation());
+        }
+
         return new Response($this->renderView('client/account/pages/servedZone.html.twig', [
-            'form' =>$form->createView(),
-            'structureServedZone' => Yaml::parseFile($this->container->get('parameter_bag')->get('kernel.project_dir') . '/src/Data/servedZone.yaml')
+            'form' => $form->createView(),
+            'servedZone' => $cache->get('servedZone-cache')
         ]));
     }
 }

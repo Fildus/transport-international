@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\LegalInformation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,9 +19,7 @@ class LegalInformationType extends AbstractType
             ->add('legalForm', ChoiceType::class, [
                 'choices' => ['S.A' => 'S.A', 'S.A.R.L' => 'S.A.R.L', 'E.U.R.L' => 'E.U.R.L', 'N.P' => 'N.P']
             ])
-            ->add('turnover', NumberType::class, [
-                'required' => true
-            ])
+            ->add('turnover')
             ->add('workforceNbr')
             ->add('establishmentsNbr');
     }

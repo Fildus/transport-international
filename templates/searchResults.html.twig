@@ -1,0 +1,40 @@
+<section id="results">
+    <ul class="col-md-12">
+        <h2 class="search-main-title">{{ 'search.results.mainTitle' | trans }}</h2>
+        {% for c in clients %}
+            <li class="row mb-0 mt-0">
+                <div class="col-10">
+                    <h3 class="cutome--title">
+                        <a
+                                href="{{ path('_professional_profile', {'cnSlug': c.legalInformation.slug}) }}"
+                                title="{{ c.legalInformation.companyName }}">
+                            {{ c.legalInformation.companyName }}
+                        </a>
+                    </h3>
+                    <p class="mt-0 mb-0">{{ c.location.postalCode~' '~c.location.address~' '~c.location.city }}</p>
+                </div>
+
+                <div class="col-2 text-center align-self-center">
+                    <a class="btn-details"
+                       href="{{ path('_professional_profile', {'cnSlug': c.legalInformation.slug}) }}"
+                       title="{{ c.legalinformation.companyName }}">
+                        <i class="fa fa-eye"
+                           title="{{ 'search.results.profile.title' | trans }} {{ c.legalinformation.companyName }}"></i>
+                    </a>
+
+                    {% if c.contact.contact is not empty %}
+                        <i class="fa fa-at" title="{{ 'search.results.contact.title' | trans }}"></i>
+                    {% endif %}
+
+                    {% if false %}
+                        <a href="">
+                            <i class="fa fa-globe" title="{{ 'search.results.website.title' | trans }}"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </li>
+            <hr class="mb-1 mt-0">
+        {% endfor %}
+    </ul>
+    {{ nav(count,page,app.request.attributes) | raw }}
+</section>

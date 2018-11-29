@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
-
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    {% include 'top.html.twig' %}
+    {% include 'parts/top.html.twig' %}
+    {{ render(controller('App\\Controller\\renderController::getHeader')) }}
     <div class="container">
         <div class="row">
             {% include 'client/account/parts/header.html.twig' %}
@@ -11,4 +11,10 @@
             {% include'client/account/defaultForm.html.twig' %}
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/auto-complete-min.js') }}"></script>
+    <script src="{{ asset('build/js/autocompleteCustom.js') }}"></script>
 {% endblock %}

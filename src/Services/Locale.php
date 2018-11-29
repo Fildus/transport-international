@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Yaml\Yaml;
 
-class Locale extends Container
+class Locale
 {
     /**
      * @var RequestStack
@@ -34,12 +34,12 @@ class Locale extends Container
     /**
      * Locale constructor.
      * @param RequestStack $requestStack
+     * @param ContainerInterface $container
      */
-    public function __construct(RequestStack $requestStack)
+    public function __construct(RequestStack $requestStack, ContainerInterface $container)
     {
         $this->requestStack = $requestStack;
-        $this->domain = Yaml::parseFile('../src/Data/domain.yaml');
-        parent::__construct();
+        $this->domain = Yaml::parseFile($container->getParameter('kernel.root_dir').'/Data/domain.yaml');
     }
 
     /**
@@ -47,14 +47,12 @@ class Locale extends Container
      */
     public function setLocale(): self
     {
-//        $httpHost = $this->requestStack->getMasterRequest()->server->get('HTTP_HOST');
-        $httpHost = str_replace('test-','',$this->requestStack->getMasterRequest()->server->get('HTTP_HOST'));
+        $httpHost = str_replace('test-','',$this->requestStack->getMasterRequest()->getHttpHost());
         foreach ($this->domain as $item) {
             if (preg_match('/(' . $item['domain'] . ')/', $httpHost)) {
                 !array_key_exists($item['lang'], $this->convertLang) ? $lang = $item['lang'] : $lang = $this->convertLang[$item['lang']];
-//                $this->requestStack->getCurrentRequest()->setDefaultLocale($lang ?? $this->fallback);
                 $this->requestStack->getCurrentRequest()->setLocale($lang ?? $this->fallback);
-                $this->localematched = $item['lang'];
+                $this->localematched = $lang;
             }
         }
         return $this;

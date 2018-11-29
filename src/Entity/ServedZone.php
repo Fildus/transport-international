@@ -3,12 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @Gedmo\Tree(type="nested")
  * @ORM\Entity(repositoryClass="App\Repository\ServedZoneRepository")
+ * @ORM\Cache(usage="READ_ONLY")
  */
 class ServedZone
 {
@@ -20,19 +22,16 @@ class ServedZone
     private $id;
 
     /**
-     * @Gedmo\Translatable
      * @ORM\Column(length=64, nullable=true)
      */
     private $country;
 
     /**
-     * @Gedmo\Translatable
      * @ORM\Column(length=64, nullable=true)
      */
     private $region;
 
     /**
-     * @Gedmo\Translatable
      * @ORM\Column(length=64, nullable=true)
      */
     private $department;
@@ -69,14 +68,24 @@ class ServedZone
     private $level;
 
     /**
-     * @todo : ENLEVER FETCH EAGER
-     * @ORM\OneToMany(targetEntity="ServedZone", mappedBy="parent", fetch="EAGER")
+     * @ORM\OneToMany(targetEntity="ServedZone", mappedBy="parent")
      */
     private $children;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Translation", cascade={"persist", "remove"})
+     */
+    private $translation;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Client", mappedBy="servedZone")
+     */
+    private $clients;
 
     public function __construct()
     {
         $this->children = new ArrayCollection();
+        $this->clients = new ArrayCollection();
     }
 
     public function getId()
@@ -89,7 +98,7 @@ class ServedZone
         return $this->country;
     }
 
-    public function setCountry(string $country) :self
+    public function setCountry(string $country): self
     {
         $this->country = $country;
 
@@ -101,7 +110,7 @@ class ServedZone
         return $this->region;
     }
 
-    public function setRegion(string $region) :self
+    public function setRegion(string $region): self
     {
         $this->region = $region;
 
@@ -147,6 +156,22 @@ class ServedZone
         return $this->children;
     }
 
+    public function addChildren(ServedZone $servedZone): self
+    {
+        if (!$this->children->contains($servedZone)){
+            $this->children[] = $servedZone;
+        }
+        return $this;
+    }
+
+    public function removeChildren(ServedZone $servedZone): self
+    {
+        if ($this->children->contains($servedZone)){
+            $this->children->remove($servedZone);
+        }
+        return $this;
+    }
+
     public function getLeft()
     {
         return $this->lft;
@@ -157,8 +182,51 @@ class ServedZone
         return $this->rgt;
     }
 
+    /**
+     * @return mixed
+     */
     public function __toString()
     {
         return $this->getDepartment() ?? $this->getRegion() ?? $this->getCountry();
+    }
+
+    public function getTranslation()
+    {
+        return $this->translation;
+    }
+
+    public function setTranslation($translation): self
+    {
+        $this->translation = $translation;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getClients(): Collection
+    {
+        return $this->clients;
+    }
+
+    public function addClient(Client $client): self
+    {
+        if (!$this->clients->contains($client)) {
+            $this->clients[] = $client;
+            $client->addActivity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeClient(Client $client): self
+    {
+        if ($this->clients->contains($client)) {
+            $this->clients->removeElement($client);
+            $client->removeActivity($this);
+        }
+
+        return $this;
     }
 }
