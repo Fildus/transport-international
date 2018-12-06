@@ -3,7 +3,7 @@
 
 {% block body %}
     {% include 'parts/top.html.twig' %}
-    {{ render(controller('App\\Controller\\renderController::getHeader')) }}
+    {{ render(controller('App\\Controller\\Front\\renderController::getHeader')) }}
     <div class="container">
         <div class="row">
             {% include 'client/account/parts/header.html.twig' %}

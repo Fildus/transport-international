@@ -62,7 +62,7 @@ class Activity
     private $level;
 
     /**
-     * @ORM\OneToMany(targetEntity="Activity", mappedBy="parent")
+     * @ORM\OneToMany(targetEntity="Activity", mappedBy="parent", fetch="EAGER")
      */
     private $children;
 

@@ -1,0 +1,76 @@
+{% extends 'backOffice/base-dashboard.html.twig' %}
+
+{% block title %}Client index{% endblock %}
+
+{% block content %}
+    <h1>Clients</h1>
+    <div class="form-group card-custom p-3">
+        <h2 class="text-center">Filtres de recherche</h2>
+        {{ form_start(searchForm) }}
+        <div class="row">
+            <div class="col-4">
+                <h3 class="tinyTitleh2">Informations légales :</h3>
+                {{ form_row(searchForm.corporateName, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.companyName, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.siret, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.legalForm, {"attr":{"class":"form-control form-control-sm"}}) }}
+            </div>
+            <div class="col-4">
+                <h3 class="tinyTitleh2">Localisation :</h3>
+                {{ form_row(searchForm.address, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.postalCode, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.city, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.location, {"attr":{"class":"form-control form-control-sm"}}) }}
+            </div>
+            <div class="col-4">
+                <h3 class="tinyTitleh2">Contact :</h3>
+                {{ form_row(searchForm.phone, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.fax, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.contact, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.webSite, {"attr":{"class":"form-control form-control-sm"}}) }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info col-12 mt-2">Filtrer</button>
+        {{ form_end(searchForm) }}
+    </div>
+    <div class="card-custom">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Entreprise</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for c in clients %}
+                <tr>
+                    <td>{{ c.legalInformation.corporateName }}</td>
+                    <td>{{ c.location.location.translation }}</td>
+                    <td>{{ c.user.username }}</td>
+                    <td>
+                        <a href="{{ path('_client_show', {'id': c.id}) }}">show</a>
+                        {#<a href="{{ path('_client_edit', {'id': c.id}) }}">edit</a>#}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination justify-content-center">
+        {{ knp_pagination_render(clients) }}
+    </div>
+
+    {#<a href="{{ path('user_new') }}">Create new</a>#}
+{% endblock %}
+
+{% block breadcrumb %}
+    <span class="home"><a href="{{ path('_admin_home') }}">DASHBOARD</a></span>
+    <span>/</span>
+    <span><a href="{{ path('_client_index') }}">CLIENTS</a></span>
+{% endblock %}

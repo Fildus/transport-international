@@ -1,9 +1,0 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-    {% include 'parts/top.html.twig' %}
-    <div class="container mb-2 mt-2">
-        {{ render(controller('App\\Controller\\RenderController::getHeader')) }}
-    </div>
-    {{ render(controller('App\\Controller\\RenderController::getSlider')) }}
-{% endblock %}

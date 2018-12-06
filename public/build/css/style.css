@@ -21,4 +21,8 @@
 #results .search-main-title{font-size:28px;color:#003b71;font-weight:400}#results .cutome--title{color:#337ab7;font-size:20px}
 #results .cutome--title a{color:#337ab7;text-decoration:none;font-size:20px}#results nav{font-size:16px}
 #affiner_recherche{padding:5px 15px 5px 15px;background:#eee;border-radius:6px}#affiner_recherche h2{font-size:22px;color:#303030 !important;text-transform:uppercase;text-align:center;padding-bottom:10px}
-#affiner_recherche h3{font-size:20px;margin:0;padding-right:10px}
+#affiner_recherche h3{font-size:20px;margin:0;padding-right:10px}#informations{padding:5px 15px 5px 15px;background:#eee;border-radius:6px}
+#informations h2:first-child{font-size:22px;color:#003b71;font-weight:400}#informations h3{font-size:20px;margin:0;padding-right:10px}
+#informations #telephone-surtax a{color:#b56eda}#informations p{font-size:16px;background:#fff;padding:5px;border-radius:6px;border:1px solid #ccc;text-align:center}
+#google_maps{padding:20px}.tabs h3{padding-top:20px;border-bottom:1px dashed #ccc;margin-bottom:10px !important;padding-bottom:5px}
+#numero-surtaxe{font-size:8px;color:#7e7e7e;margin:5px 0}#numero-link a{font-size:25px;color:#7e7e7e}

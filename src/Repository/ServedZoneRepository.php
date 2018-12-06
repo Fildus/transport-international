@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\ServedZone;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Gedmo\Tree\Entity\Repository\NestedTreeRepository;
+use Psr\SimpleCache\CacheInterface;
 
 class ServedZoneRepository extends NestedTreeRepository
 {
@@ -15,14 +16,19 @@ class ServedZoneRepository extends NestedTreeRepository
      */
     private $servedZones;
     private $servedZone;
+    /**
+     * @var CacheInterface
+     */
+    private $cache;
 
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, CacheInterface $cache)
     {
         $entityClass = ServedZone::class;
 
         $manager = $registry->getManagerForClass($entityClass);
 
         parent::__construct($manager, $manager->getClassMetadata($entityClass));
+        $this->cache = $cache;
     }
 
     /**
@@ -209,5 +215,36 @@ class ServedZoneRepository extends NestedTreeRepository
                 $this->iteratorAllchildren($child, $toDept);
             }
         }
+    }
+
+
+    /**
+     * @param $el
+     * @return array|null
+     */
+    public function findByLocation($el): ?array
+    {
+
+        $returnArray = [];
+
+        /**
+         * @var $r ServedZone
+         */
+        foreach (
+            $this->createQueryBuilder('s')
+                ->innerJoin('s.translation', 't')
+                ->andWhere('s.country is null')
+                ->andWhere('s.region is null')
+                ->getQuery()
+                ->getResult()
+            as $r) {
+            if (preg_match('/' . strtolower($el) . '/', strtolower($r->getTranslation()))) {
+                if (!in_array($r->getTranslation(), $returnArray)) {
+                    $returnArray[] = (string)$r->getTranslation();
+                }
+            }
+        }
+
+        return $returnArray;
     }
 }

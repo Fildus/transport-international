@@ -7,6 +7,7 @@ let uglifycss = require('gulp-uglifycss');
 let plumber = require('gulp-plumber');
 let image = require('gulp-image');
 let clean = require('gulp-clean');
+let scopeCss = require("gulp-scope-css");
 let livereload = require('gulp-livereload');
 
 livereload({start: true});
@@ -21,6 +22,31 @@ gulp.task('sass', function () {
             "uglyComments": true
         }))
         .pipe(gulp.dest('./public/build/css'));
+});
+
+gulp.task('sassAdmin', function () {
+    livereload.reload();
+    return gulp.src(['./assets/css/admin/*.scss'])
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'edge'}))
+        .pipe(uglifycss({
+            "maxLineLen": 80,
+            "uglyComments": true
+        }))
+        .pipe(gulp.dest('./public/build/css'));
+});
+
+gulp.task('scssScoped', function () {
+    livereload.reload();
+    return gulp.src(['./assets/css/bootstrap.min.css'])
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'edge'}))
+        .pipe(uglifycss({
+            "maxLineLen": 80,
+            "uglyComments": true
+        }))
+        .pipe(scopeCss('.SCOPED-CUSTOM'))
+        .pipe(gulp.dest('./public/build/css/scoped'));
 });
 
 gulp.task('scriptsCompact', function () {
@@ -64,11 +90,11 @@ gulp.task('clean', function () {
 });
 
 gulp.task('default', function () {
-    gulp.run(['sass', 'scriptsCompact', 'scriptsScattered', 'image'])
+    gulp.run(['sass', 'sassAdmin', 'scssScoped' , 'scriptsCompact', 'scriptsScattered', 'image'])
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./assets/css/**/*', ['sass']);
+    gulp.watch('./assets/css/**/*', ['sass', 'sassAdmin', 'scssScoped']);
     gulp.watch('./assets/img/**/*', ['image']);
     gulp.watch('./assets/js/compact/**/*', ['scriptsCompact']);
     gulp.watch('./assets/js/scattered/**/*', ['scriptsScattered']);

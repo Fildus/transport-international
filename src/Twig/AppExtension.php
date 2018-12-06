@@ -160,8 +160,10 @@ class AppExtension extends AbstractExtension
         return $this->cache->has($key);
     }
 
-    public function nav(int $count, int $page, $attr)
+    public function nav(int $count, ?int $page, $attr)
     {
+        $page === null ? $page = 1 : $page = (int)$page;
+
         $round = ceil(($count / 10) + 1);
 
         if ($page <= 3) {
@@ -216,7 +218,7 @@ class AppExtension extends AbstractExtension
         foreach ($res as $r) {
             $params = $attr->get('_route_params');
             $params['page'] = $r;
-            $content .= '<li class="page-item">';
+            $content .= '<li class="page-item ' . ($page !== $r ?'': 'active') . '">';
             $content .= '<a class="page-link" href="';
             $content .= $this->container->get('router')->generate('_search', $params);
             $content .= '">' . $r . '</a></li>';
@@ -233,7 +235,7 @@ class AppExtension extends AbstractExtension
             unset($params);
 
             $params = $attr->get('_route_params');
-            $params['page'] = $round-1;
+            $params['page'] = $round - 1;
             $content .= '<li class="page-item">';
             $content .= '<a class="page-link" href="';
             $content .= $this->container->get('router')->generate('_search', $params);

@@ -58,6 +58,30 @@ search:
     form:
         title:
             location: Localisation
+        mainTitle: Affiner ma recherche
+        location:
+            title1: Cette société est basée à
+            title2: Cette société dessert
+            title3: Activité
+        basedAt:
+            option:
+                location: Localisation
+                allLocation: toutes localisation
+                department: Département
+                allDepartment: tous départements
+
+        activity:
+            activities: Activité
+            AllActivities: toutes Activité
+        allowance:
+            activities: Préstations
+            AllActivities: toutes préstations
+        to:
+            option:
+                location: Localisation
+                allLocation: toutes localisation
+                department: Département
+                allDepartment: tous départements
     results:
         contact:
             title: Contact
@@ -66,3 +90,22 @@ search:
         profile:
             title: Voir la fiche
         mainTitle: Liste des prestataires
+    submit: Affiner ma recherche
+    reload: Nouvelle recherche
+
+professionalProfile:
+    companyInformation: Informations Société
+    phone: Téléphone
+    companyName: Raison sociale
+    adress: Adresse
+    seePlan: Voir le plan
+    mail: Adresse e-mail
+    webSite: Site Internet
+    companyManager: Responsable de l'entreprise
+    salesManager: Responsable commercial
+    workforce: Effectif de l'entreprise
+    vehiclesNbr: Nombre de véhicules
+    establishmentsNbr: Nombre d'établissements
+    turnover: Chiffre d'affaire
+    materials: Matériel de l'entreprise
+    services: Services

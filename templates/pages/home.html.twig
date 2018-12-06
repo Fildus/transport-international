@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'parts/top.html.twig' %}
+    <div class="container mb-2 mt-2">
+        {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
+    </div>
+    {{ render(controller('App\\Controller\\Front\\RenderController::getSlider')) }}
+{% endblock %}

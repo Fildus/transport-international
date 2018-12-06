@@ -1,0 +1,5 @@
+@import "parts/adminLayout";
+@import "parts/auto-complete";
+.SCOPED-CUSTOM{
+  @import "parts/content";
+}

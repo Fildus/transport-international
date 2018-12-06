@@ -72,7 +72,7 @@ class Client
     private $servedZone;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Activity", inversedBy="clients")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Activity", inversedBy="clients", fetch="EAGER")
      */
     private $activity;
 

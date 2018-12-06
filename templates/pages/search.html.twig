@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'parts/top.html.twig' %}
+    <div class="container mb-2 mt-2">
+        {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
+    </div>
+    <div class="mainTitle">
+        <div class="container">
+            <h1>{{ 'search.mainTitle' | trans }}</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 mt-5">
+                <div id="affiner_recherche">
+                    <h2>{{ 'search.form.mainTitle' | trans }}</h2>
+
+                    <form method="get" action="{{ path('_search_geturl') }}" id="customerForm">
+                        <h3>{{ 'search.form.location.title1' | trans }}</h3>
+                        <div class="form-group">
+                            <select class="form-control input-group-sm" name="fromCountry" id="fromCountry"
+                                    title="{{ 'search.form.title.location' | trans }}">
+                                <option selected="selected"
+                                        value="null">{{ 'search.form.basedAt.option.location' | trans }}</option>
+                                <option value="all">{{ 'search.form.basedAt.option.allLocation' | trans }}</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.id }}">{{ country.translation }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control input-lg" name="fromDepartment" id="fromDept">
+                                <option selected="selected"
+                                        value="null">{{ 'search.form.basedAt.option.department' | trans }}</option>
+                                <option value="all">{{ 'search.form.basedAt.option.allDepartment' | trans }}</option>
+                            </select>
+                        </div>
+
+                        <h3>{{ 'search.form.location.title2' | trans }}</h3>
+                        <div class="form-group">
+                            <select class="form-control input-lg" name="toCountry" id="toCountry">
+                                <option selected="selected"
+                                        value="null">{{ 'search.form.to.option.location' | trans }}</option>
+                                <option value="all">{{ 'search.form.to.option.allLocation' | trans }}</option>
+                                {% for country in countries %}
+                                    <option value="{{ country.id }}">{{ country.translation }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control input-lg" name="toDept" id="toDept">
+                                <option selected="selected"
+                                        value="null">{{ 'search.form.to.option.department' | trans }}</option>
+                                <option value="all">{{ 'search.form.to.option.allDepartment' | trans }}</option>
+                            </select>
+                        </div>
+
+                        <h3>{{ 'search.form.location.title3' | trans }}</h3>
+                        <div class="form-group">
+                            <select class="form-control input-lg" name="typeA" id="typeA">
+                                <option value="null"
+                                        selected="selected">{{ 'search.form.activity.activities' | trans }}</option>
+                                <option value="all">{{ 'search.form.activity.AllActivities' | trans }}</option>
+                                {% for activity in activities %}
+                                    <option value="{{ activity.id }}">{{ activity.translation }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control input-lg" name="typeB" id="typeB">
+                                <option selected="selected"
+                                        value="null">{{ 'search.form.allowance.activities' | trans }}</option>
+                                <option value="all">{{ 'search.form.allowance.AllActivities' | trans }}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn col-12" id="sendCustom">
+                                {{ 'search.submit' | trans }} <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="form-group text-right mb-0">
+                            <button type="reset" class="btn bg-transparent">
+                                {{ 'search.reload' | trans }} <i class="fas fa-sync"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-8 mt-5">
+                <section id="results">
+                    <ul class="col-md-12">
+                        <h2 class="search-main-title">{{ 'search.results.mainTitle' | trans }}</h2>
+                        {% for c in clients %}
+                            <li class="row mb-0 mt-0">
+                                <div class="col-10">
+                                    <h3 class="cutome--title">
+                                        <a href="{{ path('_professional_profile', {'cnSlug': c.legalInformation.slug}) }}"
+                                           title="{{ c.legalInformation.companyName }}">
+                                            {{ c.legalInformation.companyName }}
+                                        </a>
+                                    </h3>
+                                    <p class="mt-0 mb-0">{{ c.location.postalCode~' '~c.location.address~' '~c.location.city }}</p>
+                                </div>
+
+                                <div class="col-2 text-center align-self-center">
+                                    <a class="btn-details"
+                                       href="{{ path('_professional_profile', {'cnSlug': c.legalInformation.slug}) }}"
+                                       title="{{ c.legalinformation.companyName }}">
+                                        <i class="fa fa-eye"
+                                           title="{{ 'search.results.profile.title' | trans }} {{ c.legalinformation.companyName }}"></i>
+                                    </a>
+
+                                    {% if c.contact.contact is not empty %}
+                                        <i class="fa fa-at" title="{{ 'search.results.contact.title' | trans }}"></i>
+                                    {% endif %}
+
+                                    {% if false %}
+                                        <a href="">
+                                            <i class="fa fa-globe"
+                                               title="{{ 'search.results.website.title' | trans }}"></i>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </li>
+                            <hr class="mb-1 mt-0">
+                        {% endfor %}
+                    </ul>
+                    {{ nav(count,page,app.request.attributes) | raw }}
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        {% if dataInjection is defined %}
+        let dataInjection = {{ dataInjection | raw }};
+        {% else %}
+        let dataInjection = null;
+        {% endif %}
+    </script>
+    <script src="{{ asset('build/js/auto-complete-min.js') }}"></script>
+    <script src="{{ asset('build/js/autocompleteCustom.js') }}"></script>
+{% endblock %}

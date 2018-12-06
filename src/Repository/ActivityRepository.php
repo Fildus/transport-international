@@ -3,9 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Activity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query\Expr;
 use Gedmo\Tree\Entity\Repository\NestedTreeRepository;
+use Symfony\Component\Yaml\Tests\A;
 
 class ActivityRepository extends NestedTreeRepository
 {
@@ -23,6 +26,26 @@ class ActivityRepository extends NestedTreeRepository
         $manager = $registry->getManagerForClass($entityClass);
 
         parent::__construct($manager, $manager->getClassMetadata($entityClass));
+    }
+
+    /**
+     * @param Collection $clientActivities
+     * @return Activity
+     */
+    public function getAllActivitiesOnlyWithThoseChildren(Collection $clientActivities)
+    {
+        $activity = new Activity();
+        $activities = $this->findBy([
+            'parent' => null
+        ]);
+        foreach ($activities as $child) {
+            $activity->addChildren($child);
+        }
+        dd($clientActivities->toArray());
+
+
+        return $activity;
+
     }
 
     /**
@@ -90,9 +113,38 @@ class ActivityRepository extends NestedTreeRepository
             ->getQuery()
             ->getResult();
 
-        dump($qb);
-
         return array_unique($qb);
+    }
+
+    /**
+     * @param Collection $activities
+     * @return Activity
+     */
+    public function activitiesTreeClient(Collection $activities): Activity
+    {
+        $this->activities = null;
+        foreach ($activities as $activity) {
+            $this->iteratorTree($activity);
+        }
+
+        dump($this->activities);
+
+        return new Activity();
+    }
+
+    public function iteratorTree($activity)
+    {
+        /**
+         * @var $activity Activity
+         */
+        if (!isset($this->activities[$activity->getLevel()])){
+            if (!isset($this->activities[$activity->getLevel()][$activity->getId()])){
+                $this->activities[$activity->getLevel()][$activity->getId()][] = $activity;
+            }
+        }
+        if ($activity->getParent()){
+            $this->iterator($activity->getParent());
+        }
     }
 
     public function getAllChildren($idElement)
@@ -135,7 +187,7 @@ class ActivityRepository extends NestedTreeRepository
      */
     public function getTowTypesFromPathAndName(?string $typeA, ?string $typeB, $locale)
     {
-        if ($typeA !== null){
+        if ($typeA !== null) {
             $qbA = $this
                 ->createQueryBuilder('a')
                 ->innerJoin('a.translation', 't')
@@ -151,7 +203,7 @@ class ActivityRepository extends NestedTreeRepository
                         return ['typeA' => $activity, 'typeB' => $this->activity];
                     }
                 }
-            }else if($typeA !== null){
+            } else if ($typeA !== null) {
                 return ['typeA' => $qbA[0], 'typeB' => null];
             }
         }

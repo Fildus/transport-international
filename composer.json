@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "^1.6",
+        "knplabs/knp-paginator-bundle": "^2.8",
         "sensio/framework-extra-bundle": "^5.1",
         "stof/doctrine-extensions-bundle": "*",
         "symfony/asset": "*",
@@ -20,7 +21,7 @@
         "symfony/process": "*",
         "symfony/security-bundle": "*",
         "symfony/serializer-pack": "*",
-        "symfony/swiftmailer-bundle": "^3.1",
+        "symfony/swiftmailer-bundle": "^3.2",
         "symfony/translation": "*",
         "symfony/twig-bundle": "*",
         "symfony/validator": "*",
@@ -78,7 +79,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.1.*"
+            "require": "4.2.*"
         }
     }
 }
