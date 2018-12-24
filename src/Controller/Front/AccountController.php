@@ -7,6 +7,7 @@ use App\Entity\Contact;
 use App\Entity\CoreBusiness;
 use App\Entity\Equipment;
 use App\Entity\LegalInformation;
+use App\Entity\Location;
 use App\Entity\Managers;
 use App\Entity\User;
 use App\Form\Front\AboutType;
@@ -64,13 +65,18 @@ class AccountController extends AbstractController
      * @var ObjectManager
      */
     private $objectManager;
+    /**
+     * @var CacheInterface
+     */
+    private $cache;
 
-    public function __construct(Locale $locale, ClientRepository $clientRepository, ObjectManager $objectManager)
+    public function __construct(Locale $locale, ClientRepository $clientRepository, ObjectManager $objectManager, CacheInterface $cache)
     {
         $locale->setLocale();
         $this->locale = $locale;
         $this->clientRepository = $clientRepository;
         $this->objectManager = $objectManager;
+        $this->cache = $cache;
     }
 
     /**
@@ -96,7 +102,6 @@ class AccountController extends AbstractController
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
         ]);
-        dump($client);
         $legalInformation = $client->getLegalInformation() ?? new LegalInformation();
 
         $form = $this->createForm(LegalInformationType::class, $legalInformation);
@@ -138,7 +143,7 @@ class AccountController extends AbstractController
             'user' => $this->getUser()
         ]);
 
-        $location = $client->getLocation();
+        $location = $client->getLocation() ?? new Location();
 
         $form = $this->createForm(LocationType::class, $location);
 
@@ -412,11 +417,10 @@ class AccountController extends AbstractController
      * }, name="_activity")
      * @param Request $request
      * @param ActivityRepository $activityRepository
-     * @param CacheInterface $cache
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function activity(Request $request, ActivityRepository $activityRepository, CacheInterface $cache)
+    public function activity(Request $request, ActivityRepository $activityRepository)
     {
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
@@ -430,13 +434,14 @@ class AccountController extends AbstractController
             $this->objectManager->flush();
         }
 
-        if (!$cache->has('activity-cache')) {
-            $cache->set('activity-cache', $activityRepository->findBy(['level' => 0]));
+        $key = 'activity';
+        if (!$this->cache->has($key)){
+            $this->cache->set($key, $activityRepository->findByWithTranslation(), 3600);
         }
 
         return new Response($this->renderView('client/account/pages/activity.html.twig', [
             'form' => $form->createView(),
-            'activities' => $cache->get('activity-cache')
+            'activities' => $activityRepository->findByWithTranslation()//$this->cache->get($key)
         ]));
     }
 
@@ -457,11 +462,9 @@ class AccountController extends AbstractController
      * }, name="_servedZone")
      * @param Request $request
      * @param ServedZoneRepository $servedZoneRepository
-     * @param CacheInterface $cache
      * @return Response
-     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository, CacheInterface $cache)
+    public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository)
     {
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
@@ -475,13 +478,14 @@ class AccountController extends AbstractController
             $this->objectManager->flush();
         }
 
-        if (!$cache->has('servedZone-cache')) {
-            $cache->set('servedZone-cache', $servedZoneRepository->findByWithTranslation());
-        }
+//        $key = 'servedZone';
+//        if (!$this->cache->has($key)){
+//            $this->cache->set($key, $servedZoneRepository->findByWithTranslation(), 3600);
+//        }
 
         return new Response($this->renderView('client/account/pages/servedZone.html.twig', [
             'form' => $form->createView(),
-            'servedZone' => $cache->get('servedZone-cache')
+            'servedZone' => $servedZoneRepository->findByWithTranslation()//$this->cache->get($key)
         ]));
     }
 }

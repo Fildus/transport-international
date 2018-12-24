@@ -6,10 +6,12 @@ use App\Entity\Activity;
 use App\Entity\Client;
 use App\Entity\Search\ClientSearch;
 use App\Entity\ServedZone;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator;
-use Psr\SimpleCache\CacheInterface;
 
 /**
  * @method Client|null find($id, $lockMode = null, $lockVersion = null)
@@ -27,17 +29,43 @@ class ClientRepository extends ServiceEntityRepository
      * @var ServedZoneRepository
      */
     private $servedZoneRepository;
-    /**
-     * @var CacheInterface
-     */
-    private $cache;
 
-    public function __construct(CacheInterface $cache, RegistryInterface $registry, ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository)
+    public function __construct(
+        RegistryInterface $registry,
+        ActivityRepository $activityRepository,
+        ServedZoneRepository $servedZoneRepository
+    )
     {
         parent::__construct($registry, Client::class);
         $this->activityRepository = $activityRepository;
         $this->servedZoneRepository = $servedZoneRepository;
-        $this->cache = $cache;
+    }
+
+    /**
+     * @param int $nbr
+     * @return mixed
+     * @throws \Doctrine\ORM\Query\QueryException
+     */
+    public function lastClients(int $nbr)
+    {
+        return $this->createQueryBuilder('c')
+            ->addCriteria(Criteria::create()->orderBy(['id' => 'DESC']))
+            ->innerJoin('c.equipment', 'e')
+            ->innerJoin('c.user', 'u')
+            ->innerJoin('c.managers', 'm')
+            ->innerJoin('c.activity', 'a')
+            ->innerJoin('c.legalInformation', 'l')
+            ->andWhere('c.legalInformation != 0')
+            ->andWhere('c.contact != 0')
+            ->andWhere('c.location != 0')
+            ->andWhere('c.coreBusiness != 0')
+            ->andWhere('c.about != 0')
+            ->andWhere('c.managers != 0')
+            ->andWhere('c.user != 0')
+            ->andWhere('c.equipment != 0')
+            ->getQuery()
+            ->setMaxResults($nbr)
+            ->getResult();
     }
 
     /**
@@ -195,6 +223,7 @@ class ClientRepository extends ServiceEntityRepository
 
         $res = $paginator
             ->getQuery()
+            ->useResultCache(true)
             ->getResult();
 
         return ['clients' => $res, 'count' => $paginator->count()];
@@ -202,7 +231,7 @@ class ClientRepository extends ServiceEntityRepository
 
     /**
      * @param $cnSlug
-     * @return int
+     * @return mixed
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -213,6 +242,7 @@ class ClientRepository extends ServiceEntityRepository
             ->innerJoin('c.legalInformation', 'l')
             ->where('l.slug = \'' . $cnSlug . '\'')
             ->getQuery()
+            ->useResultCache(true)
             ->getSingleResult();
 
         return $qb;
@@ -227,8 +257,10 @@ class ClientRepository extends ServiceEntityRepository
 
         $qb = $this->createQueryBuilder('c')
             ->setMaxResults($max)
-            ->orderBy('c.id', 'DESC');
+            ->orderBy('c.id', 'DESC')
+            ->getQuery()
+            ->useResultCache(true);
 
-        return $qb->getQuery()->getResult();
+        return $qb->getResult();
     }
 }

@@ -54,6 +54,8 @@ class RegisterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($client);
             $manager->flush();
+            $this->addFlash('success', 'Votre compte a bien été créé');
+            return $this->redirectToRoute('account_legalInformation');
         }
 
         return new Response($this->renderView('client/register.html.twig', [

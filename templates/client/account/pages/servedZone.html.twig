@@ -8,8 +8,9 @@
             {% include 'client/account/parts/header.html.twig' %}
             {% include 'client/account/parts/nav.html.twig' %}
             {{ form_start(form) }}
-            {{ render(controller('App\\Controller\\renderController::getCheckboxCascade',
+            {{ render(controller('App\\Controller\\Front\\renderController::getCheckboxCascade',
                 {'entities': servedZone, 'form': form.children.servedZone.children})) }}
+
             <div class="text-right">
                 <button type="submit" class="btn btn-success">Soumettre</button>
             </div>

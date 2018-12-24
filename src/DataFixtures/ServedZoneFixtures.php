@@ -44,26 +44,34 @@ class ServedZoneFixtures extends Fixture
         $datas = Yaml::parseFile(realpath('src/Data/servedZone.yaml'));
         foreach ($datas as $k => $v) {
             $sC = new ServedZone();
+            $sC->setType(ServedZone::COUNTRY);
             $sC->setCountry($k);
+            $sC->setLevel(0);
             $sC = $this->addTranslation($k, $sC);
             $manager->persist($sC);
             foreach ($v as $kb => $vb) {
                 $sR = new ServedZone();
+                $sR->setType(ServedZone::REGION);
                 $sR->setRegion($kb);
+                $sR->setLevel(1);
                 $sR->setParent($sC);
                 $sR = $this->addTranslation($kb, $sR);
                 $manager->persist($sR);
                 if (is_string($vb)) {
                     $sD = new ServedZone();
+                    $sD->setType(ServedZone::DEPARTMENT);
                     $sD->setDepartment($vb);
                     $sD->setParent($sR);
+                    $sD->setLevel(2);
                     $sD = $this->addTranslation($vb, $sD);
                     $manager->persist($sD);
                 } else {
                     foreach ($vb as $kc => $vc) {
                         $sD = new ServedZone();
+                        $sD->setType(ServedZone::DEPARTMENT);
                         $sD->setDepartment($vc);
                         $sD->setParent($sR);
+                        $sD->setLevel(2);
                         $sD = $this->addTranslation($vc, $sD);
                         $manager->persist($sD);
                     }

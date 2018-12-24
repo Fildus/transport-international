@@ -1,0 +1,29 @@
+{% extends 'backOffice/pages/client/edit.html.twig' %}
+
+{% block title %}{{ c.legalInformation.corporateName ?? 'nouveau' }} - Managers {% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_client_index'), "Clients"],
+            [ '#' , c.legalInformation.corporateName ?? 'nouveau'],
+            [path('_admin_client_edit_managers',{"clientId":c.id}), "Managers"]
+        ]}) }}
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block form %}
+    <h2>Managers</h2>
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_widget(form) }}
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-success ">Soumettre</button>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+

@@ -1,23 +1,28 @@
-{% set unique =  random(10000)%}
-    {% if entity.children is not empty %}
-        <a class="buttonClose" onclick="toggleOpening(this, '{{ 'a'~unique }}')">
-            <i class="fas fa-plus"></i>
-        </a>
+{% set unique =  random(10000) %}
 
-        <input id="{{ 'b'~unique }}"
-               onclick="toggleSelection(this, '{{ 'a'~unique }}')"
-               class="structure-form"
-               type="checkbox">
+{% if entity.children is not empty %}
 
-        <label for="{{ 'b'~unique }}">{{ entity.translation }}</label>
-        <ul id="{{ 'a'~unique }}" hidden>
-            {% for entity in entity.children %}
-                <li>
-                    {% include 'form/checkboxCascade.html.twig' with {'entities': entity} %}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        {{ form_widget(form[entity.__toString], {attr:{'class' : 'checkbox-form'}}) }}
-        {{ form_label(form[entity.__toString], entity.translation) }}
+    <a class="buttonClose" onclick="toggleOpening(this, '{{ 'a'~unique }}')">
+        <i class="fas fa-plus"></i>
+    </a>
+
+    <input id="{{ 'b'~unique }}"
+           onclick="toggleSelection(this, '{{ 'a'~unique }}')"
+           class="structure-form"
+           type="checkbox">
+
+    <label for="{{ 'b'~unique }}">{{ entity.translation }}</label>
+    <ul id="{{ 'a'~unique }}" hidden>
+        {% for entity in entity.children %}
+            <li>
+                {% include _self with {'entities': entity} %}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    {% if form[entity.id] is defined %}
+        {{ form_widget(form[entity.id], {attr:{'class' : 'checkbox-form'}}) }}
+        {{ form_label(form[entity.id], entity.translation) }}
     {% endif %}
+{% endif %}

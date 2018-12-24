@@ -1,0 +1,15 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"]
+        ]}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="form-group card-custom p-3">
+        <h2 class="text-center">Outils</h2>
+        <a class="btn btn-warning w-100" href="{{ path('_manager_cache') }}">Réinitialiser le cache</a>
+    </div>
+{% endblock %}

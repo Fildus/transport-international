@@ -6,13 +6,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use phpDocumentor\Reflection\Types\This;
 
 /**
- * @Gedmo\Tree(type="nested")
  * @ORM\Entity(repositoryClass="App\Repository\ActivityRepository")
  */
 class Activity
 {
+    const PATH = 1;
+    const ACTIVITY = 2;
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -21,43 +24,28 @@ class Activity
     private $id;
 
     /**
-     * @ORM\Column(length=64, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $path;
 
     /**
-     * @ORM\Column(length=64, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $name;
 
     /**
-     * @Gedmo\TreeLeft
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="smallint", nullable=true)
      */
-    private $lft;
+    private $type;
 
     /**
-     * @Gedmo\TreeRight
-     * @ORM\Column(type="integer")
-     */
-    private $rgt;
-
-    /**
-     * @Gedmo\TreeParent
-     * @ORM\ManyToOne(targetEntity="Activity", inversedBy="children", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Activity", inversedBy="children", cascade={"persist"}, fetch="EAGER")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $parent;
 
     /**
-     * @Gedmo\TreeRoot
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $root;
-
-    /**
-     * @Gedmo\TreeLevel
-     * @ORM\Column(name="lvl", type="integer")
+     * @ORM\Column(type="smallint", name="lvl", type="integer")
      */
     private $level;
 
@@ -67,7 +55,7 @@ class Activity
     private $children;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Translation", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Translation", cascade={"persist", "remove"}, fetch="EAGER")
      */
     private $translation;
 
@@ -87,36 +75,6 @@ class Activity
         return $this->id;
     }
 
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
-     * @param mixed $path
-     * @return Activity
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-        return $this;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
     public function setParent($parent)
     {
         $this->parent = $parent;
@@ -129,9 +87,11 @@ class Activity
         return $this->parent;
     }
 
-    public function getRoot()
+    public function setLevel(int $level)
     {
-        return $this->root;
+        $this->level = $level;
+
+        return $this;
     }
 
     public function getLevel()
@@ -160,16 +120,6 @@ class Activity
         return $this;
     }
 
-    public function getLeft()
-    {
-        return $this->lft;
-    }
-
-    public function getRight()
-    {
-        return $this->rgt;
-    }
-
     public function getTranslation()
     {
         return $this->translation;
@@ -182,9 +132,9 @@ class Activity
         return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->getName() ?? $this->getPath();
+        return $this->translation->__toString();
     }
 
     /**
@@ -212,6 +162,61 @@ class Activity
             $client->removeActivity($this);
         }
 
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     * @return Activity
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param mixed $path
+     * @return Activity
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     * @return Activity
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
         return $this;
     }
 }

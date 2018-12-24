@@ -1,13 +1,28 @@
 {% macro nav() %}
-    <li class="main-li">{{ dropdownMenu('charter', ('header.form.charter'|trans)) | raw }}</li>
-    <li class="main-li">{{ dropdownMenu('transportOfGoods', 'Transport', [], {
-            'diverseTransportationOfGoods' : dropdownMenu('expressTransport', 'Transport Express', [], null, true)
+
+    <!-- affrètement = 59 -->
+    <li class="main-li">{{ dropdownMenu(59, ('header.form.charter'|trans)) | raw }}</li>
+
+    <!-- Transporteur de Marchandises = 4 --><!-- Transport Express = 87 -->
+    <li class="main-li">{{ dropdownMenu(4, 'Transport', [], {
+            'diverseTransportationOfGoods' : dropdownMenu(87, 'Transport Express', [], null, true)
         }) | raw }}</li>
-    <li class="main-li">{{ dropdownMenu('passengerTransport', 'Voyageurs') | raw }}</li>
-    <li class="main-li">{{ dropdownMenu('mover', 'Déménagement') | raw }}</li>
-    <li class="main-li">{{ dropdownMenu('rentWithDriver', 'Location') | raw }}</li>
-    <li class="main-li">{{ dropdownMenu('logistic', 'Logistique') | raw }}</li>
-    <li class="main-li">{{ dropdownMenu('taxi', 'Taxis') | raw }}</li>
+
+    <!-- Transport de Voyageurs = 100 -->
+    <li class="main-li">{{ dropdownMenu(100, 'Voyageurs') | raw }}</li>
+
+    <!-- Déménageur = 91 -->
+    <li class="main-li">{{ dropdownMenu(91, 'Déménagement') | raw }}</li>
+
+    <!-- Location avec chauffeur = 66 -->
+    <li class="main-li">{{ dropdownMenu(66, 'Location') | raw }}</li>
+
+    <!-- Logistique = 73 -->
+    <li class="main-li">{{ dropdownMenu(73, 'Logistique') | raw }}</li>
+
+    <!-- Taxi = 108 -->
+    <li class="main-li">{{ dropdownMenu(108, 'Taxis') | raw }}</li>
+
 {% endmacro %}
 
 {% import _self as header %}
@@ -15,7 +30,7 @@
 <div id="header" class="row mt-2">
     <div id="logo" class="col-12 col-md-3 text-center">
         <a href="{{ path('home') }}">
-            <img src="{{ asset('build/img/logo-transport-international.png') }}"
+            <img src="{{ asset('build/img/front/logo-transport-international.png') }}"
                  alt="logo transport international">
         </a>
     </div>

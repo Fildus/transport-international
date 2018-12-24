@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use App\Services\Slug;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TranslationRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Translation
 {
@@ -292,6 +294,7 @@ class Translation
      */
     public function setIt($it)
     {
+        dump($it);
         $this->it = $it;
         return $this;
     }
@@ -310,6 +313,7 @@ class Translation
      */
     public function setItSlug($itSlug)
     {
+        dump($itSlug);
         $this->itSlug = $itSlug;
         return $this;
     }
@@ -556,11 +560,40 @@ class Translation
     {
         if (isset($GLOBALS['request']) && $GLOBALS['request']) {
             $locale = $GLOBALS['request']->getLocale();
-            if ($this->__get($locale.'Slug') !== null) {
-                return (string)$this->__get($locale.'Slug');
+            if ($this->__get($locale . 'Slug') !== null) {
+                return (string)$this->__get($locale . 'Slug');
             }
             return (string)$this->getFr();
         }
         return null;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function prePersist()
+    {
+        $column = [
+            'Fr' => $this->getFrSlug(),
+            'En' => $this->getEnSlug(),
+            'Es' => $this->getEsSlug(),
+            'De' => $this->getDeSlug(),
+            'It' => $this->getItSlug(),
+            'Pt' => $this->getPtSlug(),
+            'Be' => $this->getBeSlug(),
+            'Ad' => $this->getAdSlug(),
+            'Ro' => $this->getRoSlug(),
+            'Ma' => $this->getMaSlug(),
+            'Ci' => $this->getCiSlug(),
+        ];
+
+        foreach ($column as $k => $item) {
+            $src = strtolower($k);
+            $toSlug = (new Slug())->getSlug($this->$src);
+            if ($toSlug !== null && $toSlug !== "") {
+                $dest = strtolower($k) . 'Slug';
+                $this->$dest = $toSlug;
+            }
+        }
     }
 }

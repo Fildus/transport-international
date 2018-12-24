@@ -1,0 +1,23 @@
+#top {
+  font-size        : 11px;
+  line-height      : 35px;
+
+  color            : #7e7e7e;
+  background-color : #ebebe8;
+
+  box-shadow       : 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  nav {
+    padding : 0;
+
+    ul {
+      margin  : 0;
+      padding : 0;
+
+      li {
+        display    : inline;
+        list-style : none;
+      }
+    }
+  }
+}

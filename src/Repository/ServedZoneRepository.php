@@ -3,32 +3,55 @@
 namespace App\Repository;
 
 use App\Entity\ServedZone;
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Gedmo\Tree\Entity\Repository\NestedTreeRepository;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Psr\SimpleCache\CacheInterface;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class ServedZoneRepository extends NestedTreeRepository
+/**
+ * @method ServedZone|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ServedZone|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ServedZone[]    findAll()
+ * @method ServedZone[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class ServedZoneRepository extends ServiceEntityRepository
 {
-
     /**
      * Liste of servedZones
      * @var $servedZones array
      */
     private $servedZones;
+
+    /**
+     * @var
+     */
     private $servedZone;
     /**
      * @var CacheInterface
      */
     private $cache;
 
-    public function __construct(ManagerRegistry $registry, CacheInterface $cache)
+    public function __construct(RegistryInterface $registry, CacheInterface $cache)
     {
-        $entityClass = ServedZone::class;
-
-        $manager = $registry->getManagerForClass($entityClass);
-
-        parent::__construct($manager, $manager->getClassMetadata($entityClass));
+        parent::__construct($registry, ServedZone::class);
         $this->cache = $cache;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function findByWithTranslation()
+    {
+        $qb = $this
+            ->createQueryBuilder('s')
+            ->leftJoin('s.children', 'children')
+            ->leftJoin('s.translation', 't')
+            ->addSelect('t')
+            ->where('s.level = 0')
+            ->getQuery()
+            ->useResultCache(true)
+            ->getResult();
+
+        return $qb;
     }
 
     /**
@@ -46,6 +69,7 @@ class ServedZoneRepository extends NestedTreeRepository
 
         $servedZone = $qb
             ->getQuery()
+//            ->useResultCache(true)
             ->getOneOrNullResult();
 
         /** @var $servedZone ServedZone */
@@ -101,6 +125,7 @@ class ServedZoneRepository extends NestedTreeRepository
 
         $servedZone = $qb
             ->getQuery()
+            ->useResultCache(true)
             ->getOneOrNullResult();
 
         /** @var $servedZone ServedZone */
@@ -119,6 +144,7 @@ class ServedZoneRepository extends NestedTreeRepository
 
         $choices = $qb
             ->getQuery()
+            ->useResultCache(true)
             ->getResult();
 
         $returnArray = [];
@@ -140,33 +166,48 @@ class ServedZoneRepository extends NestedTreeRepository
             ->innerJoin('s.translation', 't')
             ->where('s.level = 0')
             ->getQuery()
+            ->useResultCache(true)
             ->getResult();
 
         return $qb;
     }
 
+    /**
+     * @param $country
+     * @param $locale
+     * @return array
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
     public function getDeptByCountry($country, $locale)
     {
-        $qb = $this
-            ->createQueryBuilder('s')
-            ->innerJoin('s.translation', 't')
-            ->where('s.root = ' . $country)
-            ->andWhere('s.country is null')
-            ->andWhere('s.region is null')
+        $country = $this->createQueryBuilder('s')
+            ->where('s.id =' . (int)$country)
             ->getQuery()
-            ->getResult();
+            ->useResultCache(true)
+            ->getOneOrNullResult();
 
-        $arrayReturned = [];
+        $this->iteratorGetDeptByCountry($country);
 
-        /** @var $servedZone ServedZone */
-        foreach ($qb as $servedZone) {
-            $arrayReturned[] = [
-                'id' => $servedZone->getId(),
-                'department' => $servedZone->getTranslation()->__get($locale)
-            ];
+        return $this->servedZones;
+    }
+
+    /**
+     * @param ServedZone $servedZone
+     */
+    public function iteratorGetDeptByCountry(ServedZone $servedZone)
+    {
+        /**
+         * @var $servedZone ServedZone
+         * @var $child ServedZone
+         */
+        if (!$servedZone->getChildren()->isEmpty()) {
+            foreach ($servedZone->getChildren() as $child) {
+                $this->iteratorGetDeptByCountry($child);
+            }
+        } else {
+            if ($servedZone->getType() === ServedZone::DEPARTMENT)
+                $this->servedZones[] = ['id' => $servedZone->getId(), 'department' => $servedZone->getTranslation()->__toString()];
         }
-
-        return $arrayReturned;
     }
 
     /**
@@ -184,6 +225,7 @@ class ServedZoneRepository extends NestedTreeRepository
                 ->innerJoin('s.children', 'c')
                 ->where('t.' . $locale . 'Slug  = \'' . $toCountry . '\'')
                 ->getQuery()
+                ->useResultCache(true)
                 ->getResult();
 
             if ($toDept !== null) {
@@ -236,6 +278,7 @@ class ServedZoneRepository extends NestedTreeRepository
                 ->andWhere('s.country is null')
                 ->andWhere('s.region is null')
                 ->getQuery()
+                ->useResultCache(true)
                 ->getResult()
             as $r) {
             if (preg_match('/' . strtolower($el) . '/', strtolower($r->getTranslation()))) {
@@ -246,5 +289,64 @@ class ServedZoneRepository extends NestedTreeRepository
         }
 
         return $returnArray;
+    }
+
+    public function getCountryAndRegionByIdAndTranslation(?ServedZone $servedZone)
+    {
+        $qb = $this
+            ->createQueryBuilder('s')
+            ->where('s.department is null')
+            ->join('s.translation', 't')
+            ->getQuery()
+            ->useResultCache(true)
+            ->getResult();
+
+        $returnArray = [];
+
+        if ($servedZone !== null) {
+            $returnArray[$servedZone->getTranslation()->__toString()] = $servedZone->getId();
+            $returnArray['Pas de parent'] = null;
+        }else{
+            $returnArray['Pas de parent'] = null;
+
+        }
+
+        /** @var $item ServedZone */
+        foreach ($qb as $item) {
+            $returnArray[$item->getRegion() ? 'country' : 'region'][$item->getTranslation()->__toString()] = $item->getId();
+        }
+
+        return $returnArray;
+    }
+
+    /**
+     * @param int $parentId
+     * @return array
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function allChildrens(int $parentId)
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->where('s.id =' . $parentId)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        $this->iteratorAllChildrenByLevel($qb);
+        return $this->servedZones;
+    }
+
+    public function iteratorAllChildrenByLevel(ServedZone $servedZone)
+    {
+        /**
+         * @var $servedZone ServedZone
+         * @var $child ServedZone
+         */
+        foreach ($servedZone->getChildren() as $child) {
+            $this->iteratorAllChildrenByLevel($child);
+        }
+        if ($servedZone->getChildren()->isEmpty()) {
+            $this->servedZones[] = $servedZone;
+        }
+
     }
 }

@@ -32,6 +32,7 @@ class AutocompleteController extends AbstractController
      * @param ActivityRepository $activityRepository
      * @param Request $request
      * @return JsonResponse
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function autocompleteDepartment(
         ServedZoneRepository $servedZoneRepository,
@@ -112,7 +113,7 @@ class AutocompleteController extends AbstractController
             return new JsonResponse($choices);
         }
 
-        if ($req = $request->get('location')) {
+        if ($req = $request->get('location') ?? $request->get('location_location')) {
             $choices = $servedZoneRepository->findByLocation($req);
             return new JsonResponse($choices);
         }
@@ -134,6 +135,11 @@ class AutocompleteController extends AbstractController
 
         if ($req = $request->get('webSite')) {
             $choices = $contactRepository->findByWebSite($req);
+            return new JsonResponse($choices);
+        }
+
+        if ($req = $request->get('location_location')) {
+            $choices = $servedZoneRepository->findByLocation($req);
             return new JsonResponse($choices);
         }
     }

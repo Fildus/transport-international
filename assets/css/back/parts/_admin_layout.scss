@@ -1,0 +1,139 @@
+$header_heigth: 60px;
+$width: 180px;
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+body {
+  background-color: lightgrey;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  height: $header_heigth;
+  z-index: 1;
+  box-shadow: $box-shadow;
+
+
+  a {
+    text-decoration: none !important;
+  }
+
+  div:nth-child(1) {
+    background: $primary-color-dark;
+    min-width: $width;
+    max-width: $width;
+
+    h1 {
+      text-align: center;
+      line-height: $header_heigth;
+      font-size: 60px;
+
+      a {
+        color: $primary-color-light;
+
+        &:hover {
+          color: $primary-color-text;
+        }
+      }
+    }
+  }
+
+  div:nth-child(2) {
+
+    background: $primary-color-dark;
+    color: $primary-color-text;
+    width: 100%;
+
+    p {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      span {
+        a {
+          color: $primary-color-light;
+          line-height: $header_heigth;
+          font-size: 20px;
+
+          &:hover {
+            color: $primary-color-text;
+          }
+        }
+
+        &:before {
+          color: $primary-color-light;
+          opacity: 0.5;
+          font-size: 22px;
+          font-weight: lighter;
+          content: "/";
+        }
+      }
+    }
+  }
+}
+
+#nav-custom {
+  z-index: 2;
+  box-shadow: $box-shadow;
+
+  position: fixed;
+  bottom: 0;
+  top: $header_heigth;
+  padding-right: 0;
+  padding-left: 0;
+  background-color: $primary-color;
+  color: $primary-color-text;
+  width: $width;
+
+  .hidden {
+    display: none;
+  }
+
+  .button {
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    color: $primary-color-light;
+    text-decoration: none !important;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-color-text;
+    }
+
+  }
+}
+
+#nav-custom {
+  padding: 10px 0 0 15px;
+
+  ul {
+    padding: 0;
+    margin: 0 0 0 15px;
+
+    li {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .selected {
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+#content {
+  position: absolute;
+  top: $header_heigth;
+  bottom: 0;
+  left: $width;
+  right: 0;
+  height: fit-content;
+  padding: 20px;
+}

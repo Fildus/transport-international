@@ -1,9 +1,15 @@
-{% extends 'backOffice/base-dashboard.html.twig' %}
+{% extends 'backOffice/base/base_admin.html.twig' %}
 
-{% block title %}Client index{% endblock %}
+{% block title %}Admin - Clients{% endblock %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_client_index'), "Clients"]
+        ]}) }}
+{% endblock %}
 
 {% block content %}
-    <h1>Clients</h1>
     <div class="form-group card-custom p-3">
         <h2 class="text-center">Filtres de recherche</h2>
         {{ form_start(searchForm) }}
@@ -30,9 +36,11 @@
                 {{ form_row(searchForm.webSite, {"attr":{"class":"form-control form-control-sm"}}) }}
             </div>
         </div>
-        <button type="submit" class="btn btn-info col-12 mt-2">Filtrer</button>
+        <button type="submit" class="btn btn-outline-primary col-12 mt-2">Filtrer</button>
         {{ form_end(searchForm) }}
     </div>
+    <a href="{{ path('home') }}">Nouveau client</a>
+
     <div class="card-custom">
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -49,9 +57,13 @@
                     <td>{{ c.legalInformation.corporateName }}</td>
                     <td>{{ c.location.location.translation }}</td>
                     <td>{{ c.user.username }}</td>
-                    <td>
-                        <a href="{{ path('_client_show', {'id': c.id}) }}">show</a>
-                        {#<a href="{{ path('_client_edit', {'id': c.id}) }}">edit</a>#}
+                    <td class="text-center">
+                        <a href="{{ path('_admin_client_edit_legalInformation', {'clientId': c.id}) }}">
+                            <i class="far fa-edit mr-2"></i>
+                        </a>
+                        <a href="{{ path('_admin_client_delete', {'id': c.id}) }}">
+                            <i class="far fa-trash-alt text-danger ml-2"></i>
+                        </a>
                     </td>
                 </tr>
             {% else %}
@@ -65,12 +77,5 @@
     <div class="pagination justify-content-center">
         {{ knp_pagination_render(clients) }}
     </div>
-
-    {#<a href="{{ path('user_new') }}">Create new</a>#}
 {% endblock %}
 
-{% block breadcrumb %}
-    <span class="home"><a href="{{ path('_admin_home') }}">DASHBOARD</a></span>
-    <span>/</span>
-    <span><a href="{{ path('_client_index') }}">CLIENTS</a></span>
-{% endblock %}

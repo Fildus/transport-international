@@ -109,3 +109,48 @@ professionalProfile:
     turnover: Chiffre d'affaire
     materials: Matériel de l'entreprise
     services: Services
+home:
+    links:
+        charter:
+            subtitle: "Des affrèteurs pour organiser l'acheminement de vos marchandises :"
+        transportOfGoods:
+            subtitle: "Des professionnels pour le transport de toutes vos marchandises :"
+        rentWithDrive:
+            subtitle: "Tous les loueurs professionnels avec la mise à disposition de chauffeurs spécialisés :"
+        taxis:
+            subtitle: "Pour vos déplacements quotidiens ou exceptionnels, trouvez rapidement votre taxi partout dans le monde :"
+        logistic:
+            subtitle: "La gestion de vos flux physiques prise en charge par des professionnels spécialistes :"
+        storage:
+            subtitle: "Trouvez partout dans le monde des professionnels pour le stockage de vos marchandises :"
+        passengerTransport:
+            subtitle: "Des professionnels du transport de voyageurs sont à votre service :"
+bottom:
+    newSubscribers:
+        alt: "annuaire transport international"
+        mainLink: "Nouveaux inscrits"
+    transportDirectory:
+        alt: "annuaire transport"
+        h5: "Guide des transports"
+        htmlLink: "Retrouvez tous les transporteurs en France"
+    movingDirectory:
+        alt: "annuaire déménagement"
+        h5: "Besoin d'un déménageur ?"
+        htmlLink: "Guide des déménageurs"
+    busDirectory:
+        alt: "annuaire autocar"
+        h5: "Besoin d'un autocariste ?"
+        htmlLink: "Guide des autocaristes"
+    chartererDirectory:
+        alt: "annuaire affreteur"
+        h5: "Besoin d'un affrèteur ?"
+        htmlLink: "Guide des affréteurs"
+    warehouseDirectory:
+        alt: "annuaire entrepot"
+        h5: "Besoin d'un stockage ?"
+        htmlLink: "Guide des entreposeurs"
+
+newSubscribers:
+    mainTitle: "Nouveaux inscrits"
+    subtitleHtml: "Ces professionnels du transport, de la logistique, du stockage... se sont inscrits gratuitement sur notre annuaire et nous font confiance pour développer leur activité."
+    subscribe: "Inscrivez-vous, c'est gratuit !"

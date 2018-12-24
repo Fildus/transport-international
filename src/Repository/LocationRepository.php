@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Location;
+use App\Entity\ServedZone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -105,6 +106,16 @@ class LocationRepository extends ServiceEntityRepository
         }
 
         return $returnArray;
+    }
+
+    public function findLocationByServedZone(ServedZone $servedZone)
+    {
+        $qb = $this->createQueryBuilder('l')
+            ->where('l.location =' . $servedZone->getId())
+            ->getQuery()
+            ->getResult();
+
+        return$qb;
     }
 
 }

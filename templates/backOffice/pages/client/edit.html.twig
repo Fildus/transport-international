@@ -1,13 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'backOffice/base/base_admin.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}Client index{% endblock %}
 
-{% block body %}
-    <h1>Edit User</h1>
-
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('user_index') }}">back to list</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+{% block content %}
+    <div class="row p-5">
+        <div class="col-3">
+            <div class="nav-forms">
+                <a href="{{ path('_admin_client_edit_legalInformation',{"clientId":c.id}) }}">Informations légales</a>
+                <a href="{{ path('_admin_client_edit_location',{"clientId":c.id}) }}">Localisation</a>
+                <a href="{{ path('_admin_client_edit_contact',{"clientId":c.id}) }}">Contact</a>
+                <a href="{{ path('_admin_client_edit_coreBusiness',{"clientId":c.id}) }}">Activité principale</a>
+                <a href="{{ path('_admin_client_edit_user',{"clientId":c.id}) }}">Utilisateur</a>
+                <a href="{{ path('_admin_client_edit_password',{"clientId":c.id}) }}">Password</a>
+                <a href="{{ path('_admin_client_edit_managers',{"clientId":c.id}) }}">Managers</a>
+                <a href="{{ path('_admin_client_edit_equipment',{"clientId":c.id}) }}">Équipement</a>
+                <a href="{{ path('_admin_client_edit_about',{"clientId":c.id}) }}">À propos</a>
+                <a href="{{ path('_admin_client_edit_activity',{"clientId":c.id}) }}">Activités</a>
+                <a href="{{ path('_admin_client_edit_servedZone',{"clientId":c.id}) }}">Zones dessevies</a>
+            </div>
+        </div>
+        <div class="col-9 card-custom p-3">
+            {% block form %}{% endblock %}
+        </div>
+    </div>
 {% endblock %}
+

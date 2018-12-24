@@ -1,0 +1,50 @@
+#front-custom {
+  h2:first-child {
+    font-size   : 22px;
+    color       : #003B71;
+    font-weight : normal;
+  }
+
+  .custom-form-group {
+    width : 16%;
+  }
+
+  .jumbotron{
+    padding : 20px;
+
+    h2{
+      font-size: 24px;
+      margin: 0px 0 0 0;
+      color: #303030;
+    }
+    p{
+      margin-bottom: 15px;
+      font-size: 21px;
+      font-weight: 200;
+    }
+    .lostmail{
+      font-size: 16px;
+      color: #337ab7;
+      text-decoration: none;
+    }
+  }
+
+  article {
+    a {
+      color           : #337ab7;
+      text-decoration : none;
+    }
+
+    h3 {
+      font-size   : 14px;
+      font-weight : normal;
+    }
+
+    ul {
+      li {
+        color           : #337ab7;
+        text-decoration : none;
+      }
+    }
+  }
+}

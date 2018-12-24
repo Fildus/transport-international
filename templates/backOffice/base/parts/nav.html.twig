@@ -1,0 +1,47 @@
+<nav id="nav-custom" class="shadow-custom">
+    <div class="button {{ routeMatched('/admin/client') ? 'selected' }}"
+         onclick="toggle(this)">
+        Clients
+    </div>
+    <ul {{ routeMatched('/admin/client') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched('/admin/clients') ? 'selected' }}">
+            <a href="{{ path('_admin_client_index') }}">Tous les clients</a>
+        </li>
+        <li class="button {{ routeMatched('/admin/client/nouveau-client') ? 'selected' }}">
+            <a href="{{ path('_admin_client_new') }}">Nouveau client</a>
+        </li>
+    </ul>
+    <div class="button {{ routeMatched('/admin/zones-desservies') ? 'selected' }}"
+         onclick="toggle(this)">
+        Localisations
+    </div>
+    <ul {{ routeMatched('/admin/zones-desservies') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched(path('_admin_served_zone_index')) ? 'selected' }}">
+            <a href="{{ path('_admin_served_zone_index') }}">Toutes les zones</a>
+        </li>
+        <li class="button {{ routeMatched(path('_admin_served_zone_new')) ? 'selected' }}">
+            <a href="{{ path('_admin_served_zone_new') }}">Nouvelle zone</a>
+        </li>
+    </ul>
+    <div class="button {{ routeMatched('/admin/option') ? 'selected' }}"
+         onclick="toggle(this)">
+        Options
+    </div>
+    <ul {{ routeMatched('/admin/option') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched(path('_options_index')) ? 'selected' }}">
+            <a href="{{ path('_options_index') }}">Toutes les options</a>
+        </li>
+        <li class="button {{ routeMatched(path('_options_new')) ? 'selected' }}">
+            <a href="{{ path('_options_new') }}">Nouvelle option</a>
+        </li>
+    </ul>
+    <div class="button {{ routeMatched('/admin/manager') ? 'selected' }}"
+         onclick="toggle(this)">
+        Outils
+    </div>
+    <ul {{ routeMatched('/admin/manager') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched(path('_manager_index')) ? 'selected' }}">
+            <a href="{{ path('_manager_index') }}">Toutes les outils</a>
+        </li>
+    </ul>
+</nav>

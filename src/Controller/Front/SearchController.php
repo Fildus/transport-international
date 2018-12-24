@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 
+use App\Entity\Activity;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use App\Repository\TranslationRepository;
@@ -129,7 +130,7 @@ class SearchController extends AbstractController
             'countries' => $this->servedZoneRepository->getAllCountry(),
             'activities' => $this->activityRepository->getActivities([
                 'charter', 'passengerTransport', 'mover', 'storage', 'rentWithDriver', 'logistic', 'taxi', 'transportOfGoods'
-            ]),
+            ], $this->locale),
             'dataInjection' => json_encode($dataInjection)
         ]));
     }
@@ -244,7 +245,7 @@ class SearchController extends AbstractController
             }
         }
 
-        return $this->redirectToRoute('_search.'.$this->locale, [
+        return $this->redirectToRoute('_search.' . $this->locale, [
             'typeA' => $typeA ?? 'toutes-catégories',
             'typeB' => $typeB ?? 'toutes-activités',
             'toCountry' => $toCountry ?? 'tous-pays',

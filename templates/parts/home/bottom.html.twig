@@ -1,0 +1,94 @@
+<section id="bottom">
+    <div class="container-fluid">
+        <div class="row">
+            {% for e in [
+                [
+                    asset('build/img/front/guide/transport.jpg'),
+                    'bottom.transportDirectory.alt' | trans,
+                    'bottom.transportDirectory.h5' | trans,
+                    'http://www.annuaire-des-transports.com/',
+                    'bottom.transportDirectory.htmlLink' | trans
+                ],
+                [
+                    asset('build/img/front/guide/demenagement.jpg'),
+                    'bottom.movingDirectory.alt' | trans,
+                    'bottom.movingDirectory.h5' | trans,
+                    'http://www.annuaire-des-demenageurs.com',
+                    'bottom.movingDirectory.htmlLink' | trans
+                ],
+                [
+                    asset('build/img/front/guide/autocar.jpg'),
+                    'bottom.busDirectory.alt' | trans,
+                    'bottom.busDirectory.h5' | trans,
+                    'http://www.annuaire-des-autocaristes.com',
+                    'bottom.busDirectory.htmlLink' | trans
+                ],
+                [
+                    asset('build/img/front/guide/affreteur.jpg'),
+                    'bottom.chartererDirectory.alt' | trans,
+                    'bottom.chartererDirectory.h5' | trans,
+                    'http://www.annuaire-affreteurs.com',
+                    'bottom.chartererDirectory.htmlLink' | trans,
+                ],
+                [
+                    asset('build/img/front/guide/entrepot.jpg'),
+                    'bottom.warehouseDirectory.alt' | trans,
+                    'bottom.warehouseDirectory.alt' | trans,
+                    'http://www.annuaire-des-entreposeurs.com',
+                    'bottom.warehouseDirectory.alt' | trans,
+                ]
+            ] %}
+                <aside class="col-12 col-md-4 col-lg-2">
+                    <div class="hovereffect">
+                        <img class="img-responsive"
+                             src="{{ e[0] }}"
+                             alt="{{ e[1] }}">
+                        <div class="overlay">
+                            <h5>{{ e[2] }}</h5>
+                            <a class="info" href="{{ e[3] }}" target="new">
+                                {{ e[4] }}
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            {% endfor %}
+            <aside class="col-12 col-md-4 col-lg-2">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="{{ asset('build/img/front/globe-terrestre.png') }}" alt="{{ 'bottom.newSubscribers.alt' | trans }}">
+                    <div class="overlay">
+                        <h5>
+                            <a href="{{ path('_newSubscribers') }}">
+                                {{ 'bottom.newSubscribers.mainLink'|trans }}
+                            </a>
+                        </h5>
+                        <ul class="info">
+                            <li>
+                                <a href="https://www.transport-international.com/srl-296266.html">SRL</a>
+                                <p>BACAU, .... Europe de l'Est</p>
+                            </li>
+                            <!-- <li><a href="https://www.transport-international.com/transport_296265_Better-Removalists-Sydney.html">Better Removalists Sydney</a> -->
+                            <li>
+                                <a href="https://www.transport-international.com/better-removalists-sydney-296265.html">
+                                    Better Removalists Sydney</a>
+                                <p>Annandale, .. Océanie</p>
+                            </li>
+                            <!-- <li><a href="https://www.transport-international.com/transport_296264_Removalist.html">Removalist</a> -->
+                            <li>
+                                <a href="https://www.transport-international.com/removalist-296264.html">Removalist</a>
+                                <p>Brisbane, .. Océanie</p>
+                            </li>
+                            <!-- <li><a href="https://www.transport-international.com/transport_296263_james-smith.html">james smith</a> -->
+                            <li>
+                                <a href="https://www.transport-international.com/james-smith-296263.html">
+                                    james smith
+                                </a>
+                                <p>Better Removalists Newcastle, .. Océanie</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+</section>

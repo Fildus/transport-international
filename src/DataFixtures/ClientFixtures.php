@@ -86,7 +86,6 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
         for ($i = $iStart; $i < $iMax; $i++) {
             echo $i . '/' . $iMax . "\n";
             $row = $this->extractDb->query("SELECT * FROM info_client ORDER BY id_client LIMIT 1 OFFSET {$i}")[0];
-//            $row = $this->cache->get('info_client_0')[$i];
             $client = new Client();
             $client
                 ->setLegalInformation($this->getLegalInformation($row))
@@ -225,7 +224,6 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
     {
         $desservedZones = [];
         $desservedZoneRow = $this->extractDb->query("SELECT * FROM desservir WHERE id_client=" . (int)$row['id_client']);
-//        $desservedZoneRow = $this->cache->get('info_client_'.(int)$row['id_client']);
         if (isset($desservedZoneRow[0])) {
             foreach ($desservedZoneRow[0] as $k => $v) {
                 if (is_string($k)) {

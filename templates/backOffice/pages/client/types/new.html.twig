@@ -1,0 +1,26 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block title %}Nouveau client{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_client_index'), "Clients"],
+            [ path('_admin_client_new') , 'Nouveau client']
+        ]}) }}
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block content %}
+    <div class="form-group card-custom p-3">
+        <h2>Nouveau client</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="text-right">
+            <button type="submit" class="btn btn-success ">Soumettre</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

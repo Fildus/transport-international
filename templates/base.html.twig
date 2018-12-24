@@ -9,10 +9,20 @@
               integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
               crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('build/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('build/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/front/style.css') }}">
     {% endblock %}
 </head>
 <body>
+{% for label, messages in app.flashes %}
+    {% for m in messages %}
+        <div class="alert alert-{{ label }} alert-dismissible fade show mb-0 text-center" role="alert">
+            {{ m | raw }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+{% endfor %}
 {% block body %}{% endblock %}
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

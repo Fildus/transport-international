@@ -3,6 +3,9 @@
 namespace App\Controller\Front;
 
 
+use App\Repository\ActivityRepository;
+use App\Repository\ClientRepository;
+use App\Repository\ServedZoneRepository;
 use App\Services\Locale;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,20 +18,21 @@ class RenderController extends AbstractController
      * @param CacheInterface $cache
      * @param Locale $locale
      * @return mixed
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function getDomains($route, CacheInterface $cache, Locale $locale)
     {
-//        $cacheKey = 'domains-' . $route . $locale->setLocale()->getLocalematched();
-//        if (!$cache->has($cacheKey)) {
+        $cacheKey = 'domains-' . $route . $locale->setLocale()->getLocalematched();
+        if (!$cache->has($cacheKey)) {
             $render = $this->render('render/domains.html.twig', [
                 'domains' => $locale->getAllMainDomain(),
                 'locale' => $locale->setLocale()->getLocalematched() ?? $locale->getFallback(),
                 'route' => $route
             ]);
-//            $cache->set($cacheKey, $render);
-//        }
-        return $render;
-//        return $cache->get($cacheKey);
+            $cache->set($cacheKey, $render);
+        }
+//        return $render;
+        return $cache->get($cacheKey);
     }
 
     /**
@@ -71,4 +75,24 @@ class RenderController extends AbstractController
         }
         return new Response($cache->get($key));
     }
+
+    /**
+     * @param CacheInterface $cache
+     * @param Locale $locale
+     * @param ClientRepository $clientRepository
+     * @return string
+     * @throws \Doctrine\ORM\Query\QueryException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function getBottom(CacheInterface $cache, Locale $locale, ClientRepository $clientRepository)
+    {
+        $key = 'getBottom-5454zdzd-' . $locale->getLocalematched();
+        if (!$cache->has($key)) {
+            $cache->set($key, $this->render('render/bottom.html.twig', [
+                'clients' => $clientRepository->lastClients(4)
+            ]), 3600);
+        }
+        return $cache->get($key);
+    }
+
 }

@@ -73,10 +73,9 @@ class ProfessionalProfileController extends AbstractController
         /** @var $client Client */
         $client = $this->clientRepository->getClientProfile($cnSlug);
 
-        $activities = $client->getActivity();
-        dump($activities);
+//        $activities = $client->getActivity();
 
-        $test = $this->activityRepository->activitiesTreeClient($activities);
+//        $test = $this->activityRepository->activitiesTreeClient($activities);
 
         return new Response($this->renderView('pages/professionalProfile.html.twig', [
             'client' => $client,

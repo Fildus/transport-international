@@ -1,0 +1,20 @@
+#newSubscribers{
+  h2:first-child {
+    font-size: 16px;
+    color: #003B71;
+    font-weight: normal;
+  }
+
+  .container-nouveaux-inscrits{
+    border: solid 1px #ccc;
+    overflow: hidden;
+    height: 120px;
+    padding: 10px 0;
+    border-radius: 6px;
+    background-color: rgba(134,188,222,0.2);
+  }
+
+  h3{
+    font-size: 16px;
+  }
+}

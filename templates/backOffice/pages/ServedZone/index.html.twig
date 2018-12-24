@@ -1,0 +1,64 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            [path('_admin_client_index'), "Tous les clients"]
+        ]}) }}
+{% endblock %}
+
+{% block content %}
+    {% if servedZones.first.parent.id is defined %}
+        {% if servedZones.first.parent.parent is null %}
+            <a href="{{ path('_admin_served_zone_index') }}">parent</a>
+        {% else %}
+            <a href="{{ path('_admin_served_zone_index',{"id":servedZones.first.parent.parent.id}) }}">parent</a>
+        {% endif %}
+    {% endif %}
+    <div class="card-custom">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th width="25%" class="text-center">Nom</th>
+                <th width="25%" class="text-center">type</th>
+                <th colspan="3" width="25%" class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for s in servedZones %}
+                <tr>
+                    <td>{{ s.translation }}</td>
+                    <td>{{ s.type == 1 ? 'pays' : null }}{{ s.type == 2 ? 'région' : null }}{{ s.type == 3 ? 'département' : null }}</td>
+                    <td class="text-center">
+                        {% if s.children.count != 0 %}
+                            <a href="{{ path('_admin_served_zone_index', {'id': s.id}) }}">
+                                <i class="fas fa-code-branch">
+                                    <span class="badge badge-primary">{{ s.children.count }}</span>
+                                </i>
+                            </a>
+                        {% else %}
+                            Pas d'enfants
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_served_zone_edit', {'id': s.id}) }}">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_served_zone_delete', {'id': s.id}) }}">
+                            <i class="fas fa-trash-alt text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -6,47 +6,38 @@ let cleanCSS = require('gulp-clean-css');
 let uglifycss = require('gulp-uglifycss');
 let plumber = require('gulp-plumber');
 let image = require('gulp-image');
-let clean = require('gulp-clean');
-let scopeCss = require("gulp-scope-css");
 let livereload = require('gulp-livereload');
 
 livereload({start: true});
 
-gulp.task('sass', function () {
+gulp.task('sassFront', function () {
     livereload.reload();
-    return gulp.src(['./assets/css/*.scss', './assets/css/*.css'])
+    return gulp.src(['./assets/css/front/style.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({compatibility: 'edge'}))
         .pipe(uglifycss({
             "maxLineLen": 80,
             "uglyComments": true
         }))
-        .pipe(gulp.dest('./public/build/css'));
+        .pipe(gulp.dest('./public/build/css/front'));
 });
 
-gulp.task('sassAdmin', function () {
+gulp.task('sassBack', function () {
     livereload.reload();
-    return gulp.src(['./assets/css/admin/*.scss'])
+    return gulp.src(['./assets/css/back/style.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({compatibility: 'edge'}))
         .pipe(uglifycss({
             "maxLineLen": 80,
             "uglyComments": true
         }))
-        .pipe(gulp.dest('./public/build/css'));
+        .pipe(gulp.dest('./public/build/css/back'));
 });
 
-gulp.task('scssScoped', function () {
+gulp.task('sassBootstrap', function () {
     livereload.reload();
     return gulp.src(['./assets/css/bootstrap.min.css'])
-        .pipe(sass().on('error', sass.logError))
-        .pipe(cleanCSS({compatibility: 'edge'}))
-        .pipe(uglifycss({
-            "maxLineLen": 80,
-            "uglyComments": true
-        }))
-        .pipe(scopeCss('.SCOPED-CUSTOM'))
-        .pipe(gulp.dest('./public/build/css/scoped'));
+        .pipe(gulp.dest('./public/build/css'));
 });
 
 gulp.task('scriptsCompact', function () {
@@ -66,9 +57,9 @@ gulp.task('scriptsScattered', function () {
         .pipe(gulp.dest('./public/build/js'));
 });
 
-gulp.task('image', function () {
+gulp.task('imageFront', function () {
     livereload.reload();
-    gulp.src('./assets/img/**/*')
+    gulp.src('./assets/img/front/**/*')
         .pipe(image({
             pngquant: true,
             optipng: true,
@@ -81,22 +72,35 @@ gulp.task('image', function () {
             concurrent: 10,
             quiet: false //true
         }))
-        .pipe(gulp.dest('./public/build/img'));
+        .pipe(gulp.dest('./public/build/img/front'));
 });
 
-gulp.task('clean', function () {
-    return gulp.src('./public/build/**/*', {read: false})
-        .pipe(clean());
+gulp.task('imageBack', function () {
+    livereload.reload();
+    gulp.src('./assets/img/back/**/*')
+        .pipe(image({
+            pngquant: true,
+            optipng: true,
+            zopflipng: true,
+            jpegRecompress: false,
+            mozjpeg: true,
+            guetzli: false,
+            gifsicle: true,
+            svgo: true,
+            concurrent: 10,
+            quiet: false //true
+        }))
+        .pipe(gulp.dest('./public/build/img/back'));
 });
 
 gulp.task('default', function () {
-    gulp.run(['sass', 'sassAdmin', 'scssScoped' , 'scriptsCompact', 'scriptsScattered', 'image'])
+    gulp.run(['sassFront', 'sassBack', 'scriptsCompact', 'scriptsScattered', 'imageFront', 'imageBack', 'sassBootstrap'])
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./assets/css/**/*', ['sass', 'sassAdmin', 'scssScoped']);
-    gulp.watch('./assets/img/**/*', ['image']);
+    gulp.watch('./assets/css/**/*', ['sassFront', 'sassBack']);
+    gulp.watch('./assets/img/front/**/*', ['imageFront']);
+    gulp.watch('./assets/img/back/**/*', ['imageBack']);
     gulp.watch('./assets/js/compact/**/*', ['scriptsCompact']);
     gulp.watch('./assets/js/scattered/**/*', ['scriptsScattered']);
 });
-

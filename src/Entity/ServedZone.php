@@ -5,15 +5,17 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * @Gedmo\Tree(type="nested")
  * @ORM\Entity(repositoryClass="App\Repository\ServedZoneRepository")
- * @ORM\Cache(usage="READ_ONLY")
+ * @ORM\HasLifecycleCallbacks()
  */
 class ServedZone
 {
+    const COUNTRY = 1;
+    const REGION = 2;
+    const DEPARTMENT = 3;
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -22,48 +24,33 @@ class ServedZone
     private $id;
 
     /**
-     * @ORM\Column(length=64, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $country;
 
     /**
-     * @ORM\Column(length=64, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $region;
 
     /**
-     * @ORM\Column(length=64, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $department;
 
     /**
-     * @Gedmo\TreeLeft
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="smallint", nullable=true)
      */
-    private $lft;
+    private $type;
 
     /**
-     * @Gedmo\TreeRight
-     * @ORM\Column(type="integer")
-     */
-    private $rgt;
-
-    /**
-     * @Gedmo\TreeParent
      * @ORM\ManyToOne(targetEntity="ServedZone", inversedBy="children", cascade={"persist"})
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $parent;
 
     /**
-     * @Gedmo\TreeRoot
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $root;
-
-    /**
-     * @Gedmo\TreeLevel
-     * @ORM\Column(name="lvl", type="integer")
+     * @ORM\Column(type="smallint", type="integer")
      */
     private $level;
 
@@ -93,45 +80,15 @@ class ServedZone
         return $this->id;
     }
 
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    public function setCountry(string $country): self
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    public function getRegion()
-    {
-        return $this->region;
-    }
-
-    public function setRegion(string $region): self
-    {
-        $this->region = $region;
-
-        return $this;
-    }
-
-    public function getDepartment()
-    {
-        return $this->department;
-    }
-
-    public function setDepartment(string $department): self
-    {
-        $this->department = $department;
-
-        return $this;
-    }
-
     public function setParent($parent)
     {
-        $this->parent = $parent;
+        if ($parent == null) {
+            $this->level = 0;
+            $this->parent = null;
+        } else {
+            $this->level = $parent->getLevel() + 1;
+            $this->parent = $parent;
+        }
 
         return $this;
     }
@@ -141,9 +98,11 @@ class ServedZone
         return $this->parent;
     }
 
-    public function getRoot()
+    public function setLevel(int $level)
     {
-        return $this->root;
+        $this->level = $level;
+
+        return $this;
     }
 
     public function getLevel()
@@ -158,7 +117,7 @@ class ServedZone
 
     public function addChildren(ServedZone $servedZone): self
     {
-        if (!$this->children->contains($servedZone)){
+        if (!$this->children->contains($servedZone)) {
             $this->children[] = $servedZone;
         }
         return $this;
@@ -166,20 +125,10 @@ class ServedZone
 
     public function removeChildren(ServedZone $servedZone): self
     {
-        if ($this->children->contains($servedZone)){
+        if ($this->children->contains($servedZone)) {
             $this->children->remove($servedZone);
         }
         return $this;
-    }
-
-    public function getLeft()
-    {
-        return $this->lft;
-    }
-
-    public function getRight()
-    {
-        return $this->rgt;
     }
 
     /**
@@ -187,7 +136,7 @@ class ServedZone
      */
     public function __toString()
     {
-        return $this->getDepartment() ?? $this->getRegion() ?? $this->getCountry();
+        return $this->getTranslation();
     }
 
     public function getTranslation()
@@ -229,4 +178,87 @@ class ServedZone
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     * @return ServedZone
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param mixed $country
+     * @return ServedZone
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * @param mixed $region
+     * @return ServedZone
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * @param mixed $department
+     * @return ServedZone
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+        return $this;
+    }
+
+    /**
+     * @ORM\PreFlush()
+     */
+    public function preFlush()
+    {
+        if ($this->parent === null){
+            $this->level = 0;
+        }
+    }
+
 }

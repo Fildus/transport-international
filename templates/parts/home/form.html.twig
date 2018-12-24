@@ -1,0 +1,47 @@
+<section>
+    <form action="{{ path('_search_geturl') }}" method="get">
+        <h2>Trouvez un professionel</h2>
+        <div class="row">
+            <div class="form-group input-group-lg p-1 col-12 col-lg-2">
+                <select id="typeA" class="form-control" type="text" name="typeA">
+                    <option value="null"
+                            selected="selected">{{ 'search.form.activity.activities' | trans }}</option>
+                    <option value="all">{{ 'search.form.activity.AllActivities' | trans }}</option>
+                    {% for activity in activities %}
+                        <option value="{{ activity.id }}">{{ activity.translation }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group input-group-lg p-1 col-12 col-lg-2">
+                <select id="typeB" class="form-control" type="text" name="typeB">
+                    <option selected="selected"
+                            value="null">{{ 'search.form.allowance.activities' | trans }}</option>
+                    <option value="all">{{ 'search.form.allowance.AllActivities' | trans }}</option>
+                </select>
+            </div>
+            <div class="form-group input-group-lg p-1 col-12 col-lg-2">
+                <select id="fromCountry" class="form-control" type="text" name="fromCountry">
+                    <option selected="selected"
+                            value="null">{{ 'search.form.basedAt.option.location' | trans }}</option>
+                    <option value="all">{{ 'search.form.basedAt.option.allLocation' | trans }}</option>
+                    {% for country in countries %}
+                        <option value="{{ country.id }}">{{ country.translation }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group input-group-lg p-1 col-12 col-lg-2">
+                <select id="fromDept" class="form-control" type="text" name="fromDepartment">
+                    <option selected="selected"
+                            value="null">{{ 'search.form.basedAt.option.department' | trans }}</option>
+                    <option value="all">{{ 'search.form.basedAt.option.allDepartment' | trans }}</option>
+                </select>
+            </div>
+            <div class="form-group input-group-lg p-1 col-12 col-lg-2">
+                <input class="form-control" type="text" placeholder="raison sociale">
+            </div>
+            <div class="form-group input-group-lg p-1 col-12 col-lg-2">
+                <button class="btn btn-success btn-lg w-100" type="submit">Chercher</button>
+            </div>
+        </div>
+    </form>
+</section>

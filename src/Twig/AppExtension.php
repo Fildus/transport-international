@@ -4,10 +4,11 @@ namespace App\Twig;
 
 use App\Entity\Activity;
 use App\Repository\ActivityRepository;
+use App\Services\Locale;
 use Doctrine\Common\Collections\ArrayCollection;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -24,22 +25,26 @@ class AppExtension extends AbstractExtension
      */
     private $container;
     /**
-     * @var TranslatorInterface
+     * @var RequestStack
      */
-    private $translator;
+    private $requestStack;
+    /**
+     * @var Locale
+     */
+    private $locale;
 
     /**
      * @param ActivityRepository $activityRepository
      * @param CacheInterface $cache
      * @param ContainerInterface $container
+     * @param RequestStack $requestStack
      */
-    public function __construct(ActivityRepository $activityRepository, CacheInterface $cache, ContainerInterface $container, TranslatorInterface $translator)
+    public function __construct(ActivityRepository $activityRepository, CacheInterface $cache, ContainerInterface $container, RequestStack $requestStack)
     {
         $this->activityRepository = $activityRepository;
         $this->cache = $cache;
         $this->container = $container;
-
-        $this->translator = $translator;
+        $this->requestStack = $requestStack;
     }
 
     public function getFunctions()
@@ -50,16 +55,17 @@ class AppExtension extends AbstractExtension
             new TwigFunction('isCached', [$this, 'isCached']),
             new TwigFunction('setCache', [$this, 'setCache']),
             new TwigFunction('nav', [$this, 'nav']),
-
+            new TwigFunction('routeMatched', [$this, 'routeMatched']),
+            new TwigFunction('serialize', [$this, 'serialize']),
+            new TwigFunction('getActivity', [$this, 'getActivity'], ['is_safe' => ['html']]),
         ];
     }
 
-    public function dropdownMenu(string $activity, ?string $label, $exclude = [], $add = null, $sub = false)
+    public function dropdownMenu(int $activity, ?string $label, $exclude = [], $add = null, $sub = false)
     {
 
         $activity =
-            $this->activityRepository->findOneBy(['name' => $activity]) ??
-            $this->activityRepository->findOneBy(['path' => $activity]) ??
+            $this->activityRepository->findOneBy(['id' => $activity]) ??
             null;
 
         !empty($exclude) ? $exclude = new ArrayCollection($exclude) : $exclude = null;
@@ -114,11 +120,11 @@ class AppExtension extends AbstractExtension
     private function getHref(Activity $activity)
     {
         $href = $this->container->get('router')->generate('_search', ['page' => 1]);
-        if ($activity->getPath() !== null) {
+        if ((int)$activity->getType() === (int)Activity::PATH) {
             $href .=
                 '/' .
                 $activity->getTranslation()->getSlug();
-        } elseif ($activity->getName() !== null) {
+        } elseif ((int)$activity->getType() === (int)Activity::ACTIVITY) {
             $href .=
                 '/' .
                 $activity->getParent()->getTranslation()->getSlug() .
@@ -218,7 +224,7 @@ class AppExtension extends AbstractExtension
         foreach ($res as $r) {
             $params = $attr->get('_route_params');
             $params['page'] = $r;
-            $content .= '<li class="page-item ' . ($page !== $r ?'': 'active') . '">';
+            $content .= '<li class="page-item ' . ($page !== $r ? '' : 'active') . '">';
             $content .= '<a class="page-link" href="';
             $content .= $this->container->get('router')->generate('_search', $params);
             $content .= '">' . $r . '</a></li>';
@@ -248,5 +254,69 @@ class AppExtension extends AbstractExtension
         $content .= '</div>';
 
         return $content;
+    }
+
+    /**
+     * @param String|null $path
+     * @return bool
+     */
+    public function routeMatched(?String $path): bool
+    {
+        if (preg_match('#^' . $path . '#', $this->requestStack->getMasterRequest()->getRequestUri())) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public function serialize($data)
+    {
+        return serialize($data);
+    }
+
+    /**
+     * @param int|null $idParent
+     * @param int|null $idChild
+     * @param array $vars
+     * @return mixed
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function getActivity(?int $idParent, ?int $idChild = null, $vars = [])
+    {
+        $key =
+            'cache-getActivity-329879-' .
+            ($this->requestStack->getMasterRequest()->getLocale() ?? null) .
+            ($idParent ?? null) . '-' . ($idChild ?? null);
+        if (!$this->cache->has($key)) {
+            /**
+             * @var $child Activity
+             * @var $parent Activity
+             */
+            $parent = $this->activityRepository->find($idParent);
+            if ($idParent !== null && $idChild !== null) {
+                $child = $this->activityRepository->find($idChild);
+                $value = '<a ';
+                $value .= 'href="' . $this->container->get('router')->generate('_search_geturl', [
+                        'typeA' => $parent->getId(),
+                        'typeB' => $child->getId()
+                    ]) . '"';
+                isset($vars['class']) ?
+                    $value .= ' class="' . $vars['class'] . '"' :
+                    null;
+                $value .= '>';
+                $value .= ($vars['html'] ?? $child->getTranslation());
+                $value .= '</a>';
+                $this->cache->set($key, $value);
+            } elseif ($idParent !== null) {
+                $value = '<a ';
+                $value .= 'href="' . $this->container->get('router')->generate('_search_geturl', [
+                        'typeA' => $parent->getId()
+                    ]) . '">';
+                $value .= $parent->getTranslation();
+                $value .= '</a>';
+                $this->cache->set($key, $value);
+            }
+        }
+        return $this->cache->get($key);
     }
 }

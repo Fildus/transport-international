@@ -1,0 +1,42 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_options_index'), "Options"],
+            ['', option.name]
+        ]}) }}
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block content %}
+    <div class="form-group card-custom p-3">
+        <div class="form-group">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="text-right">
+                <button class="btn btn-success" type="submit">Soumettre</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        let textareas = document.getElementsByTagName('textarea');
+        let count = textareas.length;
+        for (let i = 0; i < count; i++) {
+            textareas[i].onkeydown = function (e) {
+                if (e.keyCode == 9 || e.which == 9) {
+                    e.preventDefault();
+                    var s = this.selectionStart;
+                    this.value = this.value.substring(0, this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
+                    this.selectionEnd = s + 1;
+                }
+            }
+        }
+    </script>
+{% endblock %}

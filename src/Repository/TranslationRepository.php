@@ -19,11 +19,4 @@ class TranslationRepository extends ServiceEntityRepository
         parent::__construct($registry, Translation::class);
     }
 
-    public function getparent($translation)
-    {
-        $this
-            ->createQueryBuilder('translation')
-            ->where('translation.frSlug = :a')
-            ->setParameter('a', $translation);
-    }
 }

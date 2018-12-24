@@ -1,0 +1,141 @@
+<section class="row">
+    <article class="col-4">
+        <h2>{{ getActivity(59) }}</h2>
+        <h3>{{ 'home.links.charter.subtitle'|trans }}</h3>
+        <ul>
+            {% for n in [60,61,62,63,64,65] %}
+                <li>
+                    {{ getActivity(59,n) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+    <article class="col-4">
+        <h2>{{ getActivity(4) }}</h2>
+        <h3>{{ 'home.links.transportOfGoods.subtitle'|trans }}</h3>
+        <ul>
+            <li>
+                {{ getActivity(25) }}
+                <ul>
+                    <li>{{ getActivity(25,24) }}</li>
+                    <li>{{ getActivity(25,29) }}</li>
+                </ul>
+            </li>
+            <li>{{ getActivity(87,88) }}</li>
+            <li>{{ getActivity(87,89) }}</li>
+            <li>{{ getActivity(87) }}</li>
+            <li>{{ getActivity(3) }}</li>
+            <li>
+                {{ getActivity(20) }}
+                <ul>
+                    <li>{{ getActivity(20,21) }}</li>
+                    <li>{{ getActivity(20,22) }}</li>
+                    <li>{{ getActivity(20,19) }}</li>
+                </ul>
+            </li>
+            <li>
+                {{ getActivity(13) }}
+                <ul>
+                    <li>{{ getActivity(13,12) }}</li>
+                    <li>{{ getActivity(13,16) }}</li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+    <div class="col-4">
+        <aside>
+            <div class="jumbotron text-center">
+                <h2 class="mb-1"> Vous êtes transporteur ? </h2>
+                <p class="mb-0"> Inscrivez-vous, c'est gratuit ! </p>
+                <p class="mt-0">
+                    <a class="btn btn-primary btn-lg"
+                       href="{{ path('_register') }}" role="button">
+                        Je m’inscris !
+                    </a>
+                </p>
+                <p class="m-0"> Déjà inscrit ? </p>
+                <p class="m-0">
+                    <a href="{{ path('_login') }}" class="btn btn-outline-primary btn-lg">
+                        Connectez-vous
+                    </a>
+                </p>
+                <p class="m-0">
+                    <a class="lostmail p-0 m-0" href="#" title="Mot de passe oublié">Mot de passe oublié</a>
+                </p>
+            </div>
+        </aside>
+        <aside>
+            <div class="jumbotron appel text-center p-1">
+                <h2>Pour toute demande</h2>
+                <p class="m-0">Du lundi au vendredi, 9h-18h</p>
+                <p>
+                    <a href="tel:0890216003">
+                        <img src="{{ asset('build/img/front/cartouche-surtaxe-adt.png') }}">
+                    </a>
+                </p>
+            </div>
+        </aside>
+    </div>
+    <article class="col-4">
+        <h2>{{ getActivity(78) }}</h2>
+        <h3>{{ 'home.links.storage.subtitle'|trans }}</h3>
+        <ul>
+            {% for n in 79..86 %}
+                <li>
+                    {{ getActivity(78,n) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+    <article class="col-4">
+        <h2>{{ getActivity(91) }}</h2>
+        <h3>{{ 'home.links.storage.subtitle'|trans }}</h3>
+        <ul>
+            {% for n in 92..99 %}
+                <li>
+                    {{ getActivity(91,n) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+    <article class="col-4">
+        <h2>{{ getActivity(66) }}</h2>
+        <h3>{{ 'home.links.rentWithDrive.subtitle'|trans }}</h3>
+        <ul>
+            {% for n in [67,68,69,70,71,72] %}
+                <li>
+                    {{ getActivity(66,n) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+    <article class="col-4">
+        <h2>{{ getActivity(100) }}</h2>
+        <h3>{{ 'home.links.passengerTransport.subtitle'|trans }}</h3>
+        <ul>
+            {% for n in 101..107 %}
+                <li>
+                    {{ getActivity(100,n) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+    <article class="col-4">
+        <h2>{{ getActivity(108) }}</h2>
+        <h3>{{ 'home.links.taxis.subtitle'|trans }}</h3>
+        <ul>
+            <li>{{ getActivity(108,107) }}</li>
+        </ul>
+    </article>
+    <article class="col-4">
+        <h2>{{ getActivity(73) }}</h2>
+        <h3>{{ 'home.links.logistic.subtitle'|trans }}</h3>
+        <ul>
+            {% for n in [74,75,76,77] %}
+                <li>
+                    {{ getActivity(73,n) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+</section>

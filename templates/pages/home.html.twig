@@ -6,4 +6,17 @@
         {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
     </div>
     {{ render(controller('App\\Controller\\Front\\RenderController::getSlider')) }}
+
+    <div class="container pt-2" id="front-custom">
+        {% include 'parts/home/form.html.twig' %}
+        {% include 'parts/home/activities.html.twig' %}
+    </div>
+    {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/auto-complete-min.js') }}"></script>
+    <script src="{{ asset('build/js/autocompleteCustomHome.js') }}"></script>
 {% endblock %}

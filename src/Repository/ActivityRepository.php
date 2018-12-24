@@ -3,72 +3,91 @@
 namespace App\Repository;
 
 use App\Entity\Activity;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query\Expr;
-use Gedmo\Tree\Entity\Repository\NestedTreeRepository;
-use Symfony\Component\Yaml\Tests\A;
+use Symfony\Bridge\Doctrine\RegistryInterface;
+use Psr\SimpleCache\CacheInterface;
 
-class ActivityRepository extends NestedTreeRepository
+class ActivityRepository extends ServiceEntityRepository
 {
     /**
      * Liste of activities
      * @var $activities array
      */
     private $activities;
+
+    /**
+     * @var $activity
+     */
     private $activity;
 
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var CacheInterface
+     */
+    private $cache;
+
+    public function __construct(RegistryInterface $registry, CacheInterface $cache)
     {
-        $entityClass = Activity::class;
+        parent::__construct($registry, Activity::class);
 
-        $manager = $registry->getManagerForClass($entityClass);
-
-        parent::__construct($manager, $manager->getClassMetadata($entityClass));
+        $this->cache = $cache;
     }
 
-    /**
-     * @param Collection $clientActivities
-     * @return Activity
-     */
-    public function getAllActivitiesOnlyWithThoseChildren(Collection $clientActivities)
+    public function findByWithTranslation()
     {
-        $activity = new Activity();
-        $activities = $this->findBy([
-            'parent' => null
-        ]);
-        foreach ($activities as $child) {
-            $activity->addChildren($child);
-        }
-        dd($clientActivities->toArray());
-
-
-        return $activity;
-
-    }
-
-    /**
-     * @param string $name
-     * @param string $locale
-     * @return int|null
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     */
-    public function getActivityName(string $name, string $locale): ?int
-    {
-        $qb = $this->createQueryBuilder('activity');
-
-        $qb->innerJoin('activity.translation', 't')
-            ->where('t.' . $locale . 'Slug = \'' . $name . '\'');
-
-        $activity = $qb
+        $qb = $this
+            ->createQueryBuilder('a')
+            ->leftJoin('a.children', 'children')
+            ->where('a.level = 0')
             ->getQuery()
-            ->getOneOrNullResult();
+            ->useResultCache(true)
+            ->getResult()
+        ;
 
-        /** @var $activity Activity */
-        if ($activity !== null) return $activity->getId();
-        return null;
+        return$qb;
     }
+    
+//    /**
+//     * @param Collection $clientActivities
+//     * @return Activity
+//     */
+//    public function getAllActivitiesOnlyWithThoseChildren(Collection $clientActivities)
+//    {
+//        $activity = new Activity();
+//        $activities = $this->findBy([
+//            'parent' => null
+//        ]);
+//        foreach ($activities as $child) {
+//            $activity->addChildren($child);
+//        }
+//
+//        return $activity;
+//
+//    }
+//
+//    /**
+//     * @param string $name
+//     * @param string $locale
+//     * @return int|null
+//     * @throws \Doctrine\ORM\NonUniqueResultException
+//     */
+//    public function getActivityName(string $name, string $locale): ?int
+//    {
+//        $qb = $this->createQueryBuilder('activity');
+//
+//        $qb->innerJoin('activity.translation', 't')
+//            ->where('t.' . $locale . 'Slug = \'' . $name . '\'');
+//
+//        $activity = $qb
+//            ->getQuery()
+//            ->useResultCache(true)
+//            ->getOneOrNullResult();
+//
+//        /** @var $activity Activity */
+//        if ($activity !== null) return $activity->getId();
+//        return null;
+//    }
 
     /**
      * @param Activity $activity
@@ -111,49 +130,50 @@ class ActivityRepository extends NestedTreeRepository
             ))
             ->innerJoin('a.translation', 't')
             ->getQuery()
-            ->getResult();
+            ->useResultCache(true)
+            ->getResult()
+        ;
 
         return array_unique($qb);
     }
 
-    /**
-     * @param Collection $activities
-     * @return Activity
-     */
-    public function activitiesTreeClient(Collection $activities): Activity
-    {
-        $this->activities = null;
-        foreach ($activities as $activity) {
-            $this->iteratorTree($activity);
-        }
-
-        dump($this->activities);
-
-        return new Activity();
-    }
-
-    public function iteratorTree($activity)
-    {
-        /**
-         * @var $activity Activity
-         */
-        if (!isset($this->activities[$activity->getLevel()])){
-            if (!isset($this->activities[$activity->getLevel()][$activity->getId()])){
-                $this->activities[$activity->getLevel()][$activity->getId()][] = $activity;
-            }
-        }
-        if ($activity->getParent()){
-            $this->iterator($activity->getParent());
-        }
-    }
+//    /**
+//     * @param Collection $activities
+//     * @return Activity
+//     */
+//    public function activitiesTreeClient(Collection $activities): Activity
+//    {
+//        $this->activities = null;
+//        foreach ($activities as $activity) {
+//            $this->iteratorTree($activity);
+//        }
+//
+//        return new Activity();
+//    }
+//
+//    public function iteratorTree($activity)
+//    {
+//        /**
+//         * @var $activity Activity
+//         */
+//        if (!isset($this->activities[$activity->getLevel()])){
+//            if (!isset($this->activities[$activity->getLevel()][$activity->getId()])){
+//                $this->activities[$activity->getLevel()][$activity->getId()][] = $activity;
+//            }
+//        }
+//        if ($activity->getParent()){
+//            $this->iterator($activity->getParent());
+//        }
+//    }
 
     public function getAllChildren($idElement)
     {
         $qb = $this
             ->createQueryBuilder('a')
-            ->where('a.id = ' . $idElement)
+            ->where('a.id = ' . (int)$idElement)
             ->innerJoin('a.translation', 't')
             ->getQuery()
+            ->useResultCache(true)
             ->getResult();
 
         $this->iteratorChildren($qb[0]);
@@ -193,6 +213,7 @@ class ActivityRepository extends NestedTreeRepository
                 ->innerJoin('a.translation', 't')
                 ->where('t.' . $locale . 'Slug  = \'' . $typeA . '\'')
                 ->getQuery()
+                ->useResultCache(true)
                 ->getResult();
 
             if ($typeB !== null && $qbA !== null) {

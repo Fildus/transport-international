@@ -1,0 +1,45 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block title %}Client index{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            ['', "nouveau"]
+        ]}) }}
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block content %}
+    {{ form_start(form) }}
+    <div class="card-custom p-3">
+        <h2>Edition localisation</h2>
+        {{ form_label(form.parent) }}
+        {{ form_widget(form.parent) }}
+        {{ form_label(form.type) }}
+        {{ form_widget(form.type) }}
+    </div>
+
+    <hr>
+
+    <div class="card-custom p-3">
+        <h2>Traductions</h2>
+        <div class="row">
+            {% for f in form.translation %}
+                <div class="col-6">
+                    {{ form_label(f) }}
+                    {{ form_widget(f) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn btn-success mt-3">Soumettre</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+

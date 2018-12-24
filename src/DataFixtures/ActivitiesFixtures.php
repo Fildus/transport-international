@@ -55,14 +55,18 @@ class ActivitiesFixtures extends Fixture
         foreach ($data as $k => $v) {
             $activity = new Activity();
             if (!is_string($v)) {
+                $activity->setType(Activity::PATH);
                 $activity->setPath($k);
+                $activity->setLevel($parent !== null ? $parent->getLevel()+1:0);
                 $activity = $this->addTranslationSlug($k, $activity);
                 if ($parent !== null) {
                     $activity->setParent($parent);
                 }
                 $this->iterator($manager, $v, $activity);
             } else {
+                $activity->setType(Activity::ACTIVITY);
                 $activity->setName($v);
+                $activity->setLevel($parent !== null ? $parent->getLevel()+1:0);
                 $activity = $this->addTranslationSlug($v, $activity);
                 if ($parent !== null) {
                     $activity->setParent($parent);

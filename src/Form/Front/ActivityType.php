@@ -63,7 +63,7 @@ class ActivityType extends AbstractType
         $activites = [];
         foreach ($this->activityRepository->findBy(['path' => null]) as $item) {
             if (!empty($options['data'])) {
-                $activites[$item->getName()] = $options['data']->getActivity()->contains($item) ? true : false;
+                $activites[$item->getId()] = $options['data']->getActivity()->contains($item) ? true : false;
             }
         }
         return $activites;

@@ -1,0 +1,44 @@
+#top{font-size:11px;line-height:35px;color:#7e7e7e;background-color:#ebebe8;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}
+#top nav{padding:0}#top nav ul{margin:0;padding:0}#top nav ul li{display:inline;list-style:none}
+.checkboxCascade .fas{cursor:pointer;color:#e26648;padding:0}.checkboxCascade label{margin-top:0;margin-bottom:0}
+.checkboxCascade ul{margin:0;list-style:none}.checkboxCascade ul li{list-style:none}
+body{font-family:'Lucida Grande',tahoma,verdana,arial,sans-serif;color:#7e7e7e;font-size:14px}
+@media(min-width:992px){#sidebar-nav{border-radius:5px;border:1px solid #e4e4e4}}
+.dropdown-submenu{position:relative}.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px;border-radius:0 6px 6px 6px}
+.dropdown-submenu:hover>.dropdown-menu{display:block}.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border:5px solid transparent;border-right-width:0;border-left-color:#ccc;margin-top:5px;margin-right:-10px}
+.dropdown-submenu:hover>a:after{border-left-color:#fff}.dropdown-submenu.pull-left{float:none}
+.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px}
+.dropdown a:hover{cursor:pointer}.header-nav{font-size:14px !important;line-height:20px;display:inline-flex;flex-wrap:wrap}
+.header-nav li{font-size:14px !important;line-height:20px;list-style:none}.header-nav .main-li{padding:0 30px 0 0}
+.header-nav img{min-width:100%;max-width:50px}#slider{background:#5a95b7;color:#fff;font-size:16px}
+#slider h1{font-size:42px;margin:40px 0 0 0}#slider h2{font-size:26px;margin:0}#slider h3{font-size:18px;margin-top:30px;font-weight:400}
+#slider #slides{overflow:hidden;position:relative;width:100%;height:120px}#slider #slides ul{list-style:none;width:100%;height:100px;margin:0;padding:0;position:relative}
+#slider #slides li{width:100%;height:100px;float:left;text-align:left;position:relative}
+#slider #buttons a{text-align:center;font-size:36px;float:left;outline:0;margin:0 40px;color:#337ab7;text-decoration:none;display:block;padding:10px;width:35px}
+@media only screen and (max-width:767px){#slider{display:none}}.mainTitle{background-color:#86bcde;font-size:30px;text-transform:uppercase;margin:0;padding:20px 0 20px 30px;color:#fff}
+.autocomplete-suggestions{text-align:left;cursor:default;border:1px solid #ccc;border-top:0;background:#fff;box-shadow:-1px 1px 3px rgba(0,0,0,.1);position:absolute;display:none;z-index:9999;max-height:254px;overflow:hidden;overflow-y:auto;box-sizing:border-box}
+.autocomplete-suggestion{position:relative;padding:0 .6em;line-height:23px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.02em;color:#333}
+.autocomplete-suggestion b{font-weight:400;color:#1f8dd6}.autocomplete-suggestion.selected{background:#f0f0f0}
+#results .search-main-title{font-size:28px;color:#003b71;font-weight:400}#results .cutome--title{color:#337ab7;font-size:20px}
+#results .cutome--title a{color:#337ab7;text-decoration:none;font-size:20px}#results nav{font-size:16px}
+#affiner_recherche{padding:5px 15px 5px 15px;background:#eee;border-radius:6px}#affiner_recherche h2{font-size:22px;color:#303030 !important;text-transform:uppercase;text-align:center;padding-bottom:10px}
+#affiner_recherche h3{font-size:20px;margin:0;padding-right:10px}#informations{padding:5px 15px 5px 15px;background:#eee;border-radius:6px}
+#informations h2:first-child{font-size:22px;color:#003b71;font-weight:400}#informations h3{font-size:20px;margin:0;padding-right:10px}
+#informations #telephone-surtax a{color:#b56eda}#informations p{font-size:16px;background:#fff;padding:5px;border-radius:6px;border:1px solid #ccc;text-align:center}
+#google_maps{padding:20px}.tabs h3{padding-top:20px;border-bottom:1px dashed #ccc;margin-bottom:10px !important;padding-bottom:5px}
+#numero-surtaxe{font-size:8px;color:#7e7e7e;margin:5px 0}#numero-link a{font-size:25px;color:#7e7e7e}
+#front-custom h2:first-child{font-size:22px;color:#003b71;font-weight:400}#front-custom .custom-form-group{width:16%}
+#front-custom .jumbotron{padding:20px}#front-custom .jumbotron h2{font-size:24px;margin:0;color:#303030}
+#front-custom .jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}#front-custom .jumbotron .lostmail{font-size:16px;color:#337ab7;text-decoration:none}
+#front-custom article a{color:#337ab7;text-decoration:none}#front-custom article h3{font-size:14px;font-weight:400}
+#front-custom article ul li{color:#337ab7;text-decoration:none}#bottom{background:#d3d7e0;margin:20px 0;padding:30px 0}
+#bottom .hovereffect{width:100%;height:100%;float:left;overflow:hidden;position:relative;text-align:center;cursor:default}
+#bottom .hovereffect .overlay{width:100%;height:100%;position:absolute;overflow:hidden;top:0;left:0;background-color:rgba(182,183,186,.5);-webkit-transition:all .4s ease-in-out;transition:all .4s ease-in-out}
+#bottom .hovereffect:hover .overlay{background-color:rgba(111,165,199,.6)}#bottom .hovereffect img{display:block;position:relative;width:100%}
+#bottom .hovereffect h5{text-transform:uppercase;color:#fff;text-align:center;position:relative;font-size:17px;padding:10px;background:rgba(0,0,0,.6);-webkit-transform:translateY(45px);-ms-transform:translateY(45px);transform:translateY(45px);-webkit-transition:all .4s ease-in-out;transition:all .4s ease-in-out}
+#bottom .hovereffect:hover h5{-webkit-transform:translateY(5px);-ms-transform:translateY(5px);transform:translateY(5px)}
+#bottom .hovereffect a.info,#bottom .hovereffect ul.info{display:inline-block;text-decoration:none;text-transform:uppercase;color:#fff;border:1px solid #fff;background-color:transparent;opacity:0;-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);-webkit-transition:all .4s ease-in-out;transition:all .4s ease-in-out;font-weight:400;margin:5px;padding:10px 10px}
+#bottom .hovereffect:hover a.info,#bottom .hovereffect:hover ul.info{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+#bottom .hovereffect a.info:hover,#bottom .hovereffect ul.info:hover{box-shadow:0 0 5px #fff}
+#newSubscribers h2:first-child{font-size:16px;color:#003b71;font-weight:400}#newSubscribers .container-nouveaux-inscrits{border:solid 1px #ccc;overflow:hidden;height:120px;padding:10px 0;border-radius:6px;background-color:rgba(134,188,222,.2)}
+#newSubscribers h3{font-size:16px}
