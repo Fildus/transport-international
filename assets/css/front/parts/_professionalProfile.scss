@@ -52,3 +52,19 @@
   font-size : 25px;
   color     : #7e7e7e;
 }
+
+#nav-tabContent{
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 15px 15px;
+  border-top: none;
+}
+
+#nav-tab{
+  font-size : 20px;
+}
+
+#nav-allowance-tab,#nav-presentation-tab,#nav-contact-tab{
+  width : (100%/3);
+}

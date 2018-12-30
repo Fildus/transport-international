@@ -1,38 +1,31 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Back;
 
-use App\Entity\ServedZone;
-use App\Entity\Translation;
-use App\Form\Back\TranslationType;
-use App\Repository\ServedZoneRepository;
+use App\Entity\Activity;
+use App\Repository\ActivityRepository;
 use Doctrine\Common\Persistence\ObjectManager;
-use function Sodium\add;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class ServedZoneEditType extends AbstractType
+class ActivityEditType extends AbstractType
 {
 
     /**
-     * @var ServedZoneRepository
+     * @var ActivityRepository
      */
-    private $servedZoneRepository;
+    private $activityRepository;
     /**
      * @var ObjectManager
      */
     private $objectManager;
 
-    public function __construct(ServedZoneRepository $servedZoneRepository, ObjectManager $objectManager)
+    public function __construct(ActivityRepository $activityRepository, ObjectManager $objectManager)
     {
-        $this->servedZoneRepository = $servedZoneRepository;
+        $this->activityRepository = $activityRepository;
         $this->objectManager = $objectManager;
     }
 
@@ -44,20 +37,19 @@ class ServedZoneEditType extends AbstractType
             ])
             ->add('type', ChoiceType::class, [
                 'choices' => [
-                    'pays' => ServedZone::COUNTRY,
-                    'region' => ServedZone::REGION,
-                    'département' => ServedZone::DEPARTMENT
+                    'activité' => Activity::PATH,
+                    'prestation' => Activity::ACTIVITY,
                 ]
             ]);
         $builder
             ->add('parent', ChoiceType::class, [
-                'choices' => $this->servedZoneRepository->getCountryAndRegionByIdAndTranslation($options['data']->getParent() ?? null),
+                'choices' => $this->activityRepository->getPathById($options['data']->getParent() ?? null),
             ])
             ->get('parent')
             ->addModelTransformer(new CallbackTransformer(
                 function ($a) {
                     if ($a !== null) {
-                        return $a->getParent();
+                        return $a;
                     }
                     return null;
                 },
@@ -65,7 +57,7 @@ class ServedZoneEditType extends AbstractType
                     if ($a === null) {
                         return null;
                     }
-                    return $this->servedZoneRepository->find($a);
+                    return $this->activityRepository->find($a);
                 }
             ));
 
@@ -74,7 +66,7 @@ class ServedZoneEditType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => ServedZone::class
+            'data_class' => Activity::class
         ]);
     }
 

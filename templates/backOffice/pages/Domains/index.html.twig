@@ -1,0 +1,49 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            [path('_admin_client_index'), "Tous les domaines"]
+        ]}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="card-custom">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th width="30%" class="text-center">domaine</th>
+                <th width="55%" class="text-center">titre</th>
+                <th width="5%" class="text-center">langue</th>
+                <th colspan="3" width="10%" class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in domains %}
+                <tr>
+                    <td>{{ d.domain }}</td>
+                    <td>{{ d.title }}</td>
+                    <td class="text-center">{{ d.lang }}</td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_domain_edit', {'id': d.id}) }}">
+                            <i class="far fa-edit mr-2"></i>
+                        </a>
+                        <a href="{{ path('_admin_domain_delete', {'id': d.id}) }}">
+                            <i class="far fa-trash-alt text-danger ml-2"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination justify-content-center">
+        {{ knp_pagination_render(domains) }}
+    </div>
+{% endblock %}

@@ -4,6 +4,7 @@ namespace App\Form\Back;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -16,6 +17,12 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username', EmailType::class)
+            ->add('role', ChoiceType::class, [
+                'choices' => [
+                    'administrateur' => 'ROLE_ADMIN',
+                    'utilisateur' => 'ROLE_USER'
+                 ]
+            ])
         ;
     }
 

@@ -156,10 +156,20 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\PrePersist
      */
-    public function setRolePrePersist()
+    public function PrePersist()
     {
         $this->role === null ?
             $this->role = self::USER :
+            null;
+    }
+
+    /**
+     * @ORM\PreFlush()
+     */
+    public function preFlush()
+    {
+        $this->password === null ?
+            $this->password = '0000' :
             null;
     }
 

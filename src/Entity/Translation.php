@@ -569,9 +569,9 @@ class Translation
     }
 
     /**
-     * @ORM\PrePersist()
+     * @ORM\PreFlush()
      */
-    public function prePersist()
+    public function PreFlush()
     {
         $column = [
             'Fr' => $this->getFrSlug(),

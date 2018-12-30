@@ -1,4 +1,5 @@
 <nav id="nav-custom" class="shadow-custom">
+
     <div class="button {{ routeMatched('/admin/client') ? 'selected' }}"
          onclick="toggle(this)">
         Clients
@@ -11,6 +12,7 @@
             <a href="{{ path('_admin_client_new') }}">Nouveau client</a>
         </li>
     </ul>
+
     <div class="button {{ routeMatched('/admin/zones-desservies') ? 'selected' }}"
          onclick="toggle(this)">
         Localisations
@@ -23,18 +25,46 @@
             <a href="{{ path('_admin_served_zone_new') }}">Nouvelle zone</a>
         </li>
     </ul>
-    <div class="button {{ routeMatched('/admin/option') ? 'selected' }}"
+
+    <div class="button {{ routeMatched('/admin/activites') ? 'selected' }}"
          onclick="toggle(this)">
-        Options
+        Activités
     </div>
-    <ul {{ routeMatched('/admin/option') ? null : 'hidden' }} >
-        <li class="button {{ routeMatched(path('_options_index')) ? 'selected' }}">
-            <a href="{{ path('_options_index') }}">Toutes les options</a>
+    <ul {{ routeMatched('/admin/activites') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched(path('_admin_activities_index')) ? 'selected' }}">
+            <a href="{{ path('_admin_activities_index') }}">Toutes les activités</a>
         </li>
-        <li class="button {{ routeMatched(path('_options_new')) ? 'selected' }}">
-            <a href="{{ path('_options_new') }}">Nouvelle option</a>
+        <li class="button {{ routeMatched(path('_admin_activities_new')) ? 'selected' }}">
+            <a href="{{ path('_admin_activities_new') }}">Nouvelle activité</a>
         </li>
     </ul>
+
+    <div class="button {{ routeMatched('/admin/utilisateurs') ? 'selected' }}"
+         onclick="toggle(this)">
+        Utilisateurs
+    </div>
+    <ul {{ routeMatched('/admin/utilisateurs') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched(path('_admin_users_index')) ? 'selected' }}">
+            <a href="{{ path('_admin_users_index') }}">Toutes les utilisateurs</a>
+        </li>
+        <li class="button {{ routeMatched(path('_admin_users_new')) ? 'selected' }}">
+            <a href="{{ path('_admin_users_new') }}">Nouvel utilisateur</a>
+        </li>
+    </ul>
+
+    <div class="button {{ routeMatched('/admin/domaines') ? 'selected' }}"
+         onclick="toggle(this)">
+        Domaines
+    </div>
+    <ul {{ routeMatched('/admin/domaines') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched(path('_admin_domain_index')) ? 'selected' }}">
+            <a href="{{ path('_admin_domain_index') }}">Tous les domaines</a>
+        </li>
+        <li class="button {{ routeMatched(path('_admin_domain_new')) ? 'selected' }}">
+            <a href="{{ path('_admin_domain_new') }}">Nouveau domaine</a>
+        </li>
+    </ul>
+
     <div class="button {{ routeMatched('/admin/manager') ? 'selected' }}"
          onclick="toggle(this)">
         Outils
@@ -44,4 +74,5 @@
             <a href="{{ path('_manager_index') }}">Toutes les outils</a>
         </li>
     </ul>
+
 </nav>

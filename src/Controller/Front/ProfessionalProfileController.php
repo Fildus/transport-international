@@ -5,7 +5,9 @@ namespace App\Controller\Front;
 use App\Entity\Client;
 use App\Repository\ActivityRepository;
 use App\Repository\ClientRepository;
+use App\Services\Locale;
 use App\Services\Mailer;
+use App\Services\Optico\Optico;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -24,11 +26,24 @@ class ProfessionalProfileController extends AbstractController
      * @var ActivityRepository
      */
     private $activityRepository;
+    /**
+     * @var Locale
+     */
+    private $locale;
 
-    public function __construct(ClientRepository $clientRepository, ActivityRepository $activityRepository)
+    /**
+     * ProfessionalProfileController constructor.
+     * @param ClientRepository $clientRepository
+     * @param ActivityRepository $activityRepository
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function __construct(ClientRepository $clientRepository, ActivityRepository $activityRepository, Locale $locale)
     {
         $this->clientRepository = $clientRepository;
         $this->activityRepository = $activityRepository;
+        $this->locale = $locale;
+        $locale->setLocale();
     }
 
     /**
@@ -55,31 +70,52 @@ class ProfessionalProfileController extends AbstractController
      */
     public function profile($cnSlug, Mailer $mailer, Request $request): Response
     {
+        $client = $this->clientRepository->getClientProfile($cnSlug);
+
         $form = $this->createFormBuilder()
-            ->add('name', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('message', TextType::class)
-            ->add('antispam', TextType::class)
+            ->add('name', TextType::class,[
+                'label' => 'professionalProfile.form.name'
+            ])
+            ->add('email', EmailType::class,[
+                'label' => 'professionalProfile.form.email'
+            ])
+            ->add('message', TextType::class,[
+                'label' => 'professionalProfile.form.message'
+            ])
+            ->add('antispam', TextType::class,[
+                'label' => 'professionalProfile.form.antispam',
+                'attr' => ['placeholder'=>'30 + 1 ?']
+            ])
             ->getForm();
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             if ((int)$form->get('antispam')->getViewData() === 31) {
-                $mailer->send($form->get('email')->getViewData(), $form->get('message')->getViewData());
+                $mailer->send($client->getUser()->getUsername(), $form->get('message')->getViewData());
             }
         }
 
-        /** @var $client Client */
-        $client = $this->clientRepository->getClientProfile($cnSlug);
-
-//        $activities = $client->getActivity();
-
-//        $test = $this->activityRepository->activitiesTreeClient($activities);
+        /**
+         * @var $client Client
+         */
+        if ($client !== null){
+            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null){
+                $phone = $client->getContact()->getPhone();
+                $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
+                $optico->addPhone($phone);
+                $optico->sendView();
+                $optico->getViewId();
+                $res = $optico->getTrackingPhoneNumber($phone);
+            }
+        }
 
         return new Response($this->renderView('pages/professionalProfile.html.twig', [
             'client' => $client,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'domain' => $this->locale->getDomain(),
+            'clients' => $this->clientRepository->findLasts(12),
+            'number' => 'desactivé'//$res ?? null
         ]));
     }
 }

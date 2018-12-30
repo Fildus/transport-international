@@ -245,4 +245,36 @@ class ActivityRepository extends ServiceEntityRepository
             }
         }
     }
+
+    /**
+     * @param Activity|null $activity
+     * @return array
+     */
+    public function getPathById(?Activity $activity)
+    {
+        $qb = $this
+            ->createQueryBuilder('a')
+            ->where('a.type = 1')
+            ->join('a.translation', 't')
+            ->getQuery()
+            ->useResultCache(true)
+            ->getResult();
+
+        $returnArray = [];
+
+        if ($activity !== null) {
+            $returnArray[$activity->getTranslation()->__toString()] = $activity->getId();
+            $returnArray['Pas de parent'] = null;
+        }else{
+            $returnArray['Pas de parent'] = null;
+
+        }
+
+        /** @var $item Activity */
+        foreach ($qb as $item) {
+            $returnArray[$item->getPath() ? 'activité' : 'prestation'][$item->getTranslation()->__toString()] = $item->getId();
+        }
+
+        return $returnArray;
+    }
 }

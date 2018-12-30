@@ -12,7 +12,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-4 mt-5">
+            <div class="col-12 col-lg-4 mt-5">
                 <div id="affiner_recherche">
                     <h2>{{ 'search.form.mainTitle' | trans }}</h2>
 
@@ -88,7 +88,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-8 mt-5">
+            <div class="col-12 col-lg-8 mt-5">
                 <section id="results">
                     <ul class="col-md-12">
                         <h2 class="search-main-title">{{ 'search.results.mainTitle' | trans }}</h2>
@@ -132,6 +132,9 @@
             </div>
         </div>
     </div>
+
+    {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
+    {% include 'parts/footer.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}
@@ -145,4 +148,27 @@
     </script>
     <script src="{{ asset('build/js/auto-complete-min.js') }}"></script>
     <script src="{{ asset('build/js/autocompleteCustom.js') }}"></script>
+{% endblock %}
+
+{% block meta %}
+
+    {% set actA = getActivityobject(data.typeA) %}
+    {% set actB = getActivityobject(data.typeB) %}
+
+    <link rel="icon" href="{{ asset('build/img/front/icons/favicon-32x32.ico') }}">
+    <title>{{ domain.title }}{{ actA != null ? (' - '~actA) : null }}{{ actB != null ? (' - '~actB) : null }}</title>
+    <meta name="description" content="{{ ('meta.search.description' | trans)~' '~(actA != null ? ('meta.search.descriptionNext' | trans))~' '~actA~' '~(actB != null ? ('et '~('meta.search.descriptionPrestation' | trans)))~' '~actB }}">
+    <meta name="keywords" content="{{ domain.keywords }}">
+    <meta property="og:title" content="{{ domain.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}" />
+    <meta property="og:image:width" content="190" />
+    <meta property="og:image:height" content="190" />
+
+    <meta property="og:site_name" content="{{ 'meta.search.og.site_name' | trans }}" />
+    <meta property="og:description" content="{{ domain.description }}" />
+
+    <link rel="canonical" href="https://www.transport-international.com/" />
+
 {% endblock %}

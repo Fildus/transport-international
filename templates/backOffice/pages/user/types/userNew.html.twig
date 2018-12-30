@@ -1,0 +1,28 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block title %}Nouvel utilisateur{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            ['', "nouveau"]
+        ]}) }}
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block content %}
+    {{ form_start(form) }}
+    <div class="card-custom p-3">
+        <h2>Traductions</h2>
+        {{ form_widget(form) }}
+        <div class="text-right">
+            <button type="submit" class="btn btn-success mt-3">Soumettre</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+

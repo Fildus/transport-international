@@ -20,6 +20,7 @@ class HomeController extends AbstractController
      */
     public function home()
     {
-        return $this->render('backOffice/pages/home/home.html.twig');
+        return $this->redirectToRoute('_admin_client_index');
+//        return $this->render('backOffice/pages/home/home.html.twig');
     }
 }

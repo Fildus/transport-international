@@ -55,7 +55,9 @@ function fromCountryElt() {
     }
 }
 
-fromCountryElt();
+if (document.getElementById('fromCountry') !== null) {
+    fromCountryElt();
+}
 
 function toCountryElt() {
     let toDeptElt = document.getElementById('toDept');
@@ -101,7 +103,9 @@ function toCountryElt() {
     }
 }
 
-toCountryElt();
+if (document.getElementById('toDept') !== null) {
+    toCountryElt();
+}
 
 function typeElt() {
     let typeBElt = document.getElementById('typeB');
@@ -148,4 +152,6 @@ function typeElt() {
     }
 }
 
-typeElt();
+if (document.getElementById('typeB') !== null) {
+    typeElt();
+}

@@ -1,0 +1,63 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            [path('_admin_users_index'), "Toutes les utilisateurs"]
+        ]}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="form-group card-custom p-3">
+        <h2 class="text-center">Filtres de recherche</h2>
+        {{ form_start(searchForm) }}
+        <div class="row">
+            <div class="col-12">
+                <h3 class="tinyTitleh2">Utilisateurs :</h3>
+                {{ form_row(searchForm.mail, {"attr":{"class":"form-control form-control-sm"}}) }}
+                {{ form_row(searchForm.role, {"attr":{"class":"form-control form-control-sm"}}) }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-primary col-12 mt-2">Filtrer</button>
+        {{ form_end(searchForm) }}
+    </div>
+
+    <div class="card-custom">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th width="25%" class="text-center">Mail de l'utilisateur</th>
+                <th width="25%" class="text-center">Type de compte</th>
+                <th colspan="3" width="25%" class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for u in users %}
+                <tr>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.role == 'ROLE_USER' ? 'Compte visiteur' : null }}{{ u.role == 'ROLE_ADMIN' ? 'Compte administrateur' : null }}</td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_users_edit', {'id': u.id}) }}">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_users_delete', {'id': u.id}) }}">
+                            <i class="fas fa-trash-alt text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination justify-content-center">
+        {{ knp_pagination_render(users) }}
+    </div>
+{% endblock %}

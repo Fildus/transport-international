@@ -58,6 +58,7 @@ class AppExtension extends AbstractExtension
             new TwigFunction('routeMatched', [$this, 'routeMatched']),
             new TwigFunction('serialize', [$this, 'serialize']),
             new TwigFunction('getActivity', [$this, 'getActivity'], ['is_safe' => ['html']]),
+            new TwigFunction('getActivityobject', [$this, 'getActivityobject'], ['is_safe' => ['html']])
         ];
     }
 
@@ -316,6 +317,27 @@ class AppExtension extends AbstractExtension
                 $value .= '</a>';
                 $this->cache->set($key, $value);
             }
+        }
+        return $this->cache->get($key);
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function getActivityobject(?int $id)
+    {
+        if ($id !== null){
+            $key =
+                'cache-getActivityobject-zdz66d5-' .
+                ($this->requestStack->getMasterRequest()->getLocale() ?? null) .
+                $id;
+            if (!$this->cache->has($key)) {
+                $this->cache->set($key, $this->activityRepository->find($id), 3600);
+            }
+        }else{
+            return null;
         }
         return $this->cache->get($key);
     }

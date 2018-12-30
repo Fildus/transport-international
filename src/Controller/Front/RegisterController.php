@@ -19,6 +19,11 @@ class RegisterController extends AbstractController
      */
     private $locale;
 
+    /**
+     * RegisterController constructor.
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
     public function __construct(Locale $locale)
     {
         $locale->setLocale();
@@ -60,7 +65,8 @@ class RegisterController extends AbstractController
 
         return new Response($this->renderView('client/register.html.twig', [
             'domains' => $this->locale->getAllMainDomain(),
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'domain' => $this->locale->getDomain()
         ]));
     }
 }

@@ -155,7 +155,8 @@ class ClientRepository extends ServiceEntityRepository
         }
 
         $qb
-            ->getQuery();
+            ->getQuery()
+        ;
 
         return $qb;
     }

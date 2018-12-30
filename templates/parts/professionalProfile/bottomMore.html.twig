@@ -1,0 +1,28 @@
+{% set activities = [
+    client.coreBusiness.transport != null ? ( 'meta.professionalProfile.someTrad.transport'|trans),
+    client.coreBusiness.logistics != null ? ( 'meta.professionalProfile.someTrad.logistics'|trans),
+    client.coreBusiness.charter != null ? ( 'meta.professionalProfile.someTrad.charter'|trans),
+    client.coreBusiness.travelers != null ? ( 'meta.professionalProfile.someTrad.travelers'|trans),
+    client.coreBusiness.relocation != null ? ( 'meta.professionalProfile.someTrad.relocation'|trans),
+    client.coreBusiness.storage != null ? ( 'meta.professionalProfile.someTrad.storage'|trans),
+    client.coreBusiness.rentalWithDriver != null ? ( 'meta.professionalProfile.someTrad.rentalWithDriver'|trans),
+    client.coreBusiness.taxis != null ? ( 'meta.professionalProfile.someTrad.taxis'|trans)
+] %}
+
+    {% set activitiesFormated = '' %}
+
+    {% for a in activities %}
+        {% if a != null %}
+            {% set activitiesFormated = activitiesFormated ~ a ~ ', ' %}
+        {% endif %}
+    {% endfor %}
+
+<section class="container">
+    <div>
+        <h3>{{ client.legalInformation.corporatename }} - {{ client.location.address }} - {{ activitiesFormated }}
+            <a style="font-size: 18px; color: inherit;" href="{{ app.request.uri }}">{{ app.request.requestUri }}</a></h3>
+        <article style="font-size: 12px!important;">
+            {{ domain.homeDescription | raw }}
+        </article>
+    </div>
+</section>

@@ -4,8 +4,10 @@ namespace App\Command;
 
 use App\DataFixtures\ActivitiesFixtures;
 use App\DataFixtures\ClientFixtures;
+use App\DataFixtures\DomainsFixtures;
 use App\DataFixtures\ServedZoneFixtures;
 use App\Repository\ActivityRepository;
+use App\Repository\DomainRepository;
 use App\Repository\ServedZoneRepository;
 use App\Services\Slug;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -40,7 +42,13 @@ class CachingDatabase extends Command
      */
     private $slug;
 
-    public function __construct(ActivityRepository $aR, ServedZoneRepository $sR, CacheInterface $cache, ObjectManager $objectManager, Slug $slug)
+    public function __construct(
+        ActivityRepository $aR,
+        ServedZoneRepository $sR,
+        CacheInterface $cache,
+        ObjectManager $objectManager,
+        Slug $slug
+    )
     {
         parent::__construct();
         $this->cache = $cache;
@@ -62,6 +70,7 @@ class CachingDatabase extends Command
         if ((int)$input->getArgument('number') === 1000) {
             (new ServedZoneFixtures($this->sR, $this->slug))->load($this->objectManager);
             (new ActivitiesFixtures($this->aR, $this->slug))->load($this->objectManager);
+            (new DomainsFixtures($this->aR))->load($this->objectManager);
         } elseif ((int)$input->getArgument('number') >= 0 && (int)$input->getArgument('number') !== 1000) {
             (new ClientFixtures($this->aR, $this->sR, $this->cache))->load($this->objectManager, (int)$input->getArgument('number') ?? 0);
         }

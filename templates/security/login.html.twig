@@ -16,7 +16,7 @@
                 {{ error.messageKey | trans(error.messageData, 'security') }}
             </div>
         {% endif %}
-        <form action="{{ path('_login.default') }}" method="post">
+        <form action="{{ path('_login') }}" method="post">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}">
@@ -30,5 +30,8 @@
 
             <button type="submit" class="btn btn-success">Se connecter</button>
         </form>
+
+
     </div>
+
 {% endblock %}

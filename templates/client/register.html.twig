@@ -1,4 +1,4 @@
-{% extends 'pages/home.html.twig' %}
+{% extends 'base.html.twig' %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
@@ -12,7 +12,7 @@
         </div>
     </div>
     {{ form_start(form) }}
-    <div class="container  mt-5">
+    <div class="container mt-5">
         <div class="col-12">
             <div class="row">
                 <div class="col-sm-12 col-md-6 form-group input-group-sm">
@@ -57,11 +57,33 @@
                     {{ form_widget(form.legalInformation.establishmentsNbr) }}
                 </div>
             </div>
-            <input type="submit" value="soumettre" class="btn btn-success float-right">
+            <div class="text-right">
+                <input type="submit" value="soumettre" class="btn btn-success">
+            </div>
         </div>
     </div>
     {{ form_end(form) }}
 
+    {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
 
+    {% include 'parts/footer.html.twig' %}
 
+{% endblock %}
+
+{% block meta %}
+    <link rel="icon" href="{{ asset('build/img/front/icons/favicon-32x32.ico') }}">
+    <title>{{ 'meta.register.title' | trans }}</title>
+    <meta name="description" content="{{ 'meta.register.description' | trans }}">
+    <meta name="keywords" content="{{ 'meta.register.keywords' | trans }}">
+
+    <meta property="og:title" content="{{ 'meta.register.og.title' | trans }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}" />
+    <meta property="og:image:width" content="190" />
+    <meta property="og:image:height" content="190" />
+
+    <meta property="og:site_name" content="{{ 'meta.register.og.site_name' | trans }}" />
+    <meta property="og:description" content="{{ 'meta.register.og.description' | trans }}" />
+    <link rel="canonical" href="https://www.transport-international.com/inscription" />
 {% endblock %}

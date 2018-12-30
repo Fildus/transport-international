@@ -70,6 +70,14 @@ class AccountController extends AbstractController
      */
     private $cache;
 
+    /**
+     * AccountController constructor.
+     * @param Locale $locale
+     * @param ClientRepository $clientRepository
+     * @param ObjectManager $objectManager
+     * @param CacheInterface $cache
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
     public function __construct(Locale $locale, ClientRepository $clientRepository, ObjectManager $objectManager, CacheInterface $cache)
     {
         $locale->setLocale();

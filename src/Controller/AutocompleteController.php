@@ -6,6 +6,7 @@ use App\Repository\ActivityRepository;
 use App\Repository\ContactRepository;
 use App\Repository\LegalInformationRepository;
 use App\Repository\LocationRepository;
+use App\Repository\UserRepository;
 use App\Services\Locale;
 use App\Repository\ServedZoneRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -67,6 +68,7 @@ class AutocompleteController extends AbstractController
      * @param LocationRepository $locationRepository
      * @param ServedZoneRepository $servedZoneRepository
      * @param ContactRepository $contactRepository
+     * @param UserRepository $userRepository
      * @param Request $request
      * @return JsonResponse
      * @throws \Psr\SimpleCache\InvalidArgumentException
@@ -76,6 +78,7 @@ class AutocompleteController extends AbstractController
         LocationRepository $locationRepository,
         ServedZoneRepository $servedZoneRepository,
         ContactRepository $contactRepository,
+        UserRepository $userRepository,
         Request $request): JsonResponse
     {
         if ($req = $request->get('corporateName')) {
@@ -142,5 +145,12 @@ class AutocompleteController extends AbstractController
             $choices = $servedZoneRepository->findByLocation($req);
             return new JsonResponse($choices);
         }
+
+        if ($req = $request->get('mail')) {
+            $choices = $userRepository->findByMailLike($req);
+            return new JsonResponse($choices);
+        }
+
+        return new JsonResponse(['faux'=>'marche pas']);
     }
 }

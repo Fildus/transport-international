@@ -4,7 +4,7 @@ namespace App\Controller\Back;
 
 use App\Entity\Location;
 use App\Entity\ServedZone;
-use App\Form\ServedZoneEditType;
+use App\Form\Back\ServedZoneEditType;
 use App\Repository\LocationRepository;
 use App\Repository\ServedZoneRepository;
 use Doctrine\Common\Persistence\ObjectManager;

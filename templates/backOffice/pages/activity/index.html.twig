@@ -1,0 +1,64 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            [path('_admin_activities_index'), "Toutes les activités"]
+        ]}) }}
+{% endblock %}
+
+{% block content %}
+    {% if activities.first.parent.id is defined %}
+        {% if activities.first.parent.parent is null %}
+            <a href="{{ path('_admin_activities_index') }}">parent</a>
+        {% else %}
+            <a href="{{ path('_admin_activities_index',{"id":activities.first.parent.parent.id}) }}">parent</a>
+        {% endif %}
+    {% endif %}
+    <div class="card-custom">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th width="25%" class="text-center">Activité/Prestation</th>
+                <th width="25%" class="text-center">type</th>
+                <th colspan="3" width="25%" class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in activities %}
+                <tr>
+                    <td>{{ a.translation }}</td>
+                    <td>{{ a.type == 1 ? 'Prestation' : null }}{{ a.type == 2 ? 'Activité' : null }}</td>
+                    <td class="text-center">
+                        {% if a.children.count != 0 %}
+                            <a href="{{ path('_admin_activities_index', {'id': a.id}) }}">
+                                <i class="fas fa-code-branch">
+                                    <span class="badge badge-primary">{{ a.children.count }}</span>
+                                </i>
+                            </a>
+                        {% else %}
+                            Pas d'enfants
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_activities_edit', {'id': a.id}) }}">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_activities_delete', {'id': a.id}) }}">
+                            <i class="fas fa-trash-alt text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

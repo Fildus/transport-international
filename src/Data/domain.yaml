@@ -1,340 +1,408 @@
 -   domain: "transport-international.com"
     title: "Transport International - annuaire référence du Transport"
     description: "Annuaire du Transport en Europe et à l'International. Tous les professionnels du transport routier, la logistique, l'affrètement, le déménagement, taxis"
+    keywords: "transport international, transport, transports, routier, maritime, aérien, fluvial, ferroviaire, logistique, affrètement, entrepôts, transitaires, autocars, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select:
     lang: fr
 -   domain: "almacenamiento-espana.com"
     title: "'Transport International', la referencia del TRANSPORTE en EUROPA"
     description: "Almacenamiento Espana, referencia del transporte por carretera, la logistica, el fletamento. Depositos y servicios para los profesionales del transporte. El alquiler y traslado por  Espana, Europa y el mundo \n"
+    keywords: "Almacenamiento Espana, almacenes, internacional, transporte, transportes, camionero, logï¿½stica, fletamento,  agentes de trï¿½nsito, coches, guï¿½a del transporte, traslado, Espaï¿½a, Europa, transporte por carretera, transporte internacional, transportes internacionales, cisternas, cubos, alimentario, transporte de mercancï¿½a, ï¿½rgano y sangre, convoy excepcional, voluminoso, autocaravana , chalï¿½, grandes vehï¿½culos, buque, frï¿½gil, transporte, , frigorï¿½fico, lï¿½quido, mercancï¿½as peligrosas, trï¿½nsito, agrupamiento, paquetes expresos, contenedores, lotes completos, convoy, recaderos y auxiliares de transporte, transporte de viajeros, de alumnos , turismo, paquete internacional, Europa, extranjero. Guï¿½a del logico que uriluza la logï¿½stica internacional, el transportista, agentes de trï¿½nsito"
     select: storage
     lang: es
 -   domain: "annuaire-affreteurs.com"
     title: "Transport International, la référence du TRANSPORT en EUROPE"
     description: "Référence affreteurs, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Annuaire affréteurs, transport, transports, routier, logistique, affrètement, entrepôts, transitaires, autocars, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire, international."
     select: charter
     lang: fr
 -   domain: "annuaire-demenageur.com"
     title: "référence du DEMENAGEUR"
     description: "La référence du demenageur professionnel et des particuliers en Europe.\nTous les différents métiers du demenagement dans un seul annuaire."
+    keywords: "Annuaire Demenageur, demenageur et archivage, France Demenageur, demenageur, devis demenageur, demenageur de particuliers, demenageur et garde meuble, demenageur et self stockage, demenageur et transfert industriel, demenageur de coffre-fort, demenageur d'objet d'art, demenageur de piano, demenageur et re-accordage de piano."
     select: relocation
     lang: fr
 -   domain: "annuaire-des-affreteurs.com"
     title: "Transport International, la référence du TRANSPORT en EUROPE"
     description: "Référence des affreteurs, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Annuaire des affreteurs, affretement, organisateur de Transport, international, commissionnaires et auxiliaires de transport, transport, transports, routier, logistique,  entrepôts, transitaires, autocars, guide du transport,  France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: charter
     lang: fr
 -   domain: "annuaire-des-autocaristes.com"
     title: "Référence des autocaristes, transport de voyageurs, annuaire du transport en autocar"
     description: "Autocariste, référence des autocaristes, transport en autocar, L’annuaire des professionnels du transport en Europe et à l’international.\n"
+    keywords: "Autocariste, autocar, transport de voyageur, bus scolaire, car de tourisme, agence de voyage."
     select: travelers
     lang: fr
 -   domain: "annuaire-des-demenageurs.com"
     title: "Référence des Demenageurs, annuaire du demenagement"
     description: "Annuaire des demenageurs, l’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du demenagement dans un seul annuaire. "
+    keywords: "Annuaire des Demenageurs, demenageurs et archivages, France Demenageurs, demenageurs, devis demenageurs, demenageurs de particuliers, demenageurs et gardes meubles, demenageurs et self stockage, demenageurs et transferts industriels, demenageurs de coffres-fort, demenageurs d'objets d'art, demenageurs de pianos, demenageurs et re-accordages de pianos."
     select: relocation
     lang: fr
 -   domain: "annuaire-des-entreposeurs.com"
     title: "Transport International, la référence du TRANSPORT en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "entreposeurs, entrepôt, archivage, entreposage, stockage, international, transport, transports, routier, logistique, affrètement, transitaires, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, frigorifique, liquide, matières dangereuses, transit, groupage, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: fr
 -   domain: "annuaire-entreposeurs.com"
     title: "Transport International, la référence du TRANSPORT en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "entrepôts, archives, entreposage, stockage, international, transport, transports, routier, logistique, affrêtement, transitaires, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, frigorifique, liquide, matières dangereuses, transit, groupage, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: fr
 -   domain: "anuar-transport.com"
     title: "Transport Interna&#355;ional, anuar al transportului european."
     description: "transport interna&#355;ional, anuarul transportului rutier, anuarul logisticii, anuarul gestionarilor transportului. Depozitare &#351;i servicii pentru profesionalii transportului. Închirieri &#351;i demenaj&#259;ri în Fran&#355;a, Europa &#351;i la nivel interna&#355;ional."
+    keywords: "Transport interna&#355;ional, transport, transporturi, rutier, logistic&#259;, gestionare, depozite, transport tranzitar, autocare, ghidul transportului, demenajare, Romania, Europa, transport rutier, transport interna&#355;ional, transporturi interna&#355;ionale, cisterne, transport cu remorc&#259;, alimentar, transport m&#259;rfuri, organe &#351;i sînge, convoi excep&#355;ional, voluminos, cas&#259; mobil&#259;, bungalou, extralung, nav&#259;, fragil, mesagerie, stocaj, depozitare, frigorific, lichid, substan&#355;e toxice, tranzit, grupaj, colete expres, conteinere, loturi complete, convoiaj, comisionari &#351;i auxiliari ai transportului, transport de c&#259;l&#259;tori, &#351;colar, turism, colet interna&#355;ional, Romania, Europa, str&#259;in&#259;tate. Ghidul logisticianului, transportatorului, tranzitarului"
     select:
     lang: ro
 -   domain: "anuari-transport.com"
     title: "Transport Internacional, anuari del TRANSPORT a EUROPA"
     description: "Transport internacional, anuari del transport per carretera, la logística, el noliejament. Depósits y serveis para els profesionals del transport. Lloguer i trasllat a Espanya, Europa i al internacional"
+    keywords: "internacional, transport, transports, camioner, logística, noliejament, depósits, transitaris, autocars, guia del transport, trasllar, Espanya, Europa, transport per carretera, transport internacional, transports internacionals, cisternes, cubos, alimentari, transport de mercaderia, órgans i sang, convoy excepcional, voluminós, mobilhome, xalet, grand llargada, barco, frágil, servei de messatgeria, magatzinatge, magatzinatges, frigorífic, líquids, materials perillosos, tránsit, agrupament, paquets expresos, contenedors, lots complerts, vuelo de entrega, recaderos i auxiliaris de transports, transport de viatgers, escolars, turisme, paquet internacional, Espanya, Europa, estranger. Guia del logisticiá, el transportista, agents de tránsito "
     select:
     lang: es
 -   domain: "autocar-belgique.com"
     title: "l'Annuaire du TRANSPORT de VOYAGEUR en BELGIQUE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout les entreprises de voyages en autocar en national et international."
+    keywords: "voyage, autocar, autocariste, autocars, autocaristes, voyages, Belgique, national,international, transport, transports, routier, autocars, guide du transport, Europe, transport routier, transport international, transports internationaux, transport de voyageurs, scolaire, tourisme, Europe, étranger."
     select: travelers
     lang: fr-BE
 -   domain: "autocar-deutschland.com"
     title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    keywords: "Transportzusatzdienste, Personentransport, Schultransport, Tourismus, Deutschland,  Europa, Ausland"
     select: travelers
     lang: de
 -   domain: "autocar-espana.com"
     title: "''Transport International'', el anuario del TRANSPORTE en ESPANA Y en  EUROPA"
     description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    keywords: "transporte de viajeros, internacional, transporte de alumnos, transportes,  transporte, traslado, España, Europa, transporte por carretera, transporte internacional, turismo, España, Europa, extranjero. "
     select: travelers
     lang: es
 -   domain: "autocar-france.com"
     title: "annuaire du Voyage en autocar en FRANCE"
     description: "Autocar France, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier pour les voyages en autocar en national et international."
+    keywords: "Autocar France, voyage en autocar, autocariste, autocars, autocaristes, voyages, France, national,international, transport, transports, routier, autocars, guide du transport, Europe, transport routier, transport international, transports internationaux, transport de voyageurs, scolaire, tourisme, Europe, étranger."
     select: travelers
     lang: fr
 -   domain: "autocar-italia.com"
     title: "Trasporto internazionale, elenco del TRASPORTO in IALIA e in EUROPA"
     description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    keywords: "viaggio, pullman, internazionale, trasporto, trasportatori, camionista, noleggio, guida del trasporto, Italia, Europa, trasporto stradale, trasporto internazionale, trasporti internazionali, trasporto turistico, allievi, turismo Italia, Europa, estero."
     select: travelers
     lang: it
 -   domain: "autocar-luxembourg.com"
     title: "annuaire du TRANSPORT en Autocar au Luxembourg"
     description: "Autocar Luxembourg, le voyage en autocar national et international."
+    keywords: "Autocar Luxembourg, voyage, autocar, autocariste, autocars, autocaristes, voyages, Luxembourg, national,international, transport, transports, routier, autocars, guide du transport, Europe, transport routier, transport international, transports internationaux, transport de voyageurs, scolaire, tourisme, Europe, étranger"
     select: travelers
     lang: fr
 -   domain: "autocar-suisse.com"
     title: "Annuaire du TRANSPORT de Voyageurs en Suiise"
     description: "Autocar Suisse, les voyages en autocar en national et international."
+    keywords: "Autocar Suisse, voyage, autocar, autocariste, autocars, autocaristes, voyages, Suisse, national,international, transport, transports, routier, autocars, guide du transport, Europe, transport routier, transport international, transports internationaux, transport de voyageurs, scolaire, tourisme, Europe, étranger"
     select: travelers
     lang: fr-CH
 -   domain: "autocaristes.com"
     title: "Transport International, annuaire du TRANSPORT en EUROPE"
     description: "Autocaristes, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Autocaristes, voyage, autocar, autocariste, autocars, autocaristes, voyages, France, national,international, transport, transports, routier, autocars, guide du transport, Europe, transport routier, transport international, transports internationaux, transport de voyageurs, scolaire, tourisme, Europe, étranger"
     select: travelers
     lang: fr
 -   domain: "coaches-uk.net"
     title: " ''Transport International'', the directory of the TRANSPORT in UK and in Europe "
     description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    keywords: "international, transport, transport, lorry driver, logistics, freighting, warehouses, forwarding agents, coaches, guide of transport, removal,the United Kingdom, Europe, road transport, international transport, international transport, cisterns, Dumps, food, goods transport, body and blood, exceptional convoy, bulky, mobilhome, bungalow, large vehicles, boat, fragile, transport, storage, storage, refrigerating, liquid product, dangerous products,  transit, grouping, parcels express train, containers, batches, convoying, commission agents and transport auxiliaries, passenger transport, school, tourism, international parcel, France, Europe, abroad. The logistician, carriers and forwarding agents' guide."
     select: travelers
     lang: en-GB
 -   domain: "demenagement-belgique.com"
     title: "Annuaire du DEMENAGEMENT en BELGIQUE"
     description: "L’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du déménagement dans un seul annuaire."
+    keywords: "Belgique Demenagement, demenagement, devis demenagement, demenagement de particuliers, demenagement et garde meuble, demenagement et self stockage, demenagement et transfert industriel, demenagement de coffre-fort, demenagement d'objet d'art, demenagement de piano, demenagement et re-accordage de piano."
     select: relocation
     lang: fr-BE
 -   domain: "demenagement-luxembourg.com"
     title: "Annuaire du DEMENAGEMENT au LUXEMBOURG"
     description: "Demenagement Luxembourg, l’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du déménagement dans un seul annuaire."
+    keywords: "Luxembourg Demenagement, demenagement, devis demenagement, demenagement de particuliers, demenagement et garde meuble, demenagement et self stockage, demenagement et transfert industriel, demenagement de coffre-fort, demenagement d'objet d'art, demenagement de piano, demenagement et re-accordage de piano."
     select: relocation
     lang: fr
 -   domain: "demenagement-suisse.com"
     title: "Annuaire du DEMENAGEUR en SUISSE"
     description: "Demenagement Suisse, l’annuaire des professionnels et des particuliers en Europe.\r\nTous les différents métiers du déménagement dans un seul annuaire."
+    keywords: "Suisse Demenagement, demenagement, devis demenagement, demenagement de particuliers, demenagement et garde meuble, demenagement et self stockage, demenagement et transfert industriel, demenagement de coffre-fort, demenagement d'objet d'art, demenagement de piano, demenagement et re-accordage de piano."
     select: relocation
     lang: fr-CH
 -   domain: "entrepot-belgique.com"
     title: "Transport International, l'Annuaire de l'Entrepôt en BELGIQUE"
     description: "Transport international, L’annuaire des professionnels du transport en BELGIQUE et à l’international.\r\nTout pour l'entreposage, le stockage et l'archivage."
+    keywords: "entrepôts, entreposage, stockage, international, transport, transports, routier, logistique, affrêtement, transitaires, guide du transport, déménagement, Belgique, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, frigorifique, liquide, matières dangereuses, transit, groupage, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: fr-BE
 -   domain: "entrepot-france.com"
     title: "Transport International, annuaire de l'Entreposage en France et en EUROPE"
     description: "Transport international, L’annuaire des professionnels de l'entrepot en France et en Europe.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "entrepôts, entreposage, stockage, international, transport, transports, routier, logistique, affrètement, transitaires, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobil home, bungalow, grande longueur, bateau, fragile, frigorifique, liquide, matières dangereuses, transit, groupage, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: fr
 -   domain: "entrepot-luxembourg.com"
     title: "Transport International, annuaire du TRANSPORT en EUROPE"
     description: "Entrepot luxembourg, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Entrepot luxembourg,entrepôts, entreposage, stockage, international, transport, transports, routier, logistique, affrêtement, transitaires, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, frigorifique, liquide, matières dangereuses, transit, groupage, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, Luxembourg, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: fr
 -   domain: "entrepot-suisse.com"
     title: "Transport International, annuaire du TRANSPORT en Suisse et en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "entrepôts, entreposage, stockage, international, transport, transports, routier, logistique, affrêtement, transitaires, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, frigorifique, liquide, matières dangereuses, transit, groupage, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: fr-CH
 -   domain: "fletamento-espana.com"
     title: "''Transport International'', el anuario del FLATAMENTO en España"
     description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    keywords: "internacional, transporte, transportes, camionero, logística, fletamento, almacenes, agentes de tránsito, coches, guía del transporte, traslado, España, Europa, transporte por carretera, transporte internacional, transportes internacionales, cisternas, cubos, alimentario, transporte de mercancía, órgano y sangre, convoy excepcional, voluminoso, autocaravana , chalé, grandes vehículos, buque, frágil, transporte, almacenamiento, almacenamiento, frigorífico, líquido, mercancías peligrosas, tránsito, agrupamiento, paquetes expresos, contenedores, lotes completos, convoy, recaderos y auxiliares de transporte, transporte de viajeros, de alumnos , turismo, paquete internacional, Francia, Europa, extranjero. Guía del logico que uriluza la logística internacional, el transportista, agentes de tránsito"
     select: charter
     lang: es
 -   domain: "france-demenagement.net"
     title: "France Demenagement, Transport International, annuaire du Demenagement en France et en EUROPE"
     description: "France demenagement, L’annuaire des professionnels du demenagement en Europe et à l’international.\r\nLe déménagement fait par des demenageurs professionnels."
+    keywords: "France Demenagement, demenagement, devis demenagement, demenagement de particuliers, demenagement et garde meuble, demenagement et self stockage, demenagement et transfert industriel, demenagement de coffre-fort, demenagement d'objet d'art, demenagement de piano, demenagement et re-accordage de piano."
     select: relocation
     lang: fr
 -   domain: "freight-uk.net"
     title: " ''Transport International'', the directory of the Freight in UK and in Europe "
     description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    keywords: "international, transport, transport, lorry driver, logistics, freighting, warehouses, forwarding agents, coaches, guide of transport, removal,the United Kingdom, Europe, road transport, international transport, international transport, cisterns, Dumps, food, goods transport, body and blood, exceptional convoy, bulky, mobilhome, bungalow, large vehicles, boat, fragile, transport, storage, storage, refrigerating, liquid product, dangerous products,  transit, grouping, parcels express train, containers, batches, convoying, commission agents and transport auxiliaries, passenger transport, school, tourism, international parcel, France, Europe, abroad. The logistician, carriers and forwarding agents' guide."
     select: charter
     lang: en-GB
 -   domain: "fret-belgique.com"
     title: "Transport International, l'Annuaire de l'ORGANISATION des TRANSPORTS en BELGIQUE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, maritime, aérien, ferrovière, fluvial et l'affrètement en international dans un seul annuaire."
+    keywords: "Affrêtement, international, transport, transports, routier,  transitaires, guide du transport, Belgique, Europe, transport routier, transport international, transports internationaux, transit, containers, convoyage, commissionnaires et auxiliaires de transport, étranger. Guide du transitaire."
     select: charter
     lang: fr-BE
 -   domain: "fret-france.com"
     title: "Transport International, annuaire du fret en France et en EUROPE"
     description: "Fret France, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Fret France, affrètement, international, commissionnaires et auxiliaires de transport, transport, transports, routier, logistique,  entrepôts, transitaires, autocars, guide du transport,  France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobil home, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: charter
     lang: fr
 -   domain: "fret-luxembourg.com"
     title: "Transport International, annuaire du frêt au Luxembourg et en EUROPE"
     description: "Fret Luxembourg, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Fret Luxembourg, affrêtement, international, transport, transports, routier,  transitaires, guide du transport, Belgique, Europe, transport routier, transport international, transports internationaux, transit, containers, convoyage, commissionnaires et auxiliaires de transport, étranger. Guide du transitaire."
     select: charter
     lang: fr
 -   domain: "fret-suisse.com"
     title: "Transport International, annuaire du frêt en Suisse et en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Affrêtement, international, transport, transports, routier,  transitaires, guide du transport, Belgique, Europe, transport routier, transport international, transports internationaux, transit, containers, convoyage, commissionnaires et auxiliaires de transport, étranger. Guide du transitaire."
     select: charter
     lang: fr-CH
 -   domain: "guia-transporte.com"
     title: "Guia Transporte, el anuario del TRANSPORTE en EUROPA"
     description: "Guia Transporte es un guia del Transporte Internacional, anuario del transporte por carretera, la logistica, el fletamento. Depositos y servicios para los profesionales del transporte. El alquiler y traslado por  Espana, Europa y el mundo \r\n"
+    keywords: "internacional, transporte, transportes, camionero, logística, fletamento, almacenes, agentes de tránsito, coches, guía del transporte, traslado, España, Europa, transporte por carretera, transporte internacional, transportes internacionales, cisternas, cubos, alimentario, transporte de mercancía, órgano y sangre, convoy excepcional, voluminoso, autocaravana , chalé, grandes vehículos, buque, frágil, transporte, almacenamiento, almacenamiento, frigorífico, líquido, mercancías peligrosas, tránsito, agrupamiento, paquetes expresos, contenedores, lotes completos, convoy, recaderos y auxiliares de transporte, transporte de viajeros, de alumnos , turismo, paquete internacional, Francia, Europa, extranjero. Guía del logico que uriluza la logística internacional, el transportista, agentes de tránsito"
     select:
     lang: es
 -   domain: "immagazzionamento-italia.com"
     title: "Trasporto internazionale, elenco del magazzinaggio in Italia e in EUROPA"
     description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    keywords: "depositi, internazionale, trasporto, trasportatori, camionista, logistica, noleggio,  spedizionieri, pullman, guida del trasporto, trasloco, Italia, Europa, trasporto stradale, trasporto internazionale, trasporti internazionali, cisterne, benne, alimentare, trasporto merce, organo e sangue, convoglio eccezionale, ingombrante, mobile home, bungalow, grande lunghezza, barca, fragile, messaggeria, magazzinaggio, deposito, frigorifero, liquido, materie pericolose, transito, collettame, pacchi espressi, casse mobili, gruppi completi, convolgimento, commissionari ed assistenti di trasporti, trasporto touristico, allievi, turismo, pacchi internazionale, Italia, Europa, estero. Guida del logista, del trasportatore, dello spedizionieri "
     select: storage
     lang: it
 -   domain: "international-transport.net"
     title: "Transport International, annuaire du TRANSPORT en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Directory of Road Haulage companies, international, transport, transports, routier, maritime, aérien; fluvial, ferroviaire, logistique, affrêtement, entrepôts, transitaires, autocars, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: storage
     lang: gb
 -   domain: "lagerung-deutschland.com"
     title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    keywords: "international, Transport, Transporte, Fernfahrer, Logistik, Spedition, Lagerhäuser internationale Transporte, Silozüge, Container, Nahrungsmittel, Stückguttransporte, Organe und Blut, Sondertransporte, großvolumig, Homemobil, Bungalow, Überlänge, Schiff, zerbrechlich, Versand, Stückgut, Lagerung, Zwischenlagerung, gekühlt, flüssig, gefährliche Stoffe, Transit, Gruppierung, Expresspaket, Container, komplette Ladung, Begleitfahrzeug, Kommissionierung und Transportzusatzdienste, Personentransport, Schultransport, Tourismus, internationales Paket, Deutschland, Frankreich, Europa, Ausland, Logistikerverzeichnis, Transportverzeichnis, Transitärverzeichnis."
     select: storage
     lang: de
 -   domain: "mudanza-espana.com"
     title: "''Transport International'', el anuario del mudanza en España y en EUROPA"
     description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    keywords: "almacenamiento, almacenamiento, almacenes, tránsito, internacional, transporte, transportes, transporte, obras de arte, caja fuerte, pianos, guardia muebles, auto almacenamiento, España, Europa, Europa, extranjero. "
     select: relocation
     lang: es
 -   domain: "noleggio-italia.com"
     title: "Trasporto internazionale, elenco del noleggio in Italia e in EUROPA"
     description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    keywords: "noleggio, commissionari ed assistenti di trasporti, internazionale, trasporto, trasportatori, camionista, logistica,  depositi, spedizionieri, pullman, guida del trasporto, trasloco, Italia, Europa, trasporto stradale, trasporto internazionale, trasporti internazionali, cisterne, benne, alimentare, trasporto merce, organo e sangue, convoglio eccezionale, ingombrante, mobile home, bungalow, grande lunghezza, barca, fragile, messaggeria, magazzinaggio, deposito, frigorifero, liquido, materie pericolose, transito, collettame, pacchi espressi, casse mobili, gruppi completi, convolgimento,  trasporto touristico, allievi, turismo, pacchi internazionale, Italia, Europa, estero. Guida del logista, del trasportatore, dello spedizionieri,Italia "
     select: charter
     lang: it
 -   domain: "removal-uk.net"
     title: " ''Transport International'', the directory of the removal UK and in Europe "
     description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    keywords: "international, transport, transport, lorry driver, logistics, freighting, warehouses, forwarding agents, coaches, guide of transport, removal,the United Kingdom, Europe, road transport, international transport, international transport, cisterns, Dumps, food, goods transport, body and blood, exceptional convoy, bulky, mobilhome, bungalow, large vehicles, boat, fragile, transport, storage, storage, refrigerating, liquid product, dangerous products,  transit, grouping, parcels express train, containers, batches, convoying, commission agents and transport auxiliaries, passenger transport, school, tourism, international parcel, France, Europe, abroad. The logistician, carriers and forwarding agents' guide."
     select: relocation
     lang: en-GB
 -   domain: "transport-belgique.com"
     title: "Transport International, l'Annuaire du TRANSPORT en BELGIQUE"
     description: "Transport Belgique, transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Transport Belgique, transport international, transport, transports, routier, logistique, affrêtement, entrepôts, transitaires, autocars, guide du transport, déménagement, BELGIQUE, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: transport
     lang: fr-BE
 -   domain: "transport-deutschland.com"
     title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    keywords: "international, Transport, Transporte, Fernfahrer, Logistik, Spedition, Lagerhäuser internationale Transporte, Silozüge, Container, Nahrungsmittel, Stückguttransporte, Organe und Blut, Sondertransporte, großvolumig, Homemobil, Bungalow, Überlänge, Schiff, zerbrechlich, Versand, Stückgut, Lagerung, Zwischenlagerung, gekühlt, flüssig, gefährliche Stoffe, Transit, Gruppierung, Expresspaket, Container, komplette Ladung, Begleitfahrzeug, Kommissionierung und Transportzusatzdienste, Personentransport, Schultransport, Tourismus, internationales Paket, Deutschland, Frankreich, Europa, Ausland, Logistikerverzeichnis, Transportverzeichnis, Transitärverzeichnis."
     select: transport
     lang: de
 -   domain: "transport-france.com"
     title: "Transport International, l'Annuaire du TRANSPORT en FRANCE"
     description: "Transport France, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Transport France, transport international, transport, transports, routier, logistique, affrètement, entrepôts, transitaires, autocars, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobil home, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select: transport
     lang: fr
 -   domain: "transport-international.be"
     title: "Transport International, annuaire du TRANSPORT BELGE en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport belge en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "transport international, transport, transports, routier, logistique, affrêtement, entrepôts, transitaires, autocars, guide du transport, déménagement, Belgique, Belgie, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
     select:
     lang: be
 -   domain: "transport-luxembourg.com"
     title: "Transport National, l'Annuaire du TRANSPORT au LUXEMBOURG"
     description: "Transport Luxembourg, l’annuaire des professionnels du transport au LUXEMBOURG et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar national et international."
+    keywords: "Transport Luxembourg, transport, transports, routier, logistique, affrêtement, entrepôts, transitaires, autocars, guide du transport, déménagement, LUXEMBOURG, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, LUXEMBOURG, Europe, étranger. Guide du logisticien, du transporteur, transitaire, international."
     select: transport
     lang: fr
 -   domain: "transport-suisse.net"
     title: "Transport Suisse, transport International, annuaire du TRANSPORT en Suisse et en EUROPE"
     description: "Transport international, L’annuaire des professionnels du transport en Europe et à l’international.\r\nTout le transport routier, la logistique et l'affrètement dans un seul annuaire. Le déménagement, voyages en autocar international."
+    keywords: "Transport Suisse, Transport, transports, routier, logistique, affrêtement, entrepôts, transitaires, autocars, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire, international."
     select: transport
     lang: fr-CH
 -   domain: "transport-uk.net"
     title: "Transport UK .net, the directory of the TRANSPORT in UK and in Europe "
     description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    keywords: "Directory of Road Haulage companies, international, transport, transport, lorry driver, logistics, freighting, warehouses, forwarding agents, coaches, guide of transport, removal,the United Kingdom, Europe, road transport, international transport, international transport, cisterns, Dumps, food, goods transport, body and blood, exceptional convoy, bulky, mobilhome, bungalow, large vehicles, boat, fragile, transport, storage, storage, refrigerating, liquid product, dangerous products,  transit, grouping, parcels express train, containers, batches, convoying, commission agents and transport auxiliaries, passenger transport, school, tourism, international parcel, France, Europe, abroad. The logistician, carriers and forwarding agents' guide."
     select: transport
     lang: en-GB
 -   domain: "transport-unternehmen.net"
     title: "Transportunternehmen, Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Transportunternehmen, internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    keywords: "Transportunternehmen, international, Transport, Transporte, Fernfahrer, Logistik, Spedition, Lagerhäuser internationale Transporte, Silozüge, Container, Nahrungsmittel, Stückguttransporte, Organe und Blut, Sondertransporte, großvolumig, Homemobil, Bungalow, Überlänge, Schiff, zerbrechlich, Versand, Stückgut, Lagerung, Zwischenlagerung, gekühlt, flüssig, gefährliche Stoffe, Transit, Gruppierung, Expresspaket, Container, komplette Ladung, Begleitfahrzeug, Kommissionierung und Transportzusatzdienste, Personentransport, Schultransport, Tourismus, internationales Paket, Deutschland, Frankreich, Europa, Ausland, Logistikerverzeichnis, Transportverzeichnis, Transitärverzeichnis."
     select:
     lang: de
 -   domain: "transportation-directory.com"
     title: "International Transport, the directory of the TRANSPORT in Europe "
     description: "International transport , the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    keywords: "international road haulage, transport, transport, lorry driver, logistics, freighting, warehouses, forwarding agents, coaches, guide of transport, removal,the United Kingdom, Europe, road transport, international transport, international transport, cisterns, Dumps, food, goods transport, body and blood, exceptional convoy, bulky, mobilhome, bungalow, large vehicles, boat, fragile, transport, storage, storage, refrigerating, liquid product, dangerous products,  transit, grouping, parcels express train, containers, batches, convoying, commission agents and transport auxiliaries, passenger transport, school, tourism, international parcel, France, Europe, abroad. The logistician, carriers and forwarding agents guide."
     select:
     lang: en-GB
 -   domain: "transporte-espana.com"
     title: "''Transport International'', el anuario del TRANSPORTE en España y en EUROPA"
     description: "''Transport Internacional'', anuario del transporte por carretera, la logística, el fletamento. Depósitos y servicios para los profesionales del transporte. El alquiler y traslado por  España, Europa y el mundo \r\n"
+    keywords: "internacional, transporte, transportes, camionero, logística, fletamento, almacenes, agentes de tránsito, coches, guía del transporte, traslado, España, Europa, transporte por carretera, transporte internacional, transportes internacionales, cisternas, cubos, alimentario, transporte de mercancía, órgano y sangre, convoy excepcional, voluminoso, autocaravana , chalé, grandes vehículos, buque, frágil, transporte, almacenamiento, almacenamiento, frigorífico, líquido, mercancías peligrosas, tránsito, agrupamiento, paquetes expresos, contenedores, lotes completos, convoy, recaderos y auxiliares de transporte, transporte de viajeros, de alumnos , turismo, paquete internacional, Francia, Europa, extranjero. Guía del logico que uriluza la logística internacional, el transportista, agentes de tránsito"
     select: transport
     lang: es
 -   domain: "trasloco-italia.com"
     title: "Trasporto internazionale, elenco del TRASLOCO in Italia e  in EUROPA"
     description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    keywords: "trasloco, internazionale, trasporto, trasportatori, camionista, depositi, Italia, Europa, trasporto stradale, trasporto internazionale, trasporti internazionali, magazzinaggio, deposito, trasporti, trasporto turistico, turismo, Italia, Europa, estero, cassaforte."
     select: relocation
     lang: it
 -   domain: "trasporti.fr"
     title: "Trasporti internazionali, elenco dei TRASPORTI in ITALIA e in EUROPA"
     description: "Trasporti internazionali, elenco dei trasporti stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Italia, Europa e l'internazionale"
+    keywords: "internazionale, trasporto, trasporto internazionale, trasporti internazionali, trasportatori, camionista, logistica, noleggio, depositi, spedizionieri, pullman, guida del trasporto, trasloco, Italia, Europa, trasporto stradale, cisterne, benne, alimentare, trasporto merce, organo e sangue, convoglio eccezionale, ingombrante, mobile home, bungalow, grande lunghezza, barca, fragile, messaggeria, magazzinaggio, deposito, frigorifero, liquido, materie pericolose, transito, collettame, pacchi espressi, casse mobili, gruppi completi, convolgimento, commissionari ed assistenti di trasporti, trasporto touristico, allievi, turismo, pacchi internazionale, Italia, Europa, estero. Guida del logista, del trasportatore, dello spedizionieri "
     select: relocation
     lang: it
 -   domain: "trasporto-italia.com"
     title: "Trasporto internazionale, elenco del TRASPORTO in ITALIA"
     description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    keywords: "internazionale, trasporto, trasportatori, camionista, logistica, noleggio, depositi, spedizionieri, pullman, guida del trasporto, trasloco, Italia, Europa, trasporto stradale, trasporto internazionale, trasporti internazionali, cisterne, benne, alimentare, trasporto merce, organo e sangue, convoglio eccezionale, ingombrante, mobile home, bungalow, grande lunghezza, barca, fragile, messaggeria, magazzinaggio, deposito, frigorifero, liquido, materie pericolose, transito, collettame, pacchi espressi, casse mobili, gruppi completi, convolgimento, commissionari ed assistenti di trasporti, trasporto touristico, allievi, turismo, pacchi internazionale, Italia, Europa, estero. Guida del logista, del trasportatore, dello spedizionieri "
     select: transport
     lang: it
 -   domain: "trasporto.fr"
     title: "Trasporto internazionale, elenco del TRASPORTO in EUROPA"
     description: "Trasporto internazionale, elenco del trasporto stradale, della logistica, del noleggio. Depositi e servizi per i professionisti del trasporto. Affitto e trasloco in Francia, Europa e l'internazionale"
+    keywords: "internazionale, trasporto, trasportatori, camionista, logistica, noleggio, depositi, spedizionieri, pullman, guida del trasporto, trasloco, Italia, Europa, trasporto stradale, trasporto internazionale, trasporti internazionali, cisterne, benne, alimentare, trasporto merce, organo e sangue, convoglio eccezionale, ingombrante, mobile home, bungalow, grande lunghezza, barca, fragile, messaggeria, magazzinaggio, deposito, frigorifero, liquido, materie pericolose, transito, collettame, pacchi espressi, casse mobili, gruppi completi, convolgimento, commissionari ed assistenti di trasporti, trasporto touristico, allievi, turismo, pacchi internazionale, Italia, Europa, estero. Guida del logista, del trasportatore, dello spedizionieri "
     select:
     lang: it
 -   domain: "umzuege-deutschland.com"
     title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Deutschland, Europa und international."
+    keywords: "international, Transport, Transporte, Fernfahrer, Logistik, Spedition, Lagerhäuser internationale Transporte, Silozüge, Container, Nahrungsmittel, Stückguttransporte, Organe und Blut, Sondertransporte, großvolumig, Homemobil, Bungalow, Überlänge, Schiff, zerbrechlich, Versand, Stückgut, Lagerung, Zwischenlagerung, gekühlt, flüssig, gefährliche Stoffe, Transit, Gruppierung, Expresspaket, Container, komplette Ladung, Begleitfahrzeug, Kommissionierung und Transportzusatzdienste, Personentransport, Schultransport, Tourismus, internationales Paket, Deutschland, Frankreich, Europa, Ausland, Logistikerverzeichnis, Transportverzeichnis, Transitärverzeichnis."
     select: relocation
     lang: de
 -   domain: "umzuge-deutschland.com"
     title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    keywords: "international, Transport, Transporte, Fernfahrer, Logistik, Spedition, Lagerhäuser internationale Transporte, Silozüge, Container, Nahrungsmittel, Stückguttransporte, Organe und Blut, Sondertransporte, großvolumig, Homemobil, Bungalow, Überlänge, Schiff, zerbrechlich, Versand, Stückgut, Lagerung, Zwischenlagerung, gekühlt, flüssig, gefährliche Stoffe, Transit, Gruppierung, Expresspaket, Container, komplette Ladung, Begleitfahrzeug, Kommissionierung und Transportzusatzdienste, Personentransport, Schultransport, Tourismus, internationales Paket, Deutschland, Frankreich, Europa, Ausland, Logistikerverzeichnis, Transportverzeichnis, Transitärverzeichnis."
     select: relocation
     lang: de
 -   domain: "verfrachten-deutschland.com"
     title: "Internationaler Transport, Verzeichnis des europäischen Transportunternehmens"
     description: "Internationaler Transport, Verzeichnis des Straßentransports, Logistik, Spedition. Lager und Dienstleistungen für die Fachleute des Transportes. Vermietungen und Umzüge in Frankreich, Deutschland, Europa und international."
+    keywords: "international, Transport, Transporte, Fernfahrer, Logistik, Spedition, Lagerhäuser internationale Transporte, Silozüge, Container, Nahrungsmittel, Stückguttransporte, Organe und Blut, Sondertransporte, großvolumig, Homemobil, Bungalow, Überlänge, Schiff, zerbrechlich, Versand, Stückgut, Lagerung, Zwischenlagerung, gekühlt, flüssig, gefährliche Stoffe, Transit, Gruppierung, Expresspaket, Container, komplette Ladung, Begleitfahrzeug, Kommissionierung und Transportzusatzdienste, Personentransport, Schultransport, Tourismus, internationales Paket, Deutschland, Frankreich, Europa, Ausland, Logistikerverzeichnis, Transportverzeichnis, Transitärverzeichnis."
     select: charter
     lang: de
 -   domain: "warehousing-uk.net"
     title: " ''Transport International'', the directory of the TRANSPORT in UK and in Europe "
     description: "''Transport International'', the  road transport, logistics and  freighting directory. Warehouses and services for the professionals in carriage. Renting and removal through the United Kingdom, Europe and the world."
+    keywords: "international, transport, transport, lorry driver, logistics, freighting, warehouses, forwarding agents, coaches, guide of transport, removal,the United Kingdom, Europe, road transport, international transport, international transport, cisterns, Dumps, food, goods transport, body and blood, exceptional convoy, bulky, mobilhome, bungalow, large vehicles, boat, fragile, transport, storage, storage, refrigerating, liquid product, dangerous products,  transit, grouping, parcels express train, containers, batches, convoying, commission agents and transport auxiliaries, passenger transport, school, tourism, international parcel, France, Europe, abroad. The logistician, carriers and forwarding agents' guide."
     select: storage
     lang: en-GB
 -   domain: "transporte-portugal.com"
     title: "Transporte internacional, o anuário do transporte em Portugal."
     description: "Transporte internacional, o anuário dos profissionais do transporte em Portugal e no internacional.\r\nA logística.\r\nTodos os tipos de transporte estão aqui presentes para qualquer tipo de mercadoria."
+    keywords: "Internacional, transporte internacional, transportes internacionais, transporte, transportes, guia do transporte, logística,  transporte rodoviário, cisternas, basculantes, frigorífico, alimentar, transporte de mercadoria, órgão e sangue, comboio excepcional, voluminoso, bungalow, grande cumprimento, embarcação, frágil,  armazenagem,  líquido, matérias perigosas, trânsito, agrupamento,  contentores, carga completa, convoy, comissários e auxiliares de transporte, transporte de passageiros escolar, turismo, encomenda, encomenda internacional, mensageria, Portugal, Europa, estrangeiro."
     select: transport
     lang: pt
 -   domain: "anuario-transporte.com"
     title: "Transporte International,  anuario do transporte português na Europa"
     description: "Transporte internacional, o anuário dos profissionais do transporte na Europa e no internacional.\r\nTodo o transporte rodoviário, a logística e o fretamento num só anuário. A mudança, viagem de autocarro internacional."
+    keywords: "Transporte internacional, fretamento, logística, transporte rodoviário, transporte de passageiros,  armazéns, mudança. Guia do especialista em logística, transportadores, transitários, comissários e auxiliares de transporte, Portugal, Europa, estrangeiro. Transporte, autocarros, guia do transporte, cisternas, frigorífico, basculantes, alimentar, transporte de mercadoria, órgão e sangue, comboio excepcional, voluminoso, mobilhome, bungalow, grande cumprimente, embarcação, frágil, mensageria, armazenagem, líquido,mercadorias perigosas, trânsito, agrupamente, encomenda expressa, contentores, cargas completas, convoy, escolar, turismo, encomenda internacional, estrangeiro."
     select:
     lang: pt
 -   domain: "autocarro-portugal.com"
     title: "Transporte internacional, anuário do transporte em Portugal"
     description: "Transporte internacional, o anuário dos profissionais do transporte em Portugal e no internacional. \r\nTodo o tansporte rodoviário, viagens de autocarro nacional e internacional."
+    keywords: "autocarros, transporte de passageiros escolar, internacional, transporte, transportes, guia do transporte, transporte internacional, turismo, encomenda internacional, Portugal, Europa, estrangeiro."
     select: travelers
     lang: pt
 -   domain: "mudanca-portugal.com"
     title: "Anuário da mudança em Portugal"
     description: "Anuário dos profissionais e dos particulares em Portugal.\r\nTodas as diferentes profissões da mudança num só anuário."
+    keywords: "Mudança, encarregados de mudança, encarregado de mudança, armazenagem, auto armazenagem, transporte, transportes, arquivo, guarda-móvel,  transferência,  cofre-forte, objectos de arte, piano, afinação, Portugal, Europa, estrangeiro."
     select: relocation
     lang: pt
 -   domain: "armazenagem-portugal.com"
     title: "Transporte internacional, o anuário dos profissionais do armazenista em Portugal e no internacional. "
     description: "Armazens propostos para vários tipos de mercadoria.\r\nTodo o tansporte rodoviário, a logística e o fretamento num só anuário.\r\n"
+    keywords: "Armazéns, armazenagem, matérias perigosas, cisternas, frigorífico, internacional, transporte, transportes,   transporte rodoviário, transporte internacional, transportes internacionais,  Portugal, Europa, estrangeiro."
     select: storage
     lang: pt
 -   domain: "fretamento-portugal.com"
     title: "Transporte internacional, anuário dos profissionais do fretamento em Portugal e no internacional."
     description: "Transporte internacional, anuário dos profissionais do transporte em Portugal e no internacional\r\nTodo o transporte rodoviário, a logística e o fretamento num só anuário.\r\n"
+    keywords: "Fretamento, transporte internacional, internacional, transporte, transportes, transportes internacionais, rodoviário, transporte rodoviário, transitários, guia do transporte, transporte de mercadoria, voluminoso, frigorífico, trânsito, agrupamento,  contentores, carga completa, comissários e auxiliares de transporte, encomenda, encomenda internacional, Portugal, Europa, estrangeiro. Guia do especialista transitário."
     select: charter
     lang: pt
 -   domain: "transport-routier.eu"
     title: "INTERNAZIONE TRASPORTU"
     description: "Transport routier, annuaire des transporteurs routiers européens."
+    keywords: "Transport routier, esperanto, langue internationale européenne, langue anationale, langue européenne, Fremdo, lukleo, Ido, lingua franca."
     select:
     lang: it
 -   domain: "transports-maroc.com"
     title: "Transport Maroc"
     description: "Transport Maroc, Transports Maroc, Transport Marocain."
+    keywords: "Transport Maroc est le guide du transport marocain en national et international."
     select:
     lang: ma
 -   domain: "transport-cotedivoire.com"
     title: "Transports CI"
     description: "Transport CI"
+    keywords: "transport ivoirien"
     select:
     lang: ci

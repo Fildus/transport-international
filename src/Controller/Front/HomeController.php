@@ -2,19 +2,13 @@
 
 namespace App\Controller\Front;
 
-use App\Entity\Options;
-use App\Repository\ActivityRepository;
-use App\Repository\OptionsRepository;
-use App\Repository\ServedZoneRepository;
 use App\Services\Locale;
-use App\Services\OptionsService;
-use function MongoDB\BSON\fromJSON;
 use Psr\SimpleCache\CacheInterface;
+use App\Repository\ActivityRepository;
+use App\Repository\ServedZoneRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Serializer\Encoder\JsonDecode;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
 
 class HomeController extends AbstractController
 {
@@ -32,10 +26,17 @@ class HomeController extends AbstractController
      */
     private $servedZoneRepository;
 
+    /**
+     * HomeController constructor.
+     * @param Locale $locale
+     * @param ActivityRepository $activityRepository
+     * @param ServedZoneRepository $servedZoneRepository
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
     public function __construct(Locale $locale, ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository)
     {
         $locale->setLocale();
-        $this->locale = $locale->getLocalematched();
+        $this->locale = $locale;
         $this->activityRepository = $activityRepository;
         $this->servedZoneRepository = $servedZoneRepository;
     }
@@ -60,19 +61,20 @@ class HomeController extends AbstractController
      */
     public function home(CacheInterface $cache): Response
     {
-        $key = 'home-z4d4zd45' . $this->locale;
+        $key = 'home-z4d4zd45' . $this->locale->getLocalematched();
         if (!$cache->has($key)) {
             $cache->set($key, [
                 'activities' => $this->activityRepository->getActivities([
                     'charter', 'passengerTransport', 'mover', 'storage', 'rentWithDriver', 'logistic', 'taxi', 'transportOfGoods'
                 ]),
                 'countries' => $this->servedZoneRepository->getAllCountry()
-                ], 3600);
+            ], 3600);
         }
 
         return new Response($this->renderView('pages/home.html.twig', [
             'activities' => $cache->get($key)['activities'],
-            'countries' => $cache->get($key)['countries']
+            'countries' => $cache->get($key)['countries'],
+            'domain' => $this->locale->getDomain()
         ]));
     }
 }

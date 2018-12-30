@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Entity\Domain;
+use App\Repository\DomainRepository;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Yaml\Yaml;
@@ -13,10 +15,7 @@ class Locale
      */
     private $requestStack;
 
-    /**
-     * @var $domain array
-     */
-    private $domain;
+    private $domainRepository;
 
     private $convertLang = [
         'fr-BE' => 'fr',
@@ -31,31 +30,41 @@ class Locale
      */
     private $localematched;
 
+    private $domain;
+
     /**
      * Locale constructor.
      * @param RequestStack $requestStack
-     * @param ContainerInterface $container
+     * @param DomainRepository $domainRepository
      */
-    public function __construct(RequestStack $requestStack, ContainerInterface $container)
+    public function __construct(RequestStack $requestStack, DomainRepository $domainRepository)
     {
         $this->requestStack = $requestStack;
-        $this->domain = Yaml::parseFile($container->getParameter('kernel.root_dir').'/Data/domain.yaml');
+        $this->domainRepository = $domainRepository;
     }
 
     /**
      * @return Locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function setLocale(): self
     {
         $httpHost = str_replace('test-','',$this->requestStack->getMasterRequest()->getHttpHost());
-        foreach ($this->domain as $item) {
-            if (preg_match('/(' . $item['domain'] . ')/', $httpHost)) {
-                !array_key_exists($item['lang'], $this->convertLang) ? $lang = $item['lang'] : $lang = $this->convertLang[$item['lang']];
+        foreach ($this->domainRepository->getAll() as $item) {
+            /** @var $item Domain */
+            if (preg_match('/(' . $item->getDomain() . ')/', $httpHost)) {
+                !array_key_exists($item->getLang(), $this->convertLang) ? $lang = $item->getLang() : $lang = $this->convertLang[$item->getLang()];
                 $this->requestStack->getCurrentRequest()->setLocale($lang ?? $this->fallback);
                 $this->localematched = $lang;
+                $this->domain = $item;
             }
         }
         return $this;
+    }
+
+    public function getDomain()
+    {
+        return $this->domain;
     }
 
     /**
@@ -71,6 +80,9 @@ class Locale
         return $this->fallback;
     }
 
+    /**
+     * @return array
+     */
     public function getAllMainDomain()
     {
         return [

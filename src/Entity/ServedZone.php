@@ -256,7 +256,9 @@ class ServedZone
      */
     public function preFlush()
     {
-        if ($this->parent === null){
+        if ($this->parent !== null) {
+            $this->level = ($this->getParent()->getLevel() ?? 0) + 1;
+        } elseif ($this->parent === null) {
             $this->level = 0;
         }
     }

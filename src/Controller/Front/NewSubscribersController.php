@@ -10,6 +10,22 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class NewSubscribersController extends AbstractController
 {
+
+    /**
+     * @var Locale
+     */
+    private $locale;
+
+    /**
+     * NewSubscribersController constructor.
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function __construct(Locale $locale)
+    {
+        $this->locale = $locale;
+        $locale->setLocale();
+    }
     /**
      * @Route({
      *     "default" : "/newSubscribers",
@@ -32,7 +48,8 @@ class NewSubscribersController extends AbstractController
     public function newSubscribers(ClientRepository $clientRepository)
     {
         return $this->render('pages/newSubscribers.html.twig',[
-            'clients' => $clientRepository->lastClients(60)
+            'clients' => $clientRepository->lastClients(60),
+            'domain' => $this->locale->getDomain()
         ]);
     }
 }

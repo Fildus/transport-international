@@ -3,11 +3,9 @@
 namespace App\Controller\Front;
 
 
-use App\Repository\ActivityRepository;
-use App\Repository\ClientRepository;
-use App\Repository\ServedZoneRepository;
 use App\Services\Locale;
 use Psr\SimpleCache\CacheInterface;
+use App\Repository\ClientRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -88,7 +86,7 @@ class RenderController extends AbstractController
     {
         $key = 'getBottom-5454zdzd-' . $locale->getLocalematched();
         if (!$cache->has($key)) {
-            $cache->set($key, $this->render('render/bottom.html.twig', [
+            $cache->set($key, $this->render('parts/bottom.html.twig', [
                 'clients' => $clientRepository->lastClients(4)
             ]), 3600);
         }

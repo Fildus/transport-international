@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'parts/top.html.twig' %}
+    <div class="container mb-2 mt-2">
+        {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
+    </div>
+    <div class="mainTitle">
+        <div class="container">
+            <h1>{{ 'legalinformation.mainTitle' | trans }}</h1>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <section class="col-12">
+                <article>
+                    {{ 'legalinformation.html' | trans | raw }}
+                </article>
+            </section>
+        </div>
+    </div>
+    {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
+    {% include 'parts/footer.html.twig' %}
+{% endblock %}
+
+{% block meta %}
+
+{% endblock %}
+

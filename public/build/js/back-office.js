@@ -21,14 +21,15 @@ const completeIds = [
     'fax',
     'contact',
     'webSite',
-    'location_location'
+    'location_location',
+    'mail'
 ];
 
 completeIds.forEach(function (e) {
     if (document.getElementById(e)) {
         new autoComplete({
             selector: 'input[id="' + e + '"]',
-            minChars: 3,
+            minChars: 1,
             source: function (term, response) {
                 $.getJSON('/autocomplete/all?'+e+'='+term, {},
                     function (data) {

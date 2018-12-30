@@ -22,6 +22,7 @@ class SecurityController extends AbstractController
      * Controller constructor.
      * @param Locale $locale
      * @param ContainerInterface $container
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale, ContainerInterface $container)
     {

@@ -7,7 +7,6 @@
     <div class="container mb-2 mt-2">
         {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
     </div>
-    {#{{ dump(client) }}#}
     <div class="mainTitle">
         <div class="container">
             <h1>{{ client.legalInformation.companyName }}</h1>
@@ -16,7 +15,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-lg-4">
                 <div id="informations">
                     <div class="text-center">
                         <h2>{{ 'professionalProfile.companyInformation' | trans }}</h2>
@@ -27,7 +26,7 @@
                             <p id="telephone-surtax">
                                 <b>
                                     <i class="fa fa-phone" aria-hidden="true"></i> :
-                                    <a href="tel:0890212455">----0 890 212 455-----todo</a>
+                                    <a href="tel:{{ number }}">{{ number }}</a>
                                 </b>
                                 <small>*</small>
                             </p>
@@ -80,28 +79,27 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-8">
+
+            <div class="col-12 col-lg-8">
                 <div class="row">
                     <div class="col-md-7 col-sm-12 col-xs-12">
-                        <div id="numero-link"><a href="tel:0890212473">0890212473</a></div>
+                        <div id="numero-link"><a href="tel:{{ number }}">{{ number }}</a></div>
                     </div>
-                    <div class="col-md-5 col-sm-12 col-xs-12" id="numero-surtaxe">* Le coût de mise en relation sera de
-                        2,99 € l'appel. Ce numéro valable 5 minutes n'est pas le numéro du destinataire mais le numéro
-                        d'un service permettant la mise en relation avec celui-ci. Ce service est édité par l'Annuaire
-                        des Transports.
+                    <div class="col-md-5 col-sm-12 col-xs-12"
+                         id="numero-surtaxe">{{ 'professionalProfile.explainTax' | trans }}
                         <a href="http://mise-en-relation.svaplus.fr" rel="noindex,nofollow"
-                           target="new">Pourquoi ce numéro ?</a>
+                           target="new">{{ 'professionalProfile.whyThisNumber' | trans }}</a>
                     </div>
                     <div class="col-12">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active w-25" id="nav-allowance-tab" data-toggle="tab"
+                                <a class="nav-item nav-link" id="nav-allowance-tab" data-toggle="tab"
                                    href="#nav-allowance" role="tab" aria-controls="nav-home"
                                    aria-selected="true">allowance</a>
-                                <a class="nav-item nav-link w-25" id="nav-presentation-tab" data-toggle="tab"
+                                <a class="nav-item nav-link" id="nav-presentation-tab" data-toggle="tab"
                                    href="#nav-presentation" role="tab" aria-controls="nav-profile"
                                    aria-selected="false">presentation</a>
-                                <a class="nav-item nav-link w-25" id="nav-contact-tab" data-toggle="tab"
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
                                    href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">contact</a>
                             </div>
                         </nav>
@@ -170,16 +168,15 @@
                                         <iframe frameborder="0"
                                                 width="100%"
                                                 height="400px"
-                                                src="https://www.google.com/maps/embed/v1/place?q=P?le+d+Echange+-+6+bd+Gambetta,+27000,+EVREUX&amp;key=AIzaSyBK7GU60p940g2WsTBsiamLklxzVsOyBKY"></iframe>
+                                                src="https://www.google.com/maps/embed/v1/place?q={{ client.location.address~'+'~client.location.postalCode~'+'~client.location.city }}&amp;key=AIzaSyBK7GU60p940g2WsTBsiamLklxzVsOyBKY"></iframe>
                                         <!--&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>-->
                                     </div>
                                 </div>
-                                <form class="form_contact" action="controller-contact.php" method="post">
+                                <form class="form_contact"
+                                      action="{{ path('_professional_profile',{'cnSlug':client.legalInformation.slug}) }}"
+                                      method="post">
                                     <fieldset>
                                         <legend>Contacter le professionnel</legend>
-                                        <input type="hidden" name="mail" value="contact@taxi-evreux.com">
-                                        <input type="hidden" name="url_courant"
-                                               value="www.transport-international.com/artisans-radio-taxis-d-evreux-548.html">
                                         <div class="form-group">
                                             {{ form_start(form) }}
                                             {{ form_row(form.name) }}
@@ -187,7 +184,7 @@
                                             {{ form_row(form.message) }}
                                             {{ form_row(form.antispam) }}
                                             <div class="text-right">
-                                                <button type="submit" class="btn btn-success">Soumission du formulaire
+                                                <button type="submit" class="btn btn-success">Envoyer !
                                                 </button>
                                             </div>
                                             {{ form_end(form) }}
@@ -201,12 +198,69 @@
                 </div>
             </div>
         </div>
-
+        {% include 'parts/professionalProfile/near.html.twig' %}
     </div>
+    {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
+    {% include 'parts/professionalProfile/bottomMore.html.twig' %}
+    {% include 'parts/footer.html.twig' %}
 
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
+    <script>
+        let el = document.getElementById('nav-contact-tab');
+        el.click()
+    </script>
+{% endblock %}
+
+{% block meta %}
+    {% set activities = [
+        client.coreBusiness.transport != null ? ( 'meta.professionalProfile.someTrad.transport'|trans),
+        client.coreBusiness.logistics != null ? ( 'meta.professionalProfile.someTrad.logistics'|trans),
+        client.coreBusiness.charter != null ? ( 'meta.professionalProfile.someTrad.charter'|trans),
+        client.coreBusiness.travelers != null ? ( 'meta.professionalProfile.someTrad.travelers'|trans),
+        client.coreBusiness.relocation != null ? ( 'meta.professionalProfile.someTrad.relocation'|trans),
+        client.coreBusiness.storage != null ? ( 'meta.professionalProfile.someTrad.storage'|trans),
+        client.coreBusiness.rentalWithDriver != null ? ( 'meta.professionalProfile.someTrad.rentalWithDriver'|trans),
+        client.coreBusiness.taxis != null ? ( 'meta.professionalProfile.someTrad.taxis'|trans)
+    ] %}
+
+    {% set activitiesFormated = '' %}
+
+    {% for a in activities %}
+        {% if a != null %}
+            {% set activitiesFormated = activitiesFormated ~ a ~ ', ' %}
+        {% endif %}
+    {% endfor %}
+
+    <link rel="icon" href="{{ asset('build/img/front/icons/favicon-32x32.ico') }}">
+    <title>{{ client.legalInformation.corporateName }} - {{ client.location.address }} - {{ domain.domain }}</title>
+    <meta name="description"
+          content="{% trans
+              with {
+              '__SOCIETY__': client.legalInformation.corporateName,
+              '__ADDRESS__': client.location.address,
+              '__ACTIVITIES__': activitiesFormated,
+              '__URI__': app.request.uri
+              }
+              from 'messages' %}meta.professionalProfile.description{% endtrans %}">
+    <meta name="keywords" content="{{ client.legalInformation.corporateName }}, {{ activitiesFormated }} {{ client.location.location.__toString }}, contact, téléphone">
+    <meta property="og:title" content="{{ client.legalInformation.corporateName }} - {{ client.location.address }} - {{ app.request.uri }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}" />
+    <meta property="og:image:width" content="190" />
+    <meta property="og:image:height" content="190" />
+    <meta property="og:site_name" content="{{ 'meta.professionalProfile.siteName' | trans }}" />
+    <meta property="og:description" content="{% trans
+        with {
+        '__SOCIETY__': client.legalInformation.corporateName,
+        '__ADDRESS__': client.location.address,
+        '__ACTIVITIES__': activitiesFormated,
+        '__URI__': app.request.uri
+        }
+        from 'messages' %}meta.professionalProfile.description{% endtrans %}" />
+    <link rel="canonical" href="{{ app.request.uri }}" />
 {% endblock %}
 

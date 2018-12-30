@@ -47,6 +47,16 @@ class SearchController extends AbstractController
      */
     private $cache;
 
+    /**
+     * SearchController constructor.
+     * @param Locale $locale
+     * @param ClientRepository $clientRepository
+     * @param ActivityRepository $activityRepository
+     * @param TranslationRepository $translationRepository
+     * @param ServedZoneRepository $servedZoneRepository
+     * @param CacheInterface $cache
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
     public function __construct(
         Locale $locale,
         ClientRepository $clientRepository,
@@ -57,7 +67,7 @@ class SearchController extends AbstractController
     )
     {
         $locale->setLocale();
-        $this->locale = $locale->getLocalematched();
+        $this->locale = $locale;
         $this->clientRepository = $clientRepository;
         $this->translationRepository = $translationRepository;
         $this->activityRepository = $activityRepository;
@@ -100,9 +110,9 @@ class SearchController extends AbstractController
         $fromCountry = in_array($fromCountry, $null) ? null : $fromCountry;
         $fromDept = in_array($fromDept, $null) ? null : $fromDept;
 
-        $activities = $this->activityRepository->getTowTypesFromPathAndName($typeA, $typeB, $this->locale);
-        $toServedZones = $this->servedZoneRepository->getTowServedZoneFromPathAndName($toCountry, $toDept, $this->locale);
-        $fromServedZones = $this->servedZoneRepository->getTowServedZoneFromPathAndName($fromCountry, $fromDept, $this->locale);
+        $activities = $this->activityRepository->getTowTypesFromPathAndName($typeA, $typeB, $this->locale->getLocalematched());
+        $toServedZones = $this->servedZoneRepository->getTowServedZoneFromPathAndName($toCountry, $toDept, $this->locale->getLocalematched());
+        $fromServedZones = $this->servedZoneRepository->getTowServedZoneFromPathAndName($fromCountry, $fromDept, $this->locale->getLocalematched());
 
         $clients = $this->clientRepository->getClientFrom_activity_servedZone(
             $activities['typeA'] ?? null,
@@ -130,8 +140,10 @@ class SearchController extends AbstractController
             'countries' => $this->servedZoneRepository->getAllCountry(),
             'activities' => $this->activityRepository->getActivities([
                 'charter', 'passengerTransport', 'mover', 'storage', 'rentWithDriver', 'logistic', 'taxi', 'transportOfGoods'
-            ], $this->locale),
-            'dataInjection' => json_encode($dataInjection)
+            ]),
+            'dataInjection' => json_encode($dataInjection),
+            'data' => $dataInjection,
+            'domain' => $this->locale->getDomain()
         ]));
     }
 
@@ -245,7 +257,7 @@ class SearchController extends AbstractController
             }
         }
 
-        return $this->redirectToRoute('_search.' . $this->locale, [
+        return $this->redirectToRoute('_search.' . $this->locale->getLocalematched(), [
             'typeA' => $typeA ?? 'toutes-catégories',
             'typeB' => $typeB ?? 'toutes-activités',
             'toCountry' => $toCountry ?? 'tous-pays',

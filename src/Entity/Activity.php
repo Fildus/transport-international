@@ -5,11 +5,10 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-use phpDocumentor\Reflection\Types\This;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ActivityRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Activity
 {
@@ -106,7 +105,7 @@ class Activity
 
     public function addChildren(Activity $activity): self
     {
-        if (!$this->children->contains($activity)){
+        if (!$this->children->contains($activity)) {
             $this->children[] = $activity;
         }
         return $this;
@@ -114,7 +113,7 @@ class Activity
 
     public function removeChildren(Activity $activity): self
     {
-        if ($this->children->contains($activity)){
+        if ($this->children->contains($activity)) {
             $this->children->remove($activity);
         }
         return $this;
@@ -218,5 +217,17 @@ class Activity
     {
         $this->name = $name;
         return $this;
+    }
+
+    /**
+     * @ORM\PreFlush()
+     */
+    public function PreFlush()
+    {
+        if ($this->parent !== null) {
+            $this->level = ($this->getParent()->getLevel() ?? 0) + 1;
+        } else {
+            $this->level = 0;
+        }
     }
 }
