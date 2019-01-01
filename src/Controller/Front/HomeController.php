@@ -2,11 +2,7 @@
 
 namespace App\Controller\Front;
 
-use App\Entity\Activity;
-use App\Services\ArrayRecursion\Recursion;
-use App\Services\ArrayRecursion\RecursionInterface;
 use App\Services\Locale;
-use Doctrine\Common\Collections\ArrayCollection;
 use Psr\SimpleCache\CacheInterface;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;

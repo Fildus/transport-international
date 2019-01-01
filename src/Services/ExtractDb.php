@@ -7,6 +7,7 @@
 namespace App\Services;
 
 use \PDO;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ExtractDb
 {
@@ -52,7 +53,7 @@ class ExtractDb
 
     public function pdo($dbName)
     {
-        return new PDO('mysql:dbname='.$dbName.';host=127.0.0.1', 'david', 'beepbeep');
+        return new PDO('mysql:dbname='.getenv('DATABASE_ENCIEN').';host='.getenv('DATABASE_HOST'), getenv('DATABASE_USERNAME'), getenv('DATABASE_PASSWORD'));
     }
 
     public function extract(string $table, string $dump = null, ?int $rows = 100, ?string $method = 'fetchAll', $dbName = 'ti_existant_complet')
