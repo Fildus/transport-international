@@ -27,7 +27,6 @@ class ServedZoneType extends AbstractType
     {
         $this->servedZoneRepository = $servedZoneRepository;
         $this->request = $this->servedZoneRepository->findBy(['type'=>ServedZone::DEPARTMENT]);
-        dump($this->request);
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -68,7 +67,6 @@ class ServedZoneType extends AbstractType
                 $servedZone[$item->getId()] = $options['data']->getServedZone()->contains($item) ? true : false;
             }
         }
-        dump($options['data']);
         return $servedZone;
     }
 }

@@ -48,7 +48,6 @@ class LocationType extends AbstractType
             ->get('location')
             ->addModelTransformer(new CallbackTransformer(
                 function ($object) {
-                    dump($object);
                     return $object !== null ? $object->getTranslation() : null;
                 },
                 function ($string) {

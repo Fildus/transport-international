@@ -29,7 +29,6 @@ class RenderController extends AbstractController
             ]);
             $cache->set($cacheKey, $render);
         }
-//        return $render;
         return $cache->get($cacheKey);
     }
 

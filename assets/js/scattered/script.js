@@ -1,6 +1,6 @@
 function toggleOpening(self, ul) {
     if (self.innerHTML.trim() === '<i class="fas fa-plus"></i>') {
-        self.innerHTML = '<i class="fas fa-minus"></i>';
+        self.innerHTML = '<i class="fas fa-minus text-black-50"></i>';
     } else {
         self.innerHTML = '<i class="fas fa-plus"></i>';
     }

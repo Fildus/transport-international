@@ -1,0 +1,18 @@
+{% for entity in entities %}
+    {% if entity.children is not empty %}
+
+        {% set unique =  random(1000000) %}
+        <li>
+            <span>{{ entity.content.translation }}</span>
+            <span onclick="toggleOpening(this, {{ unique }})" class="float-lg-right">
+                <i class="fas fa-plus"></i>
+            </span>
+            <hr class="m-1">
+            <ul id="{{ unique }}" hidden>
+                {% include _self with {'entities': entity.children} %}
+            </ul>
+        </li>
+    {% else %}
+        <p class="font-weight-bold">{{ entity.content.translation }}</p>
+    {% endif %}
+{% endfor %}

@@ -2,7 +2,11 @@
 
 namespace App\Controller\Front;
 
+use App\Entity\Activity;
+use App\Services\ArrayRecursion\Recursion;
+use App\Services\ArrayRecursion\RecursionInterface;
 use App\Services\Locale;
+use Doctrine\Common\Collections\ArrayCollection;
 use Psr\SimpleCache\CacheInterface;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
@@ -43,6 +47,7 @@ class HomeController extends AbstractController
 
     /**
      * @Route({
+     *     "default" : "/",
      *     "fr" : "/",
      *     "en" : "/",
      *     "es" : "/",
@@ -61,7 +66,7 @@ class HomeController extends AbstractController
      */
     public function home(CacheInterface $cache): Response
     {
-        $key = 'home-z4d4zd45' . $this->locale->getLocalematched();
+        $key = 'home-z4d4zd45-' . $this->locale->getLocalematched();
         if (!$cache->has($key)) {
             $cache->set($key, [
                 'activities' => $this->activityRepository->getActivities([

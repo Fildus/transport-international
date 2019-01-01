@@ -51,7 +51,7 @@ class Activity
     /**
      * @ORM\OneToMany(targetEntity="Activity", mappedBy="parent", fetch="EAGER")
      */
-    private $children;
+    public $children;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Translation", cascade={"persist", "remove"}, fetch="EAGER")

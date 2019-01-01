@@ -3,7 +3,8 @@
 namespace App\Controller\Back;
 
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use App\Services\XmlService;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -15,8 +16,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  */
 class ManagerController extends AbstractController
 {
+    private $xml;
+
+    public function __construct(XmlService $xmlService)
+    {
+        $this->xml = $xmlService;
+    }
+
     /**
      * @Route("/index", name="_index")
+     * @throws \Exception
      */
     public function index()
     {
@@ -30,6 +39,16 @@ class ManagerController extends AbstractController
     {
         shell_exec('php ' . $this->getParameter('kernel.project_dir') . '/bin/console cache:clear');
         $this->addFlash('success', 'Cache réinitialisé');
+        return $this->redirectToRoute('_manager_index');
+    }
+
+    /**
+     * @Route("/xml", name="_xml")
+     */
+    public function xml()
+    {
+        $this->xml->run();
+        $this->addFlash('success', 'xml réinitialisés');
         return $this->redirectToRoute('_manager_index');
     }
 }

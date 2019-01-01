@@ -3,23 +3,25 @@
     <div class="row">
         {% for c in clients %}
             <aside class="col-4 p-2">
-                <div class="container-nouveaux-inscrits">
-                    <div class="col-10">
-                        <h3>
-                            {% if c.legalInformation %}
-                                <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}"
-                                   title="SRL">{{ c.legalInformation.companyName }}</a>
+                <div class="container-nouveaux-inscrits container-fluid">
+                    <div class="row">
+                        <div class="col-9 offset-1">
+                            <h3>
+                                {% if c.legalInformation %}
+                                    <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}"
+                                       title="SRL">{{ c.legalInformation.companyName }}</a>
+                                {% endif %}
+                            </h3>
+                            {% if c.location %}
+                                <p>{{ c.location.postalCode~' '~c.location.address }}</p>
                             {% endif %}
-                        </h3>
-                        {% if c.location %}
-                            <p>{{ c.location.postalCode~' '~c.location.address }}</p>
-                        {% endif %}
-                    </div>
-                    <div class="col-2">
-                        <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}"
-                           title="{{ c.legalInformation.companyName }}">
-                            <i class="fa fa-eye" title="Voir la fiche {{ c.legalInformation.companyName }}"></i>
-                        </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}"
+                               title="{{ c.legalInformation.companyName }}">
+                                <i class="fa fa-eye" title="Voir la fiche {{ c.legalInformation.companyName }}"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </aside>

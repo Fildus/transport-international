@@ -3,13 +3,8 @@
 namespace App\Controller\Back;
 
 use App\Entity\Activity;
-use App\Entity\Location;
-use App\Entity\ServedZone;
 use App\Form\Back\ActivityEditType;
-use App\Form\ServedZoneEditType;
 use App\Repository\ActivityRepository;
-use App\Repository\LocationRepository;
-use App\Repository\ServedZoneRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

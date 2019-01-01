@@ -42,12 +42,11 @@ class ActivityRepository extends ServiceEntityRepository
             ->where('a.level = 0')
             ->getQuery()
             ->useResultCache(true)
-            ->getResult()
-        ;
+            ->getResult();
 
-        return$qb;
+        return $qb;
     }
-    
+
 //    /**
 //     * @param Collection $clientActivities
 //     * @return Activity
@@ -131,8 +130,7 @@ class ActivityRepository extends ServiceEntityRepository
             ->innerJoin('a.translation', 't')
             ->getQuery()
             ->useResultCache(true)
-            ->getResult()
-        ;
+            ->getResult();
 
         return array_unique($qb);
     }
@@ -265,7 +263,7 @@ class ActivityRepository extends ServiceEntityRepository
         if ($activity !== null) {
             $returnArray[$activity->getTranslation()->__toString()] = $activity->getId();
             $returnArray['Pas de parent'] = null;
-        }else{
+        } else {
             $returnArray['Pas de parent'] = null;
 
         }

@@ -23,20 +23,24 @@
             {% for c in clients %}
                 <aside class="col-4 p-2">
                     <div class="container-nouveaux-inscrits">
-                        <div class="col-10">
-                            <h3>
-                                {% if c.legalInformation %}
-                                    <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}" title="SRL">{{ c.legalInformation.companyName }}</a>
+                        <div class="row">
+                            <div class="col-9 offset-1">
+                                <h3>
+                                    {% if c.legalInformation %}
+                                        <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}"
+                                           title="SRL">{{ c.legalInformation.companyName }}</a>
+                                    {% endif %}
+                                </h3>
+                                {% if c.location %}
+                                    <p>{{ c.location.postalCode~' '~c.location.address }}</p>
                                 {% endif %}
-                            </h3>
-                            {% if c.location %}
-                                <p>{{ c.location.postalCode~' '~c.location.address }}</p>
-                            {% endif %}
-                        </div>
-                        <div class="col-2">
-                            <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}" title="{{ c.legalInformation.companyName }}">
-                                <i class="fa fa-eye" title="Voir la fiche {{ c.legalInformation.companyName }}"></i>
-                            </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="{{ path('_professional_profile',{'cnSlug':c.legalInformation.slug}) }}"
+                                   title="{{ c.legalInformation.companyName }}">
+                                    <i class="fa fa-eye" title="Voir la fiche {{ c.legalInformation.companyName }}"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -53,13 +57,13 @@
     <title>{{ 'meta.newSubscribers.title' | trans }}</title>
     <meta name="description" content="{{ 'meta.newSubscribers.description' | trans }}">
     <meta name="keywords" content="{{ domain.keywords }}">
-    <meta property="og:title" content="{{ 'meta.newSubscribers.og.title' | trans }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ app.request.uri }}" />
-    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}" />
-    <meta property="og:image:width" content="190" />
-    <meta property="og:image:height" content="190" />
-    <meta property="og:site_name" content="{{ 'meta.home.og.site_name' | trans }}" />
-    <meta property="og:description" content="{{ 'meta.newSubscribers.og.description' | trans }}" />
-    <link rel="canonical" href="https://www.transport-international.com/" />
+    <meta property="og:title" content="{{ 'meta.newSubscribers.og.title' | trans }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ app.request.uri }}"/>
+    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}"/>
+    <meta property="og:image:width" content="190"/>
+    <meta property="og:image:height" content="190"/>
+    <meta property="og:site_name" content="{{ 'meta.home.og.site_name' | trans }}"/>
+    <meta property="og:description" content="{{ 'meta.newSubscribers.og.description' | trans }}"/>
+    <link rel="canonical" href="https://www.transport-international.com/"/>
 {% endblock %}

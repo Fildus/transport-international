@@ -28,6 +28,7 @@ class LegalInformationController extends AbstractController
 
     /**
      * @Route({
+     *     "default" : "/legal-Information",
      *     "fr" : "/legal-Information-fr",
      *     "en" : "/legal-Information-en",
      *     "es" : "/legal-Information-es",

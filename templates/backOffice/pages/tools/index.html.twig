@@ -8,8 +8,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="form-group card-custom p-3">
+    <div class="form-group card-custom p-3 text-center">
         <h2 class="text-center">Outils</h2>
-        <a class="btn btn-warning w-100" href="{{ path('_manager_cache') }}">Réinitialiser le cache</a>
+        <a class="btn btn-outline-danger" href="{{ path('_manager_cache') }}">Réinitialiser le cache</a>
+        <a class="btn btn-outline-danger" href="{{ path('_manager_xml') }}">Réinitialiser les fichiers xml</a>
     </div>
 {% endblock %}

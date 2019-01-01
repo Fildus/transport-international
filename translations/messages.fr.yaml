@@ -205,6 +205,9 @@ professionalProfile:
         email: "Votre email"
         message: "Votre message"
         antispam: "Antispam"
+    allowance: "Prestations"
+    presentation: "Présentation"
+    contact: "Contact"
 
 home:
     links:

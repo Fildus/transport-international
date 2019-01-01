@@ -133,4 +133,14 @@ class LegalInformationRepository extends ServiceEntityRepository
 
         return $returnArray;
     }
+
+    public function findAllOnlySlug()
+    {
+        $qb = $this->createQueryBuilder('l')
+            ->select('l.slug')
+            ->getQuery()
+            ->getResult();
+
+        return $qb;
+    }
 }

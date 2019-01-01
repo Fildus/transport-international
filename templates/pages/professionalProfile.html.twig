@@ -93,21 +93,29 @@
                     <div class="col-12">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link" id="nav-allowance-tab" data-toggle="tab"
+                                <a class="nav-item nav-link text-center" id="nav-allowance-tab" data-toggle="tab"
                                    href="#nav-allowance" role="tab" aria-controls="nav-home"
-                                   aria-selected="true">allowance</a>
-                                <a class="nav-item nav-link" id="nav-presentation-tab" data-toggle="tab"
+                                   aria-selected="true">{{ 'professionalProfile.allowance' | trans }}</a>
+                                <a class="nav-item nav-link text-center" id="nav-presentation-tab" data-toggle="tab"
                                    href="#nav-presentation" role="tab" aria-controls="nav-profile"
-                                   aria-selected="false">presentation</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
-                                   href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">contact</a>
+                                   aria-selected="false">{{ 'professionalProfile.presentation' | trans }}</a>
+                                <a class="nav-item nav-link text-center" id="nav-contact-tab" data-toggle="tab"
+                                   href="#nav-contact" role="tab" aria-controls="nav-contact"
+                                   aria-selected="false">{{ 'professionalProfile.contact' | trans }}</a>
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-allowance" role="tabpanel"
                                  aria-labelledby="nav-home-tab">
                                 <div>
-                                    {{ include('form/profile/profileActivitiesCascade.html.twig', {'activity':client.activity}) }}
+                                    <h3>activités</h3>
+                                    <div class="checkboxCascade">
+                                        {{ include('parts/professionalProfile/cascadeView.html.twig', {'entities':activities}) }}
+                                    </div>
+                                    <h3>Zones desservies</h3>
+                                    <div class="checkboxCascade">
+                                        {{ include('parts/professionalProfile/cascadeView.html.twig', {'entities':servedZones}) }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-presentation" role="tabpanel"
@@ -208,6 +216,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('build/js/script-min.js') }}"></script>
     <script>
         let el = document.getElementById('nav-contact-tab');
         el.click()
@@ -245,14 +254,16 @@
               '__URI__': app.request.uri
               }
               from 'messages' %}meta.professionalProfile.description{% endtrans %}">
-    <meta name="keywords" content="{{ client.legalInformation.corporateName }}, {{ activitiesFormated }} {{ client.location.location.__toString }}, contact, téléphone">
-    <meta property="og:title" content="{{ client.legalInformation.corporateName }} - {{ client.location.address }} - {{ app.request.uri }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ app.request.uri }}" />
-    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}" />
-    <meta property="og:image:width" content="190" />
-    <meta property="og:image:height" content="190" />
-    <meta property="og:site_name" content="{{ 'meta.professionalProfile.siteName' | trans }}" />
+    <meta name="keywords"
+          content="{{ client.legalInformation.corporateName }}, {{ activitiesFormated }} {{ client.location.location.__toString }}, contact, téléphone">
+    <meta property="og:title"
+          content="{{ client.legalInformation.corporateName }} - {{ client.location.address }} - {{ app.request.uri }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ app.request.uri }}"/>
+    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}"/>
+    <meta property="og:image:width" content="190"/>
+    <meta property="og:image:height" content="190"/>
+    <meta property="og:site_name" content="{{ 'meta.professionalProfile.siteName' | trans }}"/>
     <meta property="og:description" content="{% trans
         with {
         '__SOCIETY__': client.legalInformation.corporateName,
@@ -260,7 +271,6 @@
         '__ACTIVITIES__': activitiesFormated,
         '__URI__': app.request.uri
         }
-        from 'messages' %}meta.professionalProfile.description{% endtrans %}" />
-    <link rel="canonical" href="{{ app.request.uri }}" />
+        from 'messages' %}meta.professionalProfile.description{% endtrans %}"/>
+    <link rel="canonical" href="{{ app.request.uri }}"/>
 {% endblock %}
-

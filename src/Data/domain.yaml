@@ -406,3 +406,11 @@
     keywords: "transport ivoirien"
     select:
     lang: ci
+
+#Necessaire pour démarrer le server
+-   domain: "transport-inter.com"
+    title: "Transports international"
+    description: "Annuaire du Transport en Europe et à l'International. Tous les professionnels du transport routier, la logistique, l'affrètement, le déménagement, taxis"
+    keywords: "transport international, transport, transports, routier, maritime, aérien, fluvial, ferroviaire, logistique, affrètement, entrepôts, transitaires, autocars, guide du transport, déménagement, France, Europe, transport routier, transport international, transports internationaux, citernes, bennes, alimentaire, transport marchandise, organe et sang, convoi exceptionnel, volumineux, mobilhome, bungalow, grande longueur, bateau, fragile, messagerie, stockage, entreposage, frigorifique, liquide, matières dangereuses, transit, groupage, colis express, containers, lots complets, convoyage, commissionnaires et auxiliaires de transport, transport de voyageurs, scolaire, tourisme, colis international, France, Europe, étranger. Guide du logisticien, du transporteur, transitaire"
+    select:
+    lang: fr
