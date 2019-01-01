@@ -113,16 +113,7 @@ class ActivityController extends AbstractController
      */
     public function delete($id)
     {
-        /** @var $activity Activity */
         $activity = $this->activityRepository->find($id);
-//        $servedZones = $this->servedZoneRepository->allChildrens($servedZone->getId());
-//        foreach ($servedZones as $child) {
-//            $locations = $locationRepository->findLocationByServedZone($child);
-//            foreach ($locations as $location){
-//                /** @var $location Location */
-//                $location->removeLocation();
-//            }
-//        }
         $this->manager->remove($activity);
         $this->manager->flush();
         $this->addFlash('success', 'l\'activité <strong>'.$activity->__toString().' </strong>a été supprimée');

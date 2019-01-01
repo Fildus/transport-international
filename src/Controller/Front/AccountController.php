@@ -486,14 +486,9 @@ class AccountController extends AbstractController
             $this->objectManager->flush();
         }
 
-//        $key = 'servedZone';
-//        if (!$this->cache->has($key)){
-//            $this->cache->set($key, $servedZoneRepository->findByWithTranslation(), 3600);
-//        }
-
         return new Response($this->renderView('client/account/pages/servedZone.html.twig', [
             'form' => $form->createView(),
-            'servedZone' => $servedZoneRepository->findByWithTranslation()//$this->cache->get($key)
+            'servedZone' => $servedZoneRepository->findByWithTranslation()
         ]));
     }
 }

@@ -22,6 +22,11 @@ class AutocompleteController extends AbstractController
      */
     private $locale;
 
+    /**
+     * AutocompleteController constructor.
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
     public function __construct(Locale $locale)
     {
         $this->locale = $locale->setLocale()->getLocalematched();

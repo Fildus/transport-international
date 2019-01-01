@@ -102,23 +102,23 @@ class ProfessionalProfileController extends AbstractController
         /**
          * @var $client Client
          */
-//        if ($client !== null){
-//            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null){
-//                $phone = $client->getContact()->getPhone();
-//                $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
-//                $optico->addPhone($phone);
-//                $optico->sendView();
-//                $optico->getViewId();
-//                $res = $optico->getTrackingPhoneNumber($phone);
-//            }
-//        }
+        if ($client !== null){
+            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null){
+                $phone = $client->getContact()->getPhone();
+                $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
+                $optico->addPhone($phone);
+                $optico->sendView();
+                $optico->getViewId();
+                $res = $optico->getTrackingPhoneNumber($phone);
+            }
+        }
 
         return new Response($this->renderView('pages/professionalProfile.html.twig', [
             'client' => $client,
             'form' => $form->createView(),
             'domain' => $this->locale->getDomain(),
             'clients' => $this->clientRepository->findBy([],['id'=>'DESC'],12, 50),
-            'number' => 'desactivé',//$res ?? null
+            'number' => $res ?? null,
             'activities' => $recursion->run($client->getActivity()),
             'servedZones' => $recursion->run($client->getServedZone())
         ]));
