@@ -45,7 +45,6 @@ class HomeController extends AbstractController
 
     /**
      * @Route({
-     *     "default" : "/",
      *     "fr" : "/",
      *     "en" : "/",
      *     "es" : "/",

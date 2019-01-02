@@ -10,12 +10,12 @@
             <div class="col-12 col-md-4 text-center">
                 <nav>
                     <ul>
-                        <li>{{ 'top.Account.myAccount'|trans }} :</li>
+                        <li>{{ 'top.account.myAccount'|trans }} :</li>
                         <li>
                             {% if app.user is not null %}
-                                <a href="{{ path('account_legalInformation') }}">{{ 'top.Account.myAccount'|trans }}</a>
+                                <a href="{{ path('account_legalInformation') }}">{{ 'top.account.myAccount'|trans }}</a>
                             {% else %}
-                                <a href="{{ path('_register') }}">{{ 'top.Account.register'|trans }}</a>
+                                <a href="{{ path('_register') }}">{{ 'top.account.register'|trans }}</a>
                             {% endif %}
                         </li>
                         |
