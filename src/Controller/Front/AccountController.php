@@ -110,6 +110,11 @@ class AccountController extends AbstractController
         $client = $this->clientRepository->findOneBy([
             'user' => $this->getUser()
         ]);
+
+        if ($client === null){
+            return $this->redirectToRoute('_admin_home');
+        }
+
         $legalInformation = $client->getLegalInformation() ?? new LegalInformation();
 
         $form = $this->createForm(LegalInformationType::class, $legalInformation);

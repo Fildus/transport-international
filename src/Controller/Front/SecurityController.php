@@ -64,6 +64,8 @@ class SecurityController extends AbstractController
     {
         if ($this->getUser()) {
             return $this->redirectToRoute('account_legalInformation.' . $this->locale);
+        }else{
+            return $this->redirectToRoute('_admin_home');
         }
     }
 

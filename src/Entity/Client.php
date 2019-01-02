@@ -77,7 +77,7 @@ class Client
     private $activity;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Contract", mappedBy="client", fetch="EAGER")
+     * @ORM\OneToMany(targetEntity="App\Entity\Contract", mappedBy="client")
      */
     private $contract;
 
