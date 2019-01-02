@@ -136,7 +136,7 @@ class XmlService extends AbstractController
         }
         $content .= '
 </sitemapindex>';
-        $file = fopen($this->project_dir . '/public/site_map.xml', 'w+');
+        $file = fopen($this->project_dir . '/public/sitemap.xml', 'w+');
         fputs($file, $content);
     }
 
