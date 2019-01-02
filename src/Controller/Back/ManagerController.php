@@ -11,8 +11,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 /**
  * Class ManagerController
  * @package App\Controller\Back
- *
- * @Route("/admin/manager", name="_manager")
  */
 class ManagerController extends AbstractController
 {
@@ -24,7 +22,7 @@ class ManagerController extends AbstractController
     }
 
     /**
-     * @Route("/index", name="_index")
+     * @Route("/admin/manager/index", name="_manager_index")
      * @throws \Exception
      */
     public function index()
@@ -33,7 +31,7 @@ class ManagerController extends AbstractController
     }
 
     /**
-     * @Route("/cache", name="_cache")
+     * @Route("/d584ad4af7a5v8va7va8897ad78ada825ad5ad8a8/cache", name="_manager_cache")
      */
     public function cache()
     {
@@ -43,7 +41,7 @@ class ManagerController extends AbstractController
     }
 
     /**
-     * @Route("/xml", name="_xml")
+     * @Route("/d584ad4af7a5v8va7va8897ad78ada825ad5ad8a8/xml", name="_manager_xml")
      */
     public function xml()
     {

@@ -20,7 +20,8 @@ class Locale
     private $convertLang = [
         'fr-BE' => 'fr',
         'fr-CH' => 'fr',
-        'en-GB' => 'en'
+        'en-GB' => 'en',
+        'gb' => 'en'
     ];
 
     private $fallback = 'en';
