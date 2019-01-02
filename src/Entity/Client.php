@@ -76,10 +76,16 @@ class Client
      */
     private $activity;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Contract", mappedBy="client", fetch="EAGER")
+     */
+    private $contract;
+
     public function __construct()
     {
         $this->servedZone = new ArrayCollection();
         $this->activity = new ArrayCollection();
+        $this->contract = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -230,6 +236,32 @@ class Client
     {
         if ($this->activity->contains($activity)) {
             $this->activity->removeElement($activity);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Contract[]
+     */
+    public function getContract(): Collection
+    {
+        return $this->contract;
+    }
+
+    public function addContract(Contract $contract): self
+    {
+        if (!$this->contract->contains($contract)) {
+            $this->contract[] = $contract;
+        }
+
+        return $this;
+    }
+
+    public function removeContract(Contract $contract): self
+    {
+        if ($this->contract->contains($contract)) {
+            $this->contract->removeElement($contract);
         }
 
         return $this;

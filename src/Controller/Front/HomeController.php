@@ -2,6 +2,8 @@
 
 namespace App\Controller\Front;
 
+use App\Entity\Client;
+use App\Repository\ClientRepository;
 use App\Services\Locale;
 use Psr\SimpleCache\CacheInterface;
 use App\Repository\ActivityRepository;
