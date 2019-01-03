@@ -13,6 +13,19 @@
         </li>
     </ul>
 
+    <div class="button {{ routeMatched('/admin/contract') ? 'selected' }}"
+         onclick="toggle(this)">
+        Contracts
+    </div>
+    <ul {{ routeMatched('/admin/contract') ? null : 'hidden' }} >
+        <li class="button {{ routeMatched('/admin/contract/index') ? 'selected' }}">
+            <a href="{{ path('_admin_contract_index') }}">Tous les contracts</a>
+        </li>
+        <li class="button {{ routeMatched('/admin/contract/nouveau') ? 'selected' }}">
+            <a href="{{ path('_admin_contract_new') }}">Nouveau contract</a>
+        </li>
+    </ul>
+
     <div class="button {{ routeMatched('/admin/zones-desservies') ? 'selected' }}"
          onclick="toggle(this)">
         Localisations

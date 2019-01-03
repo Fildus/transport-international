@@ -1,0 +1,29 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block title %}{{ c.client.legalInformation.corporateName ?? 'nouveau' }} - À propos {% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_domain_index'), "Contract"],
+            [ '#' , c.client.legalInformation.corporateName ?? 'nouveau']
+        ]}) }}
+{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block content %}
+    <div class="form-group card-custom p-3">
+        <h2>Contract</h2>
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_widget(form) }}
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn btn-success ">Soumettre</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

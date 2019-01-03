@@ -231,6 +231,4 @@ class Contract
 
         return $this;
     }
-
-
 }

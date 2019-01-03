@@ -1,0 +1,57 @@
+{% extends 'backOffice/base/base_admin.html.twig' %}
+
+{% block header %}
+    {{ include('backOffice/base/parts/header.html.twig',
+        {"breadcrumb":[
+            [path('_admin_home'), "Accueil"],
+            [path('_admin_client_index'), "Tous les contracts"]
+        ]}) }}
+{% endblock %}
+
+{% block content %}
+    <div class="card-custom">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th width="32%" class="text-center">Email</th>
+                <th width="32%" class="text-center">Contract</th>
+                <th width="5%" class="text-center">Montant</th>
+                <th width="5%" class="text-center">Devise</th>
+                <th width="5%" class="text-center">Commentaire</th>
+                <th width="5%" class="text-center">litigation</th>
+                <th width="5%" class="text-center">status</th>
+                <th colspan="3" width="11%" class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for c in contracts %}
+                <tr>
+                    <td>{{ c.email }}</td>
+                    <td>{{ c.bill }}</td>
+                    <td class="text-center">{{ c.amount }}</td>
+                    <td class="text-center">{{ c.currency }}</td>
+                    <td class="text-center">{{ c.comment }}</td>
+                    <td class="text-center">{{ c.litigation ? 'oui' : 'non' }}</td>
+                    <td class="text-center">{{ c.status ? 'oui' : 'non' }}</td>
+                    <td class="text-center">
+                        <a href="{{ path('_admin_contract_edit', {'id': c.id}) }}">
+                            <i class="far fa-edit mr-2"></i>
+                        </a>
+                        <a href="{{ path('_admin_contract_delete', {'id': c.id}) }}">
+                            <i class="far fa-trash-alt text-danger ml-2"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination justify-content-center">
+        {{ knp_pagination_render(contracts) }}
+    </div>
+{% endblock %}
