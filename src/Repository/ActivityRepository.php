@@ -47,47 +47,6 @@ class ActivityRepository extends ServiceEntityRepository
         return $qb;
     }
 
-//    /**
-//     * @param Collection $clientActivities
-//     * @return Activity
-//     */
-//    public function getAllActivitiesOnlyWithThoseChildren(Collection $clientActivities)
-//    {
-//        $activity = new Activity();
-//        $activities = $this->findBy([
-//            'parent' => null
-//        ]);
-//        foreach ($activities as $child) {
-//            $activity->addChildren($child);
-//        }
-//
-//        return $activity;
-//
-//    }
-//
-//    /**
-//     * @param string $name
-//     * @param string $locale
-//     * @return int|null
-//     * @throws \Doctrine\ORM\NonUniqueResultException
-//     */
-//    public function getActivityName(string $name, string $locale): ?int
-//    {
-//        $qb = $this->createQueryBuilder('activity');
-//
-//        $qb->innerJoin('activity.translation', 't')
-//            ->where('t.' . $locale . 'Slug = \'' . $name . '\'');
-//
-//        $activity = $qb
-//            ->getQuery()
-//            ->useResultCache(true)
-//            ->getOneOrNullResult();
-//
-//        /** @var $activity Activity */
-//        if ($activity !== null) return $activity->getId();
-//        return null;
-//    }
-
     /**
      * @param Activity $activity
      * @return array|null
@@ -127,42 +86,14 @@ class ActivityRepository extends ServiceEntityRepository
             ->where((new Expr())->in(
                 'a.path', $rootElements
             ))
-            ->innerJoin('a.translation', 't')
+            ->leftJoin('a.translation', 't')
+            ->addSelect('t')
             ->getQuery()
             ->useResultCache(true)
             ->getResult();
 
         return array_unique($qb);
     }
-
-//    /**
-//     * @param Collection $activities
-//     * @return Activity
-//     */
-//    public function activitiesTreeClient(Collection $activities): Activity
-//    {
-//        $this->activities = null;
-//        foreach ($activities as $activity) {
-//            $this->iteratorTree($activity);
-//        }
-//
-//        return new Activity();
-//    }
-//
-//    public function iteratorTree($activity)
-//    {
-//        /**
-//         * @var $activity Activity
-//         */
-//        if (!isset($this->activities[$activity->getLevel()])){
-//            if (!isset($this->activities[$activity->getLevel()][$activity->getId()])){
-//                $this->activities[$activity->getLevel()][$activity->getId()][] = $activity;
-//            }
-//        }
-//        if ($activity->getParent()){
-//            $this->iterator($activity->getParent());
-//        }
-//    }
 
     public function getAllChildren($idElement)
     {

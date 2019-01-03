@@ -163,8 +163,9 @@ class ServedZoneRepository extends ServiceEntityRepository
     {
         $qb = $this
             ->createQueryBuilder('s')
-            ->innerJoin('s.translation', 't')
             ->where('s.level = 0')
+            ->leftJoin('s.translation', 't')
+            ->addSelect('t')
             ->getQuery()
             ->useResultCache(true)
             ->getResult();
