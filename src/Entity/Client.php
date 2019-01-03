@@ -77,7 +77,7 @@ class Client
     private $activity;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Contract", mappedBy="client")
+     * @ORM\OneToMany(targetEntity="App\Entity\Contract", mappedBy="client", cascade={"persist", "remove"})
      */
     private $contract;
 

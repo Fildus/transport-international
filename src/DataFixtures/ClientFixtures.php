@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\About;
 use App\Entity\Client;
 use App\Entity\Contact;
+use App\Entity\Contract;
 use App\Entity\Location;
 use App\Entity\Managers;
 use App\Entity\Equipment;
@@ -77,6 +78,11 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
         }
     }
 
+    /**
+     * @param ObjectManager $manager
+     * @param int $start
+     * @throws \Exception
+     */
     public function load(ObjectManager $manager, int $start = 0)
     {
         $count = $this->countI((int)$start);
@@ -97,6 +103,7 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
                 ->setEquipment($this->getEquipment($row))
                 ->setAbout($this->getAbout($row));
 
+            $client = $this->addContract($client, $row);
             $client = $this->addActivities($client, $row);
             $client = $this->addServedZone($client, $row);
 
@@ -299,6 +306,61 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
         }
 
         return $location;
+    }
+
+    /**
+     * @param $client
+     * @param $row
+     * @return Client
+     * @throws \Exception
+     */
+    public function addContract($client, $row)
+    {
+        $contractDb = $this->extractDb->query("SELECT * FROM contrat WHERE id_client =" . (int)$row['id_client']);
+        $contractbcDb = $this->extractDb->query("SELECT * FROM contratbc WHERE id_client =" . (int)$row['id_client']);
+
+        !empty($contractDb) ? $contractDb = $contractDb[0] : $contractDb = null;
+        !empty($contractbcDb) ? $contractbcDb = $contractbcDb[0] : $contractbcDb = null;
+
+        if ($contractDb !== null) {
+            $contract = new Contract();
+            $contract
+                ->setAmount($contractDb['montant'])
+                ->setBill($contractDb['n_facture'])
+                ->setComment($contractDb['commentaire'])
+                ->setEmail($contractDb['email'])
+                ->setDateBc(new \DateTime($contractDb['date_facture']))
+                ->setDatePaiement(new \DateTime($contractDb['date_paiement']))
+                ->setDuration($contractDb['duree'])
+                ->setCurrency($contractDb['devise'])
+                ->setLitigation($contractDb['litige'])
+                ->setMode($contractDb['mode'])
+                ->setStatus($contractDb['statut'])
+                ->setClient($client);
+            /** @var $client Client */
+            $client = $client->addContract($contract);
+        }
+
+        if ($contractbcDb !== null) {
+            $contract = new Contract();
+            $contract
+                ->setAmount($contractbcDb['montant'])
+                ->setBill($contractbcDb['n_bc'])
+                ->setComment($contractbcDb['commentaire'])
+                ->setEmail($contractbcDb['email'])
+                ->setDateBc(new \DateTime($contractbcDb['date_bc']))
+                ->setDatePaiement(new \DateTime($contractbcDb['date_paiement']))
+                ->setDuration($contractbcDb['duree'])
+                ->setCurrency($contractbcDb['devise'])
+                ->setLitigation($contractbcDb['litige'])
+                ->setMode($contractbcDb['mode'])
+                ->setStatus($contractbcDb['statut'])
+                ->setClient($client);
+            /** @var $client Client */
+            $client = $client->addContract($contract);
+        }
+
+        return $client;
     }
 
     public function getDependencies()
