@@ -18,10 +18,14 @@
                 <a href="{{ path('_admin_client_edit_activity',{"clientId":c.id}) }}">Activités</a>
                 <a href="{{ path('_admin_client_edit_servedZone',{"clientId":c.id}) }}">Zones dessevies</a>
             </div>
+            <a href="{{ path('_admin_contract_index',{'client':c.id}) }}">
+                Voir les contracts
+            </a>
         </div>
         <div class="col-9 card-custom p-3">
             {% block form %}{% endblock %}
         </div>
+
     </div>
 {% endblock %}
 

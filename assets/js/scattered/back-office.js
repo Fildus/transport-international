@@ -31,7 +31,7 @@ completeIds.forEach(function (e) {
             selector: 'input[id="' + e + '"]',
             minChars: 1,
             source: function (term, response) {
-                $.getJSON('/autocomplete/all?'+e+'='+term, {},
+                $.getJSON('/autocomplete/all?' + e + '=' + term, {},
                     function (data) {
                         response(data);
                     }
@@ -41,3 +41,12 @@ completeIds.forEach(function (e) {
     }
 });
 
+function confirmBeforeDelete(message, that) {
+    // console.log(that)
+    // that.stopImmediatePropagation();
+    // that.preventDefault();
+
+    let test = confirm('êtes vous sûr de vouloir supprimer ' + message);
+
+    console.log(test);
+}

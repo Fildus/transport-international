@@ -9,6 +9,9 @@
 {% endblock %}
 
 {% block content %}
+    {% if client != null %}
+        <a href="{{ path('_admin_client_edit_about',{'clientId':client}) }}">Revenir au client</a>
+    {% endif %}
     <div class="card-custom">
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -37,7 +40,7 @@
                         <a href="{{ path('_admin_contract_edit', {'id': c.id}) }}">
                             <i class="far fa-edit mr-2"></i>
                         </a>
-                        <a href="{{ path('_admin_contract_delete', {'id': c.id}) }}">
+                        <a href="{{ path('_admin_contract_delete', {'id': c.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer  '+ '{{ c.bill }}'+' ?');">
                             <i class="far fa-trash-alt text-danger ml-2"></i>
                         </a>
                     </td>

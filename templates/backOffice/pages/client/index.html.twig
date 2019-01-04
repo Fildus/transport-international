@@ -58,11 +58,16 @@
                     <td>{{ c.location.location.translation }}</td>
                     <td>{{ c.user.username }}</td>
                     <td class="text-center">
-                        <a href="{{ path('_admin_client_edit_legalInformation', {'clientId': c.id}) }}">
+                        <a href="{{ path('_admin_client_edit_legalInformation', {'clientId': c.id}) }}" title="Edition">
                             <i class="far fa-edit mr-2"></i>
                         </a>
-                        <a href="{{ path('_admin_client_delete', {'id': c.id}) }}">
-                            <i class="far fa-trash-alt text-danger ml-2"></i>
+                        {% if c.contract is not empty %}
+                            <a href="{{ path('_admin_contract_index', {'clientId': c.id}) }}" title="Contracts">
+                                <i class="fas fa-file-signature ml-2"></i>
+                            </a>
+                        {% endif %}
+                        <a href="{{ path('_admin_client_delete', {'id': c.id}) }}" title="Supprimer" onclick="return confirm('Etes vous sur de vouloir supprimer  '+ '{{ c.legalInformation.corporateName }}'+' ?');">
+                            <i class="far fa-trash-alt text-danger ml-2 mr-2"></i>
                         </a>
                     </td>
                 </tr>

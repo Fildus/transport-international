@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Contract;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -19,9 +20,17 @@ class ContractRepository extends ServiceEntityRepository
         parent::__construct($registry, Contract::class);
     }
 
-    public function allQuery()
+    /**
+     * @param int|null $client
+     * @return Query
+     */
+    public function allQuery(?int $client): Query
     {
-        return $this->createQueryBuilder('c')
-            ->getQuery();
+        $qb = $this->createQueryBuilder('contract');
+        if ($client !== null && $client !== 0) {
+            $qb = $qb->innerJoin('contract.client', 'client')
+            ->where('client.id =' . $client);
+        }
+        return $qb->getQuery();
     }
 }

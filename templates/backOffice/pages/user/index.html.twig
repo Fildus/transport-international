@@ -43,7 +43,7 @@
                         </a>
                     </td>
                     <td class="text-center">
-                        <a href="{{ path('_admin_users_delete', {'id': u.id}) }}">
+                        <a href="{{ path('_admin_users_delete', {'id': u.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer '+ '{{ u.username }}' + ' ?');">
                             <i class="fas fa-trash-alt text-danger"></i>
                         </a>
                     </td>

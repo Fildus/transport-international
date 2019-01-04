@@ -47,7 +47,7 @@
                         </a>
                     </td>
                     <td class="text-center">
-                        <a href="{{ path('_admin_activities_delete', {'id': a.id}) }}">
+                        <a href="{{ path('_admin_activities_delete', {'id': a.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer '+ '{{ a.translation }}'+' ?');">
                             <i class="fas fa-trash-alt text-danger"></i>
                         </a>
                     </td>

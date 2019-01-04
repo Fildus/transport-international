@@ -42,17 +42,20 @@ class ContractController extends AbstractController
      * @Route("/index/{page}", name="_index", defaults={"page":1})
      * @param int $page
      * @param PaginatorInterface $paginator
+     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(int $page, PaginatorInterface $paginator)
+    public function index(int $page, PaginatorInterface $paginator, Request $request)
     {
+        $clientId = ((int)$request->query->get('client')) ?? null;
         $contracts = $paginator->paginate(
-            $this->contractRepository->allQuery(),
+            $this->contractRepository->allQuery($clientId),
             $page
         );
 
         return $this->render('backOffice/pages/Contract/index.html.twig', [
-            'contracts' => $contracts
+            'contracts' => $contracts,
+            'client' => $clientId
         ]);
     }
 
@@ -115,7 +118,7 @@ class ContractController extends AbstractController
     public function delete($id)
     {
         $contract = $this->contractRepository->find($id);
-        $this->addFlash('danger', 'Le contract '.$contract->getEmail().' a été supprimé');
+        $this->addFlash('danger', 'Le contract ' . $contract->getEmail() . ' a été supprimé');
         $this->manager->remove($contract);
         $this->manager->flush();
         return $this->redirectToRoute('_admin_contract_index');
