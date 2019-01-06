@@ -65,6 +65,11 @@ class ClientSearch
      */
     private $webSite;
 
+    /**
+     * @var $contract bool
+     */
+    private $contract;
+
 
     /**
      * @return int|null
@@ -272,5 +277,24 @@ class ClientSearch
     public function setWebSite(string $webSite): void
     {
         $this->webSite = $webSite;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getContract(): ?bool
+    {
+        return $this->contract;
+    }
+
+    /**
+     * @param bool $contract
+     * @return ClientSearch
+     */
+    public function setContract(bool $contract): ClientSearch
+    {
+        $this->contract = $contract;
+
+        return $this;
     }
 }

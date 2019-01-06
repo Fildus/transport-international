@@ -55,6 +55,7 @@ class ClientRepository extends ServiceEntityRepository
             ->innerJoin('c.managers', 'm')
             ->innerJoin('c.activity', 'a')
             ->innerJoin('c.legalInformation', 'l')
+            ->innerJoin('c.contract', 'contract')
             ->andWhere('c.legalInformation != 0')
             ->andWhere('c.contact != 0')
             ->andWhere('c.location != 0')
@@ -154,9 +155,17 @@ class ClientRepository extends ServiceEntityRepository
                 ->setParameter('webSite', $search->getWebSite());
         }
 
+        if ($search->getContract() !== null) {
+            if ((int)$search->getContract() === 1) {
+                $qb->andWhere('c.contract is not empty');
+            }
+            if ((int)$search->getContract() === 0){
+                $qb->andWhere('c.contract is empty');
+            }
+        }
+
         $qb
-            ->getQuery()
-        ;
+            ->getQuery();
 
         return $qb;
     }

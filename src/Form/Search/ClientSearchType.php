@@ -4,6 +4,7 @@ namespace App\Form\Search;
 
 use App\Entity\Search\ClientSearch;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -54,12 +55,6 @@ class ClientSearchType extends AbstractType
                 'label' => false,
                 'attr' => ["placeholder" => 'localisation']
             ])
-            /**
-             * $phone
-             * $fax
-             * $contact
-             * $webSite
-             */
             ->add('phone', TextType::class, [
                 'required' => false,
                 'label' => false,
@@ -79,6 +74,16 @@ class ClientSearchType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => ["placeholder" => 'Site web']
+            ])
+            ->add('contract', ChoiceType::class, [
+                'required' => false,
+                'label' => false,
+                'attr' => ["placeholder" => 'Dispose d\'un contract ?'],
+                'choices' => [
+                    'Indifférent' => null,
+                    'Posséde un contract' => 1,
+                    'Pas de contracts' => 0
+                ]
             ]);
     }
 

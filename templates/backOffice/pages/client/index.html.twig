@@ -35,6 +35,10 @@
                 {{ form_row(searchForm.contact, {"attr":{"class":"form-control form-control-sm"}}) }}
                 {{ form_row(searchForm.webSite, {"attr":{"class":"form-control form-control-sm"}}) }}
             </div>
+            <div class="col-4">
+                <h3 class="tinyTitleh2">Contract :</h3>
+                {{ form_row(searchForm.contract, {"attr":{"class":"form-control form-control-sm"}}) }}
+            </div>
         </div>
         <button type="submit" class="btn btn-outline-primary col-12 mt-2">Filtrer</button>
         {{ form_end(searchForm) }}
