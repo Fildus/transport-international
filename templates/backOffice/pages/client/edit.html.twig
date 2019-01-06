@@ -21,6 +21,10 @@
             <a href="{{ path('_admin_contract_index',{'client':c.id}) }}">
                 Voir les contracts
             </a>
+            <br>
+            <a href="{{ path('_admin_contract_new',{'idClient':c.id}) }}">
+                Ajouter un contract
+            </a>
         </div>
         <div class="col-9 card-custom p-3">
             {% block form %}{% endblock %}

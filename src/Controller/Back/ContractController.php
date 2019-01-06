@@ -4,6 +4,7 @@ namespace App\Controller\Back;
 
 use App\Entity\Contract;
 use App\Form\Back\ContractType;
+use App\Repository\ClientRepository;
 use App\Repository\ContractRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -85,13 +86,20 @@ class ContractController extends AbstractController
     }
 
     /**
-     * @Route("/nouveau", name="_new")
+     * @Route("/nouveau/{idClient}", name="_new", defaults={"idClient":null})
      * @param Request $request
+     * @param $idClient
+     * @param ClientRepository $clientRepository
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function new(Request $request)
+    public function new(Request $request, $idClient, ClientRepository $clientRepository)
     {
         $contract = new Contract();
+
+        if($idClient !== null){
+            $client = $clientRepository->find($idClient);
+            $contract->setClient($client);
+        }
 
         $form = $this->createForm(ContractType::class, $contract);
 
@@ -105,7 +113,7 @@ class ContractController extends AbstractController
         }
 
         return $this->render('backOffice/pages/Contract/types/contractEdit.html.twig', [
-            'd' => $contract,
+            'c' => $contract,
             'form' => $form->createView()
         ]);
     }

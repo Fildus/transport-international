@@ -1,6 +1,6 @@
 {% extends 'backOffice/base/base_admin.html.twig' %}
 
-{% block title %}{{ c.client.legalInformation.corporateName ?? 'nouveau' }} - À propos {% endblock %}
+{% block title %}{{ c.client.legalInformation.corporateName ?? 'nouveau' }} - Contract {% endblock %}
 
 {% block header %}
     {{ parent() }}
@@ -24,6 +24,11 @@
             <button type="submit" class="btn btn-success ">Soumettre</button>
         </div>
         {{ form_end(form) }}
-    </div>
 
+        {% if c.client %}
+            <a href="{{ path('_admin_client_edit_legalInformation',{'clientId':c.client.id}) }}">
+                Revenir au client
+            </a>
+        {% endif %}
+    </div>
 {% endblock %}

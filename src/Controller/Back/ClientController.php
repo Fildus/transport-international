@@ -91,7 +91,7 @@ class ClientController extends AbstractController
     }
 
     /**
-     * @Route("/client/{clientId}/modifications-legales", name="_edit_legalInformation")
+     * @Route("/client/{clientId}/informations-legales", name="_edit_legalInformation")
      * @param ClientRepository $client
      * @param $clientId
      * @param Request $request

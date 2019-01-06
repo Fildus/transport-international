@@ -261,6 +261,7 @@ class Client
     public function removeContract(Contract $contract): self
     {
         if ($this->contract->contains($contract)) {
+            /** @var $contract Contract */
             $this->contract->removeElement($contract);
         }
 
