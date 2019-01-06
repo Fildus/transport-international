@@ -66,7 +66,7 @@
                             <i class="far fa-edit mr-2"></i>
                         </a>
                         {% if c.contract is not empty %}
-                            <a href="{{ path('_admin_contract_index', {'clientId': c.id}) }}" title="Contracts">
+                            <a href="{{ path('_admin_contract_index', {'client': c.id}) }}" title="Contracts">
                                 <i class="fas fa-file-signature ml-2"></i>
                             </a>
                         {% endif %}

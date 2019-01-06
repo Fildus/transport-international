@@ -28,9 +28,10 @@ class ContractRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('contract');
         if ($client !== null && $client !== 0) {
-            $qb = $qb->innerJoin('contract.client', 'client')
+            $qb = $qb->join('contract.client', 'client')
             ->where('client.id =' . $client);
         }
+//        dd($qb->getQuery());
         return $qb->getQuery();
     }
 }

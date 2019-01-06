@@ -48,7 +48,7 @@ class ContractController extends AbstractController
      */
     public function index(int $page, PaginatorInterface $paginator, Request $request)
     {
-        $clientId = ((int)$request->query->get('client')) ?? null;
+        $clientId = (int)$request->query->get('client') ?? null;
         $contracts = $paginator->paginate(
             $this->contractRepository->allQuery($clientId),
             $page
