@@ -29,10 +29,11 @@ body{font-family:'Lucida Grande',tahoma,verdana,arial,sans-serif;color:#7e7e7e;f
 #numero-surtaxe{font-size:8px;color:#7e7e7e;margin:5px 0}#numero-link a{font-size:25px;color:#7e7e7e}
 #nav-tabContent{border:1px solid #ddd;border-bottom-left-radius:5px;border-bottom-right-radius:5px;padding:15px 15px;border-top:0}
 #nav-tab{font-size:20px}#nav-allowance-tab,#nav-contact-tab,#nav-presentation-tab{width:33.33333%}
-.nav-item{font-size:2.5vw}#front-custom input,#front-custom select{font-size:16px !important}
-#front-custom h2:first-child{font-size:22px;color:#003b71;font-weight:400}#front-custom .custom-form-group{width:16%}
-#front-custom .jumbotron{padding:20px}#front-custom .jumbotron h2{font-size:24px;margin:0;color:#303030}
-#front-custom .jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}#front-custom .jumbotron .lostmail{font-size:16px;color:#337ab7;text-decoration:none}
+.nav-item{font-size:20px}@media screen and (max-width:640px){.nav-item{font-size:12px}
+}#front-custom input,#front-custom select{font-size:16px !important}#front-custom h2:first-child{font-size:22px;color:#003b71;font-weight:400}
+#front-custom .custom-form-group{width:16%}#front-custom .jumbotron{padding:20px}
+#front-custom .jumbotron h2{font-size:24px;margin:0;color:#303030}#front-custom .jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}
+#front-custom .jumbotron .lostmail{font-size:16px;color:#337ab7;text-decoration:none}
 #front-custom article a{color:#337ab7;text-decoration:none}#front-custom article h3{font-size:14px;font-weight:400}
 #front-custom article ul li{color:#337ab7;text-decoration:none}.dropdown-item:active{background-color:#eee}
 li{list-style:none}#bottom{background:#d3d7e0;margin:20px 0;padding:30px 0}#bottom .hovereffect{width:100%;height:100%;float:left;overflow:hidden;position:relative;text-align:center;cursor:default}

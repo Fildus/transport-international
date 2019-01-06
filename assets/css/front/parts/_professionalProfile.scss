@@ -70,6 +70,13 @@
   width : (100%/3);
 }
 
+
 .nav-item{
-  font-size: 2.5vw;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .nav-item {
+    font-size: 12px;
+  }
 }
