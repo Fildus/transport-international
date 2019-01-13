@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\About;
+use App\Entity\BindingTable;
 use App\Entity\Client;
 use App\Entity\Contact;
 use App\Entity\Contract;
@@ -20,6 +21,7 @@ use App\Entity\LegalInformation;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use Doctrine\ORM\EntityManager;
 use Psr\SimpleCache\CacheInterface;
 
 class ClientFixtures extends Fixture implements DependentFixtureInterface
@@ -94,6 +96,7 @@ class ClientFixtures extends Fixture implements DependentFixtureInterface
             $row = $this->extractDb->query("SELECT * FROM info_client ORDER BY id_client LIMIT 1 OFFSET {$i}")[0];
             $client = new Client();
             $client
+                ->setIdOldDatabase($row['id_client'])
                 ->setLegalInformation($this->getLegalInformation($row))
                 ->setLocation($this->getLocation($row))
                 ->setContact($this->getContact($row))

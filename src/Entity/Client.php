@@ -19,6 +19,11 @@ class Client
     private $id;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $id_oldDatabase;
+
+    /**
      * @ORM\OneToOne(targetEntity="App\Entity\LegalInformation", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      */
@@ -91,6 +96,25 @@ class Client
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getIdOldDatabase(): ?int
+    {
+        return $this->id_oldDatabase;
+    }
+
+    /**
+     * @param int $id_oldDatabase
+     * @return Client
+     */
+    public function setIdOldDatabase(int $id_oldDatabase): self
+    {
+        $this->id_oldDatabase = $id_oldDatabase;
+
+        return $this;
     }
 
     public function getLegalInformation(): ?LegalInformation
