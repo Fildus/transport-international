@@ -31,7 +31,7 @@
                         <a href="{{ path('_admin_domain_edit', {'id': d.id}) }}">
                             <i class="far fa-edit mr-2"></i>
                         </a>
-                        <a href="{{ path('_admin_domain_delete', {'id': d.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer '+ '{{ a.translation }}' + ' ?');">
+                        <a href="{{ path('_admin_domain_delete', {'id': d.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer '+ '{{ d.domain }}' + ' ?');">
                             <i class="far fa-trash-alt text-danger ml-2"></i>
                         </a>
                     </td>

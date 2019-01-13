@@ -450,7 +450,7 @@ class ClientController extends AbstractController
             $this->manager->persist($c);
             $this->manager->flush();
 
-            $this->addFlash('success', 'Le client dont le mail est <strong>'.$c->getUser()->getUsername().'</strong>, a été créé');
+            $this->addFlash('success', 'Le client dont le mail est <strong>' . $c->getUser()->getUsername() . '</strong>, a été créé');
             return $this->redirectToRoute('_admin_client_edit_legalInformation', ['clientId' => $c->getId()]);
         }
 
@@ -469,7 +469,7 @@ class ClientController extends AbstractController
     {
         $c = $this->clientRepository->find($id);
 
-        $this->addFlash('warning', 'Le client <strong>'.$c->getLegalInformation()->getCorporateName().'</strong> a été supprimé');
+        $this->addFlash('warning', 'Le client <strong>' . $c->getLegalInformation()->getCorporateName() . '</strong> a été supprimé');
 
         $this->manager->remove($c);
         $this->manager->flush();

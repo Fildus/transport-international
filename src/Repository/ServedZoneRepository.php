@@ -189,7 +189,23 @@ class ServedZoneRepository extends ServiceEntityRepository
 
         $this->iteratorGetDeptByCountry($country);
 
-        return $this->servedZones;
+        $redefinedIndex = [];
+
+        foreach ($this->servedZones as $k => $v) {
+            $redefinedIndex[$v['department']] = $k;
+        }
+
+        ksort($redefinedIndex);
+
+        $return = [];
+
+        $i = 0;
+        foreach ($redefinedIndex as $k => $v){
+            $return[$i] = $this->servedZones[$v];
+            $i++;
+        }
+
+        return $return;
     }
 
     /**
