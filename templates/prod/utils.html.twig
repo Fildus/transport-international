@@ -30,7 +30,7 @@
 
 <script>
     jQuery(document).ready(function () {
-        let count = 0;
+        let count = 88;
         let action = 0;
         let max = 400;
 
@@ -55,12 +55,13 @@
                     jQuery.ajax({
                         type: 'GET',
                         url: '{{ url('caching') }}?i=' + Number(selfCount),
-                        timeout: 1800000,
+                        timeout: 3600000,
                         success: function (data) {
                             action--;
                             setOk(data.data)
                         },
                         error: function () {
+                            action--;
                             setFail(selfCount);
                             console.log('La requête n\'a pas abouti');
                         }
