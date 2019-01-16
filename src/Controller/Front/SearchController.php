@@ -3,12 +3,14 @@
 namespace App\Controller\Front;
 
 
+use App\Controller\ExceptionController;
 use App\Entity\Activity;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use App\Repository\TranslationRepository;
 use App\Services\Locale;
 use App\Repository\ClientRepository;
+use App\Services\Slug;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

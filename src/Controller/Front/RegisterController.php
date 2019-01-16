@@ -51,6 +51,9 @@ class RegisterController extends AbstractController
      */
     public function register(Request $request, ObjectManager $manager): Response
     {
+        if ($this->getUser() !== null){
+            return $this->redirectToRoute('home');
+        }
         $client = new Client();
         $form = $this->createForm(RegisterClientType::class, $client);
 

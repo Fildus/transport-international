@@ -41,10 +41,18 @@ class LocationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('address')
-            ->add('postalCode')
-            ->add('city')
-            ->add('location', TextType::class)
+            ->add('address', null, [
+                'label' => 'form.Location.adress'
+            ])
+            ->add('postalCode', null, [
+                'label' => 'form.Location.postalCode'
+            ])
+            ->add('city', null, [
+                'label' => 'form.Location.city'
+            ])
+            ->add('location', TextType::class, [
+                'label' => 'form.Location.location'
+            ])
             ->get('location')
             ->addModelTransformer(new CallbackTransformer(
                 function ($object) {

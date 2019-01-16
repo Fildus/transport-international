@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'parts/top.html.twig' %}
+    <div class="container mb-2 mt-2">
+        {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
+    </div>
+    {{ render(controller('App\\Controller\\Front\\RenderController::getSlider')) }}
+
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center text-danger">{{ 'error.404.h1' | trans }}</h1>
+        <h2 class="text-center">{{ 'error.404.text' | trans | replace({'__PAGE__': '<strong>'~app.request.uri~'</strong>' }) | raw }}</h2>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block meta %}
+
+    <link rel="icon" href="{{ asset('build/img/front/icons/favicon-32x32.ico') }}">
+    <title>{{ domain.title }}</title>
+    <meta name="description" content="{{ domain.description }}">
+    <meta name="keywords" content="{{ domain.keywords }}">
+
+    <meta property="og:title" content="{{ domain.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+
+    <meta property="og:image" content="{{ asset('build/img/front/logo-transport-international-190x190.png') }}" />
+    <meta property="og:image:width" content="190" />
+    <meta property="og:image:height" content="190" />
+
+    <meta property="og:site_name" content="{{ 'meta.home.og.site_name' | trans }}" />
+    <meta property="og:description" content="{{ domain.description }}" />
+
+    <link rel="canonical" href="https://www.transport-international.com/" />
+
+    <link rel="alternate" hreflang="fr-FR" href="https://www.transport-international.com/" />
+    <link rel="alternate" hreflang="en-GB" href="https://www.transportation-directory.com/" />
+    <link rel="alternate" hreflang="es" href="https://www.guia-transporte.com/" />
+    <link rel="alternate" hreflang="de" href="https://www.transport-unternehmen.net/" />
+    <link rel="alternate" hreflang="it" href="https://www.trasporto-italia.com/" />
+    <link rel="alternate" hreflang="pt" href="https://www.armazenagem-portugal.com/" />
+    <link rel="alternate" hreflang="fr-BE" href="https://www.transport-international.be/" />
+    <link rel="alternate" hreflang="ca-AD" href="https://www.anuari-transport.com/" />
+    <link rel="alternate" hreflang="ro" href="https://www.anuar-transport.com/" />
+    <link rel="alternate" hreflang="fr-MA" href="https://www.transports-maroc.com/" />
+    <link rel="alternate" hreflang="fr-CI" href="https://www.transport-cotedivoire.com/" />
+
+{% endblock %}

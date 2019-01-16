@@ -14,14 +14,25 @@ class LegalInformationType extends AbstractType
     {
         $builder
             ->add('siret')
-            ->add('corporateName')
-            ->add('companyName')
-            ->add('legalForm', ChoiceType::class, [
-                'choices' => ['S.A' => 'S.A', 'S.A.R.L' => 'S.A.R.L', 'E.U.R.L' => 'E.U.R.L', 'N.P' => 'N.P']
+            ->add('corporateName', null, [
+                'label' => 'form.legalInformations.siret'
             ])
-            ->add('turnover')
-            ->add('workforceNbr')
-            ->add('establishmentsNbr');
+            ->add('companyName', null, [
+                'label' => 'form.legalInformations.CompanyName'
+            ])
+            ->add('legalForm', ChoiceType::class, [
+                'choices' => ['S.A' => 'S.A', 'S.A.R.L' => 'S.A.R.L', 'E.U.R.L' => 'E.U.R.L', 'N.P' => 'N.P'],
+                'label' => 'form.legalInformations.LegamForm'
+            ])
+            ->add('turnover', null, [
+                'label' => 'form.legalInformations.Turnover'
+            ])
+            ->add('workforceNbr', null, [
+                'label' => 'form.legalInformations.workforceNbr'
+            ])
+            ->add('establishmentsNbr', null, [
+                'label' => 'form.legalInformations.EstablishmentNbr'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -12,10 +12,15 @@ class ManagersType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('companyManager')
-            ->add('operationsManager')
-            ->add('salesManager')
-        ;
+            ->add('companyManager', null, [
+                'label' => 'form.managers.companyManager'
+            ])
+            ->add('operationsManager', null, [
+                'label' => 'form.managers.operationManager'
+            ])
+            ->add('salesManager', null, [
+                'label' => 'form.managers.salesManager'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

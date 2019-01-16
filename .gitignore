@@ -20,4 +20,5 @@
 node_modules*
 test*
 yarn*
+ti_nouveau.sql*
 ###< custom ###

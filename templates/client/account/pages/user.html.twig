@@ -4,10 +4,13 @@
 
 {% block body %}
     {% include 'parts/top.html.twig' %}
-    {{ render(controller('App\\Controller\\Front\\renderController::getHeader')) }}
+    <div class="container">
+        {{ render(controller('App\\Controller\\Front\\renderController::getHeader')) }}
+    </div>
+    {% include 'client/account/parts/header.html.twig' %}
+
     <div class="container">
         <div class="row">
-            {% include 'client/account/parts/header.html.twig' %}
             {% include 'client/account/parts/nav.html.twig' %}
             {% include'client/account/defaultForm.html.twig' %}
         </div>

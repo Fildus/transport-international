@@ -2,10 +2,13 @@
 
 {% block body %}
     {% include 'parts/top.html.twig' %}
-    {{ render(controller('App\\Controller\\Front\\renderController::getHeader')) }}
+    <div class="container">
+        {{ render(controller('App\\Controller\\Front\\renderController::getHeader')) }}
+    </div>
+    {% include 'client/account/parts/header.html.twig' %}
+
     <div class="container">
         <div class="row">
-            {% include 'client/account/parts/header.html.twig' %}
             {% include 'client/account/parts/nav.html.twig' %}
             {{ form_start(form) }}
             {{ render(controller('App\\Controller\\Front\\renderController::getCheckboxCascade',
@@ -16,5 +19,6 @@
             </div>
         </div>
         {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}

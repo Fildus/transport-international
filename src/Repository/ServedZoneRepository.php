@@ -25,15 +25,14 @@ class ServedZoneRepository extends ServiceEntityRepository
      * @var
      */
     private $servedZone;
-    /**
-     * @var CacheInterface
-     */
-    private $cache;
 
-    public function __construct(RegistryInterface $registry, CacheInterface $cache)
+    /**
+     * ServedZoneRepository constructor.
+     * @param RegistryInterface $registry
+     */
+    public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, ServedZone::class);
-        $this->cache = $cache;
     }
 
     /**

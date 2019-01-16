@@ -12,14 +12,30 @@ class CoreBusinessType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('transport')
-            ->add('logistics')
-            ->add('charter')
-            ->add('travelers')
-            ->add('relocation')
-            ->add('storage')
-            ->add('rentalWithDriver')
-            ->add('taxis')
+            ->add('transport', null, [
+                'label' => 'form.coreBusiness.transport'
+            ])
+            ->add('logistics', null, [
+                'label' => 'form.coreBusiness.logistics'
+            ])
+            ->add('charter', null, [
+                'label' => 'form.coreBusiness.charter'
+            ])
+            ->add('travelers', null, [
+                'label' => 'form.coreBusiness.travelers'
+            ])
+            ->add('relocation', null, [
+                'label' => 'form.coreBusiness.relocation'
+            ])
+            ->add('storage', null, [
+                'label' => 'form.coreBusiness.storage'
+            ])
+            ->add('rentalWithDriver', null, [
+                'label' => 'form.coreBusiness.rentalWithDriver'
+            ])
+            ->add('taxis', null, [
+                'label' => 'form.coreBusiness.taxis'
+            ])
         ;
     }
 

@@ -1,653 +1,701 @@
 account:
-    header:
-        dashboard: VOTRE TABLEAU DE BORD
-    nav:
-        name: Paramètres de compte
-        legalInformation: Informations légales
-        location: Votre localisation
-        contact: Vos coordonnées
-        coreBusiness: Votre coeur de métier
-        user: Identifiants
-        managers: Contacts
-        equipment: Vos équipements
-        about: A propos
-        activity: Vos activités
-        servedZone: Zones desservies
+  header:
+    dashboard: VOTRE TABLEAU DE BORD
+  nav:
+    name: Paramètres de compte
+    legalInformation: Informations légales
+    location: Votre localisation
+    contact: Vos coordonnées
+    coreBusiness: Votre coeur de métier
+    user: Identifiants
+    managers: Contacts
+    equipment: Vos équipements
+    about: A propos
+    activity: Vos activités
+    servedZone: Zones desservies
 header:
-    form:
-        charter: Affrètement
+  form:
+    charter: Affrètement
 top:
-    welcome: Bienvinue sur l'Annuaire Transport-international.com
-    account:
-        myAccount: Mon compte
-        profile: Profil
-        register: inscription
-    log:
-        login:
-            title: déjà inscrit
-            html: déjà inscrit ?
-        logout:
-            title: se déconnecter
-            html: Se déconnecter
+  welcome: Bienvinue sur l'Annuaire Transport-international.com
+  account:
+    myAccount: Mon compte
+    profile: Profil
+    register: inscription
+
+  log:
+    login:
+      title: déjà inscrit
+      html: déjà inscrit ?
+    logout:
+      title: se déconnecter
+      html: Se déconnecter
 
 footer:
-    legelInformation: Informations légales
-    price: Tarifs et conditions
-    subscription: Inscription
-    contact: Contact
+  legelInformation: Informations légales
+  price: Tarifs et conditions
+  subscription: Inscription
+  contact: Contact
+  guides:
+    h4: Nos guides spécialisés
     guides:
-        h4: Nos guides spécialisés
-        guides:
-            transportOfGoods:
-                url: "http://www.transport-france.com/"
-                title: "Transport de Marchandises"
-                html: "Transport de Marchandises"
-            mover:
-                url: "http://www.annuaire-des-demenageurs.com/"
-                title: "Déménagement"
-                html: "Déménagement"
-            traveler:
-                url: "http://www.annuaire-des-autocaristes.com/"
-                title: "Voyage en autocar"
-                html: "Voyage en autocar"
-            fret:
-                url: "http://www.annuaire-affreteurs.com/"
-                title: "affrètement"
-                html: "affrètement"
-            storage:
-                url: "http://www.annuaire-des-entreposeurs.com/"
-                title: "Entreprise de stockage"
-                html: "Entreprise de stockage"
-            transportLuxembourg:
-                url: "http://www.transport-luxembourg.com/"
-                title: 'transport luxembourg'
-                html: "Transports Général et Industriel"
-            moverLuxembourg:
-                url: "http://www.demenagement-luxembourg.com/"
-                title: "déménageurs luxembourg"
-                html: "Déménageurs"
-            autocoarLuxembourg:
-                url: "http://www.autocar-luxembourg.com/"
-                title: "autocar luxembourg"
-                html: "Transport en autocars"
-            storageLuxembourg:
-                url: "http://www.entrepot-luxembourg.com/"
-                title: "emmagasinage luxembourg"
-                html: "Emmagasinage"
-            fretLuxembourg:
-                url: "http://www.fret-luxembourg.com/"
-                title: "fret luxembourg"
-                html: "Commissionnaire"
-            transportSwisse:
-                url: "http://www.transport-suisse.net/"
-                title: "transport suisse"
-                html: "Transport de Marchandises"
-            moverSwisse:
-                url: "http://www.demenagement-suisse.com/"
-                title: "déménageurs suisse"
-                html: "Déménagements"
-            autocoarSwisse:
-                url: "http://www.autocar-suisse.com/"
-                title: "autocar suisse"
-                html: "Voyages en Autocars"
-            storageSwisse:
-                url: "http://www.entrepot-suisse.com/"
-                title: "stockage suisse"
-                html: "Entreposage"
-            fretSwisse:
-                url: "http://www.fret-suisse.com/"
-                title: "fret suisse"
-                html: "Organisateur de transports"
-            fretBelgium:
-                url: "http://www.fret-belgique.com/"
-                title: "fret belgique"
-                html: "Frêt"
-            transportBelgium:
-                url: "http://www.transport-belgique.com/"
-                title: "transport belgique"
-                html: "Transport Général et Industriel"
-            moverBelgium:
-                url: "http://www.demenagement-belgique.com/"
-                title: "déménageurs belgique"
-                html: "Déménageurs"
-            autocoarBelgium:
-                url: "http://www.autocar-belgique.com/"
-                title: "autocar belgique"
-                html: "Transport en Autocar"
-            storageBelgium:
-                url: "http://www.entrepot-belgique.com/"
-                title: "stockage belgique"
-                html: "Stockage"
+      transportOfGoods:
+        url: "http://www.transport-france.com/"
+        title: "Transport de Marchandises"
+        html: "Transport de Marchandises"
+      mover:
+        url: "http://www.annuaire-des-demenageurs.com/"
+        title: "Déménagement"
+        html: "Déménagement"
+      traveler:
+        url: "http://www.annuaire-des-autocaristes.com/"
+        title: "Voyage en autocar"
+        html: "Voyage en autocar"
+      fret:
+        url: "http://www.annuaire-affreteurs.com/"
+        title: "affrètement"
+        html: "affrètement"
+      storage:
+        url: "http://www.annuaire-des-entreposeurs.com/"
+        title: "Entreprise de stockage"
+        html: "Entreprise de stockage"
+      transportLuxembourg:
+        url: "http://www.transport-luxembourg.com/"
+        title: 'transport luxembourg'
+        html: "Transports Général et Industriel"
+      moverLuxembourg:
+        url: "http://www.demenagement-luxembourg.com/"
+        title: "déménageurs luxembourg"
+        html: "Déménageurs"
+      autocoarLuxembourg:
+        url: "http://www.autocar-luxembourg.com/"
+        title: "autocar luxembourg"
+        html: "Transport en autocars"
+      storageLuxembourg:
+        url: "http://www.entrepot-luxembourg.com/"
+        title: "emmagasinage luxembourg"
+        html: "Emmagasinage"
+      fretLuxembourg:
+        url: "http://www.fret-luxembourg.com/"
+        title: "fret luxembourg"
+        html: "Commissionnaire"
+      transportSwisse:
+        url: "http://www.transport-suisse.net/"
+        title: "transport suisse"
+        html: "Transport de Marchandises"
+      moverSwisse:
+        url: "http://www.demenagement-suisse.com/"
+        title: "déménageurs suisse"
+        html: "Déménagements"
+      autocoarSwisse:
+        url: "http://www.autocar-suisse.com/"
+        title: "autocar suisse"
+        html: "Voyages en Autocars"
+      storageSwisse:
+        url: "http://www.entrepot-suisse.com/"
+        title: "stockage suisse"
+        html: "Entreposage"
+      fretSwisse:
+        url: "http://www.fret-suisse.com/"
+        title: "fret suisse"
+        html: "Organisateur de transports"
+      fretBelgium:
+        url: "http://www.fret-belgique.com/"
+        title: "fret belgique"
+        html: "Frêt"
+      transportBelgium:
+        url: "http://www.transport-belgique.com/"
+        title: "transport belgique"
+        html: "Transport Général et Industriel"
+      moverBelgium:
+        url: "http://www.demenagement-belgique.com/"
+        title: "déménageurs belgique"
+        html: "Déménageurs"
+      autocoarBelgium:
+        url: "http://www.autocar-belgique.com/"
+        title: "autocar belgique"
+        html: "Transport en Autocar"
+      storageBelgium:
+        url: "http://www.entrepot-belgique.com/"
+        title: "stockage belgique"
+        html: "Stockage"
 slider:
-    title: Transport-international.com
-    subTitle: La référence du Transport en Europe et à l'international
-    globeTerrestre:
-        alt: globe terrestre
-    slides:
-        first: Transport International est mis <strong>gratuitement</strong> à la disposition des PME-PMI, des Chargeurs, des Associations et des particuliers, pour leur permettre de <strong>trouver rapidement et facilement</strong> les professionnels du transport en Europe.
-        second: L’annuaire des transports vous apportera des réponses rapides et précises sur vos recherches d’un professionnel pour tout type de transport en local et même jusqu’à l’international.
-        third: Avec plus de <strong>135000 TRANSPORTEURS référencés sur 23 PAYS</strong>, Transport International est le guide du transport En Europe, de la logistique et de l’affrètement.
+  title: Transport-international.com
+  subTitle: La référence du Transport en Europe et à l'international
+  globeTerrestre:
+    alt: globe terrestre
+  slides:
+    first: Transport International est mis <strong>gratuitement</strong> à la disposition des PME-PMI, des Chargeurs, des Associations et des particuliers, pour leur permettre de <strong>trouver rapidement et facilement</strong> les professionnels du transport en Europe.
+    second: L’annuaire des transports vous apportera des réponses rapides et précises sur vos recherches d’un professionnel pour tout type de transport en local et même jusqu’à l’international.
+    third: Avec plus de <strong>135000 TRANSPORTEURS référencés sur 23 PAYS</strong>, Transport International est le guide du transport En Europe, de la logistique et de l’affrètement.
 register:
-    mainTitle: inscription
-    form:
-        username: Votre nom d'utilisateur
-        password: Votre password
-        confirm: Confirmation de votre password
-        siret: Votre siret
-        corporateName: raison sociale
-        turnover: Chiffre d'affaire
-        companyName: Le nom de votre société
-        workforce: Le nombre d'mployés
-        legalForm: Forme légale
-        establishments: Nombre d'établissements
+  mainTitle: inscription
+  form:
+    username: Votre nom d'utilisateur
+    password: Votre password
+    confirm: Confirmation de votre password
+    siret: Votre siret
+    corporateName: raison sociale
+    turnover: Chiffre d'affaire
+    companyName: Le nom de votre société
+    workforce: Le nombre d'mployés
+    legalForm: Forme légale
+    establishments: Nombre d'établissements
 login:
-    mainTitle: connexion
+  mainTitle: connexion
 search:
-    mainTitle: Votre recherche
-    form:
-        title:
-            location: Localisation
-        mainTitle: Affiner ma recherche
-        location:
-            title1: Cette société est basée à
-            title2: Cette société dessert
-            title3: Activité
-        basedAt:
-            option:
-                location: Localisation
-                allLocation: toutes localisation
-                department: Département
-                allDepartment: tous départements
+  mainTitle: Votre recherche
+  form:
+    title:
+      location: Localisation
+    mainTitle: Affiner ma recherche
+    location:
+      title1: Cette société est basée à
+      title2: Cette société dessert
+      title3: Activité
+    basedAt:
+      option:
+        location: Localisation
+        allLocation: toutes localisation
+        department: Département
+        allDepartment: tous départements
 
-        activity:
-            activities: Activité
-            AllActivities: toutes Activité
-        allowance:
-            activities: Préstations
-            AllActivities: toutes préstations
-        to:
-            option:
-                location: Localisation
-                allLocation: toutes localisation
-                department: Département
-                allDepartment: tous départements
-    results:
-        contact:
-            title: Contact
-        website:
-            title: Site web
-        profile:
-            title: Voir la fiche
-        mainTitle: Liste des prestataires
-    submit: Affiner ma recherche
-    reload: Nouvelle recherche
+    activity:
+      activities: Activité
+      AllActivities: toutes Activité
+    allowance:
+      activities: Préstations
+      AllActivities: toutes préstations
+    to:
+      option:
+        location: Localisation
+        allLocation: toutes localisation
+        department: Département
+        allDepartment: tous départements
+  results:
+    contact:
+      title: Contact
+    website:
+      title: Site web
+    profile:
+      title: Voir la fiche
+    mainTitle: Liste des prestataires
+  submit: Affiner ma recherche
+  reload: Nouvelle recherche
 
 professionalProfile:
-    explainTax: "* Le coût de mise en relation sera de 2,99 € l'appel. Ce numéro valable 5 minutes n'est pas le numéro du destinataire mais le numéro d'un service permettant la mise en relation avec celui-ci. Ce service est édité par l'Annuaire des Transports."
-    whyThisNumber: "Pourquoi ce numéro ?"
-    companyInformation: Informations Société
-    phone: Téléphone
-    companyName: Raison sociale
-    adress: Adresse
-    seePlan: Voir le plan
-    mail: Adresse e-mail
-    webSite: Site Internet
-    companyManager: Responsable de l'entreprise
-    salesManager: Responsable commercial
-    workforce: Effectif de l'entreprise
-    vehiclesNbr: Nombre de véhicules
-    establishmentsNbr: Nombre d'établissements
-    turnover: Chiffre d'affaire
-    materials: Matériel de l'entreprise
-    services: Services
-    form:
-        name: "Votre nom"
-        email: "Votre email"
-        message: "Votre message"
-        antispam: "Antispam"
-    allowance: "Prestations"
-    presentation: "Présentation"
-    contact: "Contact"
+  explainTax: "* Le coût de mise en relation sera de 2,99 € l'appel. Ce numéro valable 5 minutes n'est pas le numéro du destinataire mais le numéro d'un service permettant la mise en relation avec celui-ci. Ce service est édité par l'Annuaire des Transports."
+  whyThisNumber: "Pourquoi ce numéro ?"
+  companyInformation: Informations Société
+  phone: Téléphone
+  companyName: Raison sociale
+  adress: Adresse
+  seePlan: Voir le plan
+  mail: Adresse e-mail
+  webSite: Site Internet
+  companyManager: Responsable de l'entreprise
+  salesManager: Responsable commercial
+  workforce: Effectif de l'entreprise
+  vehiclesNbr: Nombre de véhicules
+  establishmentsNbr: Nombre d'établissements
+  turnover: Chiffre d'affaire
+  materials: Matériel de l'entreprise
+  services: Services
+  form:
+    name: "Votre nom"
+    email: "Votre email"
+    message: "Votre message"
+    antispam: "Antispam"
+  allowance: "Prestations"
+  presentation: "Présentation"
+  contact: "Contact"
 
 home:
-    links:
-        charter:
-            subtitle: "Des affrèteurs pour organiser l'acheminement de vos marchandises :"
-        transportOfGoods:
-            subtitle: "Des professionnels pour le transport de toutes vos marchandises :"
-        rentWithDrive:
-            subtitle: "Tous les loueurs professionnels avec la mise à disposition de chauffeurs spécialisés :"
-        taxis:
-            subtitle: "Pour vos déplacements quotidiens ou exceptionnels, trouvez rapidement votre taxi partout dans le monde :"
-        logistic:
-            subtitle: "La gestion de vos flux physiques prise en charge par des professionnels spécialistes :"
-        storage:
-            subtitle: "Trouvez partout dans le monde des professionnels pour le stockage de vos marchandises :"
-        passengerTransport:
-            subtitle: "Des professionnels du transport de voyageurs sont à votre service :"
+  links:
+    charter:
+      subtitle: "Des affrèteurs pour organiser l'acheminement de vos marchandises :"
+    transportOfGoods:
+      subtitle: "Des professionnels pour le transport de toutes vos marchandises :"
+    rentWithDrive:
+      subtitle: "Tous les loueurs professionnels avec la mise à disposition de chauffeurs spécialisés :"
+    taxis:
+      subtitle: "Pour vos déplacements quotidiens ou exceptionnels, trouvez rapidement votre taxi partout dans le monde :"
+    logistic:
+      subtitle: "La gestion de vos flux physiques prise en charge par des professionnels spécialistes :"
+    storage:
+      subtitle: "Trouvez partout dans le monde des professionnels pour le stockage de vos marchandises :"
+    passengerTransport:
+      subtitle: "Des professionnels du transport de voyageurs sont à votre service :"
 bottom:
-    newSubscribers:
-        alt: "annuaire transport international"
-        mainLink: "Nouveaux inscrits"
-    transportDirectory:
-        alt: "annuaire transport"
-        h5: "Guide des transports"
-        htmlLink: "Retrouvez tous les transporteurs en France"
-    movingDirectory:
-        alt: "annuaire déménagement"
-        h5: "Besoin d'un déménageur ?"
-        htmlLink: "Guide des déménageurs"
-    busDirectory:
-        alt: "annuaire autocar"
-        h5: "Besoin d'un autocariste ?"
-        htmlLink: "Guide des autocaristes"
-    chartererDirectory:
-        alt: "annuaire affreteur"
-        h5: "Besoin d'un affrèteur ?"
-        htmlLink: "Guide des affréteurs"
-    warehouseDirectory:
-        alt: "annuaire entrepot"
-        h5: "Besoin d'un stockage ?"
-        htmlLink: "Guide des entreposeurs"
+  newSubscribers:
+    alt: "annuaire transport international"
+    mainLink: "Nouveaux inscrits"
+  transportDirectory:
+    alt: "annuaire transport"
+    h5: "Guide des transports"
+    htmlLink: "Retrouvez tous les transporteurs en France"
+  movingDirectory:
+    alt: "annuaire déménagement"
+    h5: "Besoin d'un déménageur ?"
+    htmlLink: "Guide des déménageurs"
+  busDirectory:
+    alt: "annuaire autocar"
+    h5: "Besoin d'un autocariste ?"
+    htmlLink: "Guide des autocaristes"
+  chartererDirectory:
+    alt: "annuaire affreteur"
+    h5: "Besoin d'un affrèteur ?"
+    htmlLink: "Guide des affréteurs"
+  warehouseDirectory:
+    alt: "annuaire entrepot"
+    h5: "Besoin d'un stockage ?"
+    htmlLink: "Guide des entreposeurs"
 
 newSubscribers:
-    mainTitle: "Nouveaux inscrits"
-    subtitleHtml: "Ces professionnels du transport, de la logistique, du stockage... se sont inscrits gratuitement sur notre annuaire et nous font confiance pour développer leur activité."
-    subscribe: "Inscrivez-vous, c'est gratuit !"
+  mainTitle: "Nouveaux inscrits"
+  subtitleHtml: "Ces professionnels du transport, de la logistique, du stockage... se sont inscrits gratuitement sur notre annuaire et nous font confiance pour développer leur activité."
+  subscribe: "Inscrivez-vous, c'est gratuit !"
 
 meta:
-    home:
-        og:
-            site_name: "Transport International"
-    search:
-        description: "Trouver un professionnel avec Transport International : les entreprises partout dans le monde"
-        descriptionNext: "dont l'activité est"
-        descriptionPrestation: "dont la préstation est"
-        og:
-            site_name: "Transport International"
-    register:
-        title: "Transport International - Inscription Société"
-        description: "Inscrivez-vous gratuitement dans l'annuaire des Transports en Europe et à l'international et profitez d'une large visibilité"
-        keywords: 'messages'
-        og:
-            title: "Transport International - Inscription Société"
-            site_name: "Transport International"
-            description: "Inscrivez-vous gratuitement dans l'annuaire des Transports en Europe et à l'international et profitez d'une large visibilité"
-    newSubscribers:
-        title: "Transport International - Nouveaux inscrits"
-        description: "Voir les professionnels dernièrement inscrits dans l'annuaire des Transports en Europe et à l'international"
-        keywords: "transport international,inscrits,professionnels"
-        og:
-            title: "Transport International - Nouveaux inscrits"
-            site_name: "Transport International"
-            description: "Voir les professionnels dernièrement inscrits dans l'annuaire des Transports en Europe et à l'international"
-    professionalProfile:
-        description: "Contactez l'entreprise __SOCIETY__ à __ADDRESS__, activité __ACTIVITIES__. Informations : adresse, téléphone, plan d'accès. - __URI__"
-        someTrad:
-            transport: "transport"
-            logistics: "logistique"
-            charter: "affrêtement"
-            travelers: "transport de voyageurs"
-            relocation: "déménagement"
-            storage: "stockage"
-            rentalWithDriver: "location avec chauffeur"
-            taxis: "taxis"
-        siteName: "Transport International"
+  home:
+    og:
+      site_name: "Transport International"
+  search:
+    description: "Trouver un professionnel avec Transport International : les entreprises partout dans le monde"
+    descriptionNext: "dont l'activité est"
+    descriptionPrestation: "dont la préstation est"
+    og:
+      site_name: "Transport International"
+  register:
+    title: "Transport International - Inscription Société"
+    description: "Inscrivez-vous gratuitement dans l'annuaire des Transports en Europe et à l'international et profitez d'une large visibilité"
+    keywords: 'messages'
+    og:
+      title: "Transport International - Inscription Société"
+      site_name: "Transport International"
+      description: "Inscrivez-vous gratuitement dans l'annuaire des Transports en Europe et à l'international et profitez d'une large visibilité"
+  newSubscribers:
+    title: "Transport International - Nouveaux inscrits"
+    description: "Voir les professionnels dernièrement inscrits dans l'annuaire des Transports en Europe et à l'international"
+    keywords: "transport international,inscrits,professionnels"
+    og:
+      title: "Transport International - Nouveaux inscrits"
+      site_name: "Transport International"
+      description: "Voir les professionnels dernièrement inscrits dans l'annuaire des Transports en Europe et à l'international"
+  professionalProfile:
+    description: "Contactez l'entreprise __SOCIETY__ à __ADDRESS__, activité __ACTIVITIES__. Informations : adresse, téléphone, plan d'accès. - __URI__"
+    someTrad:
+      transport: "transport"
+      logistics: "logistique"
+      charter: "affrêtement"
+      travelers: "transport de voyageurs"
+      relocation: "déménagement"
+      storage: "stockage"
+      rentalWithDriver: "location avec chauffeur"
+      taxis: "taxis"
+    siteName: "Transport International"
 
 legalinformation:
-    mainTitle: "INFORMATIONS LÉGALES"
-    html: |
-        <strong>CONDITIONS</strong> <br>
-        L'inscription dans l'Annuaire des Transports Routier est gratuite. <br>
-        Pour communiquer sur notre site, consultez nos tarifs et conditions.  Les informations contenues dans ce site sont les plus précises possibles, malgré toute notre attention, si vous constatez une erreur ou une ommission, n'hésitez pas à nous écrire :<a href="mailto:webmaster@annuaire-des-transports.com">webmaster@annuaire-des-transports.com </a><br>
-        <br>
-        <strong>L'ANNUAIRE DES TRANSPORTS </strong><br>
-        ¤ L'annuaire du Transport dégage toute responsabilité de l'usage ou des conséquences, privé ou professionnel, résultant de l'utilisation de nos services. <br>
-        ¤ décline également toute responsabilité en cas d'informations erronées ou omises. <br>
-        ¤ L'éditeur ne peut en aucun cas garantir la qualité et le sérieux des prestations proposées par les entreprises référencées dans cet annuaire et le dégage ainsi, de toute responsabilité en cas de litige entre les utilisatrices(eurs) de ce service. <br>
-        <br>
-        <strong>INFORMATIQUE ET LIBERTES </strong><br>
-        Conformément à la loi Informatique et libertés du 6 janvier 1978, nous vous informons que vous disposez d'un droit d'accès, de modification, de rectification et de suppression de votre contribution. <br>
-        L'Annuaire des Transports est déclaré à la CNIL sous le n°718712. <br>
-        Pour l'exercer, adressez-vous à : <a href="mailto:webmaster@annuaire-des-transports.com">webmaster@annuaire-des-transports.com </a><br>
-        <br>
-        <strong>CONTREFACON </strong><br>
-        Toute reproduction ou représentation, en tout ou partie, à d'autres fins sur un quelconque support est interdite. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. Les informations contenues dans ce service sont non contractuelles et sujettes à modification sans préavis. <br>
-        <br>
-        <strong>EDITEUR </strong><br>
-        <p><a href="http://www.webdesign-graphiste.com" title="cr�ation site internet">Webdesign Graphiste</a><br>
-            5, chemin Al Vigné<br>
-            31140 MONTBERON </p>
-        <p>Contact Commercial : Jean-Paul Alibert <br>
-            Phone : +33 5 61 57 91 08 </p>
+  mainTitle: "INFORMATIONS LÉGALES"
+  html: |
+    <strong>CONDITIONS</strong> <br>
+    L'inscription dans l'Annuaire des Transports Routier est gratuite. <br>
+    Pour communiquer sur notre site, consultez nos tarifs et conditions.  Les informations contenues dans ce site sont les plus précises possibles, malgré toute notre attention, si vous constatez une erreur ou une ommission, n'hésitez pas à nous écrire :<a href="mailto:webmaster@annuaire-des-transports.com">webmaster@annuaire-des-transports.com </a><br>
+    <br>
+    <strong>L'ANNUAIRE DES TRANSPORTS </strong><br>
+    ¤ L'annuaire du Transport dégage toute responsabilité de l'usage ou des conséquences, privé ou professionnel, résultant de l'utilisation de nos services. <br>
+    ¤ décline également toute responsabilité en cas d'informations erronées ou omises. <br>
+    ¤ L'éditeur ne peut en aucun cas garantir la qualité et le sérieux des prestations proposées par les entreprises référencées dans cet annuaire et le dégage ainsi, de toute responsabilité en cas de litige entre les utilisatrices(eurs) de ce service. <br>
+    <br>
+    <strong>INFORMATIQUE ET LIBERTES </strong><br>
+    Conformément à la loi Informatique et libertés du 6 janvier 1978, nous vous informons que vous disposez d'un droit d'accès, de modification, de rectification et de suppression de votre contribution. <br>
+    L'Annuaire des Transports est déclaré à la CNIL sous le n°718712. <br>
+    Pour l'exercer, adressez-vous à : <a href="mailto:webmaster@annuaire-des-transports.com">webmaster@annuaire-des-transports.com </a><br>
+    <br>
+    <strong>CONTREFACON </strong><br>
+    Toute reproduction ou représentation, en tout ou partie, à d'autres fins sur un quelconque support est interdite. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. Les informations contenues dans ce service sont non contractuelles et sujettes à modification sans préavis. <br>
+    <br>
+    <strong>EDITEUR </strong><br>
+    <p><a href="http://www.webdesign-graphiste.com" title="cr�ation site internet">Webdesign Graphiste</a><br>
+        5, chemin Al Vigné<br>
+        31140 MONTBERON </p>
+    <p>Contact Commercial : Jean-Paul Alibert <br>
+        Phone : +33 5 61 57 91 08 </p>
 
 pricing:
-    mainTitle: "TARIFS ET CONDITIONS"
-    html: |
-        <article>
-                <table border="0" cellspacing="0" cellpadding="3">
-        <tbody>
-        <tr>
-        <td><strong>COMMUNIQUEZ DANS L'ANNUAIRE DES TRANSPORTS</strong><br> <br> Transport-international.com est un outils de référence dans le secteur du transport. <br> <br> Vous pouvez y assurer la promotion de votre entreprise, que vous soyez transporteur ou fournisseur de matériels liés au transport (Vente de poids lourds, entretien, etc..) <br> Le référencement est gratuit pour toutes les entreprises du transport qui désirent apparaitre dans une des rubriques de L'Annuaire des Transports. <br> Il vous suffit pour cela de remplir notre formulaire en ligne <br> Dès réception de votre demande, l'un de nos collaborateur se mettra en contact avec vous afin de remplir la fiche de détail de vos activités et destinations. <br> <br> Cependant, vous disposez d'une offre commerciale économique et modulable pour élaborer des plans de communication rentables. <br> <br> <strong>FICHES PERSONNALISEES : </strong><br> <br> C'est la carte de visite de votre entreprise sur Internet pendant un an. <br> <br> Grâce à un placement dans les premières pages lors des recherches, elle vous permet d'optimiser la visibilité de votre entreprise dans L'Annuaire. <br> <br> De plus, vous bénéficiez de la réception par courrier électronique (E-Mail) des demandes de devis. <br> Un avantage concurrentiel déterminant <br>
-        <ul>
-        <li>La fiche de votre entreprise est favorisée dans la liste, lors des recherches. </li>
-        <li>Vous pouvez insérer le logo de votre société, ainsi que des photos. </li>
-        <li>Des zones de textes vous permettent de compléter votre fiche. </li>
-        </ul>
-        <br> Ainsi, les utilisateurs de l'annuaire seront parfaitement informés sur la capacité de votre entreprise à répondre à leurs différents besoins. <br> <br> Contactez notre responsable commercial pour plus de renseignements : <a href="mailto:publicite@annuaire-des-transports.com">publicite@annuaire-des-transports.com </a></td>
-        </tr>
-        </tbody>
-        </table>
-        <p align="center">&nbsp;</p>
-        <table border="0" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>
-        <td colspan="2">
-        <p>TARIFS TRANSPORTEURS (Abonnements annuels hors taxe)</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <h3>Abonnement de base (réception automatique de demandes de devis)</h3>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>à partir de votre zone de départ:</p>
-        </td>
-        <td width="200" valign="top">
-        <p style="text-align: right;">320 € (3.500 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <h3>Options:</h3>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">à partir d'une zone de départ supplémentaire</td>
-        <td width="200" valign="top"><p style="text-align: right;">170 € (1.870 MAD)</p></td>
-        </tr>
-        <tr>
-        <td>Votre logo<br></td>
-        <td><p style="text-align: right;">70 € (770 MAD)</p></td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Une photo</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">50 € (550  MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Deux photos</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">70 € (770 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Trois photos</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">90 € (990 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td>Votre page Internet (avec votre nom de domaine disponible)</td>
-        <td><p style="text-align: right;">100 € (1.100 MAD)</p></td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Lien vers votre site Internet</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">90 € (990 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2"></td>
-        </tr>
-        <tr>
-        <td colspan="2"></td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <h3>Formule A : Sites Standards</h3>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Site Référence hébergé et référencé</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">1 020 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Site Référence hébergé, référencé et administrable</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">1 320 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Traduction: la langue supplémentaire</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">300 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>LES CARTES DE VISITES ELECTRONIQUES (Frais techniques et frais de conception sur devis)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Le forfait de 50 exemplaires gravés</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">1 300 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Le forfait de 500 exemplaires pressés</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">2 700 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Le forfait de 1000 exemplaires pressés</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">3 460 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2">
-        <p><strong>TARIFS FOURNISSEURS </strong>( Abonnements annuels hors taxe)</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <h3>Formule B : Réception automatique de demandes de devis</h3>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Fiche Technique présente sur le Pays entier</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">790 € (8.690 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Fiche Technique présente sur un Pays supplémentaire</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">250 € (2.750 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Votre logo</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">250 € (2.750 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Lien vers votre site Internet</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">420 € (4.620 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" width="532" valign="top">
-        <p align="right">&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <h3>Formule C : Sites Standards</h3>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Site standard hébergé et référencé</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">1 520 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Site Référence hébergé, référencé et administrable</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">1 820 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Traduction: la langue supplémentaire</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">420 €</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" width="532" valign="top">
-        <p align="right">&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" width="532" valign="top">
-        <p align="right">&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2">
-        <p><strong>LES BANDEAUX PUBLICITAIRES </strong></p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="2" valign="top">
-        <p>&nbsp;</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Le forfait mensuel (1 mois)</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">990 € (10.890 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
+  mainTitle: "TARIFS ET CONDITIONS"
+  html: |
+    <article>
+            <table border="0" cellspacing="0" cellpadding="3">
+    <tbody>
+    <tr>
+    <td><strong>COMMUNIQUEZ DANS L'ANNUAIRE DES TRANSPORTS</strong><br> <br> Transport-international.com est un outils de référence dans le secteur du transport. <br> <br> Vous pouvez y assurer la promotion de votre entreprise, que vous soyez transporteur ou fournisseur de matériels liés au transport (Vente de poids lourds, entretien, etc..) <br> Le référencement est gratuit pour toutes les entreprises du transport qui désirent apparaitre dans une des rubriques de L'Annuaire des Transports. <br> Il vous suffit pour cela de remplir notre formulaire en ligne <br> Dès réception de votre demande, l'un de nos collaborateur se mettra en contact avec vous afin de remplir la fiche de détail de vos activités et destinations. <br> <br> Cependant, vous disposez d'une offre commerciale économique et modulable pour élaborer des plans de communication rentables. <br> <br> <strong>FICHES PERSONNALISEES : </strong><br> <br> C'est la carte de visite de votre entreprise sur Internet pendant un an. <br> <br> Grâce à un placement dans les premières pages lors des recherches, elle vous permet d'optimiser la visibilité de votre entreprise dans L'Annuaire. <br> <br> De plus, vous bénéficiez de la réception par courrier électronique (E-Mail) des demandes de devis. <br> Un avantage concurrentiel déterminant <br>
+    <ul>
+    <li>La fiche de votre entreprise est favorisée dans la liste, lors des recherches. </li>
+    <li>Vous pouvez insérer le logo de votre société, ainsi que des photos. </li>
+    <li>Des zones de textes vous permettent de compléter votre fiche. </li>
+    </ul>
+    <br> Ainsi, les utilisateurs de l'annuaire seront parfaitement informés sur la capacité de votre entreprise à répondre à leurs différents besoins. <br> <br> Contactez notre responsable commercial pour plus de renseignements : <a href="mailto:publicite@annuaire-des-transports.com">publicite@annuaire-des-transports.com </a></td>
+    </tr>
+    </tbody>
+    </table>
+    <p align="center">&nbsp;</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td colspan="2">
+    <p>TARIFS TRANSPORTEURS (Abonnements annuels hors taxe)</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <h3>Abonnement de base (réception automatique de demandes de devis)</h3>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>à partir de votre zone de départ:</p>
+    </td>
+    <td width="200" valign="top">
+    <p style="text-align: right;">320 € (3.500 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <h3>Options:</h3>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">à partir d'une zone de départ supplémentaire</td>
+    <td width="200" valign="top"><p style="text-align: right;">170 € (1.870 MAD)</p></td>
+    </tr>
+    <tr>
+    <td>Votre logo<br></td>
+    <td><p style="text-align: right;">70 € (770 MAD)</p></td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Une photo</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">50 € (550  MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Deux photos</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">70 € (770 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Trois photos</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">90 € (990 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td>Votre page Internet (avec votre nom de domaine disponible)</td>
+    <td><p style="text-align: right;">100 € (1.100 MAD)</p></td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Lien vers votre site Internet</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">90 € (990 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2"></td>
+    </tr>
+    <tr>
+    <td colspan="2"></td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <h3>Formule A : Sites Standards</h3>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Site Référence hébergé et référencé</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">1 020 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Site Référence hébergé, référencé et administrable</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">1 320 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Traduction: la langue supplémentaire</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">300 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>LES CARTES DE VISITES ELECTRONIQUES (Frais techniques et frais de conception sur devis)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Le forfait de 50 exemplaires gravés</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">1 300 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Le forfait de 500 exemplaires pressés</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">2 700 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Le forfait de 1000 exemplaires pressés</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">3 460 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2">
+    <p><strong>TARIFS FOURNISSEURS </strong>( Abonnements annuels hors taxe)</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <h3>Formule B : Réception automatique de demandes de devis</h3>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Fiche Technique présente sur le Pays entier</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">790 € (8.690 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Fiche Technique présente sur un Pays supplémentaire</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">250 € (2.750 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Votre logo</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">250 € (2.750 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Lien vers votre site Internet</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">420 € (4.620 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" width="532" valign="top">
+    <p align="right">&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <h3>Formule C : Sites Standards</h3>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Site standard hébergé et référencé</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">1 520 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Site Référence hébergé, référencé et administrable</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">1 820 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Traduction: la langue supplémentaire</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">420 €</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" width="532" valign="top">
+    <p align="right">&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" width="532" valign="top">
+    <p align="right">&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2">
+    <p><strong>LES BANDEAUX PUBLICITAIRES </strong></p>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" valign="top">
+    <p>&nbsp;</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Le forfait mensuel (1 mois)</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">990 € (10.890 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
 
-        <p>Le forfait trimestriel (3 mois)</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">1 990 € (21.890 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Le forfait semestriel (6 mois)</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">2 990 € (32.890 MAD)</p>
-        </td>
-        </tr>
-        <tr>
-        <td width="532" valign="top">
-        <p>Le forfait annuel (12 mois)</p>
-        </td>
-        <td width="200" valign="top">
-        <p align="right">3 990 € (43.890 MAD)</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
-        <p>&nbsp;</p>
-        <p align="left"><strong>EDITEUR</strong></p>
-        <p><a href="http://www.webdesign-graphiste.com" title="création site internet">Webdesign Graphiste </a><br> 5, chemin Alvigne<br> 31140 MONTBERON<br>FRANCE</p>
-        <p>Contact Commercial : Jean-Paul Alibert <br> Phone : +33 5 61 57 91 08</p>
-        </article>
+    <p>Le forfait trimestriel (3 mois)</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">1 990 € (21.890 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Le forfait semestriel (6 mois)</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">2 990 € (32.890 MAD)</p>
+    </td>
+    </tr>
+    <tr>
+    <td width="532" valign="top">
+    <p>Le forfait annuel (12 mois)</p>
+    </td>
+    <td width="200" valign="top">
+    <p align="right">3 990 € (43.890 MAD)</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p align="left"><strong>EDITEUR</strong></p>
+    <p><a href="http://www.webdesign-graphiste.com" title="création site internet">Webdesign Graphiste </a><br> 5, chemin Alvigne<br> 31140 MONTBERON<br>FRANCE</p>
+    <p>Contact Commercial : Jean-Paul Alibert <br> Phone : +33 5 61 57 91 08</p>
+    </article>
+error:
+  404:
+    h1: "Oops, une erreur est survenue"
+    text: "La page __PAGE__ n'éxiste pas"
+
+form:
+  legalInformations:
+    siret: "siret"
+    corporateName: "Nom de votre société"
+    CompanyName: "Nom de votre compagnie"
+    LegamForm: "forme légale"
+    Turnover: "Chiffre d'affaires"
+    workforceNbr: "Effectifs"
+    EstablishmentNbr: "Nombre d'établissements"
+  Location:
+    adress: "Adresse"
+    postalCode: "Code postal"
+    city: "Ville"
+    location: "localisation"
+  contact:
+    phone: "Téléphone"
+    fax: "Numéro de fax"
+    contact: "Personne à contacter"
+    webSite: "Votre site web"
+  coreBusiness:
+    transport: "Transport de marchandises"
+    logistics: "logistique"
+    charter: "Affrètement"
+    travelers: "Voyageurs"
+    relocation: "Déménagement"
+    storage: "stockage"
+    rentalWithDriver: "Location avec chauffeur"
+    taxis: "Taxi"
+  user:
+    username: "Votre email"
+  managers:
+    companyManager: "Gérant de la société"
+    operationManager: "Personne chargée des opérations"
+    salesManager: "Personne chargée des achats"
+  about:
+    isoCertification: "Certification iso"
+    summary: "Sommaire"
+    rangeAction: "rayon d'action"
+    services: "Les services que vous proposez"
+  equipment:
+    vehicleNbr: "Nombre de véhicules"
+    materials: "Matériels"

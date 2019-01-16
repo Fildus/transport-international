@@ -12,10 +12,18 @@ class AboutType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('isoCertification')
-            ->add('summary')
-            ->add('rangeAction')
-            ->add('services')
+            ->add('isoCertification', null, [
+                'label' => 'form.about.isoCertification'
+            ])
+            ->add('summary', null, [
+                'label' => 'form.about.summary'
+            ])
+            ->add('rangeAction', null, [
+                'label' => 'form.about.rangeAction'
+            ])
+            ->add('services', null, [
+                'label' => 'form.about.services'
+            ])
         ;
     }
 

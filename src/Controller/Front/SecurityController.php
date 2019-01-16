@@ -5,17 +5,17 @@ namespace App\Controller\Front;
 
 use App\Services\Locale;
 use Psr\Container\ContainerInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    /** @var Locale  */
+    /** @var Locale */
     private $locale;
 
-    /** @var ContainerInterface  */
+    /** @var ContainerInterface */
     protected $container;
 
     /**
@@ -49,24 +49,25 @@ class SecurityController extends AbstractController
      * @param AuthenticationUtils $authenticationUtils
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function login(AuthenticationUtils $authenticationUtils)
+    public function login(AuthenticationUtils $authenticationUtils) :Response
     {
-        return $this->render('security/login.html.twig', [
-            'last_username' => $authenticationUtils->getLastUsername(),
-            'error' => $authenticationUtils->getLastAuthenticationError()
-        ]);
+        return $this->getUser() ?
+            $this->redirectToRoute('home') :
+            $this->render('security/login.html.twig', [
+                'last_username' => $authenticationUtils->getLastUsername(),
+                'error' => $authenticationUtils->getLastAuthenticationError()
+            ]);
     }
 
     /**
      * @Route("/login-success", name="_loginSuccess")
      */
-    public function onSuccess()
+    public function onSuccess(): Response
     {
         if ($this->getUser()) {
             return $this->redirectToRoute('account_legalInformation.' . $this->locale);
-        }else{
-            return $this->redirectToRoute('_admin_home');
         }
+        return $this->redirectToRoute('_admin_home');
     }
 
     /**
