@@ -7,7 +7,9 @@ use App\Entity\Client;
 use App\Entity\Search\ClientSearch;
 use App\Entity\ServedZone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
@@ -16,6 +18,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
  * @method Client|null findOneBy(array $criteria, array $orderBy = null)
  * @method Client[]    findAll()
  * @method Client[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method findById(array $clientsIds)
  */
 class ClientRepository extends ServiceEntityRepository
 {
@@ -275,5 +278,33 @@ class ClientRepository extends ServiceEntityRepository
             ->useResultCache(true);
 
         return $qb->getResult();
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return string|null
+     */
+    public function findOneByCompanyName(string $name): ?string
+    {
+        $qb = $this->createQueryBuilder('c')
+            ->leftJoin('c.legalInformation', 'l')
+            ->where('l.companyName LIKE\''.$name.'\'')
+            ->orWhere('l.companyName LIKE\''.$name.'\'')
+            ->getQuery()
+            ->getResult();
+
+        $return = [];
+
+        /**
+         * @var $client Client
+         */
+        if ($qb !== null && !empty($qb)){
+            foreach ($qb as $client) {
+                $return[] = $client->getId();
+            }
+            return implode('-',$return);
+        }
+        return null;
     }
 }

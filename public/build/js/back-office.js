@@ -42,9 +42,6 @@ completeIds.forEach(function (e) {
 });
 
 function confirmBeforeDelete(message, that) {
-    // console.log(that)
-    // that.stopImmediatePropagation();
-    // that.preventDefault();
 
     let test = confirm('êtes vous sûr de vouloir supprimer ' + message);
 

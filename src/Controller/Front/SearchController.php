@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 
+use App\Entity\Client;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use App\Repository\TranslationRepository;
@@ -78,20 +79,20 @@ class SearchController extends AbstractController
 
     /**
      * @Route({
-     *      "default": "/search/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "fr" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "en" : "/search-en/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "es" : "/search-es/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "de" : "/search-de/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "it" : "/search-it/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "pt" : "/search-pt/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "be" : "/search-be/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "ad" : "/search-ad/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "ro" : "/search-ro/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "ma" : "/search-ma/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     *      "ci" : "/search-ci/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
+     *      "default": "/search/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "fr" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "en" : "/search-en/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "es" : "/search-es/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "de" : "/search-de/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "it" : "/search-it/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "pt" : "/search-pt/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "be" : "/search-be/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ad" : "/search-ad/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ro" : "/search-ro/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ma" : "/search-ma/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ci" : "/search-ci/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
      * }, name="_search", defaults={"typeA": null, "typeB": null, "toCountry": null, "toDept": null, "fromCountry":
-     * null, "fromDept": null, "page":null})
+     * null, "fromDept": null, "page":null, "clientsIds":null})
      * @param $page
      * @param $typeA
      * @param $typeB
@@ -100,11 +101,13 @@ class SearchController extends AbstractController
      * @param $fromCountry
      * @param $fromDept
      *
+     * @param $clientsIds
+     *
      * @return Response
      */
-    public function search($page, $typeA, $typeB, $toCountry, $toDept, $fromCountry, $fromDept): Response
+    public function search($page, $typeA, $typeB, $toCountry, $toDept, $fromCountry, $fromDept, $clientsIds): Response
     {
-        $null = ['tous-pays', 'tous-departements', 'toutes-catégories', 'toutes-activités'];
+        $null = ['tous-pays', 'tous-departements', 'toutes-categories', 'toutes-activites'];
 
         $typeA = in_array($typeA, $null) ? null : $typeA;
         $typeB = in_array($typeB, $null) ? null : $typeB;
@@ -152,6 +155,42 @@ class SearchController extends AbstractController
 
     /**
      * @Route({
+     *      "default": "/search-by-company/{page}/{clientsIds}",
+     *      "fr" : "/search-by-company-fr/{page}/{clientsIds}",
+     *      "en" : "/search-by-company-en/{page}/{clientsIds}",
+     *      "es" : "/search-by-company-es/{page}/{clientsIds}",
+     *      "de" : "/search-by-company-de/{page}/{clientsIds}",
+     *      "it" : "/search-by-company-it/{page}/{clientsIds}",
+     *      "pt" : "/search-by-company-pt/{page}/{clientsIds}",
+     *      "be" : "/search-by-company-be/{page}/{clientsIds}",
+     *      "ad" : "/search-by-company-ad/{page}/{clientsIds}",
+     *      "ro" : "/search-by-company-ro/{page}/{clientsIds}",
+     *      "ma" : "/search-by-company-ma/{page}/{clientsIds}",
+     *      "ci" : "/search-by-company-ci/{page}/{clientsIds}",
+     * }, name="_search_company", defaults={"clientsIds":null, "page":1})
+     * @return Response
+     */
+    public function searchByCompany($page, $clientsIds)
+    {
+        $clientsIds = explode('-', $clientsIds);
+        $clientsByIds = $this->clientRepository->findById($clientsIds);
+
+        return new Response($this->renderView('pages/search.html.twig', [
+            'clients' => $clientsByIds,
+            'count' => count($clientsByIds),
+            'page' => $page,
+            'countries' => $this->servedZoneRepository->getAllCountry(),
+            'activities' => $this->activityRepository->getActivities([
+                'charter', 'passengerTransport', 'mover', 'storage', 'rentWithDriver', 'logistic', 'taxi', 'transportOfGoods'
+            ]),
+            'dataInjection' => json_encode(null),
+            'data' => null,
+            'domain' => $this->locale->getDomain()
+        ]));
+    }
+
+    /**
+     * @Route({
      *      "default": "/getUrl",
      *      "fr" : "/getUrl",
      *      "en" : "/getUrl",
@@ -182,7 +221,7 @@ class SearchController extends AbstractController
                     $typeA = null;
                 }
             } else {
-                $typeA = 'toutes-catégories';
+                $typeA = 'toutes-categories';
             }
         }
 
@@ -197,7 +236,7 @@ class SearchController extends AbstractController
                     $typeB = null;
                 }
             } else {
-                $typeB = 'toutes-activités';
+                $typeB = 'toutes-activites';
             }
         }
 
@@ -259,6 +298,12 @@ class SearchController extends AbstractController
             } else {
                 $fromDept = 'tous-departements';
             }
+        }
+
+
+        if ($socialRaison = $request->get('sr')) {
+            $clientsIds = $this->clientRepository->findOneByCompanyName($socialRaison);
+            return $this->redirectToRoute('_search_company', ['page' => 1, 'clientsIds' => $clientsIds]);
         }
 
         return $this->redirectToRoute('_search.' . $this->locale->getLocalematched(), [

@@ -15,8 +15,7 @@ body{font-family:'Lucida Grande',tahoma,verdana,arial,sans-serif;color:#7e7e7e;f
 #slider #slides{overflow:hidden;position:relative;width:100%;height:120px}#slider #slides ul{list-style:none;width:100%;height:100px;margin:0;padding:0;position:relative}
 #slider #slides li{width:100%;height:100px;float:left;text-align:left;position:relative}
 #slider #buttons a{text-align:center;font-size:36px;float:left;outline:0;margin:0 40px;color:#337ab7;text-decoration:none;display:block;padding:10px;width:35px}
-@media only screen and (max-width:767px){#slider{display:none}}#sidebar-nav{background-color:#000}
-.mainTitle{background-color:#86bcde;font-size:30px;text-transform:uppercase;margin:0;padding:20px 0 20px 30px;color:#fff}
+@media only screen and (max-width:767px){#slider{display:none}}.mainTitle{background-color:#86bcde;font-size:30px;text-transform:uppercase;margin:0;padding:20px 0 20px 30px;color:#fff}
 .autocomplete-suggestions{text-align:left;cursor:default;border:1px solid #ccc;border-top:0;background:#fff;box-shadow:-1px 1px 3px rgba(0,0,0,.1);position:absolute;display:none;z-index:9999;max-height:254px;overflow:hidden;overflow-y:auto;box-sizing:border-box}
 .autocomplete-suggestion{position:relative;padding:0 .6em;line-height:23px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.02em;color:#333}
 .autocomplete-suggestion b{font-weight:400;color:#1f8dd6}.autocomplete-suggestion.selected{background:#f0f0f0}
