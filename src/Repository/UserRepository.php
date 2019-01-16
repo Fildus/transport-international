@@ -29,6 +29,7 @@ class UserRepository extends ServiceEntityRepository
 
     /**
      * @param string $mail
+     *
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -55,6 +56,7 @@ class UserRepository extends ServiceEntityRepository
 
     /**
      * @param UserSearch $search
+     *
      * @return \Doctrine\ORM\Query
      */
     public function getAllUsers(UserSearch $search)

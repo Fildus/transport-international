@@ -35,8 +35,7 @@ class CoreBusinessType extends AbstractType
             ])
             ->add('taxis', null, [
                 'label' => 'form.coreBusiness.taxis'
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

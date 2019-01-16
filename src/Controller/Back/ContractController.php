@@ -30,8 +30,9 @@ class ContractController extends AbstractController
 
     /**
      * DomainController constructor.
+     *
      * @param EntityManagerInterface $manager
-     * @param ContractRepository $contractRepository
+     * @param ContractRepository     $contractRepository
      */
     public function __construct(EntityManagerInterface $manager, ContractRepository $contractRepository)
     {
@@ -41,9 +42,10 @@ class ContractController extends AbstractController
 
     /**
      * @Route("/index/{page}", name="_index", defaults={"page":1})
-     * @param int $page
+     * @param int                $page
      * @param PaginatorInterface $paginator
-     * @param Request $request
+     * @param Request            $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(int $page, PaginatorInterface $paginator, Request $request)
@@ -62,8 +64,9 @@ class ContractController extends AbstractController
 
     /**
      * @Route("/edition/{id}", name="_edit")
-     * @param $id
+     * @param         $id
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit($id, Request $request)
@@ -87,16 +90,17 @@ class ContractController extends AbstractController
 
     /**
      * @Route("/nouveau/{idClient}", name="_new", defaults={"idClient":null})
-     * @param Request $request
-     * @param $idClient
+     * @param Request          $request
+     * @param                  $idClient
      * @param ClientRepository $clientRepository
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function new(Request $request, $idClient, ClientRepository $clientRepository)
     {
         $contract = new Contract();
 
-        if($idClient !== null){
+        if ($idClient !== null) {
             $client = $clientRepository->find($idClient);
             $contract->setClient($client);
         }
@@ -121,6 +125,7 @@ class ContractController extends AbstractController
     /**
      * @Route("/delete/{id}", name="_delete")
      * @param $id
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function delete($id)

@@ -13,8 +13,7 @@ class RegisterClientType extends AbstractType
     {
         $builder
             ->add('user', UserType::class)
-            ->add('legalInformation', LegalInformationType::class)
-        ;
+            ->add('legalInformation', LegalInformationType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -35,9 +35,9 @@ class AppExtension extends AbstractExtension
 
     /**
      * @param ActivityRepository $activityRepository
-     * @param CacheInterface $cache
+     * @param CacheInterface     $cache
      * @param ContainerInterface $container
-     * @param RequestStack $requestStack
+     * @param RequestStack       $requestStack
      */
     public function __construct(ActivityRepository $activityRepository, CacheInterface $cache, ContainerInterface $container, RequestStack $requestStack)
     {
@@ -65,9 +65,7 @@ class AppExtension extends AbstractExtension
     public function dropdownMenu(int $activity, ?string $label, $exclude = [], $add = null, $sub = false)
     {
 
-        $activity =
-            $this->activityRepository->findOneBy(['id' => $activity]) ??
-            null;
+        $activity = $this->activityRepository->findOneBy(['id' => $activity]) ?? null;
 
         !empty($exclude) ? $exclude = new ArrayCollection($exclude) : $exclude = null;
 
@@ -137,6 +135,7 @@ class AppExtension extends AbstractExtension
 
     /**
      * @param $key
+     *
      * @return null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -148,6 +147,7 @@ class AppExtension extends AbstractExtension
     /**
      * @param $data
      * @param $key
+     *
      * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -159,10 +159,11 @@ class AppExtension extends AbstractExtension
 
     /**
      * @param $key
+     *
      * @return bool
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function isCached($key)
+    public function isCached($key): bool
     {
         return $this->cache->has($key);
     }
@@ -259,6 +260,7 @@ class AppExtension extends AbstractExtension
 
     /**
      * @param String|null $path
+     *
      * @return bool
      */
     public function routeMatched(?String $path): bool
@@ -278,7 +280,8 @@ class AppExtension extends AbstractExtension
     /**
      * @param int|null $idParent
      * @param int|null $idChild
-     * @param array $vars
+     * @param array    $vars
+     *
      * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -290,7 +293,7 @@ class AppExtension extends AbstractExtension
             ($idParent ?? null) . '-' . ($idChild ?? null);
         if (!$this->cache->has($key)) {
             /**
-             * @var $child Activity
+             * @var $child  Activity
              * @var $parent Activity
              */
             $parent = $this->activityRepository->find($idParent);
@@ -323,12 +326,13 @@ class AppExtension extends AbstractExtension
 
     /**
      * @param int $id
+     *
      * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function getActivityobject(?int $id)
     {
-        if ($id !== null){
+        if ($id !== null) {
             $key =
                 'cache-getActivityobject-zdz66d5-' .
                 ($this->requestStack->getMasterRequest()->getLocale() ?? null) .
@@ -336,7 +340,7 @@ class AppExtension extends AbstractExtension
             if (!$this->cache->has($key)) {
                 $this->cache->set($key, $this->activityRepository->find($id), 3600);
             }
-        }else{
+        } else {
             return null;
         }
         return $this->cache->get($key);

@@ -146,6 +146,7 @@ class Translation
 
     /**
      * @param mixed $fr
+     *
      * @return Translation
      */
     public function setFr($fr)
@@ -164,6 +165,7 @@ class Translation
 
     /**
      * @param mixed $frSlug
+     *
      * @return Translation
      */
     public function setFrSlug($frSlug)
@@ -182,6 +184,7 @@ class Translation
 
     /**
      * @param mixed $en
+     *
      * @return Translation
      */
     public function setEn($en)
@@ -200,6 +203,7 @@ class Translation
 
     /**
      * @param mixed $enSlug
+     *
      * @return Translation
      */
     public function setEnSlug($enSlug)
@@ -218,6 +222,7 @@ class Translation
 
     /**
      * @param mixed $es
+     *
      * @return Translation
      */
     public function setEs($es)
@@ -236,6 +241,7 @@ class Translation
 
     /**
      * @param mixed $esSlug
+     *
      * @return Translation
      */
     public function setEsSlug($esSlug)
@@ -254,6 +260,7 @@ class Translation
 
     /**
      * @param mixed $de
+     *
      * @return Translation
      */
     public function setDe($de)
@@ -272,6 +279,7 @@ class Translation
 
     /**
      * @param mixed $deSlug
+     *
      * @return Translation
      */
     public function setDeSlug($deSlug)
@@ -290,6 +298,7 @@ class Translation
 
     /**
      * @param mixed $it
+     *
      * @return Translation
      */
     public function setIt($it)
@@ -309,6 +318,7 @@ class Translation
 
     /**
      * @param mixed $itSlug
+     *
      * @return Translation
      */
     public function setItSlug($itSlug)
@@ -328,6 +338,7 @@ class Translation
 
     /**
      * @param mixed $pt
+     *
      * @return Translation
      */
     public function setPt($pt)
@@ -346,6 +357,7 @@ class Translation
 
     /**
      * @param mixed $ptSlug
+     *
      * @return Translation
      */
     public function setPtSlug($ptSlug)
@@ -364,6 +376,7 @@ class Translation
 
     /**
      * @param mixed $be
+     *
      * @return Translation
      */
     public function setBe($be)
@@ -382,6 +395,7 @@ class Translation
 
     /**
      * @param mixed $beSlug
+     *
      * @return Translation
      */
     public function setBeSlug($beSlug)
@@ -400,6 +414,7 @@ class Translation
 
     /**
      * @param mixed $ad
+     *
      * @return Translation
      */
     public function setAd($ad)
@@ -418,6 +433,7 @@ class Translation
 
     /**
      * @param mixed $adSlug
+     *
      * @return Translation
      */
     public function setAdSlug($adSlug)
@@ -436,6 +452,7 @@ class Translation
 
     /**
      * @param mixed $ro
+     *
      * @return Translation
      */
     public function setRo($ro)
@@ -454,6 +471,7 @@ class Translation
 
     /**
      * @param mixed $roSlug
+     *
      * @return Translation
      */
     public function setRoSlug($roSlug)
@@ -472,6 +490,7 @@ class Translation
 
     /**
      * @param mixed $ma
+     *
      * @return Translation
      */
     public function setMa($ma)
@@ -490,6 +509,7 @@ class Translation
 
     /**
      * @param mixed $maSlug
+     *
      * @return Translation
      */
     public function setMaSlug($maSlug)
@@ -508,6 +528,7 @@ class Translation
 
     /**
      * @param mixed $ci
+     *
      * @return Translation
      */
     public function setCi($ci)
@@ -526,6 +547,7 @@ class Translation
 
     /**
      * @param mixed $ciSlug
+     *
      * @return Translation
      */
     public function setCiSlug($ciSlug)

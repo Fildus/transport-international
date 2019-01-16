@@ -4,7 +4,6 @@ namespace App\Form\Back;
 
 use App\Entity\ServedZone;
 use App\Repository\ServedZoneRepository;
-use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -18,15 +17,10 @@ class ServedZoneEditType extends AbstractType
      * @var ServedZoneRepository
      */
     private $servedZoneRepository;
-    /**
-     * @var ObjectManager
-     */
-    private $objectManager;
 
-    public function __construct(ServedZoneRepository $servedZoneRepository, ObjectManager $objectManager)
+    public function __construct(ServedZoneRepository $servedZoneRepository)
     {
         $this->servedZoneRepository = $servedZoneRepository;
-        $this->objectManager = $objectManager;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)

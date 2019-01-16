@@ -29,6 +29,7 @@ class LocationRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -56,6 +57,7 @@ class LocationRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -83,6 +85,7 @@ class LocationRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -115,7 +118,7 @@ class LocationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
 
-        return$qb;
+        return $qb;
     }
 
 }

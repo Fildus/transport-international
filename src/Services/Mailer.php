@@ -11,7 +11,7 @@ class Mailer
     /**
      * @var array
      */
-    private $sender = [
+    private static $sender = [
         'host' => 'imap.gmail.com',
         'port' => 465,
         'security' => 'SSL',
@@ -20,29 +20,23 @@ class Mailer
     ];
 
     /**
-     * @var Swift_Mailer
+     * @param $receiver
+     * @param $message
      */
-    private $mailer;
-
-    public function __construct(Swift_Mailer $mailer)
-    {
-        $this->mailer = $mailer;
-    }
-
-    public function send($receiver, $message)
+    public function send($receiver, $message): void
     {
         $transport = (new \Swift_SmtpTransport(
-            $this->sender['host'],
-            $this->sender['port'],
-            $this->sender['security']
+            self::$sender['host'],
+            self::$sender['port'],
+            self::$sender['security']
         ))
-            ->setUsername($this->sender['username'])
-            ->setPassword($this->sender['password']);
+            ->setUsername(self::$sender['username'])
+            ->setPassword(self::$sender['password']);
 
         $mailer = new Swift_Mailer($transport);
 
         $message = (new \Swift_Message('sujet'))
-            ->setFrom($this->sender['username'])
+            ->setFrom(self::$sender['username'])
             ->setTo($receiver)
             ->setBody($message, 'text/plain');
 

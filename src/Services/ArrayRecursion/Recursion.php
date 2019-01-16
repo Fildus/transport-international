@@ -5,7 +5,7 @@ namespace App\Services\ArrayRecursion;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @author david GASTALDELLO davidgastaldello@msn.com
+ * @author  david GASTALDELLO davidgastaldello@msn.com
  *
  * Class Recursion
  * @package App\Services\ArrayRecursion
@@ -19,6 +19,7 @@ class Recursion implements RecursionInterface
 
     /**
      * @param ArrayCollection $objects
+     *
      * @return ArrayCollection|mixed
      */
     public function run($objects)
@@ -30,7 +31,7 @@ class Recursion implements RecursionInterface
         }
 
         /**
-         * @var $k int
+         * @var $k    int
          * @var $item EntityR
          */
         foreach ($this->result as $k => $item) {
@@ -53,6 +54,7 @@ class Recursion implements RecursionInterface
 
     /**
      * @param $obj
+     *
      * @return Recursion
      */
     private function makeEntityRIterator($obj): self
@@ -66,8 +68,8 @@ class Recursion implements RecursionInterface
 
         $this->result[$obj->getId()] = $entityR;
 
-        if ($obj->getParent() !== null){
-            if (!$this->result->contains($obj->getParent())){
+        if ($obj->getParent() !== null) {
+            if (!$this->result->contains($obj->getParent())) {
                 $this->makeEntityRIterator($obj->getParent());
             }
         }

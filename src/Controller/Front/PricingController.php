@@ -17,7 +17,9 @@ class PricingController extends AbstractController
 
     /**
      * HomeController constructor.
+     *
      * @param Locale $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale)

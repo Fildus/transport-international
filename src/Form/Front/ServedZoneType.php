@@ -26,7 +26,7 @@ class ServedZoneType extends AbstractType
     public function __construct(ServedZoneRepository $servedZoneRepository)
     {
         $this->servedZoneRepository = $servedZoneRepository;
-        $this->request = $this->servedZoneRepository->findBy(['type'=>ServedZone::DEPARTMENT]);
+        $this->request = $this->servedZoneRepository->findBy(['type' => ServedZone::DEPARTMENT]);
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)

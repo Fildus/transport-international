@@ -108,6 +108,7 @@ class Client
 
     /**
      * @param int $id_oldDatabase
+     *
      * @return Client
      */
     public function setIdOldDatabase(int $id_oldDatabase): self
@@ -291,5 +292,5 @@ class Client
 
         return $this;
     }
-       
+
 }

@@ -6,10 +6,8 @@ use App\Entity\Activity;
 use App\Entity\Client;
 use App\Entity\Search\ClientSearch;
 use App\Entity\ServedZone;
-use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Collections\Criteria;
-use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
@@ -43,6 +41,7 @@ class ClientRepository extends ServiceEntityRepository
 
     /**
      * @param int $nbr
+     *
      * @return mixed
      * @throws \Doctrine\ORM\Query\QueryException
      */
@@ -71,6 +70,7 @@ class ClientRepository extends ServiceEntityRepository
 
     /**
      * @param $search ClientSearch
+     *
      * @return \Doctrine\ORM\QueryBuilder
      */
     public function getAllClients(ClientSearch $search)
@@ -159,7 +159,7 @@ class ClientRepository extends ServiceEntityRepository
             if ((int)$search->getContract() === 1) {
                 $qb->andWhere('c.contract is not empty');
             }
-            if ((int)$search->getContract() === 0){
+            if ((int)$search->getContract() === 0) {
                 $qb->andWhere('c.contract is empty');
             }
         }
@@ -171,13 +171,14 @@ class ClientRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param Activity|null $typeA
-     * @param Activity|null $typeB
+     * @param Activity|null   $typeA
+     * @param Activity|null   $typeB
      * @param ServedZone|null $toCountry
      * @param ServedZone|null $toDept
      * @param ServedZone|null $fromCountry
      * @param ServedZone|null $fromDept
-     * @param int $page
+     * @param int             $page
+     *
      * @return array
      */
     public function getClientFrom_activity_servedZone(?Activity $typeA, ?Activity $typeB, ?ServedZone $toCountry, ?ServedZone $toDept, ?ServedZone $fromCountry, ?ServedZone $fromDept, ?int $page)
@@ -241,6 +242,7 @@ class ClientRepository extends ServiceEntityRepository
 
     /**
      * @param $cnSlug
+     *
      * @return mixed
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
@@ -260,6 +262,7 @@ class ClientRepository extends ServiceEntityRepository
 
     /**
      * @param $max
+     *
      * @return mixed
      */
     public function findLasts($max)

@@ -5,14 +5,12 @@ namespace App\Form\Front;
 use App\Entity\Location;
 use App\Entity\ServedZone;
 use App\Repository\ServedZoneRepository;
-use App\Services\ArrayPath;
 use App\Services\Locale;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Translation\TranslatorInterface;
 
 class LocationType extends AbstractType

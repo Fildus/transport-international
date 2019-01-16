@@ -9,7 +9,6 @@ use App\Services\ArrayRecursion\RecursionInterface;
 use App\Services\Locale;
 use App\Services\Mailer;
 use App\Services\Optico\Optico;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -35,9 +34,11 @@ class ProfessionalProfileController extends AbstractController
 
     /**
      * ProfessionalProfileController constructor.
-     * @param ClientRepository $clientRepository
+     *
+     * @param ClientRepository   $clientRepository
      * @param ActivityRepository $activityRepository
-     * @param Locale $locale
+     * @param Locale             $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(ClientRepository $clientRepository, ActivityRepository $activityRepository, Locale $locale)
@@ -63,10 +64,11 @@ class ProfessionalProfileController extends AbstractController
      *      "ma" : "/professional-ma/{cnSlug}",
      *      "ci" : "/professional-ci/{cnSlug}",
      * }, name="_professional_profile", defaults={"cnSlug":null})
-     * @param $cnSlug
-     * @param Mailer $mailer
-     * @param Request $request
+     * @param                    $cnSlug
+     * @param Mailer             $mailer
+     * @param Request            $request
      * @param RecursionInterface $recursion
+     *
      * @return Response .html.twig
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
@@ -102,8 +104,8 @@ class ProfessionalProfileController extends AbstractController
         /**
          * @var $client Client
          */
-        if ($client !== null){
-            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null){
+        if ($client !== null) {
+            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
                 $phone = $client->getContact()->getPhone();
                 $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
                 $optico->addPhone($phone);
@@ -117,7 +119,7 @@ class ProfessionalProfileController extends AbstractController
             'client' => $client,
             'form' => $form->createView(),
             'domain' => $this->locale->getDomain(),
-            'clients' => $this->clientRepository->findBy([],['id'=>'DESC'],12, 50),
+            'clients' => $this->clientRepository->findBy([], ['id' => 'DESC'], 12, 50),
             'number' => $res ?? null,
             'activities' => $recursion->run($client->getActivity()),
             'servedZones' => $recursion->run($client->getServedZone())

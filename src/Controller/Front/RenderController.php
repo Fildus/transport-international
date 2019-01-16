@@ -12,9 +12,10 @@ use Symfony\Component\HttpFoundation\Response;
 class RenderController extends AbstractController
 {
     /**
-     * @param $route
+     * @param                $route
      * @param CacheInterface $cache
-     * @param Locale $locale
+     * @param Locale         $locale
+     *
      * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -57,7 +58,8 @@ class RenderController extends AbstractController
 
     /**
      * @param CacheInterface $cache
-     * @param Locale $locale
+     * @param Locale         $locale
+     *
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -74,9 +76,10 @@ class RenderController extends AbstractController
     }
 
     /**
-     * @param CacheInterface $cache
-     * @param Locale $locale
+     * @param CacheInterface   $cache
+     * @param Locale           $locale
      * @param ClientRepository $clientRepository
+     *
      * @return string
      * @throws \Doctrine\ORM\Query\QueryException
      * @throws \Psr\SimpleCache\InvalidArgumentException

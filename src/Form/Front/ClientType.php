@@ -2,12 +2,10 @@
 
 namespace App\Form\Front;
 
-use App\Entity\Activity;
 use App\Entity\Client;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;

@@ -164,6 +164,6 @@ class LegalInformation
      */
     public function setSlugLifecycleCallback()
     {
-        $this->slug = (new Slug())->getSlug($this->companyName).'-'.rand(1000,10000);
+        $this->slug = (new Slug())->getSlug($this->companyName) . '-' . rand(1000, 10000);
     }
 }

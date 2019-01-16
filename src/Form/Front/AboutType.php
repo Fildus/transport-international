@@ -23,8 +23,7 @@ class AboutType extends AbstractType
             ])
             ->add('services', null, [
                 'label' => 'form.about.services'
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

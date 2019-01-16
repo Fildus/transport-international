@@ -12,8 +12,8 @@ class Optico
     const COOKIE_NAME = 'optico_visit_id';
 
     protected static $apiKey;
-    protected $viewParameters = array();
-    protected $trackingPhones = array();
+    protected $viewParameters = [];
+    protected $trackingPhones = [];
     protected $isViewSent = false;
     protected $viewId;
 
@@ -25,7 +25,7 @@ class Optico
     /**
      * Send a click request to Optico for given view id and phone
      *
-     * @param  int $viewId
+     * @param  int    $viewId
      * @param  string $phone
      *
      * @return array
@@ -38,11 +38,11 @@ class Optico
 
         $this->checkApiKey();
 
-        $parameters = array(
+        $parameters = [
             'api_key' => '06f46a4bc4c2edd635373639de3c25b8',
             'view_id' => $viewId,
             'phone' => $phone
-        );
+        ];
 
         $response = $this->sendRequest(static::CLICK_URL, $parameters);
 
@@ -167,7 +167,7 @@ class Optico
             return;
         }
 
-        $phones = isset($this->viewParameters['phones']) ? explode(',', $this->viewParameters['phones']) : array();
+        $phones = isset($this->viewParameters['phones']) ? explode(',', $this->viewParameters['phones']) : [];
 
         if (!in_array($phone, $phones)) {
             $phones[] = $phone;
@@ -187,7 +187,7 @@ class Optico
      */
     public function setViewParameter($name, $value)
     {
-        if (!in_array($name, array('visit_id', 'ip', 'user_agent', 'url', 'page_title', 'is_mobile', 'referer_url', 'nr_phones', 'direct_display', 'phones'))) {
+        if (!in_array($name, ['visit_id', 'ip', 'user_agent', 'url', 'page_title', 'is_mobile', 'referer_url', 'nr_phones', 'direct_display', 'phones'])) {
             throw new InvalidArgumentException("Unknown view parameter \"$name\"");
         }
 
@@ -239,7 +239,7 @@ class Optico
      */
     protected function getDefaultViewParameters()
     {
-        $parameters = array(
+        $parameters = [
             'visit_id' => $this->getVisitId(),
             'ip' => $_SERVER["REMOTE_ADDR"],
             'user_agent' => $_SERVER['HTTP_USER_AGENT'],
@@ -250,7 +250,7 @@ class Optico
             'nr_phones' => $this->countPhonesOnPage(),
             'direct_display' => 'false',
             'phones' => ''
-        );
+        ];
 
         return $parameters;
     }
@@ -267,7 +267,7 @@ class Optico
             return $this->viewParameters['nr_phones'];
         }
 
-        $phones = isset($this->viewParameters['phones']) ? explode(',', $this->viewParameters['phones']) : array();
+        $phones = isset($this->viewParameters['phones']) ? explode(',', $this->viewParameters['phones']) : [];
 
         return count($phones);
     }
@@ -296,7 +296,7 @@ class Optico
      * Make a request to optico
      *
      * @param  string $url
-     * @param  array $parameters
+     * @param  array  $parameters
      *
      * @return array
      */
@@ -317,7 +317,7 @@ class Optico
             $response = json_decode($rawResponse, true);
 
             if (!is_array($response)) {
-                $response = array();
+                $response = [];
                 $this->onUnexpectedResponse($url, $parameters, $rawResponse);
             }
 
@@ -329,7 +329,7 @@ class Optico
         } catch (Exception $exception) {
             $this->onRequestException($url, $parameters, $exception);
 
-            return array();
+            return [];
         }
     }
 
@@ -337,9 +337,9 @@ class Optico
      * Called when a request was sent to Optico
      *
      * @param  string $url
-     * @param  array $parameters
+     * @param  array  $parameters
      * @param  string $rawResponse
-     * @param  array $responseCurlInfo
+     * @param  array  $responseCurlInfo
      */
     protected function onRequestSend($url, array $parameters, $rawResponse, array $responseCurlInfo)
     {
@@ -349,7 +349,7 @@ class Optico
      * Called when something went wrong on Optico's side
      *
      * @param  string $url
-     * @param  array $parameters
+     * @param  array  $parameters
      * @param  string $rawResponse
      */
     protected function onUnexpectedResponse($url, array $parameters, $rawResponse)
@@ -360,9 +360,9 @@ class Optico
      * Called when a request sent to Optico returned an error
      *
      * @param  string $url
-     * @param  array $parameters
-     * @param  array $response
-     * @param  array $responseCurlInfo
+     * @param  array  $parameters
+     * @param  array  $response
+     * @param  array  $responseCurlInfo
      */
     protected function onOpticoRequestErrorMessage($url, array $parameters, array $response, array $responseCurlInfo)
     {
@@ -371,8 +371,8 @@ class Optico
     /**
      * Called when an exception was caught during the sending of a request to Optico
      *
-     * @param  string $url
-     * @param  array $parameters
+     * @param  string    $url
+     * @param  array     $parameters
      * @param  Exception $exception
      */
     protected function onRequestException($url, array $parameters, Exception $exception)

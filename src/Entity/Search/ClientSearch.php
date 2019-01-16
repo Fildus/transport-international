@@ -81,6 +81,7 @@ class ClientSearch
 
     /**
      * @param int|null $siret
+     *
      * @return ClientSearch
      */
     public function setSiret(int $siret): ClientSearch
@@ -99,6 +100,7 @@ class ClientSearch
 
     /**
      * @param string|null $corporateName
+     *
      * @return ClientSearch
      */
     public function setCorporateName(string $corporateName): ClientSearch
@@ -117,6 +119,7 @@ class ClientSearch
 
     /**
      * @param string|null $companyName
+     *
      * @return ClientSearch
      */
     public function setCompanyName(string $companyName): ClientSearch
@@ -135,6 +138,7 @@ class ClientSearch
 
     /**
      * @param string|null $legalForm
+     *
      * @return ClientSearch
      */
     public function setLegalForm(string $legalForm): ClientSearch
@@ -153,6 +157,7 @@ class ClientSearch
 
     /**
      * @param string|null $address
+     *
      * @return ClientSearch
      */
     public function setAddress(string $address): ClientSearch
@@ -171,6 +176,7 @@ class ClientSearch
 
     /**
      * @param string|null $postalCode
+     *
      * @return ClientSearch
      */
     public function setPostalCode(string $postalCode): ClientSearch
@@ -189,6 +195,7 @@ class ClientSearch
 
     /**
      * @param string|null $city
+     *
      * @return ClientSearch
      */
     public function setCity(string $city): ClientSearch
@@ -207,6 +214,7 @@ class ClientSearch
 
     /**
      * @param string|null $location
+     *
      * @return ClientSearch
      */
     public function setLocation(string $location): ClientSearch
@@ -289,6 +297,7 @@ class ClientSearch
 
     /**
      * @param bool $contract
+     *
      * @return ClientSearch
      */
     public function setContract(bool $contract): ClientSearch

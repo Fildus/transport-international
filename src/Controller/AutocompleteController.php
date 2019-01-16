@@ -24,7 +24,9 @@ class AutocompleteController extends AbstractController
 
     /**
      * AutocompleteController constructor.
+     *
      * @param Locale $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale)
@@ -35,8 +37,9 @@ class AutocompleteController extends AbstractController
     /**
      * @Route("/autocomplete", name="_autocomplete_department")
      * @param ServedZoneRepository $servedZoneRepository
-     * @param ActivityRepository $activityRepository
-     * @param Request $request
+     * @param ActivityRepository   $activityRepository
+     * @param Request              $request
+     *
      * @return JsonResponse
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -70,11 +73,12 @@ class AutocompleteController extends AbstractController
     /**
      * @Route("/autocomplete/all", name="_autocomplete_all")
      * @param LegalInformationRepository $legalInformationRepository
-     * @param LocationRepository $locationRepository
-     * @param ServedZoneRepository $servedZoneRepository
-     * @param ContactRepository $contactRepository
-     * @param UserRepository $userRepository
-     * @param Request $request
+     * @param LocationRepository         $locationRepository
+     * @param ServedZoneRepository       $servedZoneRepository
+     * @param ContactRepository          $contactRepository
+     * @param UserRepository             $userRepository
+     * @param Request                    $request
+     *
      * @return JsonResponse
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -156,6 +160,6 @@ class AutocompleteController extends AbstractController
             return new JsonResponse($choices);
         }
 
-        return new JsonResponse(['faux'=>'marche pas']);
+        return new JsonResponse(['faux' => 'marche pas']);
     }
 }

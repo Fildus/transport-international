@@ -223,6 +223,7 @@ class Contract
 
     /**
      * @param Client|null $client
+     *
      * @return Contract
      */
     public function setClient(?Client $client): self

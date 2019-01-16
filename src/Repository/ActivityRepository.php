@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Activity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Query\Expr;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Psr\SimpleCache\CacheInterface;
@@ -49,6 +48,7 @@ class ActivityRepository extends ServiceEntityRepository
 
     /**
      * @param Activity $activity
+     *
      * @return array|null
      */
     public function getActivityPath(Activity $activity): ?array
@@ -68,7 +68,7 @@ class ActivityRepository extends ServiceEntityRepository
     {
         /**
          * @var $activity Activity
-         * @var $child Activity
+         * @var $child    Activity
          */
         if (!$activity->getChildren()->isEmpty()) {
             foreach ($activity->getChildren() as $child) {
@@ -114,7 +114,7 @@ class ActivityRepository extends ServiceEntityRepository
     {
         /**
          * @var $activity Activity
-         * @var $child Activity
+         * @var $child    Activity
          */
         if (!$activity->getChildren()->isEmpty()) {
             foreach ($activity->getChildren() as $child) {
@@ -132,6 +132,7 @@ class ActivityRepository extends ServiceEntityRepository
      * @param $typeA string charter|transportOgGoods
      * @param $typeB string byContainer|charterFull
      * @param $locale
+     *
      * @return array|null
      */
     public function getTowTypesFromPathAndName(?string $typeA, ?string $typeB, $locale)
@@ -164,7 +165,7 @@ class ActivityRepository extends ServiceEntityRepository
     {
         /**
          * @var $activity Activity
-         * @var $child Activity
+         * @var $child    Activity
          */
         if ($activity->getTranslation()->getSlug() === $typeB) {
             $this->activity = $activity;
@@ -177,6 +178,7 @@ class ActivityRepository extends ServiceEntityRepository
 
     /**
      * @param Activity|null $activity
+     *
      * @return array
      */
     public function getPathById(?Activity $activity)

@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Activity
 {
-    const PATH = 1;
-    const ACTIVITY = 2;
+    public const PATH = 1;
+    public const ACTIVITY = 2;
 
     /**
      * @ORM\Column(type="integer")
@@ -174,6 +174,7 @@ class Activity
 
     /**
      * @param mixed $type
+     *
      * @return Activity
      */
     public function setType($type)
@@ -193,6 +194,7 @@ class Activity
 
     /**
      * @param mixed $path
+     *
      * @return Activity
      */
     public function setPath($path)
@@ -211,6 +213,7 @@ class Activity
 
     /**
      * @param mixed $name
+     *
      * @return Activity
      */
     public function setName($name)

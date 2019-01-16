@@ -42,9 +42,10 @@ class UsersController extends AbstractController
 
     /**
      * @Route("/index/{page}", name="_index", defaults={"page":1})
-     * @param $page
+     * @param                    $page
      * @param PaginatorInterface $paginator
-     * @param Request $request
+     * @param Request            $request
+     *
      * @return Response
      */
     public function index($page, PaginatorInterface $paginator, Request $request)
@@ -66,8 +67,9 @@ class UsersController extends AbstractController
 
     /**
      * @Route("/edition/{id}", name="_edit")
-     * @param $id
+     * @param         $id
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function edit($id, Request $request)
@@ -94,6 +96,7 @@ class UsersController extends AbstractController
     /**
      * @Route("/nouveau", name="_new")
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function new(Request $request)
@@ -120,8 +123,9 @@ class UsersController extends AbstractController
 
     /**
      * @Route("/delete/{id}", name="_delete")
-     * @param $id
+     * @param                  $id
      * @param ClientRepository $clientRepository
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function delete($id, ClientRepository $clientRepository)

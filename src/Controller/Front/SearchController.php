@@ -3,14 +3,11 @@
 namespace App\Controller\Front;
 
 
-use App\Controller\ExceptionController;
-use App\Entity\Activity;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use App\Repository\TranslationRepository;
 use App\Services\Locale;
 use App\Repository\ClientRepository;
-use App\Services\Slug;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -51,12 +48,14 @@ class SearchController extends AbstractController
 
     /**
      * SearchController constructor.
-     * @param Locale $locale
-     * @param ClientRepository $clientRepository
-     * @param ActivityRepository $activityRepository
+     *
+     * @param Locale                $locale
+     * @param ClientRepository      $clientRepository
+     * @param ActivityRepository    $activityRepository
      * @param TranslationRepository $translationRepository
-     * @param ServedZoneRepository $servedZoneRepository
-     * @param CacheInterface $cache
+     * @param ServedZoneRepository  $servedZoneRepository
+     * @param CacheInterface        $cache
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(
@@ -91,7 +90,8 @@ class SearchController extends AbstractController
      *      "ro" : "/search-ro/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
      *      "ma" : "/search-ma/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
      *      "ci" : "/search-ci/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}",
-     * }, name="_search", defaults={"typeA": null, "typeB": null, "toCountry": null, "toDept": null, "fromCountry": null, "fromDept": null, "page":null})
+     * }, name="_search", defaults={"typeA": null, "typeB": null, "toCountry": null, "toDept": null, "fromCountry":
+     * null, "fromDept": null, "page":null})
      * @param $page
      * @param $typeA
      * @param $typeB
@@ -99,6 +99,7 @@ class SearchController extends AbstractController
      * @param $toDept
      * @param $fromCountry
      * @param $fromDept
+     *
      * @return Response
      */
     public function search($page, $typeA, $typeB, $toCountry, $toDept, $fromCountry, $fromDept): Response
@@ -165,6 +166,7 @@ class SearchController extends AbstractController
      *      "ci" : "/getUrl",
      * }, name="_search_geturl")
      * @param Request $request
+     *
      * @return Response
      */
     public function getUrl(Request $request)

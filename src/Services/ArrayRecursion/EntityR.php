@@ -46,6 +46,7 @@ class EntityR
 
     /**
      * @param int $id
+     *
      * @return entityR
      */
     public function setId(int $id): entityR
@@ -64,6 +65,7 @@ class EntityR
 
     /**
      * @param int $parent
+     *
      * @return entityR
      */
     public function setParent(?int $parent): entityR
@@ -82,6 +84,7 @@ class EntityR
 
     /**
      * @param $content
+     *
      * @return $this
      */
     public function setContent($content): self
@@ -100,6 +103,7 @@ class EntityR
 
     /**
      * @param $obj
+     *
      * @return $this
      */
     public function addChildren($obj): self
@@ -112,6 +116,7 @@ class EntityR
 
     /**
      * @param $obj
+     *
      * @return $this
      */
     public function removeChildren($obj): self
@@ -132,6 +137,7 @@ class EntityR
 
     /**
      * @param int $level
+     *
      * @return EntityR
      */
     public function setLevel(int $level): EntityR

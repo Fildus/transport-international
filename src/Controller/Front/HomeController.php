@@ -2,8 +2,6 @@
 
 namespace App\Controller\Front;
 
-use App\Entity\Client;
-use App\Repository\ClientRepository;
 use App\Services\Locale;
 use Psr\SimpleCache\CacheInterface;
 use App\Repository\ActivityRepository;
@@ -30,9 +28,11 @@ class HomeController extends AbstractController
 
     /**
      * HomeController constructor.
-     * @param Locale $locale
-     * @param ActivityRepository $activityRepository
+     *
+     * @param Locale               $locale
+     * @param ActivityRepository   $activityRepository
      * @param ServedZoneRepository $servedZoneRepository
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale, ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository)
@@ -58,6 +58,7 @@ class HomeController extends AbstractController
      *     "ro" : "/",
      * }, name="home")
      * @param CacheInterface $cache
+     *
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */

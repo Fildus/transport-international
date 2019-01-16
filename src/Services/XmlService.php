@@ -53,9 +53,11 @@ class XmlService extends AbstractController
 
     /**
      * XmlService constructor.
+     *
      * @param LegalInformationRepository $legalInformationRepository
-     * @param Locale $locale
-     * @param ContainerInterface $container
+     * @param Locale                     $locale
+     * @param ContainerInterface         $container
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Exception
      */

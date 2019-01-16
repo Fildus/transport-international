@@ -72,10 +72,12 @@ class AccountController extends AbstractController
 
     /**
      * AccountController constructor.
-     * @param Locale $locale
+     *
+     * @param Locale           $locale
      * @param ClientRepository $clientRepository
-     * @param ObjectManager $objectManager
-     * @param CacheInterface $cache
+     * @param ObjectManager    $objectManager
+     * @param CacheInterface   $cache
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale, ClientRepository $clientRepository, ObjectManager $objectManager, CacheInterface $cache)
@@ -103,6 +105,7 @@ class AccountController extends AbstractController
      *      "ci" : "/legalInformation-ci"
      * }, name="_legalInformation")
      * @param Request $request
+     *
      * @return Response
      */
     public function legalInformation(Request $request)
@@ -111,7 +114,7 @@ class AccountController extends AbstractController
             'user' => $this->getUser()
         ]);
 
-        if ($client === null){
+        if ($client === null) {
             return $this->redirectToRoute('_admin_home');
         }
 
@@ -148,6 +151,7 @@ class AccountController extends AbstractController
      *      "ci" : "/location-ci"
      * }, name="_location")
      * @param Request $request
+     *
      * @return Response
      */
     public function location(Request $request)
@@ -189,6 +193,7 @@ class AccountController extends AbstractController
      *      "ci" : "/contact-ci"
      * }, name="_contact")
      * @param Request $request
+     *
      * @return Response
      */
     public function contact(Request $request)
@@ -229,6 +234,7 @@ class AccountController extends AbstractController
      *      "ci" : "/coreBusiness-ci"
      * }, name="_coreBusiness")
      * @param Request $request
+     *
      * @return Response
      */
     public function coreBusiness(Request $request)
@@ -269,6 +275,7 @@ class AccountController extends AbstractController
      *      "ci" : "/user-ci"
      * }, name="_user")
      * @param Request $request
+     *
      * @return Response
      */
     public function user(Request $request)
@@ -309,6 +316,7 @@ class AccountController extends AbstractController
      *      "ci" : "/managers-ci"
      * }, name="_managers")
      * @param Request $request
+     *
      * @return Response
      */
     public function managers(Request $request)
@@ -349,6 +357,7 @@ class AccountController extends AbstractController
      *      "ci" : "/equipment-ci"
      * }, name="_equipment")
      * @param Request $request
+     *
      * @return Response
      */
     public function equipment(Request $request)
@@ -389,6 +398,7 @@ class AccountController extends AbstractController
      *      "ci" : "/about-ci"
      * }, name="_about")
      * @param Request $request
+     *
      * @return Response
      */
     public function about(Request $request)
@@ -428,8 +438,9 @@ class AccountController extends AbstractController
      *      "ma" : "/activity-ma",
      *      "ci" : "/activity-ci"
      * }, name="_activity")
-     * @param Request $request
+     * @param Request            $request
      * @param ActivityRepository $activityRepository
+     *
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -448,7 +459,7 @@ class AccountController extends AbstractController
         }
 
         $key = 'activity';
-        if (!$this->cache->has($key)){
+        if (!$this->cache->has($key)) {
             $this->cache->set($key, $activityRepository->findByWithTranslation(), 3600);
         }
 
@@ -473,8 +484,9 @@ class AccountController extends AbstractController
      *      "ma" : "/servedZone-ma",
      *      "ci" : "/servedZone-ci"
      * }, name="_servedZone")
-     * @param Request $request
+     * @param Request              $request
      * @param ServedZoneRepository $servedZoneRepository
+     *
      * @return Response
      */
     public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository)

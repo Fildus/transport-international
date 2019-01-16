@@ -30,7 +30,8 @@ class DomainController extends AbstractController
 
     /**
      * DomainController constructor.
-     * @param DomainRepository $domainRepository
+     *
+     * @param DomainRepository       $domainRepository
      * @param EntityManagerInterface $manager
      */
     public function __construct(DomainRepository $domainRepository, EntityManagerInterface $manager)
@@ -41,8 +42,9 @@ class DomainController extends AbstractController
 
     /**
      * @Route("/index/{page}", name="_index", defaults={"page":1})
-     * @param int $page
+     * @param int                $page
      * @param PaginatorInterface $paginator
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(int $page, PaginatorInterface $paginator)
@@ -59,8 +61,9 @@ class DomainController extends AbstractController
 
     /**
      * @Route("/edition/{id}", name="_edit")
-     * @param $id
+     * @param         $id
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit($id, Request $request)
@@ -85,6 +88,7 @@ class DomainController extends AbstractController
     /**
      * @Route("/nouveau", name="_new")
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function new(Request $request)
@@ -111,12 +115,13 @@ class DomainController extends AbstractController
     /**
      * @Route("/delete/{id}", name="_delete")
      * @param $id
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function delete($id)
     {
         $domain = $this->domainRepository->find($id);
-        $this->addFlash('danger', 'Le domaine '.$domain->getTitle().' a été supprimé');
+        $this->addFlash('danger', 'Le domaine ' . $domain->getTitle() . ' a été supprimé');
         $this->manager->remove($domain);
         $this->manager->flush();
         return $this->redirectToRoute('_admin_domain_index');

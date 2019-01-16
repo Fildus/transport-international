@@ -18,7 +18,9 @@ class NewSubscribersController extends AbstractController
 
     /**
      * NewSubscribersController constructor.
+     *
      * @param Locale $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale)
@@ -26,6 +28,7 @@ class NewSubscribersController extends AbstractController
         $this->locale = $locale;
         $locale->setLocale();
     }
+
     /**
      * @Route({
      *     "default" : "/newSubscribers",
@@ -42,12 +45,13 @@ class NewSubscribersController extends AbstractController
      *      "ci" : "/newSubscribers-ci"
      * }, name="_newSubscribers")
      * @param ClientRepository $clientRepository
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Doctrine\ORM\Query\QueryException
      */
     public function newSubscribers(ClientRepository $clientRepository)
     {
-        return $this->render('pages/newSubscribers.html.twig',[
+        return $this->render('pages/newSubscribers.html.twig', [
             'clients' => $clientRepository->lastClients(60),
             'domain' => $this->locale->getDomain()
         ]);

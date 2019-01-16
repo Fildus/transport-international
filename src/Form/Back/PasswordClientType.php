@@ -16,11 +16,10 @@ class PasswordClientType extends AbstractType
     {
         $builder
             ->add('password', RepeatedType::class, [
-                'first_name'     => 'password',
-                'second_name'    => 'confirm',
-                'type'           => PasswordType::class
-            ]);
-        ;
+                'first_name' => 'password',
+                'second_name' => 'confirm',
+                'type' => PasswordType::class
+            ]);;
     }
 
     public function configureOptions(OptionsResolver $resolver)

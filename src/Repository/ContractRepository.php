@@ -22,6 +22,7 @@ class ContractRepository extends ServiceEntityRepository
 
     /**
      * @param int|null $client
+     *
      * @return Query
      */
     public function allQuery(?int $client): Query
@@ -29,7 +30,7 @@ class ContractRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('contract');
         if ($client !== null && $client !== 0) {
             $qb = $qb->join('contract.client', 'client')
-            ->where('client.id =' . $client);
+                ->where('client.id =' . $client);
         }
 //        dd($qb->getQuery());
         return $qb->getQuery();

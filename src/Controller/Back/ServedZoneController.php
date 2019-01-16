@@ -38,6 +38,7 @@ class ServedZoneController extends AbstractController
     /**
      * @Route("/index/{id}", name="_index", defaults={"id":null})
      * @param $id
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index($id)
@@ -55,8 +56,9 @@ class ServedZoneController extends AbstractController
 
     /**
      * @Route("/edition/{id}", name="_edit")
-     * @param $id
+     * @param         $id
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit($id, Request $request)
@@ -83,6 +85,7 @@ class ServedZoneController extends AbstractController
     /**
      * @Route("/nouveau", name="_new")
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function new(Request $request)
@@ -108,8 +111,9 @@ class ServedZoneController extends AbstractController
 
     /**
      * @Route("/delete/{id}", name="_delete")
-     * @param $id
+     * @param                    $id
      * @param LocationRepository $locationRepository
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -119,7 +123,7 @@ class ServedZoneController extends AbstractController
         $servedZones = $this->servedZoneRepository->allChildrens($servedZone->getId());
         foreach ($servedZones as $child) {
             $locations = $locationRepository->findLocationByServedZone($child);
-            foreach ($locations as $location){
+            foreach ($locations as $location) {
                 /** @var $location Location */
                 $location->removeLocation();
             }

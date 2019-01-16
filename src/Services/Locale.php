@@ -35,7 +35,8 @@ class Locale
 
     /**
      * Locale constructor.
-     * @param RequestStack $requestStack
+     *
+     * @param RequestStack     $requestStack
      * @param DomainRepository $domainRepository
      */
     public function __construct(RequestStack $requestStack, DomainRepository $domainRepository)
@@ -50,7 +51,7 @@ class Locale
      */
     public function setLocale(): self
     {
-        $httpHost = str_replace('test-','',$this->requestStack->getMasterRequest()->getHttpHost());
+        $httpHost = str_replace('test-', '', $this->requestStack->getMasterRequest()->getHttpHost());
         foreach ($this->domainRepository->getAll() as $item) {
             /** @var $item Domain */
             if (preg_match('/(' . $item->getDomain() . ')/', $httpHost)) {
@@ -76,7 +77,7 @@ class Locale
         return $this->localematched;
     }
 
-    public function getFallback()
+    public function getFallback(): string
     {
         return $this->fallback;
     }
@@ -84,7 +85,7 @@ class Locale
     /**
      * @return array
      */
-    public function getAllMainDomain()
+    public function getAllMainDomain(): array
     {
         return [
             'fr' => [

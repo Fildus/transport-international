@@ -38,6 +38,7 @@ class ActivityController extends AbstractController
     /**
      * @Route("/index/{id}", name="_index", defaults={"id":null})
      * @param $id
+     *
      * @return Response
      */
     public function index($id)
@@ -55,8 +56,9 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/edition/{id}", name="_edit")
-     * @param $id
+     * @param         $id
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function edit($id, Request $request)
@@ -83,6 +85,7 @@ class ActivityController extends AbstractController
     /**
      * @Route("/nouveau", name="_new")
      * @param Request $request
+     *
      * @return Response
      */
     public function new(Request $request)
@@ -109,6 +112,7 @@ class ActivityController extends AbstractController
     /**
      * @Route("/delete/{id}", name="_delete")
      * @param $id
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function delete($id)
@@ -116,7 +120,7 @@ class ActivityController extends AbstractController
         $activity = $this->activityRepository->find($id);
         $this->manager->remove($activity);
         $this->manager->flush();
-        $this->addFlash('success', 'l\'activité <strong>'.$activity->__toString().' </strong>a été supprimée');
+        $this->addFlash('success', 'l\'activité <strong>' . $activity->__toString() . ' </strong>a été supprimée');
         return $this->redirectToRoute('_admin_activities_index');
     }
 }

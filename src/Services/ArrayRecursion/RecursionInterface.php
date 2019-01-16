@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
- * @author david GASTALDELLO davidgastaldello@msn.com
+ * @author  david GASTALDELLO davidgastaldello@msn.com
  * Interface RecursionInterface
  * @package App\Services\ArrayRecursion
  */
@@ -22,6 +22,7 @@ interface RecursionInterface
      *      getId() integer
      *
      * @param ArrayCollection $collection
+     *
      * @return ArrayCollection $items
      */
     public function run($collection);

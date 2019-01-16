@@ -53,7 +53,7 @@ class ExtractDb
 
     public function pdo($dbName)
     {
-        return new PDO('mysql:dbname='.getenv('DATABASE_ENCIEN').';host='.getenv('DATABASE_HOST'), getenv('DATABASE_USERNAME'), getenv('DATABASE_PASSWORD'));
+        return new PDO('mysql:dbname=' . getenv('DATABASE_ENCIEN') . ';host=' . getenv('DATABASE_HOST'), getenv('DATABASE_USERNAME'), getenv('DATABASE_PASSWORD'));
     }
 
     public function extract(string $table, string $dump = null, ?int $rows = 100, ?string $method = 'fetchAll', $dbName = 'ti_existant_complet')
@@ -67,7 +67,7 @@ class ExtractDb
             $res = $res->fetchAll();
         } elseif ($method === 'fetch') {
             $res = $res->fetch();
-        } elseif ($method ==='fetchObject') {
+        } elseif ($method === 'fetchObject') {
             $res = $res->fetchObject();
         }
 
@@ -81,9 +81,11 @@ class ExtractDb
 
     public function query(string $query, $fetch = 'fetch', ?string $dbName = 'ti_existant_complet')
     {
-        if ($fetch === 'fetch'){
+        if ($fetch === 'fetch') {
             return $this->pdo($dbName)->query($query)->fetchAll();
-        }elseif ($fetch === 'object'){
+        }
+
+        if ($fetch === 'object') {
             return $this->pdo($dbName)->query($query)->fetchObject();
         }
         return $this->pdo($dbName)->query($query);

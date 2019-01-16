@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\ServedZone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -28,6 +27,7 @@ class ServedZoneRepository extends ServiceEntityRepository
 
     /**
      * ServedZoneRepository constructor.
+     *
      * @param RegistryInterface $registry
      */
     public function __construct(RegistryInterface $registry)
@@ -56,6 +56,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     /**
      * @param string $name
      * @param string $locale
+     *
      * @return int|null
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -78,6 +79,7 @@ class ServedZoneRepository extends ServiceEntityRepository
 
     /**
      * @param ServedZone $servedZone
+     *
      * @return array|null
      */
     public function getServedZoneByCountry(ServedZone $servedZone): ?array
@@ -98,7 +100,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     {
         /**
          * @var $servedZone ServedZone
-         * @var $child ServedZone
+         * @var $child      ServedZone
          */
         if (!$servedZone->getChildren()->isEmpty()) {
             foreach ($servedZone->getChildren() as $child) {
@@ -112,6 +114,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     /**
      * @param string $department
      * @param string $locale
+     *
      * @return ServedZone|null
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -175,6 +178,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     /**
      * @param $country
      * @param $locale
+     *
      * @return array
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -199,7 +203,7 @@ class ServedZoneRepository extends ServiceEntityRepository
         $return = [];
 
         $i = 0;
-        foreach ($redefinedIndex as $k => $v){
+        foreach ($redefinedIndex as $k => $v) {
             $return[$i] = $this->servedZones[$v];
             $i++;
         }
@@ -214,7 +218,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     {
         /**
          * @var $servedZone ServedZone
-         * @var $child ServedZone
+         * @var $child      ServedZone
          */
         if (!$servedZone->getChildren()->isEmpty()) {
             foreach ($servedZone->getChildren() as $child) {
@@ -229,7 +233,8 @@ class ServedZoneRepository extends ServiceEntityRepository
     /**
      * @param string $toCountry
      * @param string $toDept
-     * @param $locale
+     * @param        $locale
+     *
      * @return array|null
      */
     public function getTowServedZoneFromPathAndName(?string $toCountry, ?string $toDept, $locale)
@@ -264,7 +269,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     {
         /**
          * @var $servedZone ServedZone
-         * @var $child ServedZone
+         * @var $child      ServedZone
          */
         if ($servedZone->getTranslation()->getSlug() === $toDept) {
             $this->servedZone = $servedZone;
@@ -278,6 +283,7 @@ class ServedZoneRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array|null
      */
     public function findByLocation($el): ?array
@@ -322,7 +328,7 @@ class ServedZoneRepository extends ServiceEntityRepository
         if ($servedZone !== null) {
             $returnArray[$servedZone->getTranslation()->__toString()] = $servedZone->getId();
             $returnArray['Pas de parent'] = null;
-        }else{
+        } else {
             $returnArray['Pas de parent'] = null;
 
         }
@@ -337,6 +343,7 @@ class ServedZoneRepository extends ServiceEntityRepository
 
     /**
      * @param int $parentId
+     *
      * @return array
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
@@ -355,7 +362,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     {
         /**
          * @var $servedZone ServedZone
-         * @var $child ServedZone
+         * @var $child      ServedZone
          */
         foreach ($servedZone->getChildren() as $child) {
             $this->iteratorAllChildrenByLevel($child);

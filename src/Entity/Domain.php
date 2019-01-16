@@ -131,13 +131,14 @@ class Domain
     /**
      * @return string|null
      */
-    public function getHomeDescription():?string
+    public function getHomeDescription(): ?string
     {
         return $this->homeDescription;
     }
 
     /**
      * @param string|null $homeDescription
+     *
      * @return $this
      */
     public function setHomeDescription(?string $homeDescription)

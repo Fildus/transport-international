@@ -28,10 +28,11 @@ class ContactRepository extends ServiceEntityRepository
 
     /**
      * @param string|null $el
+     *
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function findByPhone(string $el):?array
+    public function findByPhone(string $el): ?array
     {
         $key = 'findByPhone-az54za';
         if (!$this->cache->has($key)) {
@@ -55,10 +56,11 @@ class ContactRepository extends ServiceEntityRepository
 
     /**
      * @param string $el
+     *
      * @return array|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function findByFax(string $el):?array
+    public function findByFax(string $el): ?array
     {
         $key = 'findByFax-az54za';
         if (!$this->cache->has($key)) {
@@ -82,10 +84,11 @@ class ContactRepository extends ServiceEntityRepository
 
     /**
      * @param string $el
+     *
      * @return array|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function findByContact(string $el):?array
+    public function findByContact(string $el): ?array
     {
         $key = 'findByContact-az54za';
         if (!$this->cache->has($key)) {
@@ -109,10 +112,11 @@ class ContactRepository extends ServiceEntityRepository
 
     /**
      * @param string $el
+     *
      * @return array|null
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function findByWebSite(string $el):?array
+    public function findByWebSite(string $el): ?array
     {
         $key = 'findByWebSite-az54za';
         if (!$this->cache->has($key)) {

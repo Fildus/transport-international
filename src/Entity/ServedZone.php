@@ -12,9 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ServedZone
 {
-    const COUNTRY = 1;
-    const REGION = 2;
-    const DEPARTMENT = 3;
+    public const COUNTRY = 1;
+    public const REGION = 2;
+    public const DEPARTMENT = 3;
 
     /**
      * @ORM\Column(type="integer")
@@ -189,6 +189,7 @@ class ServedZone
 
     /**
      * @param mixed $type
+     *
      * @return ServedZone
      */
     public function setType($type)
@@ -207,6 +208,7 @@ class ServedZone
 
     /**
      * @param mixed $country
+     *
      * @return ServedZone
      */
     public function setCountry($country)
@@ -225,6 +227,7 @@ class ServedZone
 
     /**
      * @param mixed $region
+     *
      * @return ServedZone
      */
     public function setRegion($region)
@@ -243,6 +246,7 @@ class ServedZone
 
     /**
      * @param mixed $department
+     *
      * @return ServedZone
      */
     public function setDepartment($department)

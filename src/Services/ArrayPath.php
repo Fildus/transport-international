@@ -44,7 +44,7 @@ class ArrayPath
         $formatedData = [];
         if (!empty($this->exclude)) {
             foreach ($data as $k => $d) {
-                if (!in_array($d, $this->exclude)){
+                if (!in_array($d, $this->exclude)) {
                     $formatedData[] = $d;
                 }
             }

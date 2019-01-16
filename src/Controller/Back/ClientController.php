@@ -67,10 +67,11 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/clients/{page}", name="_index", methods="GET", defaults={"page":1})
-     * @param ClientRepository $clientRepository
+     * @param ClientRepository   $clientRepository
      * @param PaginatorInterface $paginator
-     * @param int $page
-     * @param Request $request
+     * @param int                $page
+     * @param Request            $request
+     *
      * @return Response
      */
     public function index(ClientRepository $clientRepository, PaginatorInterface $paginator, $page, Request $request): Response
@@ -93,8 +94,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/informations-legales", name="_edit_legalInformation")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function legalInformationEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -123,8 +125,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/localisation", name="_edit_location")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function localisationEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -153,8 +156,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/contact", name="_edit_contact")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function contactEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -183,8 +187,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/activite-principale", name="_edit_coreBusiness")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function coreBusinessEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -213,8 +218,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/utilisateur", name="_edit_user")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function userEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -243,8 +249,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/password", name="_edit_password")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function passwordEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -273,8 +280,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/managers", name="_edit_managers")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function managersEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -304,8 +312,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/equipements", name="_edit_equipment")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function equipmentEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -334,8 +343,9 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{clientId}/a-propos", name="_edit_about")
      * @param ClientRepository $client
-     * @param $clientId
-     * @param Request $request
+     * @param                  $clientId
+     * @param Request          $request
+     *
      * @return Response
      */
     public function aboutEdit(ClientRepository $client, $clientId, Request $request): Response
@@ -363,10 +373,11 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/client/{clientId}/activites", name="_edit_activity")
-     * @param ClientRepository $client
+     * @param ClientRepository   $client
      * @param ActivityRepository $activityRepository
-     * @param $clientId
-     * @param Request $request
+     * @param                    $clientId
+     * @param Request            $request
+     *
      * @return Response
      */
     public function activityEdit(ClientRepository $client, ActivityRepository $activityRepository, $clientId, Request $request): Response
@@ -399,10 +410,11 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/client/{clientId}/zones-desservies", name="_edit_servedZone")
-     * @param ClientRepository $client
+     * @param ClientRepository     $client
      * @param ServedZoneRepository $servedZoneRepository
-     * @param $clientId
-     * @param Request $request
+     * @param                      $clientId
+     * @param Request              $request
+     *
      * @return Response
      */
     public function servedZoneEdit(ClientRepository $client, ServedZoneRepository $servedZoneRepository, $clientId, Request $request): Response
@@ -431,6 +443,7 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/nouveau-client", name="_new")
      * @param Request $request
+     *
      * @return Response
      * @throws \Exception
      */
@@ -462,6 +475,7 @@ class ClientController extends AbstractController
     /**
      * @Route("/client/{id}", name="_delete")
      * @param $id
+     *
      * @return Response
      * @throws \Exception
      */

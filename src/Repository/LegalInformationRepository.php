@@ -28,6 +28,7 @@ class LegalInformationRepository extends ServiceEntityRepository
 
     /**
      * @param string|null $el
+     *
      * @return mixed
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -55,6 +56,7 @@ class LegalInformationRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -82,6 +84,7 @@ class LegalInformationRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
@@ -109,6 +112,7 @@ class LegalInformationRepository extends ServiceEntityRepository
 
     /**
      * @param $el
+     *
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */

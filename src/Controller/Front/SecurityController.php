@@ -20,8 +20,10 @@ class SecurityController extends AbstractController
 
     /**
      * Controller constructor.
-     * @param Locale $locale
+     *
+     * @param Locale             $locale
      * @param ContainerInterface $container
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale, ContainerInterface $container)
@@ -47,9 +49,10 @@ class SecurityController extends AbstractController
      *      "ci" : "/login-ci"
      * }, name="_login")
      * @param AuthenticationUtils $authenticationUtils
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function login(AuthenticationUtils $authenticationUtils) :Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
         return $this->getUser() ?
             $this->redirectToRoute('home') :

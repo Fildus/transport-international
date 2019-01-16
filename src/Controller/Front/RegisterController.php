@@ -21,7 +21,9 @@ class RegisterController extends AbstractController
 
     /**
      * RegisterController constructor.
+     *
      * @param Locale $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale)
@@ -45,13 +47,14 @@ class RegisterController extends AbstractController
      *      "ma" : "/register-ma",
      *      "ci" : "/register-ci",
      * }, name="_register")
-     * @param Request $request
+     * @param Request       $request
      * @param ObjectManager $manager
+     *
      * @return Response
      */
     public function register(Request $request, ObjectManager $manager): Response
     {
-        if ($this->getUser() !== null){
+        if ($this->getUser() !== null) {
             return $this->redirectToRoute('home');
         }
         $client = new Client();

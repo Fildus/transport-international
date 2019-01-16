@@ -5,7 +5,6 @@ namespace App\Controller;
 
 use App\Services\Locale;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ExceptionController extends AbstractController
@@ -13,7 +12,9 @@ class ExceptionController extends AbstractController
 
     /**
      * ExceptionController constructor.
+     *
      * @param Locale $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(Locale $locale)
