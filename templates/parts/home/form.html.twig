@@ -1,22 +1,39 @@
 <section>
+    {{ dump(domain) }}
     <form action="{{ path('_search_geturl') }}" method="get">
         <h2>Trouvez un professionel</h2>
         <div class="row">
             <div class="form-group input-group-lg p-1 col-12 col-lg-2">
-                <select id="typeA" class="form-control" type="text" name="typeA">
-                    <option value="null"
-                            selected="selected">{{ 'search.form.activity.activities' | trans }}</option>
-                    <option value="all">{{ 'search.form.activity.AllActivities' | trans }}</option>
-                    {% for activity in activities %}
-                        <option value="{{ activity.id }}">{{ activity.translation }}</option>
-                    {% endfor %}
+                <select id="typeA"
+                        class="form-control
+                        {% if (domain.activity != null) %}
+                        bg-info text-white font-weight-bold{% endif %}" type="text" name="typeA">
+                    {% if (domain.activity != null and domain.activity.type == 1) %}
+                        <option value="{{ domain.activity.id }}">{{ domain.activity.translation }}</option>
+                    {% elseif (domain.activity != null and domain.activity.type == 2) %}
+                        <option value="{{ domain.activity.parent.id }}">
+                            {{ domain.activity.parent.translation }}</option>
+                    {% else %}
+                        <option value="null"
+                                selected="selected">{{ 'search.form.activity.activities' | trans }}</option>
+                        <option value="all">{{ 'search.form.activity.AllActivities' | trans }}</option>
+                        {% for activity in activities %}
+                            <option value="{{ activity.id }}">{{ activity.translation }}</option>
+                        {% endfor %}
+                    {% endif %}
                 </select>
             </div>
             <div class="form-group input-group-lg p-1 col-12 col-lg-2">
-                <select id="typeB" class="form-control" type="text" name="typeB">
-                    <option selected="selected"
-                            value="null">{{ 'search.form.allowance.activities' | trans }}</option>
-                    <option value="all">{{ 'search.form.allowance.AllActivities' | trans }}</option>
+                <select id="typeB" class="form-control
+                {% if(domain.activity != null and domain.activity.type == 2) %}
+                bg-info text-white font-weight-bold{% endif %}" type="text" name="typeB">
+                    {% if (domain.activity != null and domain.activity.type == 2) %}
+                        <option value="{{ domain.activity.id }}">{{ domain.activity.translation }}</option>
+                    {% else %}
+                        <option selected="selected"
+                                value="null">{{ 'search.form.allowance.activities' | trans }}</option>
+                        <option value="all">{{ 'search.form.allowance.AllActivities' | trans }}</option>
+                    {% endif %}
                 </select>
             </div>
             <div class="form-group input-group-lg p-1 col-12 col-lg-2">

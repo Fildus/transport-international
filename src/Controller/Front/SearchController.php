@@ -3,7 +3,6 @@
 namespace App\Controller\Front;
 
 
-use App\Entity\Client;
 use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use App\Repository\TranslationRepository;

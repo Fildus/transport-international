@@ -7,9 +7,7 @@ use App\Entity\Client;
 use App\Entity\Search\ClientSearch;
 use App\Entity\ServedZone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Criteria;
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
