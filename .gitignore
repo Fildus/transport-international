@@ -20,5 +20,6 @@
 node_modules*
 test*
 yarn*
-ti_nouveau.sql*
+ti_nouveau.sql
+ti_existant_complet.sql
 ###< custom ###

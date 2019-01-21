@@ -25,6 +25,7 @@ class ServedZoneEditType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        dump($this->servedZoneRepository->getCountryAndRegionByIdAndTranslation($options['data']->getParent() ?? null));
         $builder
             ->add('translation', TranslationType::class, [
                 'label' => false
@@ -43,8 +44,9 @@ class ServedZoneEditType extends AbstractType
             ->get('parent')
             ->addModelTransformer(new CallbackTransformer(
                 function ($a) {
+                    dump($a);
                     if ($a !== null) {
-                        return $a->getParent();
+                        return $a;
                     }
                     return null;
                 },
