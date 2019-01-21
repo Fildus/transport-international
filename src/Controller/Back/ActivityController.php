@@ -5,6 +5,7 @@ namespace App\Controller\Back;
 use App\Entity\Activity;
 use App\Form\Back\ActivityEditType;
 use App\Repository\ActivityRepository;
+use App\Services\Locale;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,8 +30,16 @@ class ActivityController extends AbstractController
      */
     private $activityRepository;
 
-    public function __construct(ActivityRepository $activityRepository, ObjectManager $manager)
+    /**
+     * ActivityController constructor.
+     * @param ActivityRepository $activityRepository
+     * @param ObjectManager $manager
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function __construct(ActivityRepository $activityRepository, ObjectManager $manager, Locale $locale)
     {
+        $locale->setLocale();
         $this->activityRepository = $activityRepository;
         $this->manager = $manager;
     }

@@ -7,6 +7,7 @@ use App\Entity\ServedZone;
 use App\Form\Back\ServedZoneEditType;
 use App\Repository\LocationRepository;
 use App\Repository\ServedZoneRepository;
+use App\Services\Locale;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,8 +30,16 @@ class ServedZoneController extends AbstractController
      */
     private $manager;
 
-    public function __construct(ServedZoneRepository $servedZoneRepository, ObjectManager $manager)
+    /**
+     * ServedZoneController constructor.
+     * @param ServedZoneRepository $servedZoneRepository
+     * @param ObjectManager $manager
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
+    public function __construct(ServedZoneRepository $servedZoneRepository, ObjectManager $manager, Locale $locale)
     {
+        $locale->setLocale();
         $this->servedZoneRepository = $servedZoneRepository;
         $this->manager = $manager;
     }
