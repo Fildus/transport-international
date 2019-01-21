@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/Fildus/transport-international#readme",
   "dependencies": {
-    "gulp-scope-css": "^0.0.2"
+    "gulp-scope-css": "^0.0.2",
+    "gulp-util": "^3.0.8"
   }
 }

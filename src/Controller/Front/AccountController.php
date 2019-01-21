@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Entity\About;
+use App\Entity\Client;
 use App\Entity\Contact;
 use App\Entity\CoreBusiness;
 use App\Entity\Equipment;
@@ -36,26 +37,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @package App\Controller
  * @Route({
  *     "default" : "/account",
- *      "fr" : "/account-fr",
- *      "en" : "/account-en",
- *      "es" : "/account-es",
- *      "de" : "/account-de",
- *      "it" : "/account-it",
- *      "pt" : "/account-pt",
- *      "be" : "/account-be",
- *      "ad" : "/account-ad",
- *      "ro" : "/account-ro",
- *      "ma" : "/account-ma",
- *      "ci" : "/account-ci"
+ *      "fr" : "/compte",
+ *      "en" : "/account",
+ *      "es" : "/cuenta",
+ *      "de" : "/Konto",
+ *      "it" : "/account",
+ *      "pt" : "/conta",
+ *      "be" : "/compte",
+ *      "ad" : "/compte",
+ *      "ro" : "/cont",
+ *      "ma" : "/compte",
+ *      "ci" : "/compte"
  * }, name="account")
  */
 class AccountController extends AbstractController
 {
-    /**
-     * @var Locale
-     */
-    private $locale;
-
     /**
      * @var ClientRepository
      */
@@ -83,7 +79,6 @@ class AccountController extends AbstractController
     public function __construct(Locale $locale, ClientRepository $clientRepository, ObjectManager $objectManager, CacheInterface $cache)
     {
         $locale->setLocale();
-        $this->locale = $locale;
         $this->clientRepository = $clientRepository;
         $this->objectManager = $objectManager;
         $this->cache = $cache;
@@ -108,16 +103,13 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function legalInformation(Request $request)
+    public function legalInformation(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
-
-        if ($client === null) {
+        if ($this->getUser() !== null && $this->getUser()->getRole() === 'ROLE_ADMIN') {
             return $this->redirectToRoute('_admin_home');
         }
 
+        $client = $this->getClient();
         $legalInformation = $client->getLegalInformation() ?? new LegalInformation();
 
         $form = $this->createForm(LegalInformationType::class, $legalInformation);
@@ -154,12 +146,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function location(Request $request)
+    public function location(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
-
+        $client = $this->getClient();
         $location = $client->getLocation() ?? new Location();
 
         $form = $this->createForm(LocationType::class, $location);
@@ -196,11 +185,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function contact(Request $request)
+    public function contact(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $contact = $client->getContact() ?? new Contact();
 
         $form = $this->createForm(ContactType::class, $contact);
@@ -237,11 +224,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function coreBusiness(Request $request)
+    public function coreBusiness(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $coreBusiness = $client->getCoreBusiness() ?? new CoreBusiness();
 
         $form = $this->createForm(CoreBusinessType::class, $coreBusiness);
@@ -278,11 +263,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function user(Request $request)
+    public function user(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $user = $client->getUser() ?? new User();
 
         $form = $this->createForm(UserType::class, $user);
@@ -319,11 +302,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function managers(Request $request)
+    public function managers(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $managers = $client->getManagers() ?? new Managers();
 
         $form = $this->createForm(ManagersType::class, $managers);
@@ -360,11 +341,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function equipment(Request $request)
+    public function equipment(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $equipment = $client->getEquipment() ?? new Equipment();
 
         $form = $this->createForm(EquipmentType::class, $equipment);
@@ -401,11 +380,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function about(Request $request)
+    public function about(Request $request): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $about = $client->getAbout() ?? new About();
 
         $form = $this->createForm(AboutType::class, $about);
@@ -444,11 +421,9 @@ class AccountController extends AbstractController
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function activity(Request $request, ActivityRepository $activityRepository)
+    public function activity(Request $request, ActivityRepository $activityRepository): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $form = $this->createForm(ActivityType::class, $client);
 
         $form->handleRequest($request);
@@ -489,11 +464,9 @@ class AccountController extends AbstractController
      *
      * @return Response
      */
-    public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository)
+    public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository): Response
     {
-        $client = $this->clientRepository->findOneBy([
-            'user' => $this->getUser()
-        ]);
+        $client = $this->getClient();
         $form = $this->createForm(ServedZoneType::class, $client);
 
         $form->handleRequest($request);
@@ -507,5 +480,15 @@ class AccountController extends AbstractController
             'form' => $form->createView(),
             'servedZone' => $servedZoneRepository->findByWithTranslation()
         ]));
+    }
+
+    /**
+     * @return \App\Entity\Client
+     */
+    private function getClient(): Client
+    {
+        return $this->clientRepository->findOneBy([
+                'user' => $this->getUser()
+            ]) ?? new Client();
     }
 }

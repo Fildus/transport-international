@@ -68,9 +68,14 @@ class SecurityController extends AbstractController
     public function onSuccess(): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('account_legalInformation.' . $this->locale);
+            if ($this->getUser()->getRole() === 'ROLE_USER'){
+                return $this->redirectToRoute('account_legalInformation.' . $this->locale);
+            }
+            if ($this->getUser()->getRole() === 'ROLE_ADMIN'){
+                return $this->redirectToRoute('_admin_home');
+            }
         }
-        return $this->redirectToRoute('_admin_home');
+        return $this->redirectToRoute('home');
     }
 
     /**

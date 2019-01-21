@@ -6,7 +6,8 @@
                 <select id="typeA"
                         class="form-control
                         {% if (domain.activity != null) %}
-                        bg-info text-white font-weight-bold{% endif %}" type="text" name="typeA">
+                        bg-light font-weight-bold" disabled {% else %}"{% endif %}
+                type="text" name="typeA">
                     {% if (domain.activity != null and domain.activity.type == 1) %}
                         <option value="{{ domain.activity.id }}">{{ domain.activity.translation }}</option>
                     {% elseif (domain.activity != null and domain.activity.type == 2) %}
@@ -25,7 +26,8 @@
             <div class="form-group input-group-lg p-1 col-12 col-lg-2">
                 <select id="typeB" class="form-control
                 {% if(domain.activity != null and domain.activity.type == 2) %}
-                bg-info text-white font-weight-bold{% endif %}" type="text" name="typeB">
+                bg-light font-weight-bold" disabled {% else %}"{% endif %}
+                type="text" name="typeB">
                     {% if (domain.activity != null and domain.activity.type == 2) %}
                         <option value="{{ domain.activity.id }}">{{ domain.activity.translation }}</option>
                     {% else %}
