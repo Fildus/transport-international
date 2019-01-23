@@ -87,17 +87,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/legalInformation",
-     *      "fr" : "/legalInformation-fr",
-     *      "en" : "/legalInformation-en",
-     *      "es" : "/legalInformation-es",
-     *      "de" : "/legalInformation-de",
-     *      "it" : "/legalInformation-it",
-     *      "pt" : "/legalInformation-pt",
-     *      "be" : "/legalInformation-be",
-     *      "ad" : "/legalInformation-ad",
-     *      "ro" : "/legalInformation-ro",
-     *      "ma" : "/legalInformation-ma",
-     *      "ci" : "/legalInformation-ci"
+     *      "fr" : "/informations-legales",
+     *      "en" : "/legal-information",
+     *      "es" : "/informacion-legal",
+     *      "de" : "/rechtliche-informationen",
+     *      "it" : "/informazioni-legali",
+     *      "pt" : "/informacao-legal",
+     *      "be" : "/informations-legales",
+     *      "ad" : "/informations-legales",
+     *      "ro" : "/informatii-juridice",
+     *      "ma" : "/informations-legales",
+     *      "ci" : "/informations-legales"
      * }, name="_legalInformation")
      * @param Request $request
      *
@@ -130,17 +130,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/location",
-     *      "fr" : "/location-fr",
-     *      "en" : "/location-en",
-     *      "es" : "/location-es",
-     *      "de" : "/location-de",
-     *      "it" : "/location-it",
-     *      "pt" : "/location-pt",
-     *      "be" : "/location-be",
-     *      "ad" : "/location-ad",
-     *      "ro" : "/location-ro",
-     *      "ma" : "/location-ma",
-     *      "ci" : "/location-ci"
+     *      "fr" : "/localisation",
+     *      "en" : "/location",
+     *      "es" : "/ubicacion",
+     *      "de" : "/lage",
+     *      "it" : "/posizione",
+     *      "pt" : "/localizacao",
+     *      "be" : "/localisation",
+     *      "ad" : "/localisation",
+     *      "ro" : "/locatie",
+     *      "ma" : "/localisation",
+     *      "ci" : "/localisation"
      * }, name="_location")
      * @param Request $request
      *
@@ -169,17 +169,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/contact",
-     *      "fr" : "/contact-fr",
-     *      "en" : "/contact-en",
-     *      "es" : "/contact-es",
-     *      "de" : "/contact-de",
-     *      "it" : "/contact-it",
-     *      "pt" : "/contact-pt",
-     *      "be" : "/contact-be",
-     *      "ad" : "/contact-ad",
-     *      "ro" : "/contact-ro",
-     *      "ma" : "/contact-ma",
-     *      "ci" : "/contact-ci"
+     *      "fr" : "/contact",
+     *      "en" : "/contact",
+     *      "es" : "/contactar",
+     *      "de" : "/Kontakt",
+     *      "it" : "/contatto",
+     *      "pt" : "/contato",
+     *      "be" : "/contact",
+     *      "ad" : "/contact",
+     *      "ro" : "/contact",
+     *      "ma" : "/contact",
+     *      "ci" : "/contact"
      * }, name="_contact")
      * @param Request $request
      *
@@ -208,17 +208,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/coreBusiness",
-     *      "fr" : "/coreBusiness-fr",
-     *      "en" : "/coreBusiness-en",
-     *      "es" : "/coreBusiness-es",
-     *      "de" : "/coreBusiness-de",
-     *      "it" : "/coreBusiness-it",
-     *      "pt" : "/coreBusiness-pt",
-     *      "be" : "/coreBusiness-be",
-     *      "ad" : "/coreBusiness-ad",
-     *      "ro" : "/coreBusiness-ro",
-     *      "ma" : "/coreBusiness-ma",
-     *      "ci" : "/coreBusiness-ci"
+     *      "fr" : "/coeur-de-metier",
+     *      "en" : "/core-business",
+     *      "es" : "/negocio-central",
+     *      "de" : "/kerngeschaft",
+     *      "it" : "/attivita-principale",
+     *      "pt" : "/negocio-principal",
+     *      "be" : "/coeur-de-metier",
+     *      "ad" : "/coeur-de-metier",
+     *      "ro" : "/afacere-principala",
+     *      "ma" : "/coeur-de-metier",
+     *      "ci" : "/coeur-de-metier"
      * }, name="_coreBusiness")
      * @param Request $request
      *
@@ -247,17 +247,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/user",
-     *      "fr" : "/user-fr",
-     *      "en" : "/user-en",
-     *      "es" : "/user-es",
-     *      "de" : "/user-de",
-     *      "it" : "/user-it",
-     *      "pt" : "/user-pt",
-     *      "be" : "/user-be",
-     *      "ad" : "/user-ad",
-     *      "ro" : "/user-ro",
-     *      "ma" : "/user-ma",
-     *      "ci" : "/user-ci"
+     *      "fr" : "/utilisateur",
+     *      "en" : "/user",
+     *      "es" : "/usuario",
+     *      "de" : "/Nutzer",
+     *      "it" : "/utente",
+     *      "pt" : "/utilizador",
+     *      "be" : "/utilisateur",
+     *      "ad" : "/utilisateur",
+     *      "ro" : "/utilizator",
+     *      "ma" : "/utilisateur",
+     *      "ci" : "/utilisateur"
      * }, name="_user")
      * @param Request $request
      *
@@ -286,17 +286,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/managers",
-     *      "fr" : "/managers-fr",
-     *      "en" : "/managers-en",
-     *      "es" : "/managers-es",
-     *      "de" : "/managers-de",
-     *      "it" : "/managers-it",
-     *      "pt" : "/managers-pt",
-     *      "be" : "/managers-be",
-     *      "ad" : "/managers-ad",
-     *      "ro" : "/managers-ro",
-     *      "ma" : "/managers-ma",
-     *      "ci" : "/managers-ci"
+     *      "fr" : "/gestionnaires",
+     *      "en" : "/managers",
+     *      "es" : "/gerentes",
+     *      "de" : "/managers",
+     *      "it" : "/managers",
+     *      "pt" : "/gerentes",
+     *      "be" : "/gestionnaires",
+     *      "ad" : "/gestionnaires",
+     *      "ro" : "/manageri",
+     *      "ma" : "/gestionnaires",
+     *      "ci" : "/gestionnaires"
      * }, name="_managers")
      * @param Request $request
      *
@@ -325,17 +325,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/equipment",
-     *      "fr" : "/equipment-fr",
-     *      "en" : "/equipment-en",
-     *      "es" : "/equipment-es",
-     *      "de" : "/equipment-de",
-     *      "it" : "/equipment-it",
-     *      "pt" : "/equipment-pt",
-     *      "be" : "/equipment-be",
-     *      "ad" : "/equipment-ad",
-     *      "ro" : "/equipment-ro",
-     *      "ma" : "/equipment-ma",
-     *      "ci" : "/equipment-ci"
+     *      "fr" : "/equipement",
+     *      "en" : "/equipment",
+     *      "es" : "/equipo",
+     *      "de" : "/ausrustung",
+     *      "it" : "/attrezzatura",
+     *      "pt" : "/equipamento",
+     *      "be" : "/equipement",
+     *      "ad" : "/equipement",
+     *      "ro" : "/echipament",
+     *      "ma" : "/equipement",
+     *      "ci" : "/equipement"
      * }, name="_equipment")
      * @param Request $request
      *
@@ -364,17 +364,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/about",
-     *      "fr" : "/about-fr",
-     *      "en" : "/about-en",
-     *      "es" : "/about-es",
-     *      "de" : "/about-de",
-     *      "it" : "/about-it",
-     *      "pt" : "/about-pt",
-     *      "be" : "/about-be",
-     *      "ad" : "/about-ad",
-     *      "ro" : "/about-ro",
-     *      "ma" : "/about-ma",
-     *      "ci" : "/about-ci"
+     *      "fr" : "/a-propos",
+     *      "en" : "/about",
+     *      "es" : "/a-proposito",
+     *      "de" : "/uber",
+     *      "it" : "/su",
+     *      "pt" : "/sobre",
+     *      "be" : "/a-propos",
+     *      "ad" : "/a-propos",
+     *      "ro" : "/despre",
+     *      "ma" : "/a-propos",
+     *      "ci" : "/a-propos"
      * }, name="_about")
      * @param Request $request
      *
@@ -403,17 +403,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/activity",
-     *      "fr" : "/activity-fr",
-     *      "en" : "/activity-en",
-     *      "es" : "/activity-es",
-     *      "de" : "/activity-de",
-     *      "it" : "/activity-it",
-     *      "pt" : "/activity-pt",
-     *      "be" : "/activity-be",
-     *      "ad" : "/activity-ad",
-     *      "ro" : "/activity-ro",
-     *      "ma" : "/activity-ma",
-     *      "ci" : "/activity-ci"
+     *      "fr" : "/activite",
+     *      "en" : "/activity",
+     *      "es" : "/actividad",
+     *      "de" : "/aktivitat",
+     *      "it" : "/attivita",
+     *      "pt" : "/atividade",
+     *      "be" : "/activite",
+     *      "ad" : "/activite",
+     *      "ro" : "/activitate",
+     *      "ma" : "/activite",
+     *      "ci" : "/activite"
      * }, name="_activity")
      * @param Request            $request
      * @param ActivityRepository $activityRepository
@@ -447,17 +447,17 @@ class AccountController extends AbstractController
     /**
      * @Route({
      *     "default" : "/servedZone",
-     *      "fr" : "/servedZone-fr",
-     *      "en" : "/servedZone-en",
-     *      "es" : "/servedZone-es",
-     *      "de" : "/servedZone-de",
-     *      "it" : "/servedZone-it",
-     *      "pt" : "/servedZone-pt",
-     *      "be" : "/servedZone-be",
-     *      "ad" : "/servedZone-ad",
-     *      "ro" : "/servedZone-ro",
-     *      "ma" : "/servedZone-ma",
-     *      "ci" : "/servedZone-ci"
+     *      "fr" : "/localisations-desservies",
+     *      "en" : "/locations-served",
+     *      "es" : "/lugares-servidos",
+     *      "de" : "/standorte-serviert",
+     *      "it" : "/posizioni-servite",
+     *      "pt" : "/locais-servidos",
+     *      "be" : "/localisations-desservies",
+     *      "ad" : "/localisations-desservies",
+     *      "ro" : "/locurile-deservite",
+     *      "ma" : "/localisations-desservies",
+     *      "ci" : "/localisations-desservies"
      * }, name="_servedZone")
      * @param Request              $request
      * @param ServedZoneRepository $servedZoneRepository

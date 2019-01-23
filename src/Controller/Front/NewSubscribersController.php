@@ -31,18 +31,18 @@ class NewSubscribersController extends AbstractController
 
     /**
      * @Route({
-     *     "default" : "/newSubscribers",
-     *      "fr" : "/newSubscribers-fr",
-     *      "en" : "/newSubscribers-en",
-     *      "es" : "/newSubscribers-es",
-     *      "de" : "/newSubscribers-de",
-     *      "it" : "/newSubscribers-it",
-     *      "pt" : "/newSubscribers-pt",
-     *      "be" : "/newSubscribers-be",
-     *      "ad" : "/newSubscribers-ad",
-     *      "ro" : "/newSubscribers-ro",
-     *      "ma" : "/newSubscribers-ma",
-     *      "ci" : "/newSubscribers-ci"
+     *     "default" : "/new-subscribers",
+     *      "fr" : "/nouveaux-inscrits",
+     *      "en" : "/new-subscribers",
+     *      "es" : "/nuevos-suscriptores",
+     *      "de" : "/neue-abonnenten",
+     *      "it" : "/nuovi-abbonati",
+     *      "pt" : "/novos-assinantes",
+     *      "be" : "/nouveaux-inscrits",
+     *      "ad" : "/nouveaux-inscrits",
+     *      "ro" : "/noi-abonati",
+     *      "ma" : "/nouveaux-inscrits",
+     *      "ci" : "/nouveaux-inscrits"
      * }, name="_newSubscribers")
      * @param ClientRepository $clientRepository
      *

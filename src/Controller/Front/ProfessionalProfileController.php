@@ -52,17 +52,17 @@ class ProfessionalProfileController extends AbstractController
     /**
      * @Route({
      *      "default": "/professional/{cnSlug}",
-     *      "fr" : "/professional-fr/{cnSlug}",
-     *      "en" : "/professional-en/{cnSlug}",
-     *      "es" : "/professional-es/{cnSlug}",
-     *      "de" : "/professional-de/{cnSlug}",
-     *      "it" : "/professional-it/{cnSlug}",
-     *      "pt" : "/professional-pt/{cnSlug}",
-     *      "be" : "/professional-be/{cnSlug}",
-     *      "ad" : "/professional-ad/{cnSlug}",
-     *      "ro" : "/professional-ro/{cnSlug}",
-     *      "ma" : "/professional-ma/{cnSlug}",
-     *      "ci" : "/professional-ci/{cnSlug}",
+     *      "fr" : "/professionnel/{cnSlug}",
+     *      "en" : "/professional/{cnSlug}",
+     *      "es" : "/profesional/{cnSlug}",
+     *      "de" : "/professionel/{cnSlug}",
+     *      "it" : "/professionale/{cnSlug}",
+     *      "pt" : "/profissional/{cnSlug}",
+     *      "be" : "/professionnel/{cnSlug}",
+     *      "ad" : "/professionnel/{cnSlug}",
+     *      "ro" : "/profesionist/{cnSlug}",
+     *      "ma" : "/professionnel/{cnSlug}",
+     *      "ci" : "/professionnel/{cnSlug}",
      * }, name="_professional_profile", defaults={"cnSlug":null})
      * @param                    $cnSlug
      * @param Mailer             $mailer

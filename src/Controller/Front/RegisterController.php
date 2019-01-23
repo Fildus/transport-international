@@ -34,18 +34,18 @@ class RegisterController extends AbstractController
 
     /**
      * @Route({
-     *      "default": "/register",
-     *      "fr" : "/register-fr",
-     *      "en" : "/register-en",
-     *      "es" : "/register-es",
-     *      "de" : "/register-de",
-     *      "it" : "/register-it",
-     *      "pt" : "/register-pt",
-     *      "be" : "/register-be",
-     *      "ad" : "/register-ad",
-     *      "ro" : "/register-ro",
-     *      "ma" : "/register-ma",
-     *      "ci" : "/register-ci",
+     *      "default": "/registration",
+     *      "fr" : "/inscription",
+     *      "en" : "/registration",
+     *      "es" : "/registro",
+     *      "de" : "/anmeldung",
+     *      "it" : "/iscrizione",
+     *      "pt" : "/inscricao",
+     *      "be" : "/inscription",
+     *      "ad" : "/inscription",
+     *      "ro" : "/inregistrare",
+     *      "ma" : "/inscription",
+     *      "ci" : "/inscription",
      * }, name="_register")
      * @param Request       $request
      * @param ObjectManager $manager

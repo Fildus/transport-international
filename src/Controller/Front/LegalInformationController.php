@@ -30,18 +30,18 @@ class LegalInformationController extends AbstractController
 
     /**
      * @Route({
-     *     "default" : "/legal-Information",
-     *     "fr" : "/legal-Information-fr",
-     *     "en" : "/legal-Information-en",
-     *     "es" : "/legal-Information-es",
-     *     "ad" : "/legal-Information-ad",
-     *     "be" : "/legal-Information-be",
-     *     "ci" : "/legal-Information-ci",
-     *     "de" : "/legal-Information-de",
-     *     "it" : "/legal-Information-it",
-     *     "ma" : "/legal-Information-ma",
-     *     "pt" : "/legal-Information-pt",
-     *     "ro" : "/legal-Information-ro",
+     *     "default" : "/legalInformation",
+     *      "fr" : "/informations-legales",
+     *      "en" : "/legal-information",
+     *      "es" : "/informacion-legal",
+     *      "de" : "/rechtliche-informationen",
+     *      "it" : "/informazioni-legali",
+     *      "pt" : "/informacao-legal",
+     *      "be" : "/informations-legales",
+     *      "ad" : "/informations-legales",
+     *      "ro" : "/informatii-juridice",
+     *      "ma" : "/informations-legales",
+     *      "ci" : "/informations-legales"
      * }, name="_legal_information")
      * @return Response
      */

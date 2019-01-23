@@ -78,18 +78,18 @@ class SearchController extends AbstractController
 
     /**
      * @Route({
-     *      "default": "/search/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "default": "/research/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
      *      "fr" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "en" : "/search-en/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "es" : "/search-es/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "de" : "/search-de/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "it" : "/search-it/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "pt" : "/search-pt/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "be" : "/search-be/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "ad" : "/search-ad/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "ro" : "/search-ro/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "ma" : "/search-ma/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
-     *      "ci" : "/search-ci/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "en" : "/research/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "es" : "/busqueda/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "de" : "/suche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "it" : "/ricerca/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "pt" : "/pesquisa/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "be" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ad" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ro" : "/cautare/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ma" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
+     *      "ci" : "/recherche/{page}/{typeA}/{typeB}/{toCountry}/{toDept}/{fromCountry}/{fromDept}/{clientsIds}",
      * }, name="_search", defaults={"typeA": null, "typeB": null, "toCountry": null, "toDept": null, "fromCountry":
      * null, "fromDept": null, "page":null, "clientsIds":null})
      * @param $page

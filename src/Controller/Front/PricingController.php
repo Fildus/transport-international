@@ -30,17 +30,18 @@ class PricingController extends AbstractController
 
     /**
      * @Route({
-     *     "fr" : "/pricing-fr",
-     *     "en" : "/pricing-en",
-     *     "es" : "/pricing-es",
-     *     "ad" : "/pricing-ad",
-     *     "be" : "/pricing-be",
-     *     "ci" : "/pricing-ci",
-     *     "de" : "/pricing-de",
-     *     "it" : "/pricing-it",
-     *     "ma" : "/pricing-ma",
-     *     "pt" : "/pricing-pt",
-     *     "ro" : "/pricing-ro",
+     *     "default" : "/pricing",
+     *      "fr" : "/tarification",
+     *      "en" : "/pricing",
+     *      "es" : "/precios",
+     *      "de" : "/preisgestaltung",
+     *      "it" : "/prezzi",
+     *      "pt" : "/precos",
+     *      "be" : "/tarification",
+     *      "ad" : "/tarification",
+     *      "ro" : "/pret",
+     *      "ma" : "/tarification",
+     *      "ci" : "/tarification"
      * }, name="_pricing")
      * @return Response
      */

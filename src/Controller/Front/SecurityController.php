@@ -36,17 +36,17 @@ class SecurityController extends AbstractController
     /**
      * @Route({
      *      "default" : "/login",
-     *      "fr" : "/login-fr",
-     *      "en" : "/login-en",
-     *      "es" : "/login-es",
-     *      "de" : "/login-de",
-     *      "it" : "/login-it",
-     *      "pt" : "/login-pt",
-     *      "be" : "/login-be",
-     *      "ad" : "/login-ad",
-     *      "ro" : "/login-ro",
-     *      "ma" : "/login-ma",
-     *      "ci" : "/login-ci"
+     *      "fr" : "/login",
+     *      "en" : "/login",
+     *      "es" : "/login",
+     *      "de" : "/login",
+     *      "it" : "/login",
+     *      "pt" : "/login",
+     *      "be" : "/login",
+     *      "ad" : "/login",
+     *      "ro" : "/login",
+     *      "ma" : "/login",
+     *      "ci" : "/login"
      * }, name="_login")
      * @param AuthenticationUtils $authenticationUtils
      *
