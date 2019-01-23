@@ -214,7 +214,7 @@ class ServedZoneRepository extends ServiceEntityRepository
     /**
      * @param ServedZone $servedZone
      */
-    public function iteratorGetDeptByCountry(ServedZone $servedZone)
+    public function iteratorGetDeptByCountry(ServedZone $servedZone): void
     {
         /**
          * @var $servedZone ServedZone
@@ -224,9 +224,8 @@ class ServedZoneRepository extends ServiceEntityRepository
             foreach ($servedZone->getChildren() as $child) {
                 $this->iteratorGetDeptByCountry($child);
             }
-        } else {
-            if ($servedZone->getType() === ServedZone::DEPARTMENT)
-                $this->servedZones[] = ['id' => $servedZone->getId(), 'department' => $servedZone->getTranslation()->__toString()];
+        } else if ($servedZone->getType() === ServedZone::DEPARTMENT) {
+            $this->servedZones[] = ['id' => $servedZone->getId(), 'department' => $servedZone->getTranslation()->__toString()];
         }
     }
 

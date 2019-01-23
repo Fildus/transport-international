@@ -3,12 +3,15 @@
 namespace App\Controller\Front;
 
 use App\Entity\Client;
+use App\Entity\ServedZone;
 use App\Repository\ActivityRepository;
 use App\Repository\ClientRepository;
 use App\Services\ArrayRecursion\RecursionInterface;
 use App\Services\Locale;
 use App\Services\Mailer;
 use App\Services\Optico\Optico;
+use App\Services\Optico\OpticoService;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -31,6 +34,15 @@ class ProfessionalProfileController extends AbstractController
      * @var Locale
      */
     private $locale;
+    /**
+     * @var CacheInterface
+     */
+    private $cache;
+
+    /**
+     * @var $clientCountry ServedZone
+     */
+    private $clientCountry;
 
     /**
      * ProfessionalProfileController constructor.
@@ -41,12 +53,13 @@ class ProfessionalProfileController extends AbstractController
      *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function __construct(ClientRepository $clientRepository, ActivityRepository $activityRepository, Locale $locale)
+    public function __construct(ClientRepository $clientRepository, ActivityRepository $activityRepository, Locale $locale, CacheInterface $cache)
     {
         $this->clientRepository = $clientRepository;
         $this->activityRepository = $activityRepository;
         $this->locale = $locale;
         $locale->setLocale();
+        $this->cache = $cache;
     }
 
     /**
@@ -72,9 +85,13 @@ class ProfessionalProfileController extends AbstractController
      * @return Response .html.twig
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function profile($cnSlug, Mailer $mailer, Request $request, RecursionInterface $recursion): Response
     {
+        /**
+         * @var $client Client
+         */
         $client = $this->clientRepository->getClientProfile($cnSlug);
 
         $form = $this->createFormBuilder()
@@ -101,28 +118,35 @@ class ProfessionalProfileController extends AbstractController
             }
         }
 
-        /**
-         * @var $client Client
-         */
-        if ($client !== null) {
-            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
-                $phone = $client->getContact()->getPhone();
-                $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
-                $optico->addPhone($phone);
-                $optico->sendView();
-                $optico->getViewId();
-                $res = $optico->getTrackingPhoneNumber($phone);
-            }
+        $key = (string)$client->getId();
+        if (!$this->cache->has($key)) {
+            $optico = new OpticoService();
+            $number = $optico->getNumber($client);
+            $this->cache->set($key, $number, 300);
         }
+
+        $this->getParentLocation($client->getLocation()->getLocation());
 
         return new Response($this->renderView('pages/professionalProfile.html.twig', [
             'client' => $client,
             'form' => $form->createView(),
             'domain' => $this->locale->getDomain(),
-            'clients' => $this->clientRepository->findBy([], ['id' => 'DESC'], 12, 50),
-            'number' => $res ?? null,
+            'clients' => $this->clientRepository->findByLocation([], ['id' => 'DESC'], 12, 50),
+            'number' => $this->cache->get($key),
             'activities' => $recursion->run($client->getActivity()),
             'servedZones' => $recursion->run($client->getServedZone())
         ]));
+    }
+
+    /**
+     * @param ServedZone $location
+     */
+    public function getParentLocation(ServedZone $location): void
+    {
+        if ($location->getType() === ServedZone::COUNTRY) {
+            $this->clientCountry = $location;
+        } else {
+            $this->getParentLocation($location->getParent());
+        }
     }
 }

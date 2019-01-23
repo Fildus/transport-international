@@ -69,6 +69,11 @@ class ServedZone
      */
     private $clients;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $indicative;
+
     public function __construct()
     {
         $this->children = new ArrayCollection();
@@ -256,6 +261,26 @@ class ServedZone
     }
 
     /**
+     * @return int
+     */
+    public function getIndicative(): ?int
+    {
+        return $this->indicative;
+    }
+
+    /**
+     * @param int $indicative
+     *
+     * @return ServedZone
+     */
+    public function setIndicative(int $indicative): ServedZone
+    {
+        $this->indicative = $indicative;
+
+        return $this;
+    }
+
+    /**
      * @ORM\PreFlush()
      */
     public function preFlush()
@@ -266,5 +291,4 @@ class ServedZone
             $this->level = 0;
         }
     }
-
 }

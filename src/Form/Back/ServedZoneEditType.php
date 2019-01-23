@@ -7,6 +7,7 @@ use App\Repository\ServedZoneRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -35,6 +36,9 @@ class ServedZoneEditType extends AbstractType
                     'region' => ServedZone::REGION,
                     'département' => ServedZone::DEPARTMENT
                 ]
+            ])
+            ->add('indicative', IntegerType::class, [
+                'label' => 'indicatif du pays'
             ]);
         $builder
             ->add('parent', ChoiceType::class, [
