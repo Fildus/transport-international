@@ -161,9 +161,12 @@ class LegalInformation
 
     /**
      * @ORM\PrePersist()
+     * @throws \Exception
      */
-    public function setSlugLifecycleCallback()
+    public function setSlugLifecycleCallback(): void
     {
-        $this->slug = (new Slug())->getSlug($this->companyName) . '-' . rand(1000, 10000);
+        if (empty($this->slug)) {
+            $this->slug = (new Slug())->getSlug($this->companyName ?? $this->corporateName) . '-' . random_int(1000, 10000);
+        }
     }
 }
