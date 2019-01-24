@@ -25,7 +25,7 @@ class OpticoService
         if ($client !== null) {
             if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
                 if ($this->indicative !== null){
-                    $phone = '0'.$this->indicative.' '.$client->getContact()->getPhone();
+                    $phone = '00'.$this->indicative.' '.$client->getContact()->getPhone();
                 }else{
                     $phone = $client->getContact()->getPhone();
                 }
