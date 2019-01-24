@@ -42,7 +42,7 @@ class OpticoService
 
     public function getIndicative(ServedZone $servedZone): void
     {
-        if ($servedZone->getIndicative() !== null){
+        if ($servedZone->getIndicative() !== null && $servedZone->getIndicative() !== ""){
             $this->indicative = $servedZone->getIndicative();
         }elseif($servedZone->getParent() !== null){
             $this->getIndicative($servedZone->getParent());
