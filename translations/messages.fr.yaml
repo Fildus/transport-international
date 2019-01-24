@@ -206,6 +206,7 @@ professionalProfile:
         email: "Votre email"
         message: "Votre message"
         antispam: "Antispam"
+        submit: "Envoyer !"
     allowance: "Prestations"
     presentation: "Présentation"
     contact: "Contact"
@@ -252,6 +253,8 @@ bottom:
         htmlLink: "Guide des entreposeurs"
 
 newSubscribers:
+    h1: "Nouveaux inscrits"
+    legend: "Contacter le professionnel"
     mainTitle: "Nouveaux inscrits"
     subtitleHtml: "Ces professionnels du transport, de la logistique, du stockage... se sont inscrits gratuitement sur notre annuaire et nous font confiance pour développer leur activité."
     subscribe: "Inscrivez-vous, c'est gratuit !"

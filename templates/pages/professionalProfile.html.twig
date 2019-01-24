@@ -184,7 +184,7 @@
                                       action="{{ path('_professional_profile',{'cnSlug':client.legalInformation.slug}) }}"
                                       method="post">
                                     <fieldset>
-                                        <legend>Contacter le professionnel</legend>
+                                        <legend>{{ 'newSubscribers.legend' | trans }}</legend>
                                         <div class="form-group">
                                             {{ form_start(form) }}
                                             {{ form_row(form.name) }}
@@ -192,8 +192,7 @@
                                             {{ form_row(form.message) }}
                                             {{ form_row(form.antispam) }}
                                             <div class="text-right">
-                                                <button type="submit" class="btn btn-success">Envoyer !
-                                                </button>
+                                                <button type="submit" class="btn btn-success">{{ 'professionalProfile.form.submit' | trans }}</button>
                                             </div>
                                             {{ form_end(form) }}
                                         </div>
