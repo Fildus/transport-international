@@ -8,16 +8,12 @@ use App\Repository\ActivityRepository;
 use App\Repository\ServedZoneRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-
-    /**
-     * @var Locale
-     */
-    private $locale;
     /**
      * @var ActivityRepository
      */
@@ -30,16 +26,12 @@ class HomeController extends AbstractController
     /**
      * HomeController constructor.
      *
-     * @param Locale               $locale
      * @param ActivityRepository   $activityRepository
      * @param ServedZoneRepository $servedZoneRepository
      *
-     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function __construct(Locale $locale, ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository)
+    public function __construct(ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository)
     {
-        $locale->setLocale();
-        $this->locale = $locale;
         $this->activityRepository = $activityRepository;
         $this->servedZoneRepository = $servedZoneRepository;
     }
@@ -58,14 +50,18 @@ class HomeController extends AbstractController
      *     "pt" : "/",
      *     "ro" : "/",
      * }, name="home")
-     * @param CacheInterface $cache
+     * @param CacheInterface   $cache
+     *
+     * @param Request          $request
+     *
+     * @param SessionInterface $session
      *
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function home(CacheInterface $cache): Response
+    public function home(CacheInterface $cache, Request $request, SessionInterface $session): Response
     {
-        $key = 'home-z4d4zd45-' . $this->locale->getLocalematched();
+        $key = 'home-z4d4zd45-' . $request->getLocale();
         if (!$cache->has($key)) {
             $cache->set($key, [
                 'activities' => $this->activityRepository->getActivities([
@@ -78,7 +74,7 @@ class HomeController extends AbstractController
         return new Response($this->renderView('pages/home.html.twig', [
             'activities' => $cache->get($key)['activities'],
             'countries' => $cache->get($key)['countries'],
-            'domain' => $this->locale->getDomain()
+            'domain' => $session->get('domain')
         ]));
     }
 }
