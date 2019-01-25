@@ -11,6 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RenderController extends AbstractController
 {
+    public function __construct(Locale $locale)
+    {
+        $locale->setLocale();
+    }
     /**
      * @param                $route
      * @param CacheInterface $cache

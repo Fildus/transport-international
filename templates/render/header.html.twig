@@ -1,32 +1,30 @@
 {% macro nav() %}
-
     <!-- affrètement = 59 -->
-    <li class="main-li">{{ dropdownMenu(59, ('header.form.charter'|trans)) | raw }}</li>
+    <li class="main-li">{{ dropdownMenu(59, getActivityobject(59).__toString) | raw }}</li>
 
     <!-- Transporteur de Marchandises = 4 --><!-- Transport Express = 87 -->
-    <li class="main-li">{{ dropdownMenu(4, 'Transport', [], {
+    <li class="main-li">{{ dropdownMenu(4, getActivityobject(4).__toString, [], {
             'diverseTransportationOfGoods' : dropdownMenu(87, 'Transport Express', [], null, true)
         }) | raw }}</li>
 
     <!-- Transport de Voyageurs = 100 -->
-    <li class="main-li">{{ dropdownMenu(100, 'Voyageurs') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu(100, getActivityobject(100).__toString) | raw }}</li>
 
     <!-- Déménageur = 91 -->
-    <li class="main-li">{{ dropdownMenu(91, 'Déménagement') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu(91, getActivityobject(91).__toString) | raw }}</li>
 
     <!-- Location avec chauffeur = 66 -->
-    <li class="main-li">{{ dropdownMenu(66, 'Location') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu(66, getActivityobject(66).__toString) | raw }}</li>
 
     <!-- Logistique = 73 -->
-    <li class="main-li">{{ dropdownMenu(73, 'Logistique') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu(73, getActivityobject(73).__toString) | raw }}</li>
 
     <!-- Taxi = 108 -->
-    <li class="main-li">{{ dropdownMenu(108, 'Taxis') | raw }}</li>
+    <li class="main-li">{{ dropdownMenu(108, getActivityobject(108).__toString) | raw }}</li>
 
 {% endmacro %}
 
 {% import _self as header %}
-
 <div id="header" class="row mt-2">
     <div id="logo" class="col-12 col-md-3 text-center">
         <a href="{{ path('home') }}">

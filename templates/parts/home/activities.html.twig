@@ -46,28 +46,28 @@
         <aside>
             <div class="jumbotron text-center">
                 <h2 class="mb-1">{{ 'home.jumbotron.areYouTransporter' | trans }}</h2>
-                <p class="mb-0"> Inscrivez-vous, c'est gratuit ! </p>
+                <p class="mb-0">{{ 'home.jumbotron.subscribe' | trans }}</p>
                 <p class="mt-0">
                     <a class="btn btn-primary btn-lg"
-                       href="{{ path('_register') }}" role="button">Z
-                        Je m’inscris !
+                       href="{{ path('_register') }}" role="button">
+                        {{ 'home.jumbotron.iSubscribe' | trans }}
                     </a>
                 </p>
-                <p class="m-0"> Déjà inscrit ? </p>
+                <p class="m-0">{{ 'home.jumbotron.aldready' | trans }}</p>
                 <p class="m-0">
                     <a href="{{ path('_login') }}" class="btn btn-outline-primary btn-lg">
-                        Connectez-vous
+                        {{ 'home.jumbotron.connection' | trans }}
                     </a>
                 </p>
                 <p class="m-0">
-                    <a class="lostmail p-0 m-0" href="#" title="Mot de passe oublié">Mot de passe oublié</a>
+                    <a class="lostmail p-0 m-0" href="#" title="Mot de passe oublié">{{ 'home.jumbotron.forgotPassword' | trans }}</a>
                 </p>
             </div>
         </aside>
         <aside>
             <div class="jumbotron appel text-center p-1">
-                <h2>Pour toute demande</h2>
-                <p class="m-0">Du lundi au vendredi, 9h-18h</p>
+                <h2>{{ 'home.jumbotron.forAnyRequest' | trans }}</h2>
+                <p class="m-0">{{ 'home.jumbotron.available' | trans }}</p>
                 <p>
                     <a href="tel:0890216003">
                         <img src="{{ asset('build/img/front/cartouche-surtaxe-adt.png') }}">

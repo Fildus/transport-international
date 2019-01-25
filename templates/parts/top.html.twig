@@ -2,17 +2,17 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 text-center">
-                <span>{{ 'top.welcome' | trans }}</span>
+                <span>{{ 'top.welcome' | trans({}, "messages", app.request.locale) }}</span>
             </div>
             <div class="col-12 col-md-4 text-center">
                 <nav>
                     <ul>
-                        <li>{{ 'top.account.myAccount'|trans }} :</li>
+                        <li>{{ 'top.account.myAccount'|trans({}, "messages", app.request.locale) }} :</li>
                         <li>
                             {% if app.user is not null %}
-                                <a href="{{ path('account_legalInformation') }}">{{ 'top.account.myAccount'|trans }}</a>
+                                <a href="{{ path('account_legalInformation') }}">{{ 'top.account.myAccount'|trans({}, "messages", app.request.locale) }}</a>
                             {% else %}
-                                <a href="{{ path('_register') }}">{{ 'top.account.register'|trans }}</a>
+                                <a href="{{ path('_register') }}">{{ 'top.account.register'|trans({}, "messages", app.request.locale) }}</a>
                             {% endif %}
                         </li>
                         |
@@ -20,11 +20,11 @@
                             {% if app.user is not null %}
                                 <a href="{{ path('logout') }}" rel="nofollow"
                                    class="connect"
-                                   title="{{ 'top.log.logout.title'|trans }}">{{ 'top.log.logout.html'|trans }}</a>
+                                   title="{{ 'top.log.logout.title'|trans({}, "messages", app.request.locale) }}">{{ 'top.log.logout.html'|trans({}, "messages", app.request.locale) }}</a>
                             {% else %}
                                 <a href="{{ path('_login') }}" rel="nofollow"
                                    class="connect"
-                                   title="{{ 'top.log.login.title'|trans }}">{{ 'top.log.login.html'|trans }}</a>
+                                   title="{{ 'top.log.login.title'|trans({}, "messages", app.request.locale) }}">{{ 'top.log.login.html'|trans({}, "messages", app.request.locale) }}</a>
                             {% endif %}
                         </li>
                     </ul>

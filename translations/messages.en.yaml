@@ -22,7 +22,6 @@ top:
         myAccount: My Account
         profile: Profile
         register: registration
-
     log:
         login:
             title: already registered
@@ -236,6 +235,7 @@ home:
         forgotPassword: "Forgot your password"
         forAnyRequest: "For any request"
         available: "Monday to Friday, 9am to 6pm"
+    search: "search"
 
 bottom:
     newSubscribers:
