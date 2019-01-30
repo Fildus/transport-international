@@ -24,14 +24,16 @@ class OpticoService
 
         if ($client !== null) {
             if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
-                if ($this->indicative !== null){
-                    $phone = '00'.$this->indicative.' '.$this->reformatNumber($client->getContact()->getPhone());
-                }else{
+                if ($this->indicative !== null) {
+                    $phone = '00' . $this->indicative . ' ' . $this->reformatNumber($client->getContact()->getPhone());
+                } else {
                     $phone = $client->getContact()->getPhone();
                 }
 
+                $phone = $this->reformatNumber($phone);
+
                 $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
-                $optico->addPhone($this->reformatNumber($phone));
+                $optico->addPhone($phone);
                 $optico->sendView();
                 $optico->getViewId();
                 return $optico->getTrackingPhoneNumber($phone);
@@ -47,9 +49,9 @@ class OpticoService
 
         if ($client !== null) {
             if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
-                if ($this->indicative !== null){
-                    $phone = '00'.$this->indicative.' '.$this->reformatNumber($client->getContact()->getPhone());
-                }else{
+                if ($this->indicative !== null) {
+                    $phone = '00' . $this->indicative . ' ' . $this->reformatNumber($client->getContact()->getPhone());
+                } else {
                     $phone = $client->getContact()->getPhone();
                 }
                 return $this->reformatNumber($phone);
@@ -61,20 +63,20 @@ class OpticoService
 
     public function getIndicative(ServedZone $servedZone): void
     {
-        if ($servedZone->getIndicative() !== null && $servedZone->getIndicative() !== ''){
+        if ($servedZone->getIndicative() !== null && $servedZone->getIndicative() !== '') {
             $this->indicative = $servedZone->getIndicative();
-        }elseif($servedZone->getParent() !== null){
+        } elseif ($servedZone->getParent() !== null) {
             $this->getIndicative($servedZone->getParent());
         }
     }
 
     public function reformatNumber(?string $nbr)
     {
-        if ($nbr !== null){
+        if ($nbr !== null) {
             $number = trim($nbr);
-            $number = str_replace(' ','',$number);
+            $number = str_replace(' ', '', $number);
 
-            if ((int) $number[0] === 0){
+            if ((int)$number[0] === 0) {
                 $number = substr($number, 1);
             }
             return $number;
