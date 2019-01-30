@@ -93,7 +93,7 @@ class ProfessionalProfileController extends AbstractController
          * @var $client Client
          */
         $client = $this->clientRepository->getClientProfile($cnSlug);
-
+//        dd($client->getContact()->getPhone());
         $form = $this->createFormBuilder()
             ->add('name', TextType::class, [
                 'label' => 'professionalProfile.form.name'

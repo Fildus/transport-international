@@ -25,12 +25,10 @@ class OpticoService
         if ($client !== null) {
             if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
                 if ($this->indicative !== null) {
-                    $phone = '00' . $this->indicative . ' ' . $this->reformatNumber($client->getContact()->getPhone());
+                    $phone = '+' . $this->indicative . ' ' . $this->reformatNumber($client->getContact()->getPhone());
                 } else {
                     $phone = $client->getContact()->getPhone();
                 }
-
-                $phone = $this->reformatNumber($phone);
 
                 $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
                 $optico->addPhone($phone);
