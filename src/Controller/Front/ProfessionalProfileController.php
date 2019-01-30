@@ -130,7 +130,6 @@ class ProfessionalProfileController extends AbstractController
             $number = null;
         }
 
-        dump($request->getSession());
         $this->getParentLocation($client->getLocation()->getLocation());
 
         return new Response($this->renderView('pages/professionalProfile.html.twig', [
