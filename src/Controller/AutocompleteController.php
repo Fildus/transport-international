@@ -160,10 +160,10 @@ class AutocompleteController extends AbstractController
             return new JsonResponse($choices);
         }
 
-//        if ($req = $request->get('sr')) {
-//            $choices = $legalInformationRepository->findByCompanyName($req);
-//            return new JsonResponse($choices);
-//        }
+        if ($req = $request->get('sr')) {
+            $choices = $legalInformationRepository->findByCompanyName($req);
+            return new JsonResponse($choices);
+        }
 
         return new JsonResponse(['faux' => 'don\'t work']);
     }

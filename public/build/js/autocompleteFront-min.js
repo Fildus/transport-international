@@ -1,0 +1,1 @@
+const completeIds=["sr"];completeIds.forEach(function(e){document.getElementById(e)&&new autoComplete({selector:'input[id="'+e+'"]',minChars:3,source:function(t,o){$.getJSON("/autocomplete/all?"+e+"="+t,{},function(e){o(e)})}})});

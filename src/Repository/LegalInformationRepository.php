@@ -88,26 +88,34 @@ class LegalInformationRepository extends ServiceEntityRepository
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function findByCompanyName($el): ?array
+    public function findByCompanyName($el): array
     {
-        $key = 'findByCompanyName-5d988a';
+        $key = md5($el);
         if (!$this->cache->has($key)) {
-            $this->cache->set($key, $this->findAll());
-        }
-        $returnArray = [];
+            $strings = explode(' ', $el);
 
-        /**
-         * @var $r LegalInformation
-         */
-        foreach ($this->cache->get($key) as $r) {
-            if (preg_match('/' . strtolower($el) . '/', strtolower($r->getCompanyName()))) {
-                if (!in_array($r->getCompanyName(), $returnArray)) {
-                    $returnArray[] = (string)$r->getCompanyName();
-                }
+            $qb = $this->createQueryBuilder('l');
+
+            for ($i = 0, $iMax = count($strings); $i < $iMax; $i++) {
+                $qb = $qb
+                    ->andWhere('l.companyName LIKE :var' . $i)
+                    ->setParameter('var' . $i, '%' . $strings[$i] . '%');
             }
+            $qb = $qb
+                ->getQuery()
+                ->setMaxResults(20)
+                ->getResult();
+
+            $return = [];
+            /** @var $item LegalInformation */
+            foreach ($qb as $item) {
+                $return[] = $item->getCompanyName();
+            }
+
+            $this->cache->set($key, $return, 3600);
         }
 
-        return $returnArray;
+        return $this->cache->get($key);
     }
 
     /**

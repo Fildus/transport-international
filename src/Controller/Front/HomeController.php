@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\LegalInformationRepository;
 use App\Services\Locale;
 use Psr\SimpleCache\CacheInterface;
 use App\Repository\ActivityRepository;
@@ -59,8 +60,18 @@ class HomeController extends AbstractController
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function home(CacheInterface $cache, Request $request, SessionInterface $session): Response
+    public function home(CacheInterface $cache, Request $request, SessionInterface $session, LegalInformationRepository $legalInformationRepository): Response
     {
+        $test = $legalInformationRepository->findByCompanyName('transport fournié');
+//        dd($test);
+
+
+
+
+
+
+
+
         $key = 'home-z4d4zd45-' . $request->getLocale();
         if (!$cache->has($key)) {
             $cache->set($key, [
