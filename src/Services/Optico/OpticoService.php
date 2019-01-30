@@ -25,12 +25,13 @@ class OpticoService
         if ($client !== null) {
             if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
                 if ($this->indicative !== null){
-                    $phone = '00'.$this->indicative.' '.$client->getContact()->getPhone();
+                    $phone = '00'.$this->indicative.' '.$this->reformatNumber($client->getContact()->getPhone());
                 }else{
                     $phone = $client->getContact()->getPhone();
                 }
+
                 $optico = new Optico('06f46a4bc4c2edd635373639de3c25b8');
-                $optico->addPhone($phone);
+                $optico->addPhone($this->reformatNumber($phone));
                 $optico->sendView();
                 $optico->getViewId();
                 return $optico->getTrackingPhoneNumber($phone);
@@ -40,14 +41,44 @@ class OpticoService
         return null;
     }
 
+    public function getNormalNumber(Client $client): ?string
+    {
+        $this->getIndicative($client->getLocation()->getLocation());
+
+        if ($client !== null) {
+            if ($client->getContact() !== null && $client->getContact()->getPhone() !== null) {
+                if ($this->indicative !== null){
+                    $phone = '00'.$this->indicative.' '.$this->reformatNumber($client->getContact()->getPhone());
+                }else{
+                    $phone = $client->getContact()->getPhone();
+                }
+                return $this->reformatNumber($phone);
+            }
+            return null;
+        }
+        return null;
+    }
+
     public function getIndicative(ServedZone $servedZone): void
     {
-        if ($servedZone->getIndicative() !== null && $servedZone->getIndicative() !== ""){
+        if ($servedZone->getIndicative() !== null && $servedZone->getIndicative() !== ''){
             $this->indicative = $servedZone->getIndicative();
         }elseif($servedZone->getParent() !== null){
             $this->getIndicative($servedZone->getParent());
         }
     }
 
+    public function reformatNumber(?string $nbr)
+    {
+        if ($nbr !== null){
+            $number = trim($nbr);
+            $number = str_replace(' ','',$number);
 
+            if ((int) $number[0] === 0){
+                $number = substr($number, 1);
+            }
+            return $number;
+        }
+        return null;
+    }
 }

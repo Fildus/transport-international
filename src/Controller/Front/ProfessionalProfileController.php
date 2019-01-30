@@ -118,13 +118,19 @@ class ProfessionalProfileController extends AbstractController
             }
         }
 
-        $key = (string)$client->getId();
-        if (!$this->cache->has($key)) {
-            $optico = new OpticoService();
-            $number = $optico->getNumber($client);
-            $this->cache->set($key, $number, 300);
+        $optico = new OpticoService();
+        if ($request->getSession() && $request->getSession()->has('tryHaveNumber')) {
+            $try = count($request->getSession()->get('tryHaveNumber'));
+            if ($try > 10) {
+                $number = $optico->getNormalNumber($client);
+            } else {
+                $number = $optico->getNumber($client);
+            }
+        } else {
+            $number = null;
         }
 
+        dump($request->getSession());
         $this->getParentLocation($client->getLocation()->getLocation());
 
         return new Response($this->renderView('pages/professionalProfile.html.twig', [
@@ -132,7 +138,7 @@ class ProfessionalProfileController extends AbstractController
             'form' => $form->createView(),
             'domain' => $this->locale->getDomain(),
             'clients' => $this->clientRepository->findByLocation([], ['id' => 'DESC'], 12, 50),
-            'number' => $this->cache->get($key),
+            'number' => $number ?? null,
             'activities' => $recursion->run($client->getActivity()),
             'servedZones' => $recursion->run($client->getServedZone())
         ]));
