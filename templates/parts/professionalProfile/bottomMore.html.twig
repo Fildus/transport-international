@@ -19,8 +19,7 @@
 
 <section class="container">
     <div>
-        <h3>{{ client.legalInformation.corporatename }} - {{ client.location.address }} - {{ activitiesFormated }}
-            <a style="font-size: 18px; color: inherit;" href="{{ app.request.uri }}">{{ app.request.requestUri }}</a></h3>
+        <h3>{{ client.legalInformation.corporatename }} - {{ client.location.address }} - {{ activitiesFormated }}</h3>
         <article style="font-size: 12px!important;">
             {{ domain.homeDescription | raw }}
         </article>
