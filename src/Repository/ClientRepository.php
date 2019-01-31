@@ -57,6 +57,7 @@ class ClientRepository extends ServiceEntityRepository
             ->innerJoin('c.activity', 'a')
             ->innerJoin('c.legalInformation', 'l')
             ->innerJoin('c.contract', 'contract')
+            ->innerJoin('c.contact', 'contact')
             ->andWhere('c.legalInformation != 0')
             ->andWhere('c.contact != 0')
             ->andWhere('c.location != 0')
@@ -83,6 +84,7 @@ class ClientRepository extends ServiceEntityRepository
             ->innerJoin('location.location', 'servedZone')
             ->innerJoin('servedZone.translation', 'servedZoneTranslation')
             ->innerJoin('c.contact', 'contact')
+            ->innerJoin('c.user', 'user')
             ->orderBy('c.id', 'ASC');
 
         if ($search->getSiret() !== null) {
@@ -163,6 +165,16 @@ class ClientRepository extends ServiceEntityRepository
             }
             if ((int)$search->getContract() === 0) {
                 $qb->andWhere('c.contract is empty');
+            }
+        }
+
+        if ($search->isHaveEmail() !== null) {
+            if ((int)$search->isHaveEmail() === 1) {
+                $qb->andWhere('user.username is not null');
+                $qb->andWhere('user.username != \'\'');
+            }
+            if ((int)$search->isHaveEmail() === 0) {
+                $qb->andWhere('user.username = \'\'');
             }
         }
 

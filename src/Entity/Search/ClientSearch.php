@@ -70,6 +70,10 @@ class ClientSearch
      */
     private $contract;
 
+    /**
+     * @var $haveEmail bool
+     */
+    private $haveEmail;
 
     /**
      * @return int|null
@@ -305,5 +309,21 @@ class ClientSearch
         $this->contract = $contract;
 
         return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function isHaveEmail():? bool
+    {
+        return $this->haveEmail;
+    }
+
+    /**
+     * @param bool $haveEmail
+     */
+    public function setHaveEmail(bool $haveEmail): void
+    {
+        $this->haveEmail = $haveEmail;
     }
 }

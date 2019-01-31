@@ -84,6 +84,16 @@ class ClientSearchType extends AbstractType
                     'Posséde un contract' => 1,
                     'Pas de contracts' => 0
                 ]
+            ])
+            ->add('haveEmail', ChoiceType::class, [
+                'required' => false,
+                'label' => false,
+                'attr'=>['placeholder' => 'Dispose d\'un email?'],
+                'choices' => [
+                    'Indifférent' => null,
+                    'Possède un email' => 1,
+                    'Ne possède pas d\'email' => 0
+                ]
             ]);
     }
 
