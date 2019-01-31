@@ -1,244 +1,244 @@
-conta:
-    cabeçalho:
-        painel de instrumentos: SEU PAINEL
+account:
+    header:
+        dashboard: SEU PAINEL
     nav:
-        nome: configurações da conta
+        name: configurações da conta
         legalInformation: Informação legal
-        localização: sua localização
-        contato: seus detalhes
+        location: sua localização
+        contact: seus detalhes
         coreBusiness: o seu core business
-        usuário: identificadores
-        gerentes: Contatos
-        equipamento: o seu equipamento
-        sobre: ​​Sobre
-        atividade: suas atividades
+        user: identificadores
+        managers: Contatos
+        equipment: o seu equipamento
+        about: ​​Sobre
+        activity: suas atividades
         servedZone: Áreas atendidas
-cabeçalho:
-    forma:
-        Charter: Fretamento
+header:
+    form:
+        charter: Fretamento
 top:
-    bem-vindo: Bienvinue no diretório Transport-international.com
-    conta:
+    welcome: Bem-vindo no diretório Transport-international.com
+    account:
         myAccount: minha conta
-        perfil: Perfil
-        registrar: registro
+        profile: Perfil
+        register: registro
 
     log:
-        o login:
-            título: já registrado
+        login:
+            title: já registrado
             html: já está registrado?
-        sair do tópico:
-            título: desconectar
+        logout:
+            title: desconectar
             html: desconectar
 
-rodapé:
+footer:
     legelInformation: Informação legal
-    preço: Preços e condições
-    subscrição: Registo
-    contato: Contato
-    guias:
+    price: Preços e condições
+    subscription: Registo
+    contact: Contato
+    guides:
         h4: Nossos guias especializados
-        guias:
+        guides:
             transportOfGoods:
                 url: "http://www.transport-france.com/"
-                título: "Transporte de Frete"
+                title: "Transporte de Frete"
                 html: "Transporte de frete"
-            movedor:
-                url: "http://www.manage-demager.com/"
-                título: "Mover"
+            mover:
+                url: "http://www.annuaire-des-demenageurs.com/"
+                title: "Mover"
                 html: "Moving"
-            viajante:
+            traveler:
                 url: "http://www.annuaire-des-autocaristes.com/"
-                título: "Viagem de ônibus"
+                title: "Viagem de ônibus"
                 html: "Viagem de ônibus"
-            frete:
+            fret:
                 url: "http://www.annuaire-affreteurs.com/"
-                título: "fretamento"
+                title: "fretamento"
                 html: "fretamento"
-            armazenamento:
+            storage:
                 url: "http://www.weather-directory.com/"
-                título: "Empresa de armazenamento"
+                title: "Empresa de armazenamento"
                 html: "Empresa de armazenamento"
             transportLuxembourg:
                 url: "http://www.transport-luxembourg.com/"
-                título: 'transporte luxemburgo'
+                title: 'transporte luxemburgo'
                 html: "Transportes Gerais e Industriais"
             moverLuxembourg:
                 url: "http://www.demenagement-luxembourg.com/"
-                título: "movers luxembourg"
+                title: "movers luxembourg"
                 html: "Movers"
             autocoarLuxembourg:
                 url: "http://www.autocar-luxembourg.com/"
-                título: "treinador de luxemburgo"
+                title: "treinador de luxemburgo"
                 html: "Transporte de ônibus"
             storageLuxembourg:
                 url: "http://www.entrepot-luxembourg.com/"
-                título: "armazém de luxemburgo"
+                title: "armazém de luxemburgo"
                 html: "Armazenando"
             fretLuxembourg:
                 url: "http://www.fret-luxembourg.com/"
-                título: "frete luxemburgo"
+                title: "frete luxemburgo"
                 html: "Commissionaire"
             transportSwisse:
                 url: "http://www.transport-suisse.net/"
-                título: "transporte suíço"
+                title: "transporte suíço"
                 html: "Transporte de frete"
             moverSwisse:
                 url: "http://www.demenagement-suisse.com/"
-                título: "Swiss movers"
+                title: "Swiss movers"
                 html: "Remoções"
             autocoarSwisse:
                 url: "http://www.autocar-suisse.com/"
-                título: "Treinador suíço"
+                title: "Treinador suíço"
                 html: "Coach Travel"
             storageSwisse:
                 url: "http://www.entrepot-suisse.com/"
-                título: "armazenamento suíço"
+                title: "armazenamento suíço"
                 html: "Armazenamento"
             fretSwisse:
                 url: "http://www.fret-suisse.com/"
-                título: "Frete suíço"
+                title: "Frete suíço"
                 html: "Organizador de transporte"
             fretBelgium:
                 url: "http://www.fret-belgique.com/"
-                título: "frete bélgica"
+                title: "frete bélgica"
                 html: "Frete"
             transportBelgium:
                 url: "http://www.transport-belgique.com/"
-                título: "transporte belga"
+                title: "transporte belga"
                 html: "Transportes Gerais e Industriais"
             moverBelgium:
                 url: "http://www.demenagement-belgique.com/"
-                título: "movers belgium"
+                title: "movers belgium"
                 html: "Movers"
             autocoarBelgium:
                 url: "http://www.autocar-belgique.com/"
-                título: "coach belgium"
+                title: "coach belgium"
                 html: "Transporte por Coach"
             storageBelgium:
                 url: "http://www.entrepot-belgique.com/"
-                título: "armazenamento bélgica"
+                title: "armazenamento bélgica"
                 html: "Storage"
-deslizante:
-    título: Transport-international.com
+slider:
+    title: Transport-international.com
     subTitle: A referência dos Transportes na Europa e internacionalmente
     globeTerrestre:
         alt: globo terrestre
     slides:
-        primeiro: a Transport International está <strong> free </ strong> disponível para pequenas e médias empresas, remetentes, associações e indivíduos para ajudá-los a <strong> encontrar com rapidez e facilidade profissionais de transporte </ strong> na Europa.
-        segundo: o diretório de transporte fornecerá respostas rápidas e precisas sobre sua pesquisa de um profissional para todos os tipos de transporte local e internacionalmente.
-        terceiro: Com mais de <strong> 135000 TRANSPORTERS referenciados em 23 PAÍSES </ strong>, a Transport International é o guia de transporte na Europa, logística e afretamento.
-registrar:
+        first: a Transport International está <strong> free </strong> disponível para pequenas e médias empresas, remetentes, associações e indivíduos para ajudá-los a <strong> encontrar com rapidez e facilidade profissionais de transporte </strong> na Europa.
+        second: o diretório de transporte fornecerá respostas rápidas e precisas sobre sua pesquisa de um profissional para todos os tipos de transporte local e internacionalmente.
+        third: Com mais de <strong> 135000 TRANSPORTERS referenciados em 23 PAÍSES </strong>, a Transport International é o guia de transporte na Europa, logística e afretamento.
+register:
     mainTitle: registro
-    forma:
-        nome de usuário: seu nome de usuário
-        senha: sua senha
-        confirme: Confirmação da sua senha
+    form:
+        username: seu nome de usuário
+        password: sua senha
+        confirm: Confirmação da sua senha
         siret: seu siret
         corporateName: nome da empresa
-        volume de negócios: volume de negócios
+        turnover: volume de negócios
         companyName: o nome da sua empresa
-        força de trabalho: o número de funcionários
+        workforce: o número de funcionários
         legalForm: forma jurídica
-        estabelecimentos: Número de estabelecimentos
-o login:
+        establishments: Número de estabelecimentos
+login:
     mainTitle: conexão
-Pesquisa:
+search:
     mainTitle: sua pesquisa
-    forma:
-        título:
-            localização: localização
+    form:
+        title:
+            location: localização
         mainTitle: Refine minha pesquisa
-        renda:
+        location:
             title1: Esta empresa é baseada em
             title2: esta empresa serve
             title3: Activity
         basedAt:
-            opção:
-                localização: localização
+            option:
+                location: localização
                 allLocation: todas as localizações
-                departamento: Departamento
+                department: Departamento
                 allDepartment: todos os departamentos
 
-        atividade:
-            atividades: Activity
-            Atividade AllActivities
-        subsídio:
-            atividades: Prestiações
+        activity:
+            activities: Activity
+            AllActivities: Todas as atividades
+        allowance:
+            activities: Prestiações
             AllActivities: todos os serviços
-        para:
-            opção:
-                localização: localização
+        to:
+            option:
+                location: localização
                 allLocation: todas as localizações
-                departamento: Departamento
+                department: Departamento
                 allDepartment: todos os departamentos
-    resultados:
-        contato:
-            título: contato
+    results:
+        contact:
+            title: contato
         website:
-            título: site
-        perfil:
+            title: site
+        profile:
             title: Veja o cartão
         mainTitle: lista de provedores
-    enviar: Refine minha pesquisa
+    submit: Refine minha pesquisa
     reload: nova pesquisa
 
 professionalProfile:
     explainTax: "* O custo da conexão será de € 2,99 por chamada. Esse número válido de 5 minutos não é o número do destinatário, mas o número de um serviço que permite a conexão com ele. Este serviço é publicado pelo Diretório de Transportes. "
     whyThisNumber: "Por que esse número?"
     companyInformation: Informações sobre a empresa
-    telefone: telefone
+    phone: telefone
     companyName: nome da empresa
-    Endereço: Endereço
+    adress: Endereço
     seePlan: Veja o mapa
     mail: endereço de e-mail
     webSite: site
     companyManager: Gerente da empresa
     salesManager: Gerente de vendas
-    força de trabalho: Força de trabalho
+    workforce: Força de trabalho
     vehiclesNbr: Número de veículos
-    EstabelecimentoNbr: Número de estabelecimentos
-    volume de negócios: volume de negócios
-    materiais: equipamento da empresa
-    serviços: Serviços
-    forma:
-        nome: "Seu nome"
+    establishmentsNbr: Número de estabelecimentos
+    turnover: volume de negócios
+    materials: equipamento da empresa
+    services: Serviços
+    form:
+        name: "Seu nome"
         email: "Seu email"
-        mensagem: "Sua mensagem"
-        Antispam: "Antispam"
-        enviar: "Enviar!"
-    subsídio: "Benefícios"
-    apresentação: "Apresentação"
-    contato: "Contato"
+        message: "Sua mensagem"
+        antispam: "Antispam"
+        submit: "Enviar!"
+    allowance: "Benefícios"
+    presentation: "Apresentação"
+    contact: "Contato"
 
-casa:
+home:
     links:
-        Carta:
-            subtítulo: "Afretadores para organizar a entrega de suas mercadorias:"
+        charter:
+            subtitle: "Afretadores para organizar a entrega de suas mercadorias:"
         transportOfGoods:
-            subtítulo: "Profissionais para o transporte de todos os seus bens:"
+            subtitle: "Profissionais para o transporte de todos os seus bens:"
         rentWithDrive:
             subtitle: "Todos os locatários profissionais com a oferta de condutores especializados:"
-        táxis:
-            subtítulo: "Para suas viagens diárias ou excepcionais, encontre rapidamente seu táxi em qualquer lugar do mundo:"
-        logística:
+        taxis:
+            subtitle: "Para suas viagens diárias ou excepcionais, encontre rapidamente seu táxi em qualquer lugar do mundo:"
+        logistic:
             subtitle: "A gestão dos seus fluxos físicos suportados por especialistas profissionais:"
-        armazenamento:
-            subtítulo: "Encontre profissionais em todo o mundo para o armazenamento de suas mercadorias:"
+        storage:
+            subtitle: "Encontre profissionais em todo o mundo para o armazenamento de suas mercadorias:"
         passengerTransport:
-            subtítulo: "Os profissionais de transporte de passageiros estão ao seu serviço:"
+            subtitle: "Os profissionais de transporte de passageiros estão ao seu serviço:"
     jumbotron:
         areYouTransporter: "Você é um portador"
-        inscreva-se: "Inscreva-se, é grátis!"
+        subscribe: "Inscreva-se, é grátis!"
         iSubscribe: "Eu me inscrevo!"
         aldready: "Já está registrado?"
-        conexão: "Login"
+        connection: "Login"
         forgotPassword: "Senha esquecida"
         forAnyRequest: "Para qualquer pedido"
-        disponível: "de segunda a sexta, das 9h às 18h"
+        available: "de segunda a sexta, das 9h às 18h"
 
 bottom:
-    NewSubscribers:
+    newSubscribers:
         alt: "diretório de transporte internacional"
         mainLink: "Novos Registradores"
     transportDirectory:
@@ -262,453 +262,453 @@ bottom:
         h5: "Precisa de um armazenamento?"
         htmlLink: "Guia do armazenador"
 
-NewSubscribers:
+newSubscribers:
     h1: "Novos inscritos"
-    lenda: "Contate o profissional"
+    legend: "Contate o profissional"
     mainTitle: "Novos inscritos"
     subtitleHtml: "Esses profissionais em transporte, logística, armazenamento ... se registraram gratuitamente em nosso diretório e confiam em nós para desenvolver seus negócios."
-    inscreva-se: "Inscreva-se, é grátis!"
+    subscribe: "Inscreva-se, é grátis!"
 
 meta:
-    casa:
+    home:
         og:
-            nome_do_site: "Transporte Internacional"
-    Pesquisa:
+            site_name: "Transporte Internacional"
+    search:
         description: "Encontre um profissional com o International Transport: empresas em todo o mundo"
         descriptionNext: "cuja atividade é"
-        descriptionPrescription: "cuja apresentação é"
+        descriptionPrestation: "cuja apresentação é"
         og:
-            nome_do_site: "Transporte Internacional"
-    registrar:
-        título: "Transporte Internacional - Registro de Empresa"
-        descrição: "Registre-se gratuitamente no diretório de transporte na Europa e no exterior e desfrute de uma ampla visibilidade"
-        palavras-chave: 'mensagens'
+            site_name: "Transporte Internacional"
+    register:
+        title: "Transporte Internacional - Registro de Empresa"
+        description: "Registre-se gratuitamente no diretório de transporte na Europa e no exterior e desfrute de uma ampla visibilidade"
+        keywords: 'mensagens'
         og:
-            título: "Transporte Internacional - Registro de Empresa"
-            nome_do_site: "Transporte Internacional"
-            descrição: "Registre-se gratuitamente no diretório de transporte na Europa e no exterior e desfrute de uma ampla visibilidade"
-    NewSubscribers:
-        título: "Transporte Internacional - Novos Registrantes"
-        Descrição: "Veja os mais recentes profissionais listados no Diretório Europeu e Internacional de Transporte"
-        palavras-chave: "transporte internacional, registrado, profissionais"
+            title: "Transporte Internacional - Registro de Empresa"
+            site_name: "Transporte Internacional"
+            description: "Registre-se gratuitamente no diretório de transporte na Europa e no exterior e desfrute de uma ampla visibilidade"
+    newSubscribers:
+        title: "Transporte Internacional - Novos Registrantes"
+        description: "Veja os mais recentes profissionais listados no Diretório Europeu e Internacional de Transporte"
+        keywords: "transporte internacional, registrado, profissionais"
         og:
-            título: "Transporte Internacional - Novos Registrantes"
-            nome_do_site: "Transporte Internacional"
-            Descrição: "Veja os mais recentes profissionais listados no Diretório Europeu e Internacional de Transporte"
+            title: "Transporte Internacional - Novos Registrantes"
+            site_name: "Transporte Internacional"
+            description: "Veja os mais recentes profissionais listados no Diretório Europeu e Internacional de Transporte"
     professionalProfile:
-        descrição: "Contate a empresa __SOCIETY__ em __ADDRESS__, atividade __ACTIVITIES__ Informações: endereço, telefone, plano de acesso - __URI__"
+        description: "Contate a empresa __SOCIETY__ em __ADDRESS__, atividade __ACTIVITIES__ Informações: endereço, telefone, plano de acesso - __URI__"
         someTrad:
-            transporte: "transporte"
-            logística: "logística"
-            carta: "fretamento"
-            viajantes: "transporte de passageiros"
-            relocação: "mover"
-            armazenamento: "armazenamento"
+            transport: "transporte"
+            logistics: "logística"
+            charter: "fretamento"
+            travelers: "transporte de passageiros"
+            relocation: "mover"
+            storage: "armazenamento"
             rentalWithDriver: "aluguel com motorista"
-            táxis: "táxis"
+            taxis: "táxis"
         siteName: "Transporte Internacional"
 
 legalinformation:
     mainTitle: "INFORMAÇÃO LEGAL"
     html: |
-        <strong> CONDIÇÕES </ strong> em
+        <strong> CONDIÇÕES </strong> em
         Registro no diretório de transporte rodoviário é gratuito. <br>
-        Para se comunicar em nosso site, consulte nossas tarifas e condições. As informações contidas neste site são as mais precisas possíveis, apesar de toda a nossa atenção, se você notar um erro ou uma omissão, não hesite em nos escrever: <a href = "mailto: webmaster@annuaire-des-transports.com "> webmaster@manager-of-transportations.com </a> <br>
+        Para se comunicar em nosso site, consulte nossas tarifas e condições. As informações contidas neste site são as mais precisas possíveis, apesar de toda a nossa atenção, se você notar um erro ou uma omissão, não hesite em nos escrever: <a href = "mailto: webmaster@annuaire-des-transports.com ">webmaster@annuaire-des-transports.com </a> <br>
         <br>
-        <strong> DIRETÓRIO DO TRANSPORTE </ strong> <br>
+        <strong> DIRETÓRIO DO TRANSPORTE </strong> <br>
         ¤ O Diretório de Transporte não se responsabiliza pelo uso ou pelas conseqüências, privadas ou profissionais, resultantes do uso de nossos serviços. <br>
         ¤ também declina toda a responsabilidade em caso de informações erradas ou omitidas. <br>
         ¤ A editora não pode, em nenhuma circunstância, garantir a qualidade e confiabilidade dos serviços oferecidos pelas empresas listadas neste diretório e, assim, liberá-los de qualquer responsabilidade no caso de uma disputa entre os usuários deste serviço. <br>
         <br>
-        <strong> INFORMÁTICA E LIBERDADES </ strong> <br>
+        <strong> INFORMÁTICA E LIBERDADES </strong> <br>
         De acordo com o Data Protection Act de 6 de janeiro de 1978, informamos que você tem o direito de acessar, modificar, retificar e excluir sua contribuição. <br>
         O Anuário dos Transportes é declarado à CNIL sob o número 718712. <br>
         Para exercer esse direito, entre em contato com: <a href="mailto:webmaster@annuaire-des-transports.com"> webmaster@annuaire-des-transports.com </a> <br>
         <br>
-        <strong> CONTRAFACON </ strong> <br>
+        <strong> CONTRAFACON </strong> <br>
         Qualquer reprodução ou representação, no todo ou em parte, para outros fins em qualquer meio é proibida. O não cumprimento desta proibição constitui uma violação que pode incorrer na responsabilidade civil e criminal do infrator. As informações contidas neste serviço não são vinculativas e estão sujeitas a alterações sem aviso prévio. <br>
         <br>
-        <strong> EDITOR </ strong> <br>
-        <p> <a href="http://www.webdesign-graphiste.com" title="site de criação"> Webdesign Designer gráfico </a> <br>
-            5 Al Vigné Road <br>
-            31140 MONTBERON </ p>
-        <p> Contato comercial: Jean-Paul Alibert Review,
-            Telefone: +33 5 61 57 91 08 </ p>
+        <strong> EDITOR </strong> <br>
+        <p><a href="http://www.webdesign-graphiste.com" title="site de criação">Webdesign Graphiste </a> <br>
+            5, chemin Al Vigné <br>
+            31140 MONTBERON </p>
+        <p>Contato comercial: Jean-Paul Alibert <br>
+            Phone: +33 5 61 57 91 08 </p>
 
-preços:
+pricing:
     mainTitle: "PREÇOS E CONDIÇÕES"
     html: |
-        <Article>
+        <article>
                 <table border = "0" cellspacing = "0" cellpadding = "3">
-        <Tbody>
-        <Tr>
-        <td> <strong> COMUNICAR NO DIRECTÓRIO DE TRANSPORTE </ strong> <br> <br> Transport-international.com é uma ferramenta de referência no sector dos transportes. <br> <br> Você pode promover sua empresa, seja você uma transportadora ou fornecedora de materiais relacionados ao transporte (venda de caminhões, manutenção, etc.). O SEO é gratuito para todas as empresas. transporte que desejam aparecer em uma das seções do Anuário de Transporte. <br> Basta preencher nosso formulário on-line - Ao receber sua solicitação, um de nossos funcionários entrará em contato com você para completar os detalhes de suas atividades e destinos. <br> <br> No entanto, você tem uma oferta comercial econômica e escalonável para desenvolver planos de comunicação econômicos. <br> <br> <strong> CARTÕES PERSONALIZADOS: </ strong> <br> <br> Este é o seu cartão de visita na Internet durante um ano. <br> <br> Graças a um posicionamento nas primeiras páginas durante as pesquisas, permite otimizar a visibilidade da sua empresa no The Directory. <br> <br> Além disso, você se beneficia do recebimento de solicitações de cotação por email (E-mail). <br> Uma vantagem competitiva decisiva <br>
-        <Ul>
-        <li> A listagem de sua empresa é favorecida na lista, durante as pesquisas. </ Li>
-        <li> Você pode inserir o logotipo da sua empresa, bem como fotos. </ Li>
-        <li> As caixas de texto permitem que você conclua sua listagem. </ Li>
-        </ Ul>
-        Assim, os usuários do diretório serão totalmente informados sobre a capacidade da sua empresa de atender às suas diferentes necessidades. <br> <br> Entre em contato com nosso gerente de vendas para obter mais informações: <a href="mailto:publicite@office-of-transportation.com"> publicite@transportation-directory.com </a> </ td>
-        </ Tr>
-        </ Tbody>
-        </ Table>
-        <p align = "center"> & nbsp; </ p>
+        <tbody>
+        <tr>
+        <td><strong>COMUNICAR NO DIRECTÓRIO DE TRANSPORTE </strong> <br> <br> Transport-international.com é uma ferramenta de referência no sector dos transportes. <br> <br> Você pode promover sua empresa, seja você uma transportadora ou fornecedora de materiais relacionados ao transporte (venda de caminhões, manutenção, etc.). O SEO é gratuito para todas as empresas. transporte que desejam aparecer em uma das seções do Anuário de Transporte. <br> Basta preencher nosso formulário on-line - Ao receber sua solicitação, um de nossos funcionários entrará em contato com você para completar os detalhes de suas atividades e destinos. <br> <br> No entanto, você tem uma oferta comercial econômica e escalonável para desenvolver planos de comunicação econômicos. <br> <br> <strong> CARTÕES PERSONALIZADOS: </strong> <br> <br> Este é o seu cartão de visita na Internet durante um ano. <br> <br> Graças a um posicionamento nas primeiras páginas durante as pesquisas, permite otimizar a visibilidade da sua empresa no The Directory. <br> <br> Além disso, você se beneficia do recebimento de solicitações de cotação por email (E-mail). <br> Uma vantagem competitiva decisiva <br>
+        <ul>
+        <li> A listagem de sua empresa é favorecida na lista, durante as pesquisas. </li>
+        <li> Você pode inserir o logotipo da sua empresa, bem como fotos. </li>
+        <li> As caixas de texto permitem que você conclua sua listagem. </li>
+        </ul>
+        <br>Assim, os usuários do diretório serão totalmente informados sobre a capacidade da sua empresa de atender às suas diferentes necessidades. <br> <br> Entre em contato com nosso gerente de vendas para obter mais informações: <a href="mailto:publicite@office-of-transportation.com"> publicite@transportation-directory.com </a> </td>
+        </tr>
+        </tbody>
+        </table>
+        <p align = "center">&nbsp;</p>
         <table border = "0" cellspacing = "0" cellpadding = "0">
-        <Tbody>
-        <Tr>
+        <tbody>
+        <tr>
         <td colspan = "2">
-        <p> TARIFAS TRANSPORTADORES (assinatura anual excluindo impostos) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>TARIFAS TRANSPORTADORES (assinatura anual excluindo impostos) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <h3> Assinatura básica (recebimento automático de solicitações de cotação) </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3>Assinatura básica (recebimento automático de solicitações de cotação) </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> da sua área inicial: </ p>
-        </ Td>
+        <p>da sua área inicial: </p>
+        </td>
         <td width = "200" valign = "top">
-        <p style = "text-align: right;"> 320 € (3.500 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p style = "text-align: right;"> 320 € (3.500 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <H3> informações: </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
-        <td width = "532" valign = "top"> de uma zona inicial adicional </ td>
-        <td width = "200" = 170 € (1.870 MAD) </ p> </ td>
-        </ Tr>
-        <Tr>
-        <td> Seu logotipo - </ td>
-        <td> <p style = "texto-alinhamento: direito;"> 70 € (770 MAD) </ p> </ td>
-        </ Tr>
-        <Tr>
+        <h3>Informações: </h3>
+        </td>
+        </tr>
+        <tr>
+        <td width = "532" valign = "top"> de uma zona inicial adicional </td>
+        <td width="200" valign="top"><p style="text-align: right;">170 € (1.870 MAD)</p></td>
+        </tr>
+        <tr>
+        <td>Seu logotipo<br></td>
+        <td><p style = "texto-alinhamento: direito;"> 70 € (770 MAD) </p> </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Uma foto </ p>
-        </ Td>
+        <p>Uma foto</p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 50 € (550 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 50 € (550 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Duas fotos </ p>
-        </ Td>
+        <p>Duas fotos</p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 70 € (770 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 70 € (770 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Três fotos </ p>
-        </ Td>
+        <p>Três fotos</p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 90 € (990 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
-        <td> Sua página da Web (com seu nome de domínio disponível) </ td>
-        <td> 100 € (1.100 MAD) </ p>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 90 € (990 MAD) </p>
+        </td>
+        </tr>
+        <tr>
+        <td>Sua página da Web (com seu nome de domínio disponível) </td>
+        <td><p style="text-align: right;">100 € (1.100 MAD)</p></td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Link para seu site </ p>
-        </ Td>
+        <p>Link para seu site </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 90 € (990 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 90 € (990 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
-        <td colspan = "2"> </ td>
-        </ Tr>
-        <Tr>
-        <td colspan = "2"> </ td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
+        <td colspan = "2"> </td>
+        </tr>
+        <tr>
+        <td colspan = "2"> </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <h3> Fórmula A: sites padrão </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3>Fórmula A: sites padrão </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Referência hospedada e referenciada do site </ p>
-        </ Td>
+        <p>Referência hospedada e referenciada do site </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 1.020 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 1.020 € </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Referência do site hospedada, referenciada e administrável </ p>
-        </ Td>
+        <p>Referência do site hospedada, referenciada e administrável </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 1.320 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1.320 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Tradução: o idioma extra </ p>
-        </ Td>
+        <p>Tradução: o idioma extra </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 300 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 300 € </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <p> CARTÕES DE NEGÓCIOS ELETRÔNICOS (Despesas técnicas e custos de projeto com cotação) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>CARTÕES DE NEGÓCIOS ELETRÔNICOS (Despesas técnicas e custos de projeto com cotação) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
+        <p>&nbsp;</p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right">&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> O pacote de 50 cópias gravadas </ p>
-        </ Td>
+        <p>O pacote de 50 cópias gravadas </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 1.300 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1.300 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> O pacote de 500 cópias pressionadas </ p>
-        </ Td>
+        <p>O pacote de 500 cópias pressionadas </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 2.700 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 2.700 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> O pacote de 1000 cópias pressionadas </ p>
-        </ Td>
+        <p>O pacote de 1000 cópias pressionadas </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 3.460 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 3.460 </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2">
-        <p> <strong> TAXAS DE FORNECEDOR </ strong> (assinatura anual excluindo impostos) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p><strong> TAXAS DE FORNECEDOR </strong> (assinatura anual excluindo impostos) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <h3> Formulário B: Receber Pedidos de Cotação Automaticamente </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3>Formulário B: Receber Pedidos de Cotação Automaticamente </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Folha de dados presente em todo o país </ p>
-        </ Td>
+        <p> Folha de dados presente em todo o país </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 790 € (8.690 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 790 € (8.690 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Folha de dados presente em um país adicional </ p>
-        </ Td>
+        <p> Folha de dados presente em um país adicional </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 250 € (2.750 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 250 € (2.750 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Seu logotipo </ p>
-        </ Td>
+        <p>Seu logotipo </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 250 € (2.750 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 250 € (2.750 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Link para seu site </ p>
-        </ Td>
+        <p>Link para seu site </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 420 € (4.620 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 420 € (4.620 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" width = "532" valign = "top">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right">&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <h3> Fórmula C: sites padrão </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3>Fórmula C: sites padrão </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Site padrão hospedado e referenciado </ p>
-        </ Td>
+        <p>Site padrão hospedado e referenciado </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 1.520 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1.520 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Referência do site hospedada, referenciada e administrável </ p>
-        </ Td>
+        <p>Referência do site hospedada, referenciada e administrável </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 1.820 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1.820 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Tradução: o idioma extra </ p>
-        </ Td>
+        <p>Tradução: o idioma extra </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 420 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 420 € </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" width = "532" valign = "top">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right">&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" width = "532" valign = "top">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right">&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2">
-        <p> <strong> BANDAS DE PUBLICIDADE </ strong> </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p><strong> BANDAS DE PUBLICIDADE </strong> </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "top">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> Pacote mensal (1 mês) </ p>
-        </ Td>
+        <p>Pacote mensal (1 mês) </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> 990 € (10.890 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 990 € (10.890 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
 
-        <p> O pacote trimestral (3 meses) </ p>
-        </ Td>
+        <p>O pacote trimestral (3 meses) </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 1.990 (MAD 21.890) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1.990 (MAD 21.890) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> O pacote de seis meses (6 meses) </ p>
-        </ Td>
+        <p>O pacote de seis meses (6 meses) </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 2,990 (MAD 32,890) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 2,990 (MAD 32,890) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "top">
-        <p> A taxa anual (12 meses) </ p>
-        </ Td>
+        <p>A taxa anual (12 meses) </p>
+        </td>
         <td width = "200" valign = "top">
-        <p align = "right"> € 3.990 (MAD 43.390) </ p>
-        </ Td>
-        </ Tr>
-        </ Tbody>
-        </ Table>
-        <P> & nbsp; </ p>
-        <p align = "left"> <strong> EDITOR </ strong> </ p>
-        <p> <a href="http://www.webdesign-graphiste.com" title="criação website"> Webdesign Graphic Designer </a> - 5, chemin Alvigne - 31140 MONTBERON FRANÇA </ p>
-        <p> Contato de vendas: Jean-Paul Alibert - Telefone: +33 5 61 57 91 08 </ p>
-        </ Item>
-de erro:
+        <p align = "right"> € 3.990 (MAD 43.390) </p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p align = "left"> <strong> EDITOR </strong> </p>
+        <p><a href="http://www.webdesign-graphiste.com" title="criação website"> Webdesign Graphiste</a><br> 5, chemin Alvigne - 31140 MONTBERON FRANÇA </p>
+        <p>Contato de vendas: Jean-Paul Alibert - Telefone: +33 5 61 57 91 08 </p>
+        </article>
+error:
     404:
         h1: "Ops, ocorreu um erro"
         text: "A página __PAGE__ não existe"
 
-forma:
+form:
     legalInformations:
         siret: "siret"
         corporateName: "Nome da sua empresa"
         CompanyName: "Nome da sua empresa"
         LegamForm: "forma legal"
-        Volume de negócios: "volume de negócios"
+        Turnover: "volume de negócios"
         workforceNbr: "Associação"
-        EstabelecimentoNbr: "Número de estabelecimentos"
-    Aluguel:
-        Endereço: "Endereço"
+        EstablishmentNbr: "Número de estabelecimentos"
+    Location:
+        adress: "Endereço"
         postalCode: "CEP"
-        cidade: "cidade"
-        localização: "localização"
-    contato:
-        telefone: "telefone"
+        city: "cidade"
+        location: "localização"
+    contact:
+        phone: "telefone"
         fax: "Número de fax"
-        contato: "Pessoa de contato"
+        contact: "Pessoa de contato"
         webSite: "Seu site"
-    core business:
-        transporte: "Transporte de carga"
-        logística: "logística"
-        carta: "fretamento"
-        viajantes: "Viajantes"
-        Relocação: "Mover"
-        armazenamento: "armazenamento"
+    coreBusiness:
+        transport: "Transporte de carga"
+        logistics: "logística"
+        charter: "fretamento"
+        travelers: "Viajantes"
+        relocation: "Mover"
+        storage: "armazenamento"
         rentalWithDriver: "Aluguel com motorista"
-        táxis: "Taxi"
+        taxis: "Taxi"
     user:
         username: "Seu email"
-    gerentes:
+    managers:
         companyManager: "Gerente da empresa"
         operationManager: "Responsável pelas operações"
         salesManager: "Pessoa Compradora"
-    sobre:
+    about:
         isoCertification: "certificação ISO"
-        resumo: "Resumo"
+        summary: "Resumo"
         rangeAction: "raio de ação"
-        serviços: "Os serviços que você oferece"
-    equipamento:
+        services: "Os serviços que você oferece"
+    equipment:
         vehicleNbr: "Número de veículos"
-        materiais: "Materiais"
+        materials: "Materiais"

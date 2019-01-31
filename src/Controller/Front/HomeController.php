@@ -62,16 +62,6 @@ class HomeController extends AbstractController
      */
     public function home(CacheInterface $cache, Request $request, SessionInterface $session, LegalInformationRepository $legalInformationRepository): Response
     {
-        $test = $legalInformationRepository->findByCompanyName('transport fournié');
-//        dd($test);
-
-
-
-
-
-
-
-
         $key = 'home-z4d4zd45-' . $request->getLocale();
         if (!$cache->has($key)) {
             $cache->set($key, [

@@ -1,244 +1,244 @@
-cont:
+account:
     header:
-        tablou de bord: PLANUL DVS.
+        dashboard: PLANUL DVS.
     nav:
-        nume: Setări cont
+        name: Setări cont
         legalInformation: Informații juridice
-        locație: locația dvs.
+        location: locația dvs.
         contact: Detaliile tale
         coreBusiness: afacerea dvs. de bază
-        utilizator: Identificatori
-        managerii: Contacte
-        echipament: echipamentul dvs.
-        despre: Despre
-        activitate: activitățile dvs.
+        user: Identificatori
+        managers: Contacte
+        equipment: echipamentul dvs.
+        about: Despre
+        activity: activitățile dvs.
         servedZone: Areas Served
 header:
-    forma:
+    form:
         charter: Închiriere
 top:
-    bun venit: Bienvinue pe directorul Transport-international.com
-    cont:
-        contul meu: Contul meu
-        profil: Profil
-        înregistrare: înregistrare
+    welcome: Bun venit pe directorul Transport-international.com
+    account:
+        myAccount: Contul meu
+        profile: Profil
+        register: înregistrare
 
     log:
-        conectare:
-            titlu: deja înregistrat
+        login:
+            title: deja înregistrat
             html: deja înregistrat?
         logout:
-            titlu: deconectați
+            title: deconectați
             html: Deconectați
 
-subsol:
+footer:
     legelInformation: Informații juridice
-    preț: Tarife și condiții
-    abonament: Înregistrare
+    price: Tarife și condiții
+    subscription: Înregistrare
     contact: Contactați
-    ghiduri:
+    guides:
         h4: Ghidurile noastre de specialitate
-        ghiduri:
+        guides:
             transportOfGoods:
                 url: "http://www.transport-france.com/"
-                titlu: "Transportul de mărfuri"
+                title: "Transportul de mărfuri"
                 html: "Transportul de mărfuri"
             mover:
-                url: "http://www.manage-demager.com/"
-                titlu: "Mutarea"
+                url: "http://www.annuaire-des-demenageurs.com/"
+                title: "Mutarea"
                 html: "Mutarea"
-            calator:
+            traveler:
                 url: "http://www.annuaire-des-autocaristes.com/"
-                titlu: "Excursie cu autobuzul"
+                title: "Excursie cu autobuzul"
                 html: "Excursie cu autobuzul"
-            de transport de marfă:
+            fret:
                 url: "http://www.annuaire-affreteurs.com/"
-                titlu: "navlosire"
+                title: "navlosire"
                 html: "navlosire"
-            depozitare:
-                url: "http://www.weather-directory.com/"
-                titlu: "Companie de depozitare"
+            storage:
+                url: "http://www.annuaire-des-entreposeurs.com/"
+                title: "Companie de depozitare"
                 html: "Compania de depozitare"
             transportLuxembourg:
                 url: "http://www.transport-luxembourg.com/"
-                titlu: "transport luxemburg"
+                title: "transport luxemburg"
                 html: "Transportul general și industrial"
             moverLuxembourg:
                 url: "http://www.demenagement-luxembourg.com/"
-                titlu: "movers luxembourg"
+                title: "movers luxembourg"
                 html: "Movers"
             autocoarLuxembourg:
                 url: "http://www.autocar-luxembourg.com/"
-                titlu: "antrenor luxemburg"
+                title: "antrenor luxemburg"
                 html: "Autocare"
             storageLuxembourg:
                 url: "http://www.entrepot-luxembourg.com/"
-                titlu: "depozit luxemburg"
+                title: "depozit luxemburg"
                 html: "Stocarea"
             fretLuxembourg:
                 url: "http://www.fret-luxembourg.com/"
-                titlu: "marfă luxemburg"
+                title: "marfă luxemburg"
                 html: "Commissionaire"
             transportSwisse:
                 url: "http://www.transport-suisse.net/"
-                titlu: "transportul elvețian"
+                title: "transportul elvețian"
                 html: "Transportul de mărfuri"
             moverSwisse:
                 url: "http://www.demenagement-suisse.com/"
-                titlu: "Movers elvețian"
+                title: "Movers elvețian"
                 html: "Mutări"
             autocoarSwisse:
                 url: "http://www.autocar-suisse.com/"
-                titlu: "antrenor elvețian"
+                title: "antrenor elvețian"
                 html: "Coach Travel"
             storageSwisse:
                 url: "http://www.entrepot-suisse.com/"
-                titlu: "Depozit elvețian"
+                title: "Depozit elvețian"
                 html: "Depozitare"
             fretSwisse:
                 url: "http://www.fret-suisse.com/"
-                titlu: "Transportul elvețian"
+                title: "Transportul elvețian"
                 html: "Organizator de transport"
             fretBelgium:
                 url: "http://www.fret-belgique.com/"
-                titlu: "Belgia de marfă"
+                title: "Belgia de marfă"
                 html: "Transport marfă"
             transportBelgium:
                 url: "http://www.transport-belgique.com/"
-                titlu: "transport în Belgia"
+                title: "transport în Belgia"
                 html: "Transportul general și industrial"
             moverBelgium:
                 url: "http://www.demenagement-belgique.com/"
-                titlu: "movers belgium"
+                title: "movers belgium"
                 html: "Movers"
             autocoarBelgium:
                 url: "http://www.autocar-belgique.com/"
-                titlu: "antrenor belgium"
+                title: "antrenor belgium"
                 html: "Transportul cu autocarul"
             storageBelgium:
                 url: "http://www.entrepot-belgique.com/"
-                titlu: "Belgia de stocare"
+                title: "Belgia de stocare"
                 html: "Stocare"
 slider:
-    titlu: Transport-international.com
-    subtitlul: Referința transportului în Europa și pe plan internațional
+    title: Transport-international.com
+    subTitle: Referința transportului în Europa și pe plan internațional
     globeTerrestre:
         alt: globul terestru
-    slide-uri:
-        în primul rând: Transportul internațional este <strong> gratuit </ strong> disponibil pentru întreprinderile mici și mijlocii, expeditorii, asociațiile și persoanele fizice pentru a le ajuta <strong> să găsească rapid și ușor profesioniști în domeniul transporturilor </ strong> în Europa.
-        al doilea: directorul de transport vă va oferi răspunsuri rapide și exacte privind căutarea unui profesionist pentru toate tipurile de transport la nivel local și chiar internațional.
-        al treilea: cu mai mult de <strong> 135000 TRANSPORTERI menționați în 23 de țări </ strong>, Transportul internațional este ghidul de transport În Europa, logistică și navlosire.
+    slides:
+        first: Transportul internațional este <strong> gratuit </strong> disponibil pentru întreprinderile mici și mijlocii, expeditorii, asociațiile și persoanele fizice pentru a le ajuta <strong> să găsească rapid și ușor profesioniști în domeniul transporturilor </strong> în Europa.
+        second: directorul de transport vă va oferi răspunsuri rapide și exacte privind căutarea unui profesionist pentru toate tipurile de transport la nivel local și chiar internațional.
+        third: cu mai mult de <strong> 135000 TRANSPORTERI menționați în 23 de țări </strong>, Transportul internațional este ghidul de transport În Europa, logistică și navlosire.
 register:
     mainTitle: înregistrare
-    forma:
+    form:
         username: numele de utilizator
-        parola: parola dvs.
-        confirmați: Confirmarea parolei
+        password: parola dvs.
+        confirm: Confirmarea parolei
         siret: siretul tău
         corporateName: numele companiei
-        cifra de afaceri: Cifra de afaceri
+        turnover: Cifra de afaceri
         companyName: numele companiei dvs.
-        forța de muncă: numărul de angajați
+        workforce: numărul de angajați
         legalForm: Forma juridică
-        unități: numărul de unități
-conectare:
+        establishments: numărul de unități
+login:
     mainTitle: conexiune
-căutare:
+search:
     mainTitle: Căutarea dvs.
-    forma:
-        titlu:
-            locație: Locație
+    form:
+        title:
+            location: Locație
         mainTitle: Îmbunătățiți căutarea
-        chirie:
+        location:
             title1: Această companie are sediul în
             title2: Această companie servește
-            titlu3: Activitate
+            title3: Activitate
         basedAt:
-            opțiune:
-                locație: Locație
+            option:
+                location: Locație
                 allLocation: toate locațiile
-                Departamentul: Departamentul
-                tot Departamentul: toate departamentele
+                department: Departamentul
+                allDepartment: toate departamentele
 
-        activitatea:
-            activități: Activitate
-            Activitatea AllActivities
-        alocație:
-            activități: Prestiții
+        activity:
+            activities: Activitate
+            AllActivities: Toate activitățile
+        allowance:
+            activities: Prestiții
             AllActivities: toate serviciile
-        la:
-            opțiune:
-                locație: Locație
+        to:
+            option:
+                location: Locație
                 allLocation: toate locațiile
-                Departamentul: Departamentul
-                tot Departamentul: toate departamentele
-    rezultate:
-        Contact:
-            titlu: Contact
-        site-ul:
-            titlu: site web
-        profil:
-            titlu: consultați cardul
+                department: Departamentul
+                allDepartment: toate departamentele
+    results:
+        contact:
+            title: Contact
+        website:
+            title: site web
+        profile:
+            title: consultați cardul
         mainTitle: Lista furnizorilor
-    trimiteți: Îmbunătățiți căutarea
+    submit: Îmbunătățiți căutarea
     reload: căutare nouă
 
 professionalProfile:
     explainTax: "* Costul de conectare va fi de 2,99 € pe apel. Acest număr valabil de 5 minute nu este numărul destinatarului, ci numărul unui serviciu care permite conexiunea cu acesta. Acest serviciu este publicat de Directorul Transporturilor. "
     whyThisNumber: "De ce acest număr?"
-    Informație despre companie:
-    telefon: Telefon
+    companyInformation: Informații despre companie
+    phone: Telefon
     companyName: Numele companiei
-    Adresă: Adresa
+    adress: Adresă
     seePlan: Vedeți harta
     mail: adresa de e-mail
     webSite: site web
     companyManager: Manager al companiei
     salesManager: Manager de vânzări
-    Forța de muncă: Forța de muncă
+    workforce: Forța de muncă
     vehiclesNbr: Numărul de vehicule
-    Înființare: Numărul de unități
-    cifra de afaceri: Cifra de afaceri
-    materiale: echipamente pentru companii
-    servicii: Servicii
-    forma:
-        nume: "Numele dvs."
+    establishmentsNbr: Numărul de unități
+    turnover: Cifra de afaceri
+    materials: echipamente pentru companii
+    services: Servicii
+    form:
+        name: "Numele dvs."
         email: "E-mailul dvs."
-        mesaj: "Mesajul dvs."
-        Antispam: "Antispam"
-        trimiteți: "Trimiteți!"
-    indemnizație: "Beneficii"
-    prezentare: "Prezentare"
+        message: "Mesajul dvs."
+        antispam: "Antispam"
+        submit: "Trimiteți!"
+    allowance: "Beneficii"
+    presentation: "Prezentare"
     contact: "Contact"
 
-acasă:
-    Link-uri:
+home:
+    links:
         charter:
-            subtitlu: "Charterers pentru a organiza livrarea bunurilor dvs.:"
+            subtitle: "Charterers pentru a organiza livrarea bunurilor dvs.:"
         transportOfGoods:
-            subtitlu: "Profesioniști pentru transportul tuturor bunurilor dvs."
+            subtitle: "Profesioniști pentru transportul tuturor bunurilor dvs."
         rentWithDrive:
-            subtitrare: "Toți chiriașii profesioniști cu furnizarea de șoferi specializați:"
-        taxiuri:
-            subtitrare: "Pentru călătoriile zilnice sau excepționale, găsiți rapid taxiul dvs. oriunde în lume:"
-        logistica:
-            subtitlul: "Managementul fluxurilor dvs. fizice susținute de specialiști profesioniști:"
-        depozitare:
-            subtitlul: "Găsiți profesioniști din întreaga lume pentru depozitarea bunurilor dvs."
+            subtitle: "Toți chiriașii profesioniști cu furnizarea de șoferi specializați:"
+        taxis:
+            subtitle: "Pentru călătoriile zilnice sau excepționale, găsiți rapid taxiul dvs. oriunde în lume:"
+        logistic:
+            subtitle: "Managementul fluxurilor dvs. fizice susținute de specialiști profesioniști:"
+        storage:
+            subtitle: "Găsiți profesioniști din întreaga lume pentru depozitarea bunurilor dvs."
         passengerTransport:
-            subtitlu: "Profesioniștii în domeniul transportului de pasageri sunt la dispoziția dumneavoastră:"
-    Jumbotron:
-        suntYouTransporter: "Sunteți un transportator"
-        abonați-vă: "Înscrieți-vă, este gratuit!"
+            subtitle: "Profesioniștii în domeniul transportului de pasageri sunt la dispoziția dumneavoastră:"
+    jumbotron:
+        areYouTransporter: "Sunteți un transportator"
+        subscribe: "Înscrieți-vă, este gratuit!"
         iSubscribe: "Abonați-mă!"
         aldready: "Deja v-ați înregistrat?"
-        conexiune: "Log in"
-        ugotPassword: "Parola uitată"
-        pentruAnyRequest: "Pentru orice solicitare"
-        disponibile: "de luni până vineri între orele 9:00 și 18:00"
+        connection: "Log in"
+        forgotPassword: "Parola uitată"
+        forAnyRequest: "Pentru orice solicitare"
+        available: "de luni până vineri între orele 9:00 și 18:00"
 
-jos:
-    NewSubscribers:
+bottom:
+    newSubscribers:
         alt: "director de transport internațional"
         mainLink: "Noii înregistrați"
     transportDirectory:
@@ -262,453 +262,453 @@ jos:
         h5: "Aveți nevoie de un depozit?"
         htmlLink: "Ghidul magazinului"
 
-NewSubscribers:
+newSubscribers:
     h1: "Noii solicitanți ai înregistrării"
-    legenda: "Contactați profesionistul"
+    legend: "Contactați profesionistul"
     mainTitle: "Noii solicitanți ai înregistrării"
-    subtitleHtml: "Acești profesioniști în transport, logistică, depozitare ... s-au înregistrat gratuit pe directorul nostru și ne-au încredere în dezvoltarea afacerii lor".
-    abonați-vă: "Înscrieți-vă, este gratuit!"
+    subtitleHtml: "Acești profesioniști în transport, logistică, depozitare ... s-au înregistrat gratuit pe directorul nostru și ne-au încredere în dezvoltarea afacerii lor"
+    subscribe: "Înscrieți-vă, este gratuit!"
 
 meta:
-    acasă:
+    home:
         og:
             site_name: "Transport internațional"
-    căutare:
-        descriere: "Găsiți un profesionist cu transport internațional: companii din întreaga lume"
+    search:
+        description: "Găsiți un profesionist cu transport internațional: companii din întreaga lume"
         descriptionNext: "a cărei activitate este"
-        descrierePrescrierea: "a căror prezentare este"
+        descriptionPrestation: "a căror prezentare este"
         og:
             site_name: "Transport internațional"
     register:
-        titlu: "Transportul internațional - înregistrarea companiei"
-        descriere: "Înregistrați-vă gratuit în directorul de transport din Europa și din străinătate și bucurați-vă de o vizibilitate largă"
-        cuvinte cheie: "mesaje"
+        title: "Transportul internațional - înregistrarea companiei"
+        description: "Înregistrați-vă gratuit în directorul de transport din Europa și din străinătate și bucurați-vă de o vizibilitate largă"
+        keywords: "mesaje"
         og:
-            titlu: "Transportul internațional - înregistrarea companiei"
+            title: "Transportul internațional - înregistrarea companiei"
             site_name: "Transport internațional"
-            descriere: "Înregistrați-vă gratuit în directorul de transport din Europa și din străinătate și bucurați-vă de o vizibilitate largă"
-    NewSubscribers:
-        titlu: "Transportul internațional - noii solicitanți de înregistrare"
-        descriere: "Vedeți cei mai recenți profesioniști enumerați în Directorul european pentru transporturi internaționale"
-        cuvinte-cheie: "transport internațional, înregistrat, profesioniști"
+            description: "Înregistrați-vă gratuit în directorul de transport din Europa și din străinătate și bucurați-vă de o vizibilitate largă"
+    newSubscribers:
+        title: "Transportul internațional - noii solicitanți de înregistrare"
+        description: "Vedeți cei mai recenți profesioniști enumerați în Directorul european pentru transporturi internaționale"
+        keywords: "transport internațional, înregistrat, profesioniști"
         og:
-            titlu: "Transportul internațional - noii solicitanți de înregistrare"
+            title: "Transportul internațional - noii solicitanți de înregistrare"
             site_name: "Transport internațional"
-            descriere: "Vedeți cei mai recenți profesioniști enumerați în Directorul european pentru transporturi internaționale"
+            description: "Vedeți cei mai recenți profesioniști enumerați în Directorul european pentru transporturi internaționale"
     professionalProfile:
-        descriere: "Contactați compania __SOCIETY__ la __ADDRESS__, activitate __ACTIVITIES__ Informații: adresa, telefon, plan de acces - __URI__"
+        description: "Contactați compania __SOCIETY__ la __ADDRESS__, activitate __ACTIVITIES__ Informații: adresa, telefon, plan de acces - __URI__"
         someTrad:
             transport: "transport"
-            logistică: "logistică"
+            logistics: "logistică"
             charter: "navlosirea"
-            călătorii: "transportul de călători"
-            relocare: "mutați"
-            depozitare: "depozitare"
-            rentWithDriver: "închiriere cu șofer"
-            taxiuri: "taxiuri"
+            travelers: "transportul de călători"
+            relocation: "mutați"
+            storage: "depozitare"
+            rentalWithDriver: "închiriere cu șofer"
+            taxis: "taxiuri"
         siteName: "Transport internațional"
 
 legalinformation:
     mainTitle: "INFORMAȚII JURIDICE"
     html: |
-        <strong> CONDIȚII </ strong> <br>
+        <strong> CONDIȚII </strong> <br>
         Înregistrarea în directorul de transport rutier este gratuită. <br>
         Pentru a comunica pe site-ul nostru, consultați tarifele și condițiile noastre. Informațiile conținute în acest site sunt cele mai exacte, în ciuda atenției noastre, dacă observați o eroare sau o ommisie, nu ezitați să ne scrieți: <a href = "mailto: webmaster@annuaire-des-transports.com "> webmaster@manager-of-transportations.com </a>
         <br>
-        <strong> DIRECTORĂ TRANSPORT </ strong> <br>
+        <strong> DIRECTORĂ TRANSPORT </strong> <br>
         ¤ Directorul de transport nu își asumă răspunderea pentru utilizarea sau consecințele, private sau profesionale, care rezultă din utilizarea serviciilor noastre. <br>
         ¤ De asemenea, refuză orice responsabilitate în cazul informațiilor eronate sau omitete. <br>
         ¤ Editorul nu poate garanta în niciun caz calitatea și fiabilitatea serviciilor oferite de companiile listate în acest director și, prin urmare, le eliberează de orice răspundere în cazul unui litigiu între utilizatorii acestui serviciu. <br>
         <br>
-        <strong> INFORMATICĂ ȘI LIBERTĂȚI </ strong> <br>
+        <strong> INFORMATICĂ ȘI LIBERTĂȚI </strong> <br>
         În conformitate cu Legea privind protecția datelor din 6 ianuarie 1978, vă informăm că aveți dreptul de a accesa, modifica, corecta și șterge contribuția. <br>
         Anuarul transporturilor este declarat la CNIL sub nr. 718712. <br>
         Pentru a vă exercita acest drept, vă rugăm să contactați: <a href="mailto:webmaster@annuaire-des-transports.com"> webmaster@annuaire-des-transports.com </a> <br>
         <br>
-        <strong> CONTRAFACON </ strong> <br>
+        <strong> CONTRAFACON </strong> <br>
         Orice reproducere sau reprezentare, totală sau parțială, în alte scopuri, pe orice suport, este interzisă. Nerespectarea acestei interdicții constituie o încălcare care poate genera răspunderea civilă și penală a contravenientului. Informațiile conținute în acest serviciu nu sunt obligatorii și pot fi modificate fără notificare. <br>
         <br>
-        <strong> EDITOR </ strong> <br>
-        <p> <a href="http://www.webdesign-graphiste.com"> site-ul de cultură"> Webdesign Graphic Designer </a> <br>
-            5 Drum Al Vigné <br>
-            31140 MONTBERON </ p>
-        <p> Contact comercial: Jean-Paul Alibert <br>
-            Telefon: +33 5 61 57 91 08 </ p>
+        <strong> EDITOR </strong> <br>
+        <p><a href="http://www.webdesign-graphiste.com" title="crearea de pagini web"> Webdesign Graphiste </a> <br>
+            5, chemin Al Vigné<br>
+            31140 MONTBERON </p>
+        <p>Contact comercial: Jean-Paul Alibert <br>
+            Telefon: +33 5 61 57 91 08 </p>
 
-de stabilire a prețurilor:
+pricing:
     mainTitle: "TARIFE ȘI CONDIȚII"
     html: |
-        <Article>
+        <article>
                 <table border = "0" cellspacing = "0" cellpadding = "3">
-        <Tbody>
-        <Tr>
-        <td> <strong> COMUNICĂRI ÎN DIRECTORUL TRANSPORTULUI </ strong> <br> <br> Transport-international.com este un instrument de referință în sectorul transporturilor. <br> <br> Puteți promova compania dvs., indiferent dacă sunteți transportator sau furnizor de materiale legate de transport (vânzarea de camioane, întreținere etc.) SEO este gratuit pentru toate companiile transport care doresc să apară într-una din secțiunile din Anuarul transporturilor. <br> Pur și simplu completați formularul nostru online <br> La primirea cererii dvs., unul dintre angajații noștri va lua legătura cu dvs. pentru a completa detaliile activităților și destinațiilor. <br> <br> Cu toate acestea, aveți o ofertă comercială economică și scalabilă pentru a dezvolta planuri de comunicare rentabile. <br> <br> <strong> CARDURI PERSONALIZATE: </ strong> <br> <br> Aceasta este cartea dvs. de vizită de pe Internet timp de un an. <br> <br> Datorită unei plasări în primele pagini în timpul căutărilor, vă permite să optimizați vizibilitatea companiei dvs. în The Directory. <br> <br> În plus, beneficiați de primirea de cereri de e-mail (e-mail) pentru citate. <br> Un avantaj competitiv decisiv <br>
-        <Ul>
-        <li> Lista companiilor dvs. este favorizată în listă, în timpul căutărilor. </ Li>
-        <li> Puteți insera logo-ul companiei dvs., precum și fotografii. </ Li>
-        <li> Cutiile de text vă permit să completați înregistrarea. </ Li>
-        </ Ul>
-        <br> Astfel, utilizatorii directorului vor fi pe deplin informați cu privire la capacitatea companiei dvs. de a-și satisface nevoile diferite. <br> <br> Contactați managerul de vânzări pentru mai multe informații: <a href="mailto:publicite@office-of-transportation.com"> publicite@transportation-directory.com </a> </ td>
-        </ Tr>
-        </ Tbody>
-        </ Table>
-        <p align = "center"> & nbsp; </ p>
+        <tbody>
+        <tr>
+        <td><strong> COMUNICĂRI ÎN DIRECTORUL TRANSPORTULUI </strong> <br> <br> Transport-international.com este un instrument de referință în sectorul transporturilor. <br> <br> Puteți promova compania dvs., indiferent dacă sunteți transportator sau furnizor de materiale legate de transport (vânzarea de camioane, întreținere etc.) SEO este gratuit pentru toate companiile transport care doresc să apară într-una din secțiunile din Anuarul transporturilor. <br> Pur și simplu completați formularul nostru online <br> La primirea cererii dvs., unul dintre angajații noștri va lua legătura cu dvs. pentru a completa detaliile activităților și destinațiilor. <br> <br> Cu toate acestea, aveți o ofertă comercială economică și scalabilă pentru a dezvolta planuri de comunicare rentabile. <br> <br> <strong> CARDURI PERSONALIZATE: </strong> <br> <br> Aceasta este cartea dvs. de vizită de pe Internet timp de un an. <br> <br> Datorită unei plasări în primele pagini în timpul căutărilor, vă permite să optimizați vizibilitatea companiei dvs. în The Directory. <br> <br> În plus, beneficiați de primirea de cereri de e-mail (E-mail) pentru citate. <br> Un avantaj competitiv decisiv <br>
+        <ul>
+        <li>Lista companiilor dvs. este favorizată în listă, în timpul căutărilor. </li>
+        <li>Puteți insera logo-ul companiei dvs., precum și fotografii. </li>
+        <li>Cutiile de text vă permit să completați înregistrarea. </li>
+        </ul>
+        <br> Astfel, utilizatorii directorului vor fi pe deplin informați cu privire la capacitatea companiei dvs. de a-și satisface nevoile diferite. <br> <br> Contactați managerul de vânzări pentru mai multe informații: <a href="mailto:publicite@office-of-transportation.com"> publicite@transportation-directory.com </a> </td>
+        </tr>
+        </tbody>
+        </table>
+        <p align = "center">&nbsp;</p>
         <table border = "0" cellspacing = "0" cellpadding = "0">
-        <Tbody>
-        <Tr>
+        <tbody>
+        <tr>
         <td colspan = "2">
-        <p> TRANSPORTATORII RATELOR (abonament anual fără taxă) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>TRANSPORTATORII RATELOR (abonament anual fără taxă) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <h3> Abonament de bază (primirea automată a cererilor de ofertă) </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3>Abonament de bază (primirea automată a cererilor de ofertă) </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> din zona de pornire: </ p>
-        </ Td>
+        <p>din zona de pornire: </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p style = "text-align: right;"> 320 € (3.500 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p style = "text-align: right;"> 320 € (3.500 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <H3> Informații: </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
-        <td width = "532" valign = "top"> dintr-o zonă de pornire suplimentară </ td>
-        <td width = "200" = 170 € (1.870 MAD) </ p> </ td>
-        </ Tr>
-        <Tr>
-        <td> Logo-ul dvs. </ td>
-        <p> <p style = "text-align: right;"> 70 € (770 MAD) </ p> </ td>
-        </ Tr>
-        <Tr>
+        <h3>Informații: </h3>
+        </td>
+        </tr>
+        <tr>
+        <td width = "532" valign = "top"> dintr-o zonă de pornire suplimentară </td>
+        <td width="200" valign="top"><p style="text-align: right;">170 € (1.870 MAD)</p></td>
+        </tr>
+        <tr>
+        <td>Logo-ul dvs<br></td>
+        <td><p style="text-align: right;">70 € (770 MAD)</p></td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> O fotografie </ p>
-        </ Td>
+        <p>O fotografie </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 50 € (550 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 50 € (550 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Două fotografii </ p>
-        </ Td>
+        <p>Două fotografii </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 70 € (770 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 70 € (770 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Trei fotografii </ p>
-        </ Td>
+        <p>Trei fotografii </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 90 € (990 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
-        <td> Pagina dvs. web (cu numele de domeniu disponibil) </ td>
-        <td> 100 € (1,100 MAD) </ p>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 90 € (990 MAD) </p>
+        </td>
+        </tr>
+        <tr>
+        <td>Pagina dvs. web (cu numele de domeniu disponibil) </td>
+        <td><p style="text-align: right;">100 € (1.100 MAD)</p></td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Link la site-ul dvs. web </ p>
-        </ Td>
+        <p>Link la site-ul dvs. web </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 90 € (990 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 90 € (990 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
-        <td colspan = "2"> </ td>
-        </ Tr>
-        <Tr>
-        <td colspan = "2"> </ td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
+        <td colspan = "2"> </td>
+        </tr>
+        <tr>
+        <td colspan = "2"> </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <h3> Formula A: Site-uri standard </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3>Formula A: Site-uri standard </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Referința site-ului găzduită și referită </ p>
-        </ Td>
+        <p>Referința site-ului găzduită și referită </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 1.020 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 1.020 € </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Referința site-ului găzduită, menționată și administrabilă </ p>
-        </ Td>
+        <p>Referința site-ului găzduită, menționată și administrabilă </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> € 1,320 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1,320 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Traducerea: limba suplimentară </ p>
-        </ Td>
+        <p>Traducerea: limba suplimentară </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 300 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 300 € </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <p> CARDURI DE AFACERI ELECTRONICE (Cheltuieli tehnice și costuri de proiectare pe cotații) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>CARDURI DE AFACERI ELECTRONICE (Cheltuieli tehnice și costuri de proiectare pe cotații) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
+        <p>&nbsp;</p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> & nbsp; </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Pachetul cu 50 de copii gravate </ p>
-        </ Td>
+        <p>Pachetul cu 50 de copii gravate </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 1.300 EUR </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 1.300 EUR </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Pachetul de 500 de copii copiat </ p>
-        </ Td>
+        <p>Pachetul de 500 de copii copiat </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 2.700 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 2.700 € </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Pachetul de 1000 de exemplare apăsat </ p>
-        </ Td>
+        <p>Pachetul de 1000 de exemplare apăsat </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 3.460 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 3.460 € </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2">
-        <p> <strong> RATELE FURNIZORILOR </ strong> (abonament anual fără taxă) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p><strong>RATELE FURNIZORILOR </strong> (abonament anual fără taxă) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <h3> Formularul B: Solicitare de primire automată </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3> Formularul B: Solicitare de primire automată </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Fișa tehnică prezentă pe întreaga țară </ p>
-        </ Td>
+        <p>Fișa tehnică prezentă pe întreaga țară </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 790 € (8,690 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 790 € (8,690 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Fișa tehnică prezentă într-o țară suplimentară </ p>
-        </ Td>
+        <p>Fișa tehnică prezentă într-o țară suplimentară </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 250 € (2.750 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 250 € (2.750 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Logo-ul dvs. </ p>
-        </ Td>
+        <p>Logo-ul dvs. </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 250 € (2.750 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 250 € (2.750 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Link la site-ul dvs. web </ p>
-        </ Td>
+        <p> Link la site-ul dvs. web </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 420 € (4,620 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 420 € (4,620 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" width = "532" valign = "sus">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> & nbsp; </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <h3> Formula C: Site-uri standard </ h3>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <h3> Formula C: Site-uri standard </h3>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Site-ul standard găzduit și referit </ p>
-        </ Td>
+        <p> Site-ul standard găzduit și referit </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> € 1,520 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1,520 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Referința site-ului găzduită, menționată și administrabilă </ p>
-        </ Td>
+        <p>Referința site-ului găzduită, menționată și administrabilă </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> € 1,820 </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1,820 </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Traducerea: limba suplimentară </ p>
-        </ Td>
+        <p>Traducerea: limba suplimentară </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 420 € </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 420 € </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" width = "532" valign = "sus">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> & nbsp; </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" width = "532" valign = "sus">
-        <p align = "right"> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> & nbsp; </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2">
-        <p> <strong> BANDURI DE PUBLICITATE </ strong> </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p><strong>BANDURI DE PUBLICITATE </strong> </p>
+        </td>
+        </tr>
+        <tr>
         <td colspan = "2" valign = "sus">
-        <P> & nbsp; </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p>&nbsp;</p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Pachet lunar (1 lună) </ p>
-        </ Td>
+        <p>Pachet lunar (1 lună) </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> 990 € (10.890 MAD) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> 990 € (10.890 MAD) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
 
-        <p> Pachetul trimestrial (3 luni) </ p>
-        </ Td>
+        <p>Pachetul trimestrial (3 luni) </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> € 1,990 (MAD 21,890) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 1,990 (MAD 21,890) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Pachetul de șase luni (6 luni) </ p>
-        </ Td>
+        <p>Pachetul de șase luni (6 luni) </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> € 2,990 (MAD 32,890) </ p>
-        </ Td>
-        </ Tr>
-        <Tr>
+        <p align = "right"> € 2,990 (MAD 32,890) </p>
+        </td>
+        </tr>
+        <tr>
         <td width = "532" valign = "sus">
-        <p> Taxa anuală (12 luni) </ p>
-        </ Td>
+        <p>Taxa anuală (12 luni) </p>
+        </td>
         <td width = "200" valign = "sus">
-        <p align = "right"> € 3,990 (MAD 43,890) </ p>
-        </ Td>
-        </ Tr>
-        </ Tbody>
-        </ Table>
-        <P> & nbsp; </ p>
-        <p align = "left"> <strong> PUBLISHER </ strong> </ p>
-        <p> <a href="http://www.webdesign-graphiste.com"> Site-ul de creare a site-ului"> Webdesign Graphic Designer </a> <br> 5, chemin Alvigne <br> 31140 MONTBERON FRANCE </ p>
-        <p> Contact de vânzări: Jean-Paul Alibert - Telefon: +33 5 61 57 91 08 </ p>
-        </ Postul>
-eroare:
+        <p align = "right"> € 3,990 (MAD 43,890) </p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p align = "left"> <strong> PUBLISHER </strong> </p>
+        <p><a href="http://www.webdesign-graphiste.com" title="Site-ul de creare a site-ului"> Webdesign Graphic Designer </a> <br> 5, chemin Alvigne <br> 31140 MONTBERON FRANCE </p>
+        <p>Contact de vânzări: Jean-Paul Alibert - Telefon: +33 5 61 57 91 08 </p>
+        </article>
+error:
     404:
         h1: "Hopa, a apărut o eroare"
         text: "Pagina __PAGE__ nu există"
 
-forma:
+form:
     legalInformations:
         siret: "siret"
         corporateName: "Numele companiei dvs."
         CompanyName: "Numele companiei dvs."
         LegamForm: "formă juridică"
-        Cifra de afaceri: "Cifra de afaceri"
+        Turnover: "Cifra de afaceri"
         workforceNbr: "Participare"
-        ÎnființareNbr: "Numărul de unități"
-    Inchiriere:
-        Adresa: "Adresa"
-        cod poștal: "Cod poștal"
-        oraș: "Orașul"
-        locație: "locație"
-    Contact:
-        telefon: "Telefon"
+        EstablishmentNbr: "Numărul de unități"
+    Location:
+        adress: "Adresa"
+        postalCode: "Cod poștal"
+        city: "Orașul"
+        location: "locație"
+    contact:
+        phone: "Telefon"
         fax: "Numărul de fax"
         contact: "Persoana de contact"
         webSite: "Site-ul dvs."
     coreBusiness:
         transport: "Transport marfă"
-        logistică: "logistică"
+        logistics: "logistică"
         charter: "navlosirea"
-        Călătorii: "Călători"
-        Relocarea: "Mutarea"
-        depozitare: "depozitare"
-        rentWithDriver: "Închiriere cu sofer"
-        taxiuri: "Taxi"
-    utilizator:
-        nume de utilizator: "E-mailul dvs."
-    manageri:
+        travelers: "Călători"
+        relocation: "Mutarea"
+        storage: "depozitare"
+        rentalWithDriver: "Închiriere cu sofer"
+        taxis: "Taxi"
+    user:
+        username: "E-mailul dvs."
+    managers:
         companyManager: "Manager al companiei"
-        managerManager: "Persoana responsabilă de operațiuni"
+        operationManager: "Persoana responsabilă de operațiuni"
         salesManager: "Persoană de cumpărare"
-    despre:
-        isoCertificare: "Certificare ISO"
-        sumar: "Rezumat"
+    about:
+        isoCertification: "Certificare ISO"
+        summary: "Rezumat"
         rangeAction: "raza de acțiune"
-        servicii: "Serviciile pe care le oferiți"
-    Echipament:
-        vehiculNbr: "Numărul de vehicule"
-        materiale: "Materiale"
+        services: "Serviciile pe care le oferiți"
+    equipment:
+        vehicleNbr: "Numărul de vehicule"
+        materials: "Materiale"
