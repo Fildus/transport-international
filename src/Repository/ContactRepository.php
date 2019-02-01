@@ -26,32 +26,82 @@ class ContactRepository extends ServiceEntityRepository
         $this->cache = $cache;
     }
 
+//    /**
+//     * @param string|null $el
+//     *
+//     * @return array
+//     * @throws \Psr\SimpleCache\InvalidArgumentException
+//     */
+//    public function findByPhone(string $el): ?array
+//    {
+//        $key = 'findByPhone-az54za';
+//        if (!$this->cache->has($key)) {
+//            $this->cache->set($key, $this->findAll());
+//        }
+//        $returnArray = [];
+//
+//        /**
+//         * @var $r Contact
+//         */
+//        foreach ($this->cache->get($key) as $r) {
+//            if (preg_match('/' . strtolower($el) . '/', strtolower($r->getPhone()))) {
+//                if (!in_array($r->getPhone(), $returnArray)) {
+//                    $returnArray[] = (string)$r->getPhone();
+//                }
+//            }
+//        }
+//
+//        return $returnArray;
+//    }
+
     /**
-     * @param string|null $el
+     * @param string $el
      *
      * @return array
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function findByPhone(string $el): ?array
+    public function findByPhone(string $el): array
     {
-        $key = 'findByPhone-az54za';
+        $key = md5(__CLASS__ . __METHOD__);
         if (!$this->cache->has($key)) {
-            $this->cache->set($key, $this->findAll());
-        }
-        $returnArray = [];
 
-        /**
-         * @var $r Contact
-         */
-        foreach ($this->cache->get($key) as $r) {
-            if (preg_match('/' . strtolower($el) . '/', strtolower($r->getPhone()))) {
-                if (!in_array($r->getPhone(), $returnArray)) {
-                    $returnArray[] = (string)$r->getPhone();
-                }
+            $qb = $this->createQueryBuilder('c')
+                ->select('c.id', 'c.phone')
+                ->getQuery()
+                ->getResult();
+
+            $return = [];
+            /** @var $item Contact */
+            foreach ($qb as $item) {
+                $intToString = [];
+                preg_match_all('#\d+#', $item['phone'], $intToString);
+                $intToString = implode('', $intToString[0]);
+                $return[$item['id']] = [
+                    'phone' => $item['phone'],
+                    'intToString' => $intToString
+                ];
+            }
+            $this->cache->set($key, $return, 86400);
+        }
+        $allNumbers = $this->cache->get($key);
+
+        $fullSearch = [];
+        preg_match_all('#\d+#', $el, $fullSearch);
+        $el = implode('', $fullSearch[0]);
+
+        $i = 0;
+        $return = [];
+        foreach ($allNumbers as $k => $v) {
+            if (preg_match('#' . $el . '#', $v['intToString'])) {
+                $return[] = $v['phone'];
+                $i++;
+            }
+            if ($i > 10){
+                return $return;
             }
         }
 
-        return $returnArray;
+        return $return;
     }
 
     /**

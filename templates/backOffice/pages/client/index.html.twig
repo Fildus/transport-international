@@ -40,6 +40,10 @@
                 {{ form_row(searchForm.contract, {"attr":{"class":"form-control form-control-sm"}}) }}
                 {{ form_row(searchForm.haveEmail, {"attr":{"class":"form-control form-control-sm"}}) }}
             </div>
+            <div class="col-4">
+                <h3 class="tinyTitleh2">Recherche par Id</h3>
+                {{ form_row(searchForm.id, {"attr":{"class":"form-control form-control-sm"}}) }}
+            </div>
         </div>
         <button type="submit" class="btn btn-outline-primary col-12 mt-2">Filtrer</button>
         {{ form_end(searchForm) }}
@@ -50,18 +54,28 @@
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
+                {#<th>Entreprise</th>#}
+                {#<th>Adresse</th>#}
+                {#<th>Email</th>#}
+
+                <th>id (new)</th>
+                <th>id (old)</th>
                 <th>Entreprise</th>
                 <th>Adresse</th>
-                <th>Email</th>
+                <th>Télephone</th>
+
+
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             {% for c in clients %}
                 <tr>
+                    <td class="text-center">{{ c.id }}</td>
+                    <td class="text-center">{{ c.idOldDatabase }}</td>
                     <td>{{ c.legalInformation.corporateName }}</td>
-                    <td>{{ c.location.location.translation }}</td>
-                    <td>{{ c.user.username }}</td>
+                    <td>{{ c.location.address~' '~c.location.postalCode~' '~c.location.city }}</td>
+                    <td>{{ c.contact.phone }}</td>
                     <td class="text-center">
                         <a href="{{ path('_admin_client_edit_legalInformation', {'clientId': c.id}) }}" title="Edition">
                             <i class="far fa-edit mr-2"></i>

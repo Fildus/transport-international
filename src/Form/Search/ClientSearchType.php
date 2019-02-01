@@ -88,12 +88,17 @@ class ClientSearchType extends AbstractType
             ->add('haveEmail', ChoiceType::class, [
                 'required' => false,
                 'label' => false,
-                'attr'=>['placeholder' => 'Dispose d\'un email?'],
+                'attr' => ['placeholder' => 'Dispose d\'un email?'],
                 'choices' => [
                     'Indifférent' => null,
                     'Possède un email' => 1,
                     'Ne possède pas d\'email' => 0
                 ]
+            ])
+            ->add('id', IntegerType::class, [
+                'required' => false,
+                'label' => false,
+                'attr' => ["placeholder" => 'Id']
             ]);
     }
 

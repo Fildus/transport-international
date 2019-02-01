@@ -713,3 +713,5 @@ form:
     equipment:
         vehicleNbr: "Nombre de véhicules"
         materials: "Matériels"
+number:
+    price: "Service 2.99€ / appel + prix appel"

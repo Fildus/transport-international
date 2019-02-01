@@ -192,7 +192,8 @@
                                             {{ form_row(form.message) }}
                                             {{ form_row(form.antispam) }}
                                             <div class="text-right">
-                                                <button type="submit" class="btn btn-success">{{ 'professionalProfile.form.submit' | trans }}</button>
+                                                <button type="submit"
+                                                        class="btn btn-success">{{ 'professionalProfile.form.submit' | trans }}</button>
                                             </div>
                                             {{ form_end(form) }}
                                         </div>
@@ -200,7 +201,19 @@
                                 </form>
                             </div>
                         </div>
-
+                        <div>
+                            <a href="tel:{{ number }}" rel="nofollow" class="containerNumber">
+                                <div class="firstBlock">
+                                    {{ number }}
+                                </div>
+                                <div class="secondBlock">
+                                    <div class="triangle"></div>
+                                    <div>
+                                        {{ 'number.price' | trans }}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

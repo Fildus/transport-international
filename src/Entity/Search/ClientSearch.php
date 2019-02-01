@@ -76,6 +76,11 @@ class ClientSearch
     private $haveEmail;
 
     /**
+     * @var $id int
+     */
+    private $id;
+
+    /**
      * @return int|null
      */
     public function getSiret(): ?int
@@ -325,5 +330,24 @@ class ClientSearch
     public function setHaveEmail(bool $haveEmail): void
     {
         $this->haveEmail = $haveEmail;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId():? int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return ClientSearch
+     */
+    public function setId(int $id): ClientSearch
+    {
+        $this->id = $id;
+        return $this;
     }
 }

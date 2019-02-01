@@ -9,6 +9,7 @@ use App\Entity\ServedZone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Query\Expr;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
@@ -29,16 +30,22 @@ class ClientRepository extends ServiceEntityRepository
      * @var ServedZoneRepository
      */
     private $servedZoneRepository;
+    /**
+     * @var CacheInterface
+     */
+    private $cache;
 
     public function __construct(
         RegistryInterface $registry,
         ActivityRepository $activityRepository,
-        ServedZoneRepository $servedZoneRepository
+        ServedZoneRepository $servedZoneRepository,
+        CacheInterface $cache
     )
     {
         parent::__construct($registry, Client::class);
         $this->activityRepository = $activityRepository;
         $this->servedZoneRepository = $servedZoneRepository;
+        $this->cache = $cache;
     }
 
     /**
@@ -178,6 +185,11 @@ class ClientRepository extends ServiceEntityRepository
             }
         }
 
+        if ($search->getId() !== null) {
+            $qb->orWhere('c.id_oldDatabase =' . $search->getId());
+            $qb->orWhere('c.id =' . $search->getId());
+        }
+
         $qb
             ->getQuery();
 
@@ -300,8 +312,8 @@ class ClientRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('c')
             ->leftJoin('c.legalInformation', 'l')
-            ->where('l.companyName LIKE\''.$name.'\'')
-            ->orWhere('l.companyName LIKE\''.$name.'\'')
+            ->where('l.companyName LIKE\'' . $name . '\'')
+            ->orWhere('l.companyName LIKE\'' . $name . '\'')
             ->getQuery()
             ->getResult();
 
@@ -310,11 +322,11 @@ class ClientRepository extends ServiceEntityRepository
         /**
          * @var $client Client
          */
-        if ($qb !== null && !empty($qb)){
+        if ($qb !== null && !empty($qb)) {
             foreach ($qb as $client) {
                 $return[] = $client->getId();
             }
-            return implode('-',$return);
+            return implode('-', $return);
         }
         return null;
     }

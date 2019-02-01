@@ -90,7 +90,7 @@ class LegalInformationRepository extends ServiceEntityRepository
      */
     public function findByCompanyName($el): array
     {
-        $key = md5($el);
+        $key = md5(__CLASS__ . __METHOD__ . $el);
         if (!$this->cache->has($key)) {
             $strings = explode(' ', $el);
 
@@ -103,7 +103,7 @@ class LegalInformationRepository extends ServiceEntityRepository
             }
             $qb = $qb
                 ->getQuery()
-                ->setMaxResults(20)
+                ->setMaxResults(30)
                 ->getResult();
 
             $return = [];
@@ -111,10 +111,8 @@ class LegalInformationRepository extends ServiceEntityRepository
             foreach ($qb as $item) {
                 $return[] = $item->getCompanyName();
             }
-
-            $this->cache->set($key, $return, 3600);
+            $this->cache->set($key, array_values(array_unique($return)), 86400);
         }
-
         return $this->cache->get($key);
     }
 
