@@ -20,7 +20,8 @@ class RedirectController extends AbstractController
     public function redirectToProfessionalProfile(string $req, ClientRepository $clientRepository): Response
     {
         $test = [];
-        preg_match('/\d+/', $req, $test);
+        preg_match('/\d+\.html/', $req, $test);
+        preg_match('/\d+/', $test[0], $test);
         $client = $clientRepository->findOneBy([
             'id_oldDatabase' => (int)$test[0]
         ]);
