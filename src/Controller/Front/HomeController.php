@@ -23,18 +23,26 @@ class HomeController extends AbstractController
      * @var ServedZoneRepository
      */
     private $servedZoneRepository;
+    /**
+     * @var Locale
+     */
+    private $locale;
 
     /**
      * HomeController constructor.
      *
-     * @param ActivityRepository   $activityRepository
+     * @param ActivityRepository $activityRepository
      * @param ServedZoneRepository $servedZoneRepository
      *
+     * @param Locale $locale
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function __construct(ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository)
+    public function __construct(ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository, Locale $locale)
     {
         $this->activityRepository = $activityRepository;
         $this->servedZoneRepository = $servedZoneRepository;
+        $this->locale = $locale;
+        $locale->setLocale();
     }
 
     /**
@@ -51,16 +59,14 @@ class HomeController extends AbstractController
      *     "pt" : "/",
      *     "ro" : "/",
      * }, name="home")
-     * @param CacheInterface   $cache
+     * @param CacheInterface $cache
      *
-     * @param Request          $request
-     *
-     * @param SessionInterface $session
+     * @param Request $request
      *
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function home(CacheInterface $cache, Request $request, SessionInterface $session, LegalInformationRepository $legalInformationRepository): Response
+    public function home(CacheInterface $cache, Request $request): Response
     {
         $key = 'home-z4d4zd45-' . $request->getLocale();
         if (!$cache->has($key)) {
@@ -75,7 +81,7 @@ class HomeController extends AbstractController
         return new Response($this->renderView('pages/home.html.twig', [
             'activities' => $cache->get($key)['activities'],
             'countries' => $cache->get($key)['countries'],
-            'domain' => $session->get('domain')
+            'domain' => $this->locale->getDomain()
         ]));
     }
 }
