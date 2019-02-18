@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'parts/top.html.twig' %}
+    <div class="container mb-2 mt-2">
+        {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
+    </div>
+    {{ render(controller('App\\Controller\\Front\\RenderController::getSlider')) }}
+
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center text-danger">{{ 'error.404.h1' | trans }}</h1>
+        <h2 class="text-center">{{ 'error.404.text' | trans | replace({'__PAGE__': '<strong>'~app.request.uri~'</strong>' }) | raw }}</h2>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
