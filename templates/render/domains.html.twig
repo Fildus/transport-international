@@ -1,9 +1,8 @@
 {% for k, domain in domains %}
     {% if k != app.request.locale %}
         <li>
-            <a hreflang="{{ domain.domain }}"
-            {#href="{{ 'http://test-'~domain.domain~path(route~'.'~k) }}">#}
-            href="{{ 'http://'~domain.domain }}">
+            <a hreflang="{{ 'https://www.'~domain.domain }}"
+            href="{{ 'https://www.'~domain.domain }}">
             <img src="{{ asset('build/img/front/flags/'~domain.img) }}"
                  alt="{{ domain.hreflang }}">
             </a>

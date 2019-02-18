@@ -33,7 +33,6 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/account, roles: [ROLE_USER, ROLE_ADMIN] }
-        - { path: /*, requires_channel: https }
 
     encoders:
         App\Entity\User: plaintext
