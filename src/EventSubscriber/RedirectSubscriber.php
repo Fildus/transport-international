@@ -14,7 +14,8 @@ class RedirectSubscriber extends AbstractController implements EventSubscriberIn
     {
         $kernelHost = $event->getRequest()->getHttpHost();
         if ((int)preg_match('#^www#', $kernelHost) === 0) {
-            return $this->redirect('https://www.' . $kernelHost);
+            header('Location: ' . 'https://www.' . $kernelHost, true, 301);
+            exit();
         }
     }
 
