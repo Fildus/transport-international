@@ -55,8 +55,8 @@ class XmlService extends AbstractController
      * XmlService constructor.
      *
      * @param LegalInformationRepository $legalInformationRepository
-     * @param Locale                     $locale
-     * @param ContainerInterface         $container
+     * @param Locale $locale
+     * @param ContainerInterface $container
      *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      * @throws \Exception
@@ -147,16 +147,26 @@ class XmlService extends AbstractController
         $lang = ['fr', 'en', 'es', 'de', 'it', 'pt', 'be', 'ad', 'ro', 'ma', 'ci'];
         $content = 'User-agent: *';
         $content .= "\n";
-        foreach ($lang as $l) {
-            $content .= 'Disallow: ' . $this->generateUrl('_login.' . $l);
-            $content .= "\n";
-        }
+        $content .= 'Disallow: ' . '/login';
+        $content .= "\n";
         foreach ($lang as $l) {
             $content .= 'Disallow: ' . $this->generateUrl('_register.' . $l);
             $content .= "\n";
         }
         foreach ($lang as $l) {
             $content .= 'Disallow: ' . $this->generateUrl('account_legalInformation.' . $l);
+            $content .= "\n";
+        }
+        foreach ($lang as $l) {
+            $content .= 'Disallow: ' . $this->generateUrl('account_legalInformation.' . $l);
+            $content .= "\n";
+        }
+        foreach ($lang as $l) {
+            $content .= 'Disallow: ' . $this->generateUrl('_legal_information.' . $l);
+            $content .= "\n";
+        }
+        foreach ($lang as $l) {
+            $content .= 'Disallow: ' . $this->generateUrl('_pricing.'.$l);
             $content .= "\n";
         }
         foreach ($this->siteMapdomains as $item) {
