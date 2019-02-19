@@ -144,11 +144,12 @@ class LegalInformationRepository extends ServiceEntityRepository
         return $returnArray;
     }
 
-    public function findAllOnlySlug()
+    public function findAllOnlySlug(int $max)
     {
         $qb = $this->createQueryBuilder('l')
             ->select('l.slug')
             ->getQuery()
+            ->setMaxResults($max)
             ->getResult();
 
         return $qb;

@@ -83,11 +83,13 @@ class XmlService extends AbstractController
                 'en-GB' => 'en',
                 'gb' => 'en'
             ];
-
+            /**
+             * @todo: ici 1 -> function xml()..
+             */
             $this->content .= '<?xml version="1.0" encoding="UTF-8"?>';
             $this->content .= '
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-            foreach ($this->legalInformationRepository->findAllOnlySlug() as $k => $v) {
+            foreach ($this->legalInformationRepository->findAllOnlySlug(50000) as $k => $v) {
 
                 array_key_exists($domain->getLang(), $convertLang) === true ?
                     $lang = $convertLang[$domain->getLang()] :
@@ -105,13 +107,18 @@ class XmlService extends AbstractController
             $file = fopen($this->project_dir . '/public/' . $siteMapName, 'w+');
             fputs($file, $this->content);
             $this->content = '';
+            /**
+             * jusque là 1
+             */
         }
 
         $this->makeMainXml();
         $this->makeRobot();
 
     }
+    // make Xml
 
+    // make contentXml
     public function makeXml(?string $slug, $domain, $lang)
     {
         if ($slug !== null) {
