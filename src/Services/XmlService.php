@@ -89,7 +89,7 @@ class XmlService extends AbstractController
             $this->content .= '<?xml version="1.0" encoding="UTF-8"?>';
             $this->content .= '
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-            foreach ($this->legalInformationRepository->findAllOnlySlug(50000) as $k => $v) {
+            foreach ($this->legalInformationRepository->findAllOnlySlug(5000) as $k => $v) {
 
                 array_key_exists($domain->getLang(), $convertLang) === true ?
                     $lang = $convertLang[$domain->getLang()] :

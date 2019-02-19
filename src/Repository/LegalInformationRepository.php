@@ -144,13 +144,32 @@ class LegalInformationRepository extends ServiceEntityRepository
         return $returnArray;
     }
 
+    /**
+     * @param int $max
+     * @return mixed
+     * @throws \Psr\SimpleCache\InvalidArgumentException
+     */
     public function findAllOnlySlug(int $max)
     {
+        $key = 'findAllOnlySlug-zdozkdozk';
+        if (!$this->cache->has($key)) {
+            $this->cache->set($key, 0);
+        } else {
+            $nbr = $this->cache->get($key);
+            $nbr++;
+            $this->cache->set($key, $nbr);
+        }
+
         $qb = $this->createQueryBuilder('l')
             ->select('l.slug')
             ->getQuery()
             ->setMaxResults($max)
+            ->setFirstResult($this->cache->get($key) * $max)
             ->getResult();
+
+        if (empty($qb) || $qb === null){
+            $this->cache->delete($key);
+        }
 
         return $qb;
     }
