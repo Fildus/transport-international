@@ -164,7 +164,7 @@ search:
             activities: Activité
             AllActivities: toutes Activité
         allowance:
-            activities: Préstations
+            activities: Prestations
             AllActivities: toutes préstations
         to:
             option:

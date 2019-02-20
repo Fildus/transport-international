@@ -61,14 +61,12 @@ class HomeController extends AbstractController
      * }, name="home")
      * @param CacheInterface $cache
      *
-     * @param Request $request
-     *
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function home(CacheInterface $cache, Request $request): Response
+    public function home(CacheInterface $cache): Response
     {
-        $key = 'home-z4d4zd45-' . $request->getLocale();
+        $key = 'home-z4d4zd45-' . $this->locale->getLocalematched();
         if (!$cache->has($key)) {
             $cache->set($key, [
                 'activities' => $this->activityRepository->getActivities([

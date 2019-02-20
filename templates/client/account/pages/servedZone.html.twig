@@ -3,7 +3,7 @@
 {% block body %}
     {% include 'parts/top.html.twig' %}
     <div class="container">
-        {{ render(controller('App\\Controller\\Front\\renderController::getHeader')) }}
+        {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
     </div>
     {% include 'client/account/parts/header.html.twig' %}
 
@@ -11,7 +11,7 @@
         <div class="row">
             {% include 'client/account/parts/nav.html.twig' %}
             {{ form_start(form) }}
-            {{ render(controller('App\\Controller\\Front\\renderController::getCheckboxCascade',
+            {{ render(controller('App\\Controller\\Front\\RenderController::getCheckboxCascade',
                 {'entities': servedZone, 'form': form.children.servedZone.children})) }}
 
             <div class="text-right">
