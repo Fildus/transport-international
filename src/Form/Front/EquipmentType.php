@@ -16,7 +16,7 @@ class EquipmentType extends AbstractType
                 'label' => 'form.equipment.vehicleNbr'
             ])
             ->add('materials', null, [
-                'label' => 'form.equipment.vehicleNbr'
+                'label' => 'form.equipment.materials'
             ]);
     }
 

@@ -5,6 +5,8 @@ namespace App\Form\Front;
 use App\Entity\LegalInformation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,9 +15,12 @@ class LegalInformationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('siret')
-            ->add('corporateName', null, [
-                'label' => 'form.legalInformations.siret'
+            ->add('siret', IntegerType::class, [
+                'label' => 'form.legalInformations.siret',
+                'required' => false
+            ])
+            ->add('corporateName', TextType::class, [
+                'label' => 'form.legalInformations.corporateName'
             ])
             ->add('companyName', null, [
                 'label' => 'form.legalInformations.CompanyName'

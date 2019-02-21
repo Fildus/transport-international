@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AboutRepository")
@@ -88,4 +90,80 @@ class About
 
         return $this;
     }
+
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function isoCertificationValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getIsoCertification();
+//        $min = 5;
+//        $max = 255;
+//        if ((strlen($v) < $min || strlen($v) > $max) && $v !== null) {
+//            $context
+//                ->buildViolation('form.about.validation.isoCertification')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ min }}', $min)
+//                ->setParameter('{{ max }}', $max)
+//                ->addViolation();
+//        }
+//    }
+//
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function summaryValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getSummary();
+//        $min = 5;
+//        $max = 255;
+//        if ((strlen($v) < $min || strlen($v) > $max) && $v !== null) {
+//            $context
+//                ->buildViolation('form.about.validation.summary')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ min }}', $min)
+//                ->setParameter('{{ max }}', $max)
+//                ->addViolation();
+//        }
+//    }
+//
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function rangeActionValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getRangeAction();
+//        $min = 5;
+//        $max = 255;
+//        if ((strlen($v) < $min || strlen($v) > $max) && $v !== null) {
+//            $context
+//                ->buildViolation('form.about.validation.rangeAction')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ min }}', $min)
+//                ->setParameter('{{ max }}', $max)
+//                ->addViolation();
+//        }
+//    }
+//
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function servicesValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getServices();
+//        $min = 50;
+//        $max = 255;
+//        if ((strlen($v) < $min || strlen($v) > $max) && $v !== null) {
+//            $context
+//                ->buildViolation('form.about.validation.services')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ min }}', $min)
+//                ->setParameter('{{ max }}', $max)
+//                ->addViolation();
+//        }
+//    }
 }

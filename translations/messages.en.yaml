@@ -683,7 +683,7 @@ form:
         adress: "Adress"
         postalCode: "postal code"
         city: "city"
-        location: "location"
+        location: "Localiation"
     contact:
         phone: "Phone"
         fax: "Fax number"

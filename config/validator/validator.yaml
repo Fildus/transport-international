@@ -1,0 +1,68 @@
+App\Entity\About:
+    properties:
+        isoCertification:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: about.isoCertification }}
+        summary:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: about.summary }}
+        rangeAction:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: about.rangeAction }}
+        services:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: about.services }}
+
+App\Entity\LegalInformation:
+    properties:
+        siret:
+            - { Regex: { pattern: '/^\d{14}$/', htmlPattern: false, message: legalInformation.siret }}
+        corporateName:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: legalInformation.corporateName }}
+            -   NotNull: ~
+        companyName:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: legalInformation.companyName }}
+            -   NotNull: ~
+        legalForm:
+            -   Choice: ['S.A', 'S.A.R.L', 'E.U.R.L', 'N.P']
+        turnover:
+            - { Regex: { pattern: '/^\d{0,12}$/', htmlPattern: false, message: legalInformation.turnover }}
+        workforceNbr:
+            - { Regex: { pattern: '/^\d{0,6}$/', htmlPattern: false, message: legalInformation.workforceNbr }}
+        establishmentsNbr:
+            - { Regex: { pattern: '/^\d{0,6}$/', htmlPattern: false, message: legalInformation.establishmentsNbr }}
+
+App\Entity\Location:
+    properties:
+        address:
+            - { Regex: { pattern: '/^[\w\ ]{5,255}$/', htmlPattern: false, message: location.address }}
+        postalCode:
+            - { Regex: { pattern: '/^\d{5,10}$/', htmlPattern: false, message: location.postalCode }}
+        city:
+            - { Regex: { pattern: '/^[\w\ ]{2,255}$/', htmlPattern: false, message: location.city }}
+        location:
+            -   NotNull: ~
+
+App\Entity\Contact:
+    properties:
+        phone:
+            - { Regex: { pattern: '/^\d{9,10}$/', htmlPattern: false, message: contact.phone }}
+            -   NotNull: ~
+        fax:
+            - { Regex: { pattern: '/^\d{9,10}$/', htmlPattern: false, message: contact.fax }}
+        contact:
+            - { Regex: { pattern: '/^[\w\ ]{2,255}$/', htmlPattern: false, message: contact.contact }}
+        webSite:
+            - { Regex: { pattern: '/^.{10,255}$/', htmlPattern: false, message: contact.webSite }}
+
+App\Entity\Managers:
+    properties:
+        companyManager:
+            - { Regex: { pattern: '/^[\w\ ]{2,255}$/', htmlPattern: false, message: managers.companyManager }}
+        operationsManager:
+            - { Regex: { pattern: '/^[\w\ ]{2,255}$/', htmlPattern: false, message: managers.operationsManager }}
+        salesManager:
+            - { Regex: { pattern: '/^[\w\ ]{2,255}$/', htmlPattern: false, message: managers.salesManager }}
+
+App\Entity\Equipment:
+    properties:
+        vehiclesNbr:
+            - { Regex: { pattern: '/^\d{1,4}$/', htmlPattern: false, message: equipment.vehiclesNbr }}
+        materials:
+            - { Regex: { pattern: '/^[\w\ ]{2,255}$/', htmlPattern: false, message: equipment.materials }}

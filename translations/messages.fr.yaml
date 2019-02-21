@@ -674,9 +674,9 @@ error:
 form:
     legalInformations:
         siret: "siret"
-        corporateName: "Nom de votre société"
-        CompanyName: "Nom de votre compagnie"
-        LegamForm: "forme légale"
+        corporateName: "Raison sociale *"
+        CompanyName: "Nom commercial *"
+        LegamForm: "Forme légale"
         Turnover: "Chiffre d'affaires"
         workforceNbr: "Effectifs"
         EstablishmentNbr: "Nombre d'établissements"
@@ -684,9 +684,9 @@ form:
         adress: "Adresse"
         postalCode: "Code postal"
         city: "Ville"
-        location: "localisation"
+        location: "localisation *"
     contact:
-        phone: "Téléphone"
+        phone: "Téléphone *"
         fax: "Numéro de fax"
         contact: "Personne à contacter"
         webSite: "Votre site web"
@@ -708,10 +708,10 @@ form:
     about:
         isoCertification: "Certification iso"
         summary: "Sommaire"
-        rangeAction: "rayon d'action"
+        rangeAction: "Rayon d'action"
         services: "Les services que vous proposez"
     equipment:
         vehicleNbr: "Nombre de véhicules"
-        materials: "Matériels"
+        materials: "Matériels de l'entreprise"
 number:
     price: "Service 2.99€ / appel + prix appel"

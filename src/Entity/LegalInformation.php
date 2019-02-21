@@ -169,4 +169,88 @@ class LegalInformation
             $this->slug = (new Slug())->getSlug($this->companyName ?? $this->corporateName) . '-' . random_int(1000, 10000);
         }
     }
+
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function siretValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getSiret();
+//        $length = 14;
+//        if (strlen($v) !== $length && $v !== null) {
+//            $context
+//                ->buildViolation('form.legalInformations.validation.siret')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ length }}', $length)
+//                ->addViolation();
+//        }
+//    }
+
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function corporateNameValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getCorporateName();
+//        $min = 3;
+//        $max = 255;
+//        if (strlen($v) < $min || strlen($v) > $max) {
+//            $context
+//                ->buildViolation('form.legalInformations.validation.corporateName')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ min }}', $min)
+//                ->setParameter('{{ max }}', $max)
+//                ->addViolation();
+//        }
+//    }
+
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function companyNameValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getCompanyName();
+//        $min = 3;
+//        $max = 255;
+//        if (strlen($v) < $min || strlen($v) > $max) {
+//            $context
+//                ->buildViolation('form.legalInformations.validation.CompanyName')
+//                ->setTranslationDomain('messages')
+//                ->setParameter('{{ min }}', $min)
+//                ->setParameter('{{ max }}', $max)
+//                ->addViolation();
+//        }
+//    }
+
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function legalFormValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getLegalForm();
+//        $choices = ['S.A', 'S.A.R.L', 'E.U.R.L', 'N.P'];
+//        if (!in_array($v, $choices)) {
+//            $context
+//                ->buildViolation('form.legalInformations.validation.corporateName')
+//                ->addViolation();
+//        }
+//    }
+
+//    /**
+//     * @param ExecutionContextInterface $context
+//     * @Assert\Callback()
+//     */
+//    public function turnoverValidation(ExecutionContextInterface $context)
+//    {
+//        $v = $context->getValue()->getLegalForm();
+//        if (!in_array($v, $choices)) {
+//            $context
+//                ->buildViolation('form.legalInformations.validation.corporateName')
+//                ->addViolation();
+//        }
+//    }
 }

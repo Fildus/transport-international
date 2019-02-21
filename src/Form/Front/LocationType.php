@@ -40,7 +40,7 @@ class LocationType extends AbstractType
     {
         $builder
             ->add('address', null, [
-                'label' => 'form.Location.adress'
+                'label' => 'form.Location.adress',
             ])
             ->add('postalCode', null, [
                 'label' => 'form.Location.postalCode'

@@ -1,0 +1,34 @@
+about:
+    isoCertification: "Peut être nul ou contenir entre 5 et 255 caractères."
+    summary: "Peut être nul ou contenir entre 5 et 255 caractères."
+    rangeAction: "Peut être nul ou contenir entre 5 et 255 caractères."
+    services: "Peut être nul ou contenir entre 5 et 255 caractères."
+
+legalInformation:
+    siret: "Peut être nul ou contenir 14 caractères."
+    corporateName: "Doit contenir entre 5 et 255 caractères."
+    companyName: "Doit contenir entre 5 et 255 caractères."
+    turnover: "Peut être nul ou contenir jusqu'à 12 chiffres."
+    workforceNbr: "Peut être nul ou contenir jusqu'à 6 chiffres."
+    establishmentsNbr: "Peut être nul ou contenir jusqu'à 6 chiffres."
+
+location:
+    address: "Peut être nul ou doit contenir entre 5 et 255 caractères."
+    postalCode: "Peut être nul ou doit contenir entre 5 et 255 caractères."
+    city: "Peut être nul ou doit contenir entre 5 et 255 caractères."
+    location: "Doit contenir un département valide. Veuillez sélectionner un département proposé via le système."
+
+contact:
+    phone: "Vous devez renseigner un numero de téléphone valide. Sont accéptés les numéros compris entre 9 et 10 chiffres"
+    fax: "Peut être nul. Sont accéptés les numéros compris entre 9 et 10 chiffres"
+    contact: "Peut être nul ou doit contenir entre 2 et 255 caractères."
+    webSite: "Peut être nul ou doit contenir entre 10 et 255 caractères."
+
+managers:
+    companyManager: "Peut être nul ou doit contenir entre 2 et 255 caractères."
+    operationsManager: "Peut être nul ou doit contenir entre 2 et 255 caractères."
+    salesManager: "Peut être nul ou doit contenir entre 2 et 255 caractères."
+
+equipment:
+    vehiclesNbr: "Peut être nul ou doit contenir entre 2 et 255 caractères."
+    materials: "Peut être nul ou doit contenir entre 2 et 255 caractères."
