@@ -1,4 +1,6 @@
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
