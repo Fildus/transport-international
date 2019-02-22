@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Client
 {
@@ -85,6 +86,12 @@ class Client
      * @ORM\OneToMany(targetEntity="App\Entity\Contract", mappedBy="client", cascade={"persist", "remove"})
      */
     private $contract;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", nullable=false, options={"default":false})
+     */
+    private $validated;
 
     public function __construct()
     {
@@ -293,4 +300,32 @@ class Client
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function isValidated(): bool
+    {
+        return $this->validated;
+    }
+
+    /**
+     * @param bool $validated
+     * @return Client
+     */
+    public function setValidated(bool $validated): self
+    {
+        $this->validated = $validated;
+
+        return $this;
+    }
+
+    /**
+     * @ORM\PreFlush()
+     */
+    public function PreFlush()
+    {
+        if ($this->validated === null){
+            $this->validated = 0;
+        }
+    }
 }

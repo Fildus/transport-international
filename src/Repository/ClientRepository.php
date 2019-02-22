@@ -185,9 +185,18 @@ class ClientRepository extends ServiceEntityRepository
             }
         }
 
-        if ($search->getId() !== null) {
-            $qb->orWhere('c.id_oldDatabase =' . $search->getId());
-            $qb->orWhere('c.id =' . $search->getId());
+        if ($search->getContract() !== null) {
+            if ((int)$search->getContract() === 1) {
+                $qb->andWhere('c.contract is not empty');
+            }
+            if ((int)$search->getContract() === 0) {
+                $qb->andWhere('c.contract is empty');
+            }
+        }
+
+        if ($search->isValidated() !== null) {
+            $validated = $search->isValidated() ? 1 : 0;
+            $qb->andWhere('c.validated =' . $validated);
         }
 
         $qb
@@ -197,13 +206,13 @@ class ClientRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param Activity|null   $typeA
-     * @param Activity|null   $typeB
+     * @param Activity|null $typeA
+     * @param Activity|null $typeB
      * @param ServedZone|null $toCountry
      * @param ServedZone|null $toDept
      * @param ServedZone|null $fromCountry
      * @param ServedZone|null $fromDept
-     * @param int             $page
+     * @param int $page
      *
      * @return array
      */
@@ -220,7 +229,7 @@ class ClientRepository extends ServiceEntityRepository
 
         if ($typeA) {
             if ($typeB) {
-                $qb->where('a.id = ' . $typeB->getId());
+                $qb->andWhere('a.id = ' . $typeB->getId());
             } else {
                 $activitiesIds = $this->activityRepository->getActivityPath($typeA);
                 $qb->where($qb->expr()->andX(
@@ -250,6 +259,9 @@ class ClientRepository extends ServiceEntityRepository
                 ));
             }
         }
+
+        $qb = $qb
+            ->where('c.validated = 1');
 
         $qb
             ->distinct()

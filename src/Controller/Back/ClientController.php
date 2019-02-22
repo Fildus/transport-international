@@ -14,6 +14,7 @@ use App\Entity\Managers;
 use App\Entity\Search\ClientSearch;
 use App\Entity\User;
 use App\Form\Back\PasswordClientType;
+use App\Form\Back\ClientValidatedType;
 use App\Form\Front\AboutType;
 use App\Form\Front\ActivityType;
 use App\Form\Front\ContactType;
@@ -396,11 +397,6 @@ class ClientController extends AbstractController
             $this->addFlash('success', 'Les modifications ont bien été pris en compte');
         }
 
-//        $key = 'activityEdit';
-//        if (!$this->cache->has($key)){
-//            $this->cache->set($key, $activityRepository->findByWithTranslation(),3600);
-//        }
-
         return $this->render('backOffice/pages/client/types/activity.html.twig', [
             'form' => $form->createView(),
             'c' => $c,
@@ -489,5 +485,33 @@ class ClientController extends AbstractController
         $this->manager->flush();
 
         return $this->redirectToRoute('_admin_client_index', ['page' => 1]);
+    }
+
+    /**
+     * @Route("/client/{clientId}/validated", name="_edit_validated")
+     * @param ClientRepository $client
+     * @param                  $clientId
+     * @param Request          $request
+     *
+     * @return Response
+     */
+    public function validatedEdit(ClientRepository $client, $clientId, Request $request): Response
+    {
+        $c = $client->find($clientId);
+
+        $form = $this->createForm(ClientValidatedType::class, $c);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->manager->persist($c);
+            $this->manager->flush();
+            $this->addFlash('success', 'Les modifications ont bien été pris en compte');
+        }
+
+        return $this->render('backOffice/pages/client/types/about.html.twig', [
+            'form' => $form->createView(),
+            'c' => $c
+        ]);
     }
 }

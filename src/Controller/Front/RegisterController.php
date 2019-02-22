@@ -6,6 +6,7 @@ namespace App\Controller\Front;
 use App\Entity\Client;
 use App\Services\Locale;
 use App\Form\Front\RegisterClientType;
+use App\Services\Mailer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -47,16 +48,20 @@ class RegisterController extends AbstractController
      *      "ma" : "/inscription",
      *      "ci" : "/inscription",
      * }, name="_register")
-     * @param Request       $request
+     * @param Request $request
      * @param ObjectManager $manager
      *
+     * @param Mailer $mailer
      * @return Response
      */
-    public function register(Request $request, ObjectManager $manager): Response
+    public function register(Request $request, ObjectManager $manager, Mailer $mailer): Response
     {
         if ($this->getUser() !== null) {
             return $this->redirectToRoute('home');
         }
+        /**
+         * @var $client Client
+         */
         $client = new Client();
         $form = $this->createForm(RegisterClientType::class, $client);
 
@@ -66,6 +71,12 @@ class RegisterController extends AbstractController
             $manager->persist($client);
             $manager->flush();
             $this->addFlash('success', 'Votre compte a bien été créé');
+            $mailer->send($client->getUser()->getUsername(), $this->renderView('mail/mail.html.twig', [
+                'content' => [
+                    'url' => 'https://www.transport-international.com' . $this->generateUrl('_admin_client_edit_legalInformation', ['clientId' => $client->getId()]),
+                    'client' => $client
+                ]
+            ]));
             return $this->redirectToRoute('account_legalInformation');
         }
 

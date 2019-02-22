@@ -81,6 +81,11 @@ class ClientSearch
     private $id;
 
     /**
+     * @var boolean
+     */
+    private $Validated;
+
+    /**
      * @return int|null
      */
     public function getSiret(): ?int
@@ -319,7 +324,7 @@ class ClientSearch
     /**
      * @return bool|null
      */
-    public function isHaveEmail():? bool
+    public function isHaveEmail(): ?bool
     {
         return $this->haveEmail;
     }
@@ -335,7 +340,7 @@ class ClientSearch
     /**
      * @return int
      */
-    public function getId():? int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -348,6 +353,25 @@ class ClientSearch
     public function setId(int $id): ClientSearch
     {
         $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isValidated(): ?bool
+    {
+        return $this->Validated;
+    }
+
+    /**
+     * @param bool $Validated
+     * @return ClientSearch
+     */
+    public function setValidated(bool $Validated): self
+    {
+        $this->Validated = $Validated;
+
         return $this;
     }
 }

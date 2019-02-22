@@ -6,6 +6,7 @@
     <div class="row p-5">
         <div class="col-3">
             <div class="nav-forms">
+                <a href="{{ path('_admin_client_edit_validated',{"clientId":c.id}) }}">Validation</a>
                 <a href="{{ path('_admin_client_edit_legalInformation',{"clientId":c.id}) }}">Informations légales</a>
                 <a href="{{ path('_admin_client_edit_location',{"clientId":c.id}) }}">Localisation</a>
                 <a href="{{ path('_admin_client_edit_contact',{"clientId":c.id}) }}">Contact</a>

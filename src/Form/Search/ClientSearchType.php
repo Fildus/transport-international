@@ -80,7 +80,7 @@ class ClientSearchType extends AbstractType
                 'label' => false,
                 'attr' => ["placeholder" => 'Dispose d\'un contract ?'],
                 'choices' => [
-                    'Indifférent' => null,
+                    'Possède un contract ou non' => null,
                     'Posséde un contract' => 1,
                     'Pas de contracts' => 0
                 ]
@@ -90,7 +90,7 @@ class ClientSearchType extends AbstractType
                 'label' => false,
                 'attr' => ['placeholder' => 'Dispose d\'un email?'],
                 'choices' => [
-                    'Indifférent' => null,
+                    'Possède un mail ou non' => null,
                     'Possède un email' => 1,
                     'Ne possède pas d\'email' => 0
                 ]
@@ -99,6 +99,16 @@ class ClientSearchType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => ["placeholder" => 'Id']
+            ])
+            ->add('validated', ChoiceType::class, [
+                'required' => false,
+                'label' => false,
+                'attr' => ["placeholder" => 'est validé ?'],
+                'choices' => [
+                    'Validé ou non' => null,
+                    'Validé' => 1,
+                    'Non validé' => 0
+                ]
             ]);
     }
 

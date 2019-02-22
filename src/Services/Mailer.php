@@ -35,10 +35,11 @@ class Mailer
 
         $mailer = new Swift_Mailer($transport);
 
-        $message = (new \Swift_Message('sujet'))
+        $message = (new \Swift_Message('Nouvel utilisateur'))
             ->setFrom(self::$sender['username'])
             ->setTo($receiver)
-            ->setBody($message, 'text/plain');
+            ->setBody($message, 'text/plain')
+            ->setContentType('text/html');
 
         $mailer->send($message);
     }
