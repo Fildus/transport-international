@@ -1,42 +1,144 @@
-.containerNumber {
-  display : flex;
-  margin  : 5px;
+.numero-arcep {
+  border: 0.1rem solid #CCC;
+  height: 2.2rem;
+  font-weight: 700;
+  background-color: #fff;
+  margin-left: 0.7rem;
+  display: inline-block;
+  line-height: 1.2rem;
+  vertical-align: middle
 }
 
-.firstBlock {
-  width            : 380px;
-  padding-left     : 10px;
-  background-color : white;
-  border           : solid 1px #bbbbbb;
-  color            : purple;
-  font-weight      : bolder;
-  font-size        : 26px;
-  padding-right    : 30px;
-  height           : 40px;
-  line-height      : 40px;
+.numero-arcep .num-arcep {
+  float: left;
+  padding: 0.2rem 0.5rem;
+  line-height: 1.3rem
 }
 
-.secondBlock {
-  font-weight      : bolder;
-  position         : relative;
-  left             : -185px;
-  color            : white;
-  background-color : purple;
-  font-size        : 14px;
-  line-height      : 16px;
-  width            : 180px;
-  padding          : 3px 0 0 0;
-  display          : flex;
-  height           : 40px;
+.numero-arcep .contenu-arcep {
+  font-size: 0.9rem;
+  color: #fff;
+  float: right;
+  height: 2.1rem;
+  padding: 0.1rem 0.5rem 0.2rem 1rem;
+  margin: -0.2rem 0.5rem 0.5rem 0;
+  position: relative;
+  line-height: 1rem;
+  min-height: 2.4rem;
+  max-width: 11rem
 }
 
-.triangle {
-  position     : relative;
-  width        : 0;
-  height       : 0;
-  border-style : solid;
-  top          : 5px;
-  margin-right : 5px;
-  border-width : 12.5px 0 12.5px 10px;
-  border-color : transparent transparent transparent #ffffff;
+.numero-arcep .contenu-arcep:after, .numero-arcep .contenu-arcep:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+
+.numero-arcep .contenu-arcep:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #fff;
+  margin-top: -0.5rem;
+  border-width: 0.5rem
+}
+
+.numero-arcep .contenu-arcep:before {
+  border-color: rgba(227, 227, 227, 0);
+  border-left-color: none;
+  margin-top: -0.7rem;
+  border-width: 0.7rem
+}
+
+.numero-arcep .contenu-arcep:hover:after {
+  border-left-color: none
+}
+
+.numero-arcep .contenu-arcep:hover:before {
+  border-left-color: none
+}
+
+.numero-arcep .contenu-arcep:after, .numero-arcep .contenu-arcep:before {
+  left: 0;
+  height: 1rem;
+  width: 0.5rem
+}
+
+.numero-arcep .contenu-arcep {
+  font-size: 0.9rem;
+  color: #fff;
+  float: right;
+  height: 2.1rem;
+  padding: 0.1rem 0.5rem 0.2rem 1rem;
+  margin: -0.2rem 0.5rem 0.5rem 0;
+  position: relative;
+  line-height: 1rem;
+  min-height: 2.4rem;
+  max-width: 11rem
+}
+
+.numero-arcep .contenu-arcep:after, .numero-arcep .contenu-arcep:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+
+.numero-arcep .contenu-arcep:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #fff;
+  margin-top: -0.5rem;
+  border-width: 0.5rem
+}
+
+.numero-arcep .contenu-arcep:before {
+  border-color: rgba(227, 227, 227, 0);
+  border-left-color: none;
+  margin-top: -0.7rem;
+  border-width: 0.7rem
+}
+
+.numero-arcep .contenu-arcep:hover:after {
+  border-left-color: none
+}
+
+.numero-arcep .contenu-arcep:hover:before {
+  border-left-color: none
+}
+
+.numero-arcep .contenu-arcep:after, .numero-arcep .contenu-arcep:before {
+  left: 0;
+  height: 1rem;
+  width: 0.5rem
+}
+
+.numero-arcep.numero-gratuit .num-arcep {
+  color: #78b41e
+}
+
+.numero-arcep.numero-gratuit .contenu-arcep {
+  background-color: #78b41e
+}
+
+.numero-arcep.numero-banalise .num-arcep {
+  color: #91919b
+}
+
+.numero-arcep.numero-banalise .contenu-arcep {
+  background-color: #91919b
+}
+
+.numero-arcep.numero-majore .num-arcep {
+  color: #a50f78
+}
+
+.numero-arcep.numero-majore .contenu-arcep {
+  background-color: #a50f78
 }

@@ -73,7 +73,6 @@ class OpticoService
         if ($nbr !== null) {
             $number = trim($nbr);
             $number = str_replace(' ', '', $number);
-            $number = str_replace(['(', ')'], '', $number);
 
             if ((int)$number[0] === 0) {
                 $number = substr($number, 1);
