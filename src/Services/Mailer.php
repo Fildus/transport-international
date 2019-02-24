@@ -26,17 +26,17 @@ class Mailer
     public function send($receiver, $message): void
     {
         $transport = (new \Swift_SmtpTransport(
-            self::$sender['host'],
-            self::$sender['port'],
-            self::$sender['security']
+            getenv('HOST'),
+            getenv('PORT'),
+            getenv('SECURITY')
         ))
-            ->setUsername(self::$sender['username'])
-            ->setPassword(self::$sender['password']);
+            ->setUsername(getenv('USERNAME'))
+            ->setPassword(getenv('PASSWORD'));
 
         $mailer = new Swift_Mailer($transport);
 
         $message = (new \Swift_Message('Nouvel utilisateur'))
-            ->setFrom(self::$sender['username'])
+            ->setFrom(getenv('USERNAME'))
             ->setTo($receiver)
             ->setBody($message, 'text/plain')
             ->setContentType('text/html');

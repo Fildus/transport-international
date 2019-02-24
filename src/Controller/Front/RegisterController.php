@@ -71,7 +71,7 @@ class RegisterController extends AbstractController
             $manager->persist($client);
             $manager->flush();
             $this->addFlash('success', 'Votre compte a bien été créé');
-            $mailer->send($client->getUser()->getUsername(), $this->renderView('mail/mail.html.twig', [
+            $mailer->send(getenv('EMAIL'), $this->renderView('mail/mail.html.twig', [
                 'content' => [
                     'url' => 'https://www.transport-international.com' . $this->generateUrl('_admin_client_edit_legalInformation', ['clientId' => $client->getId()]),
                     'client' => $client
