@@ -22,6 +22,7 @@ test*
 yarn*
 ti_nouveau.sql
 ti_existant_complet.sql
+pages
 public/*.xml
 public/robots.txt
 ###< custom ###

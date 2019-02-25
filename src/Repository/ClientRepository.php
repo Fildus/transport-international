@@ -261,7 +261,7 @@ class ClientRepository extends ServiceEntityRepository
         }
 
         $qb = $qb
-            ->where('c.validated = 1');
+            ->andWhere('c.validated = 1');
 
         $qb
             ->distinct()
