@@ -25,7 +25,7 @@ class RedirectSubscriber extends AbstractController implements EventSubscriberIn
         }
 
         $file = $event->getRequest()->getPathInfo() === '/' ? $file = '/index.html' : $event->getRequest()->getPathInfo();
-        $fullPath = '../pages/' . $event->getRequest()->getHttpHost() . $file;
+        $fullPath = '../pages/' . str_replace('www.','',$event->getRequest()->getHttpHost()) . $file;
         if(file_exists($fullPath)){
             echo file_get_contents($fullPath);
             die();
