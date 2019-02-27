@@ -225,6 +225,8 @@ home:
             subtitle: "La gestion de vos flux physiques prise en charge par des professionnels spécialistes :"
         storage:
             subtitle: "Trouvez partout dans le monde des professionnels pour le stockage de vos marchandises :"
+        mover:
+            subtitle: "Pour vos déménagements, trouvez des professionnels spécialisés :"
         passengerTransport:
             subtitle: "Des professionnels du transport de voyageurs sont à votre service :"
     jumbotron:

@@ -4,7 +4,6 @@
         <h3>{{ 'home.links.charter.subtitle'|trans }}</h3>
         <ul>
             {% for n in [60,61,62,63,64] %}
-                {# retiré 65 #}
                 <li>
                     {{ getActivity(59,n) }}
                 </li>
@@ -22,9 +21,14 @@
                     <li>{{ getActivity(25,29) }}</li>
                 </ul>
             </li>
-            <li>{{ getActivity(87,88) }}</li>
-            <li>{{ getActivity(87,89) }}</li>
-            <li>{{ getActivity(87) }}</li>
+            <li>
+                {{ getActivity(87) }}
+                <ul>
+                    <li>{{ getActivity(87,88) }}</li>
+                    <li>{{ getActivity(87,89) }}</li>
+                    <li>{{ getActivity(87,90) }}</li>
+                </ul>
+            </li>
             <li>{{ getActivity(3) }}</li>
             <li>
                 {{ getActivity(20) }}
@@ -82,7 +86,6 @@
         <h3>{{ 'home.links.storage.subtitle'|trans }}</h3>
         <ul>
             {% for n in 79..85 %}
-                {# retiré 86 #}
                 <li>
                     {{ getActivity(78,n) }}
                 </li>
@@ -91,7 +94,7 @@
     </article>
     <article class="col-12 col-md-6 col-lg-4">
         <h2>{{ getActivity(91) }}</h2>
-        <h3>{{ 'home.links.storage.subtitle'|trans }}</h3>
+        <h3>{{ 'home.links.mover.subtitle'|trans }}</h3>
         <ul>
             {% for n in 92..98 %}
                 <li>
@@ -104,7 +107,7 @@
         <h2>{{ getActivity(66) }}</h2>
         <h3>{{ 'home.links.rentWithDrive.subtitle'|trans }}</h3>
         <ul>
-            {% for n in [67,68,69,70,71,72] %}
+            {% for n in [67,68,69,70,71] %}
                 <li>
                     {{ getActivity(66,n) }}
                 </li>
@@ -133,7 +136,7 @@
         <h2>{{ getActivity(73) }}</h2>
         <h3>{{ 'home.links.logistic.subtitle'|trans }}</h3>
         <ul>
-            {% for n in [74,75,76] %}
+            {% for n in [72,74,75,76] %}
                 <li>
                     {{ getActivity(73,n) }}
                 </li>
