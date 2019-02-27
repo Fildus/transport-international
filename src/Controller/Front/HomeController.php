@@ -31,10 +31,11 @@ class HomeController extends AbstractController
     /**
      * HomeController constructor.
      *
-     * @param ActivityRepository $activityRepository
+     * @param ActivityRepository   $activityRepository
      * @param ServedZoneRepository $servedZoneRepository
      *
-     * @param Locale $locale
+     * @param Locale               $locale
+     *
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function __construct(ActivityRepository $activityRepository, ServedZoneRepository $servedZoneRepository, Locale $locale)
@@ -64,7 +65,7 @@ class HomeController extends AbstractController
      * @return Response
      * @throws \Psr\SimpleCache\InvalidArgumentException
      */
-    public function home(CacheInterface $cache): Response
+    public function home(CacheInterface $cache, Request $request): Response
     {
         $key = 'home-z4d4zd45-' . $this->locale->getLocalematched();
         if (!$cache->has($key)) {
@@ -76,10 +77,30 @@ class HomeController extends AbstractController
             ], 3600);
         }
 
+
         return new Response($this->renderView('pages/home.html.twig', [
             'activities' => $cache->get($key)['activities'],
             'countries' => $cache->get($key)['countries'],
-            'domain' => $this->locale->getDomain()
+            'domain' => $this->locale->getDomain(),
+            'top' => $this->addToHome($request, 'top'),
+            'bot' => $this->addToHome($request, 'bot'),
+            'full' => $this->addToHome($request, 'full')
         ]));
+    }
+
+    /**
+     * @param Request $request
+     * @param string  $position
+     *
+     * @return false|string
+     */
+    public function addToHome(Request $request, string $position): ?string
+    {
+        $file = $request->getPathInfo() === '/' ? $file = '/' . $position . '.html' : $request->getPathInfo();
+        $fullPath = '../pages/' . str_replace('www.', '', $request->getHttpHost()) . $file;
+        if (file_exists($fullPath)) {
+            return file_get_contents($fullPath);
+        }
+        return null;
     }
 }

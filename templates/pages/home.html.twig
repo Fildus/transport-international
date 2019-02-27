@@ -6,13 +6,33 @@
         {{ render(controller('App\\Controller\\Front\\RenderController::getHeader')) }}
     </div>
     {{ render(controller('App\\Controller\\Front\\RenderController::getSlider')) }}
-
     <div class="container pt-2" id="front-custom">
+        <div id="search-bar">
+            <form class="form-inline search-trans" action="{{ path('_search_geturl') }}" method="get">
+                <input class="form-control form-control-sm mr-3 w-75" type="text"
+                       placeholder="{{ 'home.search' | trans }}" aria-label="Search" name="sr" id="sr">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </form>
+        </div>
         {% include 'parts/home/form.html.twig' %}
-        {% include 'parts/home/activities.html.twig' %}
     </div>
-    {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
-    {% include 'parts/home/bottomMore.html.twig' %}
+
+    {% if full %}
+        {{ full | raw }}
+    {% else %}
+        <div class="container pt-2" id="front-custom">
+            {% if top %}
+                {{ top | raw }}
+            {% endif %}
+            {% include 'parts/home/activities.html.twig' %}
+        </div>
+        {{ render(controller('App\\Controller\\Front\\RenderController::getBottom')) }}
+        {% include 'parts/home/bottomMore.html.twig' %}
+        {% if bot %}
+            {{ bot | raw }}
+        {% endif %}
+    {% endif %}
+
     {% include 'parts/footer.html.twig' %}
 {% endblock %}
 

@@ -236,7 +236,8 @@ home:
         forgotPassword: "Mot de passe oublié"
         forAnyRequest: "Pour toute demande"
         available: "Du lundi au vendredi, 9h-18h"
-    search: "Chercher"
+    search: "Rechercher une entreprise"
+    searchAll: "Recherche"
 
 bottom:
     newSubscribers:
