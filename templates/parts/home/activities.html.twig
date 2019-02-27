@@ -3,7 +3,8 @@
         <h2>{{ getActivity(59) }}</h2>
         <h3>{{ 'home.links.charter.subtitle'|trans }}</h3>
         <ul>
-            {% for n in [60,61,62,63,64,65] %}
+            {% for n in [60,61,62,63,64] %}
+                {# retiré 65 #}
                 <li>
                     {{ getActivity(59,n) }}
                 </li>
@@ -80,7 +81,8 @@
         <h2>{{ getActivity(78) }}</h2>
         <h3>{{ 'home.links.storage.subtitle'|trans }}</h3>
         <ul>
-            {% for n in 79..86 %}
+            {% for n in 79..85 %}
+                {# retiré 86 #}
                 <li>
                     {{ getActivity(78,n) }}
                 </li>
@@ -91,7 +93,7 @@
         <h2>{{ getActivity(91) }}</h2>
         <h3>{{ 'home.links.storage.subtitle'|trans }}</h3>
         <ul>
-            {% for n in 92..99 %}
+            {% for n in 92..98 %}
                 <li>
                     {{ getActivity(91,n) }}
                 </li>
@@ -113,7 +115,7 @@
         <h2>{{ getActivity(100) }}</h2>
         <h3>{{ 'home.links.passengerTransport.subtitle'|trans }}</h3>
         <ul>
-            {% for n in 101..107 %}
+            {% for n in 101..106 %}
                 <li>
                     {{ getActivity(100,n) }}
                 </li>
@@ -131,7 +133,7 @@
         <h2>{{ getActivity(73) }}</h2>
         <h3>{{ 'home.links.logistic.subtitle'|trans }}</h3>
         <ul>
-            {% for n in [74,75,76,77] %}
+            {% for n in [74,75,76] %}
                 <li>
                     {{ getActivity(73,n) }}
                 </li>

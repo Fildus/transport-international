@@ -65,7 +65,7 @@ li{list-style:none}#bottom{background:#d3d7e0;margin:20px 0;padding:30px 0}#bott
 .numero-arcep.numero-majore .num-arcep{color:#a50f78}.numero-arcep.numero-majore .contenu-arcep{background-color:#a50f78}
 #search-bar{margin:20px -10px}#search-bar form.search-trans{background:#28a745;padding:40px;border-radius:5px;width:100%;margin:20px 0}
 #search-bar form.search-trans .form-control{background-color:transparent;border-bottom:1px solid #fff !important;border:inherit;color:#fff;font-size:1.25rem}
-#search-bar form.search-trans .form-control:focus{box-shadow:inherit}#search-bar form.search-trans .form-control::placeholder{color:#c2fcc0;transition:all .3s ease;font-size:2rem}
+#search-bar form.search-trans .form-control:focus{box-shadow:inherit}#search-bar form.search-trans .form-control::placeholder{color:#c2fcc0;transition:all .3s ease;font-size:1.7rem}
 #search-bar form.search-trans .form-control:focus::placeholder{font-size:1.5rem}#search-bar form.search-trans .w-75{width:95% !important}
 @media screen and (max-width:1000px){#search-bar form.search-trans .w-75{width:90% !important}
 }@media screen and (max-width:800px){#search-bar form.search-trans .form-control::placeholder{font-size:1.2rem}
