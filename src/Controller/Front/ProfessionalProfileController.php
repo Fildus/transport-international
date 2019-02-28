@@ -85,7 +85,6 @@ class ProfessionalProfileController extends AbstractController
      * @return Response .html.twig
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
-     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function profile($cnSlug, Mailer $mailer, Request $request, RecursionInterface $recursion): Response
     {

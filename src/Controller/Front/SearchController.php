@@ -3,7 +3,9 @@
 namespace App\Controller\Front;
 
 
+use App\Entity\Client;
 use App\Repository\ActivityRepository;
+use App\Repository\LegalInformationRepository;
 use App\Repository\ServedZoneRepository;
 use App\Repository\TranslationRepository;
 use App\Services\Locale;
@@ -45,6 +47,10 @@ class SearchController extends AbstractController
      * @var CacheInterface
      */
     private $cache;
+    /**
+     * @var LegalInformationRepository
+     */
+    private $legalInformationRepository;
 
     /**
      * SearchController constructor.
@@ -64,6 +70,7 @@ class SearchController extends AbstractController
         ActivityRepository $activityRepository,
         TranslationRepository $translationRepository,
         ServedZoneRepository $servedZoneRepository,
+        LegalInformationRepository $legalInformationRepository,
         CacheInterface $cache
     )
     {
@@ -73,6 +80,7 @@ class SearchController extends AbstractController
         $this->translationRepository = $translationRepository;
         $this->activityRepository = $activityRepository;
         $this->servedZoneRepository = $servedZoneRepository;
+        $this->legalInformationRepository = $legalInformationRepository;
         $this->cache = $cache;
     }
 
@@ -302,6 +310,14 @@ class SearchController extends AbstractController
 
         if ($socialRaison = $request->get('sr')) {
             $clientsIds = $this->clientRepository->findOneByCompanyName($socialRaison);
+            if ($clientsIds !== null){
+                $ids = explode('-', $clientsIds);
+                if (count($ids) === 1){
+                    /** @var $client Client */
+                    $client = $this->clientRepository->findById($ids[0]);
+                    return $this->redirectToRoute('_professional_profile', ['cnSlug' => end($client)->getLegalInformation()->getSlug()]);
+                }
+            }
             return $this->redirectToRoute('_search_company', ['page' => 1, 'clientsIds' => $clientsIds]);
         }
 
