@@ -96,107 +96,112 @@ class ClientRepository extends ServiceEntityRepository
 
         if ($search->getSiret() !== null) {
             $qb
-                ->andWhere('legalInformation.siret LIKE :siret')
+                ->orWhere('legalInformation.siret LIKE :siret')
                 ->setParameter('siret', $search->getSiret());
         }
 
         if ($search->getCorporateName() !== null) {
             $qb
-                ->andWhere('legalInformation.corporateName LIKE :corporateName')
+                ->orWhere('legalInformation.corporateName LIKE :corporateName')
                 ->setParameter('corporateName', $search->getCorporateName());
         }
 
         if ($search->getCompanyName() !== null) {
             $qb
-                ->andWhere('legalInformation.companyName LIKE :companyName')
+                ->orWhere('legalInformation.companyName LIKE :companyName')
                 ->setParameter('companyName', $search->getCompanyName());
         }
 
         if ($search->getLegalForm() !== null) {
             $qb
-                ->andWhere('legalInformation.legalForm = :legalForm')
+                ->orWhere('legalInformation.legalForm = :legalForm')
                 ->setParameter('legalForm', $search->getLegalForm());
         }
 
         if ($search->getAddress() !== null) {
             $qb
-                ->andWhere('location.address = :address')
+                ->orWhere('location.address = :address')
                 ->setParameter('address', $search->getAddress());
         }
 
         if ($search->getPostalCode() !== null) {
             $qb
-                ->andWhere('location.postalCode = :postalCode')
+                ->orWhere('location.postalCode = :postalCode')
                 ->setParameter('postalCode', $search->getPostalCode());
         }
 
         if ($search->getCity() !== null) {
             $qb
-                ->andWhere('location.city = :city')
+                ->orWhere('location.city = :city')
                 ->setParameter('city', $search->getCity());
         }
 
         if ($search->getLocation() !== null) {
             $qb
-                ->andWhere('servedZoneTranslation.fr = :servedZoneTranslation')
+                ->orWhere('servedZoneTranslation.fr = :servedZoneTranslation')
                 ->setParameter('servedZoneTranslation', $search->getLocation());
         }
 
         if ($search->getPhone() !== null) {
             $qb
-                ->andWhere('contact.phone = :phone')
+                ->orWhere('contact.phone = :phone')
                 ->setParameter('phone', $search->getPhone());
         }
 
         if ($search->getFax() !== null) {
             $qb
-                ->andWhere('contact.fax = :fax')
+                ->orWhere('contact.fax = :fax')
                 ->setParameter('fax', $search->getFax());
         }
 
         if ($search->getContact() !== null) {
             $qb
-                ->andWhere('contact.contact = :contact')
+                ->orWhere('contact.contact = :contact')
                 ->setParameter('contact', $search->getContact());
         }
 
         if ($search->getWebSite() !== null) {
             $qb
-                ->andWhere('contact.webSite = :webSite')
+                ->orWhere('contact.webSite = :webSite')
                 ->setParameter('webSite', $search->getWebSite());
         }
 
         if ($search->getContract() !== null) {
             if ((int)$search->getContract() === 1) {
-                $qb->andWhere('c.contract is not empty');
+                $qb->orWhere('c.contract is not empty');
             }
             if ((int)$search->getContract() === 0) {
-                $qb->andWhere('c.contract is empty');
+                $qb->orWhere('c.contract is empty');
             }
         }
 
         if ($search->isHaveEmail() !== null) {
             if ((int)$search->isHaveEmail() === 1) {
-                $qb->andWhere('user.username is not null');
-                $qb->andWhere('user.username != \'\'');
+                $qb->orWhere('user.username is not null');
+                $qb->orWhere('user.username != \'\'');
             }
             if ((int)$search->isHaveEmail() === 0) {
-                $qb->andWhere('user.username = \'\'');
+                $qb->orWhere('user.username = \'\'');
             }
         }
 
         if ($search->getContract() !== null) {
             if ((int)$search->getContract() === 1) {
-                $qb->andWhere('c.contract is not empty');
+                $qb->orWhere('c.contract is not empty');
             }
             if ((int)$search->getContract() === 0) {
-                $qb->andWhere('c.contract is empty');
+                $qb->orWhere('c.contract is empty');
             }
         }
 
         if ($search->isValidated() !== null) {
             $validated = $search->isValidated() ? 1 : 0;
-            $qb->andWhere('c.validated =' . $validated);
+            $qb->orWhere('c.validated =' . $validated);
+        }
+
+        if ($search->getId() !== null){
+            $qb = $qb->orWhere('c.id ='.$search->getId());
+            $qb = $qb->orWhere('c.id_oldDatabase ='.$search->getId());
         }
 
         $qb
