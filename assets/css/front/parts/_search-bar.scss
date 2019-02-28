@@ -1,9 +1,9 @@
 #search-bar {
   margin : 20px -10px;
   form.search-trans {
-    background    : #28a745;;
-    padding       : 40px;
-    border-radius : 5px;
+    background    : #5a95b7;
+    padding       : 30px;
+    border-radius : 3px;
     width         : 100%;
     margin        : 20px 0;
   }
@@ -21,7 +21,7 @@
   }
 
   form.search-trans .form-control::placeholder {
-    color      : hsl(118, 91%, 87%);
+    color      : #FFFFFF;
     transition : all 0.3s ease;
     font-size  : 1.7rem;
   }
@@ -53,7 +53,7 @@
   }
 
   form.search-trans .fa {
-    color      : white;
+    color      : #FFFFFF;
     transition : transform 0.3s ease;
     font-size  : 1.2rem;
   }
