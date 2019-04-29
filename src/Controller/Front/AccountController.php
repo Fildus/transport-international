@@ -27,6 +27,8 @@ use App\Repository\ServedZoneRepository;
 use App\Services\Locale;
 use Doctrine\Common\Persistence\ObjectManager;
 use Psr\SimpleCache\CacheInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -110,6 +112,9 @@ class AccountController extends AbstractController
         }
 
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $legalInformation = $client->getLegalInformation() ?? new LegalInformation();
 
         $form = $this->createForm(LegalInformationType::class, $legalInformation);
@@ -149,6 +154,9 @@ class AccountController extends AbstractController
     public function location(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $location = $client->getLocation() ?? new Location();
 
         $form = $this->createForm(LocationType::class, $location);
@@ -182,12 +190,14 @@ class AccountController extends AbstractController
      *      "ci" : "/contact"
      * }, name="_contact")
      * @param Request $request
-     *
      * @return Response
      */
     public function contact(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $contact = $client->getContact() ?? new Contact();
 
         $form = $this->createForm(ContactType::class, $contact);
@@ -227,6 +237,9 @@ class AccountController extends AbstractController
     public function coreBusiness(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $coreBusiness = $client->getCoreBusiness() ?? new CoreBusiness();
 
         $form = $this->createForm(CoreBusinessType::class, $coreBusiness);
@@ -266,6 +279,9 @@ class AccountController extends AbstractController
     public function user(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $user = $client->getUser() ?? new User();
 
         $form = $this->createForm(UserType::class, $user);
@@ -305,6 +321,9 @@ class AccountController extends AbstractController
     public function managers(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $managers = $client->getManagers() ?? new Managers();
 
         $form = $this->createForm(ManagersType::class, $managers);
@@ -344,6 +363,9 @@ class AccountController extends AbstractController
     public function equipment(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $equipment = $client->getEquipment() ?? new Equipment();
 
         $form = $this->createForm(EquipmentType::class, $equipment);
@@ -383,6 +405,9 @@ class AccountController extends AbstractController
     public function about(Request $request): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $about = $client->getAbout() ?? new About();
 
         $form = $this->createForm(AboutType::class, $about);
@@ -424,6 +449,9 @@ class AccountController extends AbstractController
     public function activity(Request $request, ActivityRepository $activityRepository): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $form = $this->createForm(ActivityType::class, $client);
 
         $form->handleRequest($request);
@@ -467,6 +495,9 @@ class AccountController extends AbstractController
     public function servedZone(Request $request, ServedZoneRepository $servedZoneRepository): Response
     {
         $client = $this->getClient();
+        if ($client === null){
+            return $this->redirectToRoute('_login');
+        }
         $form = $this->createForm(ServedZoneType::class, $client);
 
         $form->handleRequest($request);
@@ -483,12 +514,15 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @return \App\Entity\Client
+     * @return Client
      */
-    private function getClient(): Client
+    private function getClient(): ?Client
     {
-        return $this->clientRepository->findOneBy([
-                'user' => $this->getUser()
-            ]) ?? new Client();
+        if ($this->getUser() !== null) {
+            return $this->clientRepository->findOneBy([
+                    'user' => $this->getUser()
+                ]) ?? new Client();
+        }
+        return null;
     }
 }

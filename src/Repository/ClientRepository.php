@@ -8,10 +8,13 @@ use App\Entity\Search\ClientSearch;
 use App\Entity\ServedZone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Collections\Criteria;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr;
+use Doctrine\ORM\QueryBuilder;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use function Symfony\Component\DependencyInjection\Loader\Configurator\iterator;
 
 /**
  * @method Client|null find($id, $lockMode = null, $lockVersion = null)
@@ -81,17 +84,17 @@ class ClientRepository extends ServiceEntityRepository
     /**
      * @param $search ClientSearch
      *
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return Query
      */
     public function getAllClients(ClientSearch $search)
     {
         $qb = $this->createQueryBuilder('c')
-            ->innerJoin('c.legalInformation', 'legalInformation')
-            ->innerJoin('c.location', 'location')
-            ->innerJoin('location.location', 'servedZone')
-            ->innerJoin('servedZone.translation', 'servedZoneTranslation')
-            ->innerJoin('c.contact', 'contact')
-            ->innerJoin('c.user', 'user')
+            ->leftJoin('c.legalInformation', 'legalInformation')
+            ->leftJoin('c.location', 'location')
+            ->leftJoin('location.location', 'servedZone')
+            ->leftJoin('servedZone.translation', 'servedZoneTranslation')
+            ->leftJoin('c.contact', 'contact')
+            ->join('c.user', 'user')
             ->orderBy('c.id', 'ASC');
 
         if ($search->getSiret() !== null) {
@@ -199,25 +202,25 @@ class ClientRepository extends ServiceEntityRepository
             $qb->orWhere('c.validated =' . $validated);
         }
 
-        if ($search->getId() !== null){
-            $qb = $qb->orWhere('c.id ='.$search->getId());
-            $qb = $qb->orWhere('c.id_oldDatabase ='.$search->getId());
+        if ($search->getId() !== null) {
+            $qb = $qb->orWhere('c.id =' . $search->getId());
+            $qb = $qb->orWhere('c.id_oldDatabase =' . $search->getId());
         }
 
-        $qb
+        $qb = $qb
             ->getQuery();
 
         return $qb;
     }
 
     /**
-     * @param Activity|null $typeA
-     * @param Activity|null $typeB
+     * @param Activity|null   $typeA
+     * @param Activity|null   $typeB
      * @param ServedZone|null $toCountry
      * @param ServedZone|null $toDept
      * @param ServedZone|null $fromCountry
      * @param ServedZone|null $fromDept
-     * @param int $page
+     * @param int             $page
      *
      * @return array
      */

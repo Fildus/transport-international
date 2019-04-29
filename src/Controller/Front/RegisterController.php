@@ -77,6 +77,7 @@ class RegisterController extends AbstractController
                     'client' => $client
                 ]
             ]));
+            $request->getSession()->set('new_client', $client);
             return $this->redirectToRoute('account_legalInformation');
         }
 

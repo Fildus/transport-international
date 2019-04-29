@@ -31,9 +31,7 @@ use App\Repository\ClientRepository;
 use App\Repository\ServedZoneRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
-use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,16 +53,11 @@ class ClientController extends AbstractController
      * @var ClientRepository
      */
     private $clientRepository;
-    /**
-     * @var CacheInterface
-     */
-    private $cache;
 
-    public function __construct(ObjectManager $manager, ClientRepository $clientRepository, CacheInterface $cache)
+    public function __construct(ObjectManager $manager, ClientRepository $clientRepository)
     {
         $this->manager = $manager;
         $this->clientRepository = $clientRepository;
-        $this->cache = $cache;
     }
 
     /**
@@ -401,7 +394,7 @@ class ClientController extends AbstractController
         return $this->render('backOffice/pages/client/types/activity.html.twig', [
             'form' => $form->createView(),
             'c' => $c,
-            'activities' => $activityRepository->findByWithTranslation()//$this->cache->get($key)
+            'activities' => $activityRepository->findByWithTranslation()
         ]);
     }
 

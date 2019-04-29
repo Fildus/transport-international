@@ -4,9 +4,8 @@ namespace App\Services;
 
 use App\Entity\Domain;
 use App\Repository\DomainRepository;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Psr\SimpleCache\InvalidArgumentException;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\Yaml\Yaml;
 
 class Locale
 {
@@ -47,11 +46,16 @@ class Locale
 
     /**
      * @return Locale
-     * @throws \Psr\SimpleCache\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setLocale(): self
     {
-        $httpHost = str_replace('test-', '', $this->requestStack->getMasterRequest()->getHttpHost());
+        if ($r = $this->requestStack->getMasterRequest()) {
+            $httpHost = getenv('APP_ENV') === 'prod' ?
+                str_replace('test-', '', $r->getHttpHost()) :
+                $r->getHttpHost();
+        }
+
         foreach ($this->domainRepository->getAll() as $item) {
             /** @var $item Domain */
             if (preg_match('/(' . $item->getDomain() . ')/', $httpHost)) {

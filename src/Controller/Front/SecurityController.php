@@ -5,6 +5,7 @@ namespace App\Controller\Front;
 
 use App\Services\Locale;
 use Psr\Container\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -50,14 +51,20 @@ class SecurityController extends AbstractController
      * }, name="_login")
      * @param AuthenticationUtils $authenticationUtils
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param Request             $request
+     *
+     * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
+        if ($request->getSession() && $request->getSession()->has('new_client')) {
+            $user = $request->getSession()->get('new_client');
+        }
+
         return $this->getUser() ?
             $this->redirectToRoute('home') :
             $this->render('security/login.html.twig', [
-                'last_username' => $authenticationUtils->getLastUsername(),
+                'last_username' => isset($user) && $user !== null ? $user->getUser()->getUserName() : $authenticationUtils->getLastUsername(),
                 'error' => $authenticationUtils->getLastAuthenticationError()
             ]);
     }
@@ -68,10 +75,10 @@ class SecurityController extends AbstractController
     public function onSuccess(): Response
     {
         if ($this->getUser()) {
-            if ($this->getUser()->getRole() === 'ROLE_USER'){
+            if ($this->getUser()->getRole() === 'ROLE_USER') {
                 return $this->redirectToRoute('account_legalInformation.' . $this->locale);
             }
-            if ($this->getUser()->getRole() === 'ROLE_ADMIN'){
+            if ($this->getUser()->getRole() === 'ROLE_ADMIN') {
                 return $this->redirectToRoute('_admin_home');
             }
         }

@@ -35,8 +35,8 @@ class ManagerController extends AbstractController
      */
     public function cache()
     {
-        shell_exec('php ' . $this->getParameter('kernel.project_dir') . '/bin/console cache:clear');
-        $this->addFlash('success', 'Cache réinitialisé');
+        $res = shell_exec('php ' . $this->getParameter('kernel.project_dir') . '/bin/console cache:clear');
+        $this->addFlash('success', $res);
         return $this->redirectToRoute('_manager_index');
     }
 

@@ -12,7 +12,9 @@
 {% block content %}
     <div class="form-group card-custom p-3">
         <h2 class="text-center">Filtres de recherche</h2>
-        {{ form_start(searchForm) }}
+        {{ form_start(searchForm,
+            {'action': path('_admin_client_index')}
+        ) }}
         <div class="row">
             <div class="col-4">
                 <h3 class="tinyTitleh2">Informations légales :</h3>
@@ -69,9 +71,9 @@
                 <tr>
                     <td class="text-center">{{ c.id }}</td>
                     <td class="text-center">{{ c.idOldDatabase }}</td>
-                    <td>{{ c.legalInformation.corporateName }}</td>
-                    <td>{{ c.location.address~' '~c.location.postalCode~' '~c.location.city }}</td>
-                    <td>{{ c.contact.phone }}</td>
+                    <td>{{ c.legalInformation.corporateName ?? null }}</td>
+                    <td>{{ c.location.address ?? null~' '~c.location.postalCode ?? null~' '~c.location.city ?? null }}</td>
+                    <td>{{ c.contact.phone ?? null }}</td>
                     {% if c.validated %}
                         <td class="alert-success text-center">validé</td>
                     {% else %}
@@ -87,7 +89,7 @@
                             </a>
                         {% endif %}
                         <a href="{{ path('_admin_client_delete', {'id': c.id}) }}" title="Supprimer"
-                           onclick="return confirm('Etes vous sur de vouloir supprimer  '+ '{{ c.legalInformation.corporateName }}'+' ?');">
+                           onclick="return confirm('Etes vous sur de vouloir supprimer  '+ '{{ c.legalInformation.corporateName ?? null }}'+' ?');">
                             <i class="far fa-trash-alt text-danger ml-2 mr-2"></i>
                         </a>
                     </td>
