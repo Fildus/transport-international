@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Translation\TranslatorBagInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class SearchController extends AbstractController
 {
@@ -182,6 +184,29 @@ class SearchController extends AbstractController
         $clientsIds = explode('-', $clientsIds);
         $clientsByIds = $this->clientRepository->findById($clientsIds);
 
+        $clients = [];
+        foreach ($clientsByIds as $clientsById) {
+            /** @var $clientsById Client */
+            if ($clientsById->isValidated() === true) {
+                $clients[] = $clientsById;
+            }
+        }
+
+        if (empty($clients)) {
+            $message = [
+                'fr' => 'La société n\'a pas été validé par transport international pour le moment',
+                'en' => 'The company has not been validated by international transport for the moment',
+                'de' => 'Das Unternehmen wurde im Moment nicht durch internationale Transporte validiert',
+                'es' => 'La empresa no ha sido validada por el transporte internacional por el momento.',
+                'id' => 'La compagnia non è stata convalidata dal trasporto internazionale per il momento',
+                'ma' => 'Компанијата не е валидирана од меѓународен превоз засега',
+                'po' => 'A empresa não foi validada pelo transporte internacional no momento',
+                'ro' => 'Compania nu a fost validată de transportul internațional pentru moment'
+            ];
+            $this->addFlash('warning', $message[$this->locale->getLocalematched() ?? 'en']);
+            return $this->redirectToRoute('home.' . $this->locale->getLocalematched());
+        }
+
         return new Response($this->renderView('pages/search.html.twig', [
             'clients' => $clientsByIds,
             'count' => count($clientsByIds),
@@ -307,12 +332,11 @@ class SearchController extends AbstractController
             }
         }
 
-
         if ($socialRaison = $request->get('sr')) {
             $clientsIds = $this->clientRepository->findOneByCompanyName($socialRaison);
-            if ($clientsIds !== null){
+            if ($clientsIds !== null) {
                 $ids = explode('-', $clientsIds);
-                if (count($ids) === 1){
+                if (count($ids) === 1) {
                     /** @var $client Client */
                     $client = $this->clientRepository->findById($ids[0]);
                     return $this->redirectToRoute('_professional_profile', ['cnSlug' => end($client)->getLegalInformation()->getSlug()]);

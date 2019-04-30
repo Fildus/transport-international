@@ -78,7 +78,7 @@ class RegisterController extends AbstractController
                 ]
             ]));
             $request->getSession()->set('new_client', $client);
-            return $this->redirectToRoute('account_legalInformation');
+            return $this->redirectToRoute('_login');
         }
 
         return new Response($this->renderView('client/register.html.twig', [

@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\LegalInformation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use mysql_xdevapi\Result;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -111,7 +112,7 @@ class LegalInformationRepository extends ServiceEntityRepository
             foreach ($qb as $item) {
                 $return[] = $item->getCompanyName();
             }
-            $this->cache->set($key, array_values(array_unique($return)), 86400);
+            $this->cache->set($key, array_values(array_unique($return)), 3600);
         }
         return $this->cache->get($key);
     }

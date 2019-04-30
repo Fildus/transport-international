@@ -334,6 +334,7 @@ class ClientRepository extends ServiceEntityRepository
             ->leftJoin('c.legalInformation', 'l')
             ->where('l.companyName LIKE\'' . $name . '\'')
             ->orWhere('l.companyName LIKE\'' . $name . '\'')
+            ->andWhere('c.validated = true')
             ->getQuery()
             ->getResult();
 
